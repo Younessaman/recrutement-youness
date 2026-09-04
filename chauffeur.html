@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chauffeur Opérateur | E360S</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:#f5f7fa;
+color:#333;
+line-height:1.6;
+}
+
+/* HERO */
+
 .hero{
 background:linear-gradient(135deg,#00A7E1,#007DB8);
 color:white;
@@ -89,6 +115,150 @@ color:#F9FF00;
 font-size:14px;
 }
 
+/* BANNIÈRE */
+
+.info{
+background:#F9FF00;
+color:#009EDB;
+font-weight:800;
+text-align:center;
+padding:18px;
+font-size:20px;
+border-bottom:4px solid #009EDB;
+}
+
+/* CONTENU */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.job-title{
+font-size:34px;
+font-weight:900;
+color:#009EDB;
+margin-bottom:10px;
+}
+
+.job-badge{
+display:inline-block;
+background:#F9FF00;
+color:#007DB8;
+padding:8px 15px;
+border-radius:20px;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.section-title{
+color:#009EDB;
+font-size:18px;
+margin-top:25px;
+margin-bottom:10px;
+}
+
+ul{
+margin-left:20px;
+}
+
+li{
+margin-bottom:8px;
+}
+
+/* VILLES */
+
+.cities{
+margin-top:15px;
+}
+
+.city{
+display:inline-block;
+background:#F9FF00;
+color:#007DB8;
+padding:12px 18px;
+border-radius:30px;
+font-weight:800;
+margin:6px;
+text-decoration:none;
+transition:.3s;
+}
+
+.city:hover{
+background:#009EDB;
+color:white;
+transform:translateY(-2px);
+}
+
+/* BOUTON BAS */
+
+.bottom-btn{
+display:block;
+text-align:center;
+background:#009EDB;
+color:white;
+text-decoration:none;
+padding:18px;
+border-radius:12px;
+margin-top:30px;
+font-size:18px;
+font-weight:900;
+}
+
+.bottom-btn:hover{
+background:#007DB8;
+}
+
+/* WOW */
+
+.wow{
+margin-top:60px;
+}
+
+.wow h2{
+text-align:center;
+color:#009EDB;
+margin-bottom:30px;
+font-size:30px;
+}
+
+.wow-grid{
+display:flex;
+gap:25px;
+}
+
+.wow-card{
+flex:1;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+border-top:6px solid #F9FF00;
+}
+
+.wow-card h3{
+color:#009EDB;
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding:40px;
+color:#666;
+}
+
+/* MOBILE */
+
 @media(max-width:768px){
 
 .hero h1{
@@ -97,8 +267,184 @@ font-size:46px;
 
 .specialties span{
 display:block;
+max-width:240px;
 margin:8px auto;
-max-width:220px;
+}
+
+.stats{
+gap:25px;
+}
+
+.wow-grid{
+flex-direction:column;
 }
 
 }
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="badge">
+EMBAUCHE EN COURS
+</div>
+
+<h1>
+CHAUFFEUR<br>
+<span class="yellow">OPÉRATEUR</span>
+</h1>
+
+<div class="seasonal-banner">
+POSTE SAISONNIER
+</div>
+
+<div class="specialties">
+<span>Classe 1</span>
+<span>Classe 3</span>
+<span>Hydrovac</span>
+<span>Fosses septiques</span>
+</div>
+
+<a class="hero-btn"
+href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
+target="_blank">
+
+POSTULER MAINTENANT
+
+</a>
+
+<div class="stats">
+
+<div>
+<div class="stat-number">13+</div>
+<div class="stat-label">Régions</div>
+</div>
+
+<div>
+<div class="stat-number">48h</div>
+<div class="stat-label">Réponse rapide</div>
+</div>
+
+<div>
+<div class="stat-number">2 568+</div>
+<div class="stat-label">Employés au Canada</div>
+</div>
+
+</div>
+
+</section>
+
+<div class="info">
+Opportunités disponibles dans plusieurs régions du Québec
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<div class="job-title">
+Chauffeur Opérateur
+</div>
+
+<div class="job-badge">
+Poste saisonnier • Possibilité de travail à l'année
+</div>
+
+<p>
+Solutions Environnementales 360 (E360S) recherche plusieurs chauffeurs-opérateurs afin de soutenir ses opérations environnementales partout au Québec.
+</p>
+
+<h3 class="section-title">Responsabilités</h3>
+
+<ul>
+<li>Conduire et opérer un camion spécialisé</li>
+<li>Effectuer les inspections avant départ</li>
+<li>Maintenir les équipements en bon état</li>
+<li>Compléter les rapports requis</li>
+<li>Collaborer avec les équipes terrain</li>
+</ul>
+
+<h3 class="section-title">Conditions offertes</h3>
+
+<ul>
+<li>Salaire compétitif</li>
+<li>Heures supplémentaires disponibles</li>
+<li>Équipements modernes</li>
+<li>Formation offerte</li>
+<li>Entrée en poste rapide</li>
+</ul>
+
+<h3 class="section-title">Profil recherché</h3>
+
+<ul>
+<li>Permis Classe 1 ou Classe 3 valide</li>
+<li>Expérience pertinente</li>
+<li>Autonomie et professionnalisme</li>
+<li>Esprit d'équipe</li>
+<li>Respect des normes de sécurité</li>
+</ul>
+
+<h3 class="section-title">Régions disponibles</h3>
+
+<div class="cities">
+
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Longueuil</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Sorel</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Sainte‑Julie</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Québec</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Lévis</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Saguenay</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Saint‑Jérôme</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Mont‑Blanc</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Roxton Pond</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Windsor</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Drummondville</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Saint‑Denis‑de‑Brompton</a>
+<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Vaudreuil‑Dorion</a>
+
+</div>
+
+<a class="bottom-btn"
+href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
+target="_blank">
+POSTULER MAINTENANT
+</a>
+
+<div class="wow">
+
+<h2>Pourquoi rejoindre E360S ?</h2>
+
+<div class="wow-grid">
+
+<div class="wow-card">
+<h3>Entreprise en croissance</h3>
+<p>Une organisation environnementale en pleine expansion partout au Canada.</p>
+</div>
+
+<div class="wow-card">
+<h3>Équipements modernes</h3>
+<p>Travaillez avec des camions spécialisés et des équipements performants.</p>
+</div>
+
+<div class="wow-card">
+<h3>Culture humaine</h3>
+<p>Une équipe accessible qui valorise la sécurité, le respect et le développement des employés.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Solutions Environnementales 360 (E360S)
+</div>
+
+</body>
+</html>
