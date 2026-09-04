@@ -2,91 +2,229 @@
 <html lang="fr">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chauffeur Opérateur | E360S</title>
+<title>Chauffeurs & Opérateurs | E360S</title>
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #f4f6f8;
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#F5F7FA;
+    color:#333;
+    line-height:1.6;
 }
 
-/* Bande jaune */
+/* HERO */
 
-.hero-top {
-    background-color: #E8E21A;
-    text-align: center;
-    padding: 25px;
+.hero{
+    background:linear-gradient(
+    135deg,
+    #00B4F0,
+    #008BC4
+    );
+    color:white;
+    text-align:center;
+    padding:60px 20px;
 }
 
-.logo {
-    width: 280px;
-    max-width: 90%;
+.logo{
+    width:300px;
+    max-width:90%;
+    margin-bottom:25px;
 }
 
-/* Bannière camion */
-
-.banner {
-    height: 600px;
-    background-image: url('images/Camion.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.badge{
+    display:inline-block;
+    background:#F9FF00;
+    color:#008BC4;
+    font-weight:800;
+    padding:12px 22px;
+    border-radius:30px;
+    margin-bottom:25px;
+    font-size:14px;
 }
 
-.overlay {
-    text-align: center;
-    padding: 20px;
+.hero h1{
+    font-size:78px;
+    line-height:0.95;
+    font-weight:900;
+    margin-bottom:15px;
 }
 
-/* Titre */
-
-.hero-title {
-    color: #00A3E0;
-    font-size: 70px;
-    font-weight: 800;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
+.highlight{
+    color:#F9FF00;
 }
 
-/* Sous-titre */
-
-.hero-subtitle {
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 15px;
+.hero p{
+    font-size:24px;
+    margin:20px auto 30px;
+    max-width:900px;
 }
 
-/* Mobile */
+.hero-btn{
+    display:inline-block;
+    background:#F9FF00;
+    color:#008BC4;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:800;
+    padding:18px 40px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
 
-@media (max-width: 768px) {
+.hero-btn:hover{
+    background:white;
+}
 
-    .banner {
-        height: 400px;
-    }
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
 
-    .hero-title {
-        font-size: 42px;
-    }
+.stat-number{
+    font-size:40px;
+    font-weight:900;
+    color:#F9FF00;
+}
 
-    .hero-subtitle {
-        font-size: 18px;
-    }
+.stat-text{
+    font-size:14px;
+}
+
+/* SECTION INFO */
+
+.info{
+    background:white;
+    text-align:center;
+    padding:20px;
+    font-size:18px;
+    border-bottom:1px solid #E5E5E5;
+}
+
+/* CONTENU */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.card h2{
+    color:#00A7E1;
+    margin-bottom:15px;
+}
+
+.tag{
+    display:inline-block;
+    background:#F9FF00;
+    color:#008BC4;
+    padding:8px 14px;
+    border-radius:20px;
+    margin-right:8px;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.section-title{
+    color:#00A7E1;
+    margin-top:30px;
+    margin-bottom:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+/* VILLES */
+
+.city{
+    display:inline-block;
+    background:#F9FF00;
+    color:#008BC4;
+    border:3px solid #00A7E1;
+    padding:12px 18px;
+    border-radius:30px;
+    margin:6px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.city:hover{
+    background:#00A7E1;
+    color:white;
+}
+
+/* BOUTON BAS */
+
+.bottom-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#00A7E1;
+    color:white;
+    padding:20px;
+    border-radius:12px;
+    font-size:20px;
+    font-weight:800;
+    margin-top:35px;
+}
+
+.bottom-btn:hover{
+    background:#008BC4;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:40px 20px;
+    color:#666;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.logo{
+    width:220px;
+}
+
+.stats{
+    gap:20px;
+}
 
 }
 
@@ -96,28 +234,138 @@ body {
 
 <body>
 
-<div class="hero-top">
+<section class="hero">
 
-    <img srcogo.jpg
+<img src="images/Logo.jpgss="badge">
+EMBAUCHE EN COURS
+</div>
+
+<h1>
+CHAUFFEURS &<br>
+<span class="highlight">OPÉRATEURS</span>
+</h1>
+
+<p>
+Classe 1 • Classe 3 • Hydrovac • Fosses septiques<br>
+Plusieurs régions du Québec
+</p>
+
+<a class="hero-btn"
+href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
+target="_blank">
+
+POSTULER MAINTENANT
+
+</a>
+
+<div class="stats">
+
+<div>
+<div class="stat-number">13</div>
+<div class="stat-text">Régions</div>
+</div>
+
+<div>
+<div class="stat-number">Classe 1</div>
+<div class="stat-text">Permis recherché</div>
+</div>
+
+<div>
+<div class="stat-number">Classe 3</div>
+<div class="stat-text">Permis recherché</div>
+</div>
 
 </div>
 
-<div class="banner">
+</section>
 
-    <div class="overlay">
+<div class="info">
+Postulez en moins d'une minute et choisissez la région qui vous intéresse.
+</div>
 
-        <h1 class="hero-title">
-            Chauffeur Opérateur
-        </h1>
+<div class="container">
 
-        <p class="hero-subtitle">
-            Classe 1 • Classe 3 • Plusieurs régions du Québec
-        </p>
+<div class="card">
 
-    </div>
+<h2>Chauffeur Opérateur</h2>
+
+<div class="tag">Temps plein</div>
+<div class="tag">Hydrovac</div>
+<div class="tag">Fosses septiques</div>
+<div class="tag">Plusieurs villes</div>
+
+<p>
+Solutions Environnementales 360 (E360S) est l’une des entreprises environnementales en plus forte croissance au Canada. Nous recherchons plusieurs chauffeurs-opérateurs afin de soutenir nos opérations partout au Québec.
+</p>
+
+<h3 class="section-title">Responsabilités</h3>
+
+<ul>
+<li>Conduire et opérer un camion spécialisé</li>
+<li>Effectuer les inspections avant départ</li>
+<li>Maintenir les équipements en bon état</li>
+<li>Compléter les rapports requis</li>
+<li>Collaborer avec les équipes terrain</li>
+</ul>
+
+<h3 class="section-title">Conditions offertes</h3>
+
+<ul>
+<li>Temps plein</li>
+<li>Salaire compétitif</li>
+<li>Heures supplémentaires disponibles</li>
+<li>Équipements modernes</li>
+<li>Entrée en poste rapide</li>
+</ul>
+
+<h3 class="section-title">Profil recherché</h3>
+
+<ul>
+<li>Permis Classe 1 ou Classe 3 valide</li>
+<li>Expérience pertinente</li>
+<li>Autonomie et professionnalisme</li>
+<li>Esprit d'équipe</li>
+<li>Respect des normes de sécurité</li>
+</ul>
+
+<h3 class="section-title">Régions disponibles</h3>
+
+<div>
+
+<span class="city">Mont-Blanc</span>
+<span class="city">Saint-Jérôme</span>
+<span class="city">Windsor</span>
+<span class="city">Roxton Pond</span>
+<span class="city">Drummondville</span>
+<span class="city">Saint-Denis-de-Brompton</span>
+<span class="city">Vaudreuil-Dorion</span>
+<span class="city">Québec</span>
+<span class="city">Lévis</span>
+<span class="city">Saguenay</span>
+<span class="city">Sainte-Julie</span>
+<span class="city">Sorel</span>
+<span class="city">Longueuil</span>
+
+</div>
+
+<a class="bottom-btn"
+href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
+target="_blank">
+
+POSTULER MAINTENANT
+
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+Solutions Environnementales 360 (E360S)<br>
+Seuls les candidats retenus seront contactés.
 
 </div>
 
 </body>
-
 </html>
