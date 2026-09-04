@@ -5,7 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chauffeurs & Opérateurs | E360S</title>
+<title>Chauffeur Opérateur | E360S</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;800&display=swap
 
 <style>
 
@@ -16,171 +18,172 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:'Inter',sans-serif;
     background:#f4f6f8;
-    color:#222;
+    color:#293241;
+    line-height:1.6;
 }
 
-.hero{
-    background:
-    linear-gradient(
-        rgba(0,119,182,.85),
-        rgba(0,119,182,.85)
-    ),
-    url('Images/Camion.jpg');
+/* HERO */
 
-    background-size:cover;
-    background-position:center;
-    padding:80px 20px;
+.hero{
+    background:#E8E21A;
+}
+
+.hero-top{
+    padding:40px 20px;
     text-align:center;
-    color:white;
 }
 
 .logo{
-    width:220px;
-    margin-bottom:25px;
+    max-width:300px;
+    width:100%;
 }
 
-.badge{
-    display:inline-block;
-    background:#ffe600;
-    color:black;
-    font-weight:bold;
-    padding:10px 20px;
-    border-radius:30px;
-    margin-bottom:25px;
+.hero-image{
+    background:
+    linear-gradient(
+        rgba(0,163,224,0.75),
+        rgba(0,163,224,0.75)
+    ),
+    url('Images/Camion.jpg');
+
+    height:350px;
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
-.hero h1{
-    font-size:60px;
-    line-height:1;
-    margin-bottom:20px;
+.hero-content h1{
+    font-size:52px;
+    font-weight:800;
+    margin-bottom:15px;
 }
 
-.highlight{
-    color:#ffe600;
-}
-
-.hero p{
-    font-size:20px;
-    max-width:700px;
+.hero-content p{
+    font-size:22px;
+    max-width:800px;
     margin:auto;
 }
 
-.stats{
-    margin-top:40px;
-    display:flex;
-    justify-content:center;
-    gap:50px;
-    flex-wrap:wrap;
-}
+/* CONTENU */
 
-.stat h2{
-    color:#ffe600;
-    font-size:40px;
-}
-
-.info{
-    background:white;
-    text-align:center;
-    padding:25px;
-    font-size:18px;
-}
-
-.section{
+.container{
     max-width:1100px;
     margin:auto;
     padding:50px 20px;
 }
 
-.job-card{
+.card{
     background:white;
     border-radius:20px;
-    padding:35px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-    margin-bottom:30px;
+    padding:40px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-.job-card h2{
-    margin-bottom:10px;
-}
-
-.tag{
-    display:inline-block;
-    background:#ffe600;
-    padding:6px 14px;
-    border-radius:20px;
-    font-size:13px;
-    font-weight:bold;
-    margin-right:8px;
-}
-
-.job-card h3{
+.section-title{
+    color:#00A3E0;
+    margin-bottom:15px;
     margin-top:25px;
-    margin-bottom:10px;
-    color:#0077b6;
 }
 
-.job-card ul{
-    margin-left:20px;
+ul{
+    padding-left:20px;
 }
 
-.job-card li{
+li{
     margin-bottom:8px;
+}
+
+.cities{
+    margin-top:15px;
 }
 
 .city{
     display:inline-block;
-    background:#f1f1f1;
-    padding:10px 14px;
-    border-radius:20px;
+    background:#E8E21A;
+    color:#003B5C;
+    padding:10px 15px;
+    border-radius:25px;
     margin:5px;
+    font-weight:600;
 }
 
-.apply{
+/* CTA */
+
+.cta{
+    margin-top:35px;
+}
+
+.btn{
     display:block;
     text-align:center;
-    background:#0077b6;
-    color:white;
     text-decoration:none;
+    background:#00A3E0;
+    color:white;
     padding:18px;
-    border-radius:12px;
+    border-radius:10px;
     font-size:20px;
-    font-weight:bold;
-    margin-top:30px;
+    font-weight:700;
+    transition:.3s;
 }
 
-.apply:hover{
-    background:#005f8d;
+.btn:hover{
+    background:#0087bb;
 }
 
-.why{
-    background:white;
-    padding:60px 20px;
+/* STATS */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.stat{
     text-align:center;
 }
 
-.why img{
-    width:100%;
-    max-width:900px;
-    border-radius:15px;
-    margin-bottom:25px;
+.stat-number{
+    font-size:36px;
+    font-weight:800;
+    color:#00A3E0;
 }
+
+.stat-text{
+    font-size:14px;
+}
+
+/* FOOTER */
 
 .footer{
     text-align:center;
-    padding:30px;
+    padding:40px 20px;
     color:#666;
 }
 
+/* MOBILE */
+
 @media(max-width:768px){
 
-.hero h1{
-    font-size:40px;
+.hero-content h1{
+    font-size:34px;
 }
 
-.logo{
-    width:170px;
+.hero-content p{
+    font-size:18px;
+}
+
+.card{
+    padding:25px;
 }
 
 }
@@ -191,139 +194,131 @@ body{
 
 <body>
 
+<!-- LOGO -->
+
 <section class="hero">
 
-<img src="o.jpg
+<div class="hero-top">
 
-<div class="badge">
-🚛 EMBAUCHE EN COURS
+Images/Logo.jpg
+
 </div>
 
-<h1>
-CHAUFFEURS &<br>
-<span class="highlight">OPÉRATEURS</span>
-</h1>
+<div class="hero-image">
+
+<div class="hero-content">
+
+<h1>Chauffeur Opérateur</h1>
 
 <p>
-Rejoins l'une des entreprises environnementales en plus forte croissance au Canada.
-Plusieurs régions disponibles et entrée en poste rapide.
+Classe 1 • Classe 3 • Plusieurs régions du Québec
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTENU -->
+
+<div class="container">
+
+<div class="card">
+
+<h2 class="section-title">À propos d'E360S</h2>
+
+<p>
+Solutions Environnementales 360 est une entreprise canadienne en forte croissance offrant des services environnementaux essentiels partout au Québec. Notre succès repose sur nos employés, notre culture de sécurité et notre engagement envers nos clients.
 </p>
 
 <div class="stats">
 
 <div class="stat">
-<h2>12</h2>
-<p>Villes</p>
+<div class="stat-number">12</div>
+<div class="stat-text">Emplacements</div>
 </div>
 
 <div class="stat">
-<h2>7</h2>
-<p>Postes ouverts</p>
+<div class="stat-number">100%</div>
+<div class="stat-text">Équipements spécialisés</div>
 </div>
 
 <div class="stat">
-<h2>48h</h2>
-<p>Réponse rapide</p>
+<div class="stat-number">Rapide</div>
+<div class="stat-text">Processus d'embauche</div>
 </div>
 
 </div>
 
-</section>
-
-<div class="info">
-Postule en moins d'une minute et choisis la ville qui t'intéresse.
-</div>
-
-<section class="section">
-
-<div class="job-card">
-
-<h2>🚛 Chauffeur Opérateur Classe 1 & 3</h2>
-
-<span class="tag">Temps plein</span>
-<span class="tag">Hydrovac</span>
-<span class="tag">Fosses septiques</span>
-
-<h3>Ce que tu feras</h3>
+<h2 class="section-title">Responsabilités</h2>
 
 <ul>
 <li>Conduire et opérer un camion spécialisé</li>
 <li>Effectuer les inspections avant départ</li>
-<li>Maintenir les équipements</li>
-<li>Compléter les rapports</li>
-<li>Participer aux opérations terrain</li>
+<li>Assurer la sécurité des opérations</li>
+<li>Maintenir les équipements en bon état</li>
+<li>Compléter les rapports requis</li>
+<li>Travailler en collaboration avec l'équipe terrain</li>
 </ul>
 
-<h3>Conditions</h3>
+<h2 class="section-title">Conditions offertes</h2>
 
 <ul>
+<li>Poste à temps plein</li>
 <li>Salaire compétitif</li>
-<li>Temps plein</li>
 <li>Heures supplémentaires disponibles</li>
 <li>Équipements modernes</li>
+<li>Formation et accompagnement</li>
 <li>Entrée en poste rapide</li>
 </ul>
 
-<h3>Profil recherché</h3>
+<h2 class="section-title">Profil recherché</h2>
 
 <ul>
-<li>Permis Classe 1 ou 3</li>
-<li>Autonomie</li>
-<li>Fiabilité</li>
+<li>Permis classe 1 ou classe 3 valide</li>
+<li>Expérience pertinente</li>
+<li>Autonomie et professionnalisme</li>
+<li>Respect des normes de sécurité</li>
 <li>Esprit d'équipe</li>
 </ul>
 
-<h3>Villes disponibles</h3>
+<h2 class="section-title">Régions disponibles</h2>
 
-<div class="city">📍 Mont-Blanc</div>
-<div class="city">📍 Saint-Jérôme</div>
-<div class="city">📍 Roxton Pond</div>
-<div class="city">📍 Drummondville</div>
-<div class="city">📍 Québec</div>
-<div class="city">📍 Lévis</div>
-<div class="city">📍 Longueuil</div>
-<div class="city">📍 Sorel</div>
-<div class="city">📍 Sainte-Julie</div>
-<div class="city">📍 Vaudreuil-Dorion</div>
-<div class="city">📍 Windsor</div>
-<div class="city">📍 Saint-Denis-de-Brompton</div>
+<div class="cities">
 
-<a class="apply"
+<span class="city">Mont-Blanc</span>
+<span class="city">Saint-Jérôme</span>
+<span class="city">Roxton Pond</span>
+<span class="city">Drummondville</span>
+<span class="city">Windsor</span>
+<span class="city">Saint-Denis-de-Brompton</span>
+<span class="city">Vaudreuil-Dorion</span>
+<span class="city">Québec</span>
+<span class="city">Lévis</span>
+<span class="city">Sainte-Julie</span>
+<span class="city">Sorel</span>
+<span class="city">Longueuil</span>
+
+</div>
+
+<div class="cta">
+
+<a class="btn"
 href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
 target="_blank">
 
-👇 POSTULER MAINTENANT - 1 MINUTE
+POSTULER MAINTENANT
 
 </a>
 
 </div>
 
-</section>
+</div>
 
-<section class="why">
-
-Images/Équipe.jpg
-
-<h2>Pourquoi choisir E360S?</h2>
-
-<br>
-
-<p>
-✅ Entreprise en forte croissance<br>
-✅ Équipements modernes<br>
-✅ Ambiance de travail dynamique<br>
-✅ Possibilités d'avancement<br>
-✅ Plusieurs emplacements au Québec
-</p>
-
-</section>
+</div>
 
 <div class="footer">
 
 Solutions Environnementales 360 (E360S)<br>
-Seuls les candidats retenus seront contactés.
-
-</div>
-
-</body>
-</html>
+Seuls les candidats retenus seront contact
