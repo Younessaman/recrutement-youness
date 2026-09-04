@@ -6,39 +6,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>E360S Test</title>
+<title>Chauffeur Opérateur | E360S</title>
 
 <style>
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero{
-    background:#E8E21A;
-    text-align:center;
-    padding:30px;
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f6f8;
 }
 
-.logo{
-    width:250px;
+/* Bande jaune */
+
+.hero-top {
+    background-color: #E8E21A;
+    text-align: center;
+    padding: 25px;
 }
 
-.banner{
-    height:400px;
+.logo {
+    width: 280px;
+    max-width: 90%;
+}
 
-    background-image:url('images/Camion.jpg');
-    background-size:cover;
-    background-position:center;
+/* Bannière camion */
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.banner {
+    height: 600px;
+    background-image: url('images/Camion.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    color:white;
-    font-size:50px;
-    font-weight:bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Titre */
+
+.hero-title {
+    color: #00A3E0;
+    font-size: 70px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
+}
+
+/* Sous-titre */
+
+.hero-subtitle {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .banner {
+        height: 400px;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
 }
 
 </style>
@@ -47,23 +96,28 @@ body{
 
 <body>
 
-<div class="hero">
+<div class="hero-top">
 
-images/Logo.jpg
+    <img srcogo.jpg
 
 </div>
 
 <div class="banner">
 
-CHAUFFEUR OPÉRATEUR
+    <div class="overlay">
+
+        <h1 class="hero-title">
+            Chauffeur Opérateur
+        </h1>
+
+        <p class="hero-subtitle">
+            Classe 1 • Classe 3 • Plusieurs régions du Québec
+        </p>
+
+    </div>
 
 </div>
 
 </body>
 
 </html>
-
-.hero-btn:hover{
-
-    background:white;
-}
