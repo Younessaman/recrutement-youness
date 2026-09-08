@@ -2,7 +2,6 @@
 <html lang="fr">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,9 +25,9 @@ color:#333;
 
 .hero{
 background:linear-gradient(135deg,#00A7E1,#007DB8);
-text-align:center;
-padding:80px 20px;
 color:white;
+text-align:center;
+padding:90px 20px;
 }
 
 .badge{
@@ -42,10 +41,10 @@ margin-bottom:25px;
 }
 
 .hero h1{
-font-size:80px;
+font-size:72px;
 font-weight:900;
 line-height:.95;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .yellow{
@@ -60,13 +59,13 @@ margin-bottom:40px;
 .stats{
 display:flex;
 justify-content:center;
-gap:80px;
+gap:60px;
 flex-wrap:wrap;
-margin-top:50px;
+margin-top:45px;
 }
 
 .stat-number{
-font-size:48px;
+font-size:42px;
 font-weight:900;
 color:#F9FF00;
 }
@@ -75,104 +74,113 @@ color:#F9FF00;
 font-size:15px;
 }
 
-/* SECTION DEPARTEMENTS */
+/* SECTION DIVISIONS */
 
-.departments{
-padding:70px 20px;
+.divisions{
 max-width:1200px;
-margin:auto;
+margin:60px auto;
+padding:0 20px;
 }
 
 .section-title{
 text-align:center;
 font-size:42px;
 color:#009EDB;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
-.department-grid{
+.divisions-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
-.department-card{
+.division-card{
 
 background:white;
 
-padding:35px;
+text-decoration:none;
+
+color:#333;
+
+padding:30px;
 
 border-radius:20px;
 
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-
 border-top:8px solid #F9FF00;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 transition:.3s;
 }
 
-.department-card:hover{
+.division-card:hover{
+
 transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
-.department-card h3{
+.division-card h3{
+
 color:#009EDB;
-margin-bottom:15px;
-font-size:28px;
+
+font-size:34px;
+
+margin-bottom:20px;
 }
 
-.department-card ul{
+.division-card ul{
+
 margin-left:18px;
-margin-bottom:25px;
+
+margin-bottom:20px;
 }
 
-.department-card li{
+.division-card li{
+
 margin-bottom:8px;
 }
 
-.department-btn{
+.card-link{
 
-display:inline-block;
+color:#009EDB;
 
-background:#009EDB;
-
-color:white;
-
-text-decoration:none;
-
-padding:12px 22px;
-
-border-radius:10px;
-
-font-weight:800;
+font-weight:900;
 }
 
 /* WOW */
 
 .why{
+
 max-width:1200px;
+
 margin:auto;
-padding:20px 20px 80px;
+
+padding:20px;
 }
 
 .why h2{
+
 text-align:center;
-color:#009EDB;
+
 font-size:42px;
-margin-bottom:40px;
+
+color:#009EDB;
+
+margin-bottom:35px;
 }
 
 .why-grid{
-display:flex;
-gap:25px;
-flex-wrap:wrap;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
 }
 
 .why-card{
-
-flex:1;
-
-min-width:280px;
 
 background:white;
 
@@ -180,13 +188,15 @@ padding:30px;
 
 border-radius:18px;
 
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-
 border-top:8px solid #F9FF00;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .why-card h3{
+
 color:#009EDB;
+
 margin-bottom:15px;
 }
 
@@ -194,29 +204,20 @@ margin-bottom:15px;
 
 .cta{
 
-background:#009EDB;
-
 text-align:center;
 
 padding:70px 20px;
-
-color:white;
-}
-
-.cta h2{
-font-size:40px;
-margin-bottom:20px;
 }
 
 .cta-btn{
 
 display:inline-block;
 
-background:#F9FF00;
+background:#009EDB;
 
-color:#007DB8;
+color:white;
 
-padding:18px 35px;
+padding:18px 40px;
 
 border-radius:12px;
 
@@ -224,25 +225,49 @@ text-decoration:none;
 
 font-weight:900;
 
-margin-top:20px;
+font-size:18px;
 }
 
+/* FOOTER */
+
 .footer{
+
 text-align:center;
+
 padding:40px;
-color:#666;
+
+color:#777;
+}
+
+@media(max-width:1000px){
+
+.divisions-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:52px;
+font-size:48px;
+}
+
+.hero-subtitle{
+font-size:18px;
+}
+
+.divisions-grid{
+grid-template-columns:1fr;
 }
 
 .section-title,
-.why h2,
-.cta h2{
-font-size:32px;
+.why h2{
+font-size:30px;
 }
 
 }
@@ -289,15 +314,16 @@ Plusieurs divisions • Plusieurs régions du Québec
 
 </section>
 
-<section class="departments">
+<section class="divisions">
 
 <h2 class="section-title">
 Choisissez votre division
 </h2>
 
-<div class="department-grid">
+<div class="divisions-grid">
 
-<div class="department-card">
+<a class="division-card"
+href="https://recrutement-e360s.vercel.app/chauffeur.html">
 
 <h3>Sanitation</h3>
 
@@ -308,60 +334,57 @@ Choisissez votre division
 <li>Classe 3</li>
 </ul>
 
-<a hrefion.html
-Voir les postes
-</a>
-
+<div class="card-link">
+Voir les postes →
 </div>
 
-<div class="department-card">
+</a>
+
+<a class="division-card"
+href="recyclage.html">
 
 <h3>Recyclage</h3>
-
-<ul>
-<li>Front-End</li>
-<li>Roll-Off</li>
+-Off</li>
 <li>Classe 3</li>
 <li>Collecte</li>
 </ul>
 
-<a href="recyclage.html"postes
-</a>
-
+<div class="card-link">
+Voir les postes →
 </div>
 
-<div class="department-card">
+</a>
 
-<h3>Commercial</h3>
+<a class="division-card"
+href="</h3>
 
 <ul>
-<li>Chauffeurs</li>
-<li>Containers</li>
-<li>Collecte</li>
+<li>Conteneurs</li>
 <li>Transport</li>
-</ul>
-
-commercial.html
-Voir les postes
-</a>
-
-</div>
-
-<div class="department-card">
-
-<h3>Résidentiel</h3>
-
-<ul>
 <li>Collecte</li>
-<li>Classe 3</li>
-<li>Opérations locales</li>
-<li>Municipal</li>
+<li>Classe 1-3</li>
 </ul>
 
-<a href="residentiel.html" class
+<div class="card-link">
+Voir les postes →
+</div>
+
 </a>
 
+<a class="division-card"
+href="residentiel.html">
+
+llecte</li>
+<li>Classe 3</li>
+<li>Municipal</li>
+<li>Opérations locales</li>
+</ul>
+
+<div class="card-link">
+Voir les postes →
 </div>
+
+</a>
 
 </div>
 
@@ -369,7 +392,9 @@ Voir les postes
 
 <section class="why">
 
-<h2>Pourquoi rejoindre E360S ?</h2>
+<h2>
+Pourquoi rejoindre E360S ?
+</h2>
 
 <div class="why-grid">
 
@@ -409,25 +434,17 @@ Une équipe accessible qui valorise la sécurité, le respect et le développeme
 
 <section class="cta">
 
-<h2>
-Vous ne trouvez pas votre poste ?
-</h2>
-
-<p>
-Soumettez une candidature spontanée.
-</p>
-
-<a href="https://forms.office.com/"
-class="cta-btn"
-target="_blank">
-
-CANDIDATURE SPONTANÉE
+<a class="cta-btn"
+href="https://forms SPONTANÉE
 
 </a>
 
 </section>
 
-<div class="footer"></div>
+<div class="footer">
+Solutions Environnementales 360 (E360S)
+</div>
 
 </body>
 </html>
+``
