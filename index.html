@@ -1,55 +1,433 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-  <title>Offres d'emploi - Youness Aman</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carrières E360S</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:#F5F7FA;
+color:#333;
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(135deg,#00A7E1,#007DB8);
+text-align:center;
+padding:80px 20px;
+color:white;
+}
+
+.badge{
+display:inline-block;
+background:#F9FF00;
+color:#007DB8;
+padding:12px 30px;
+border-radius:40px;
+font-weight:900;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:80px;
+font-weight:900;
+line-height:.95;
+margin-bottom:25px;
+}
+
+.yellow{
+color:#F9FF00;
+}
+
+.hero-subtitle{
+font-size:24px;
+margin-bottom:40px;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:80px;
+flex-wrap:wrap;
+margin-top:50px;
+}
+
+.stat-number{
+font-size:48px;
+font-weight:900;
+color:#F9FF00;
+}
+
+.stat-label{
+font-size:15px;
+}
+
+/* SECTION DEPARTEMENTS */
+
+.departments{
+padding:70px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+color:#009EDB;
+margin-bottom:50px;
+}
+
+.department-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.department-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+border-top:8px solid #F9FF00;
+
+transition:.3s;
+}
+
+.department-card:hover{
+transform:translateY(-8px);
+}
+
+.department-card h3{
+color:#009EDB;
+margin-bottom:15px;
+font-size:28px;
+}
+
+.department-card ul{
+margin-left:18px;
+margin-bottom:25px;
+}
+
+.department-card li{
+margin-bottom:8px;
+}
+
+.department-btn{
+
+display:inline-block;
+
+background:#009EDB;
+
+color:white;
+
+text-decoration:none;
+
+padding:12px 22px;
+
+border-radius:10px;
+
+font-weight:800;
+}
+
+/* WOW */
+
+.why{
+max-width:1200px;
+margin:auto;
+padding:20px 20px 80px;
+}
+
+.why h2{
+text-align:center;
+color:#009EDB;
+font-size:42px;
+margin-bottom:40px;
+}
+
+.why-grid{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.why-card{
+
+flex:1;
+
+min-width:280px;
+
+background:white;
+
+padding:30px;
+
+border-radius:18px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+border-top:8px solid #F9FF00;
+}
+
+.why-card h3{
+color:#009EDB;
+margin-bottom:15px;
+}
+
+/* CTA */
+
+.cta{
+
+background:#009EDB;
+
+text-align:center;
+
+padding:70px 20px;
+
+color:white;
+}
+
+.cta h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.cta-btn{
+
+display:inline-block;
+
+background:#F9FF00;
+
+color:#007DB8;
+
+padding:18px 35px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:900;
+
+margin-top:20px;
+}
+
+.footer{
+text-align:center;
+padding:40px;
+color:#666;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:52px;
+}
+
+.section-title,
+.why h2,
+.cta h2{
+font-size:32px;
+}
+
+}
+
+</style>
+
 </head>
 
-<body style="font-family: Arial; background-color:#f5f5f5; padding: 40px;">
+<body>
 
-  <div style="max-width:800px; margin:auto; background:white; padding:30px; border-radius:10px;">
+<section class="hero">
 
-    <h1 style="text-align:center;">🔥 Opportunités d'emploi</h1>
-    <p style="text-align:center;">Postes disponibles rapidement au Québec</p>
+<div class="badge">
+EMBAUCHE EN COURS
+</div>
 
-    <hr>
+<h1>
+OPPORTUNITÉS<br>
+<span class="yellow">CHAUFFEURS</span>
+</h1>
 
-    <!-- Répartiteur -->
-    <h2>📞 Répartiteur(trice)</h2>
-    <p><strong>Description :</strong></p>
-    <p>
-      Coordination des opérations, gestion des appels et organisation des équipes terrain.
-    </p>
+<div class="hero-subtitle">
+Plusieurs divisions • Plusieurs régions du Québec
+</div>
 
-    <ul>
-      <li>✅ Temps plein</li>
-      <li>✅ Salaire compétitif</li>
-      <li>✅ Environnement dynamique</li>
-    </ul>
+<div class="stats">
 
-    <a href="repartiteur.html">
-      <button style="background:black; color:white; padding:12px 25px; border:none; border-radius:5px; cursor:pointer;">
-        Voir l’offre
-      </button>
-    </a>
+<div>
+<div class="stat-number">13+</div>
+<div class="stat-label">Régions</div>
+</div>
 
-    <hr>
+<div>
+<div class="stat-number">2 568+</div>
+<div class="stat-label">Employés au Canada</div>
+</div>
 
-<!-- Chauffeur -->
-<h2>🚛 Chauffeur-Opérateur</h2>
-<p><strong>Description :</strong></p>
-<p>
-  Conduite de camions et opérations terrain (hydrovac, fosses septiques).
-</p>
+<div>
+<div class="stat-number">24/7</div>
+<div class="stat-label">Services essentiels</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="departments">
+
+<h2 class="section-title">
+Choisissez votre division
+</h2>
+
+<div class="department-grid">
+
+<div class="department-card">
+
+<h3>Sanitation</h3>
 
 <ul>
-  <li>✅ Temps plein</li>
-  <li>✅ Bon salaire</li>
-  <li>✅ Plusieurs villes disponibles</li>
+<li>Hydrovac</li>
+<li>Fosses septiques</li>
+<li>Classe 1</li>
+<li>Classe 3</li>
 </ul>
 
-<a href="chauffeur.html">
-  <button style="background:black; color:white; padding:12px 25px; border:none; border-radius:5px; cursor:pointer;">
-    Voir l’offre
-  </button>
+<a hrefion.html
+Voir les postes
 </a>
 
+</div>
+
+<div class="department-card">
+
+<h3>Recyclage</h3>
+
+<ul>
+<li>Front-End</li>
+<li>Roll-Off</li>
+<li>Classe 3</li>
+<li>Collecte</li>
+</ul>
+
+<a href="recyclage.html"postes
+</a>
+
+</div>
+
+<div class="department-card">
+
+<h3>Commercial</h3>
+
+<ul>
+<li>Chauffeurs</li>
+<li>Containers</li>
+<li>Collecte</li>
+<li>Transport</li>
+</ul>
+
+commercial.html
+Voir les postes
+</a>
+
+</div>
+
+<div class="department-card">
+
+<h3>Résidentiel</h3>
+
+<ul>
+<li>Collecte</li>
+<li>Classe 3</li>
+<li>Opérations locales</li>
+<li>Municipal</li>
+</ul>
+
+<a href="residentiel.html" class
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="why">
+
+<h2>Pourquoi rejoindre E360S ?</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<h3>Entreprise en croissance</h3>
+
+<p>
+Une organisation environnementale en pleine expansion partout au Canada.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>Équipements modernes</h3>
+
+<p>
+Travaillez avec des véhicules spécialisés et des équipements performants.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>Culture humaine</h3>
+
+<p>
+Une équipe accessible qui valorise la sécurité, le respect et le développement des employés.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+Vous ne trouvez pas votre poste ?
+</h2>
+
+<p>
+Soumettez une candidature spontanée.
+</p>
+
+<a href="https://forms.office.com/"
+class="cta-btn"
+target="_blank">
+
+CANDIDATURE SPONTANÉE
+
+</a>
+
+</section>
+
+<div class="footer"></div>
+
+</body>
+</html>
