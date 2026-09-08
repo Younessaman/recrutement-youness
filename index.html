@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +16,9 @@ box-sizing:border-box;
 
 body{
 font-family:'Segoe UI',sans-serif;
-background:#F5F7FA;
+background:#f5f7fa;
 color:#333;
+line-height:1.6;
 }
 
 /* HERO */
@@ -27,229 +27,248 @@ color:#333;
 background:linear-gradient(135deg,#00A7E1,#007DB8);
 color:white;
 text-align:center;
-padding:90px 20px;
+padding:80px 20px;
 }
 
 .badge{
 display:inline-block;
 background:#F9FF00;
 color:#007DB8;
-padding:12px 30px;
-border-radius:40px;
 font-weight:900;
+padding:12px 24px;
+border-radius:30px;
+font-size:14px;
 margin-bottom:25px;
+letter-spacing:1px;
 }
 
 .hero h1{
 font-size:72px;
 font-weight:900;
 line-height:.95;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .yellow{
 color:#F9FF00;
 }
 
-.hero-subtitle{
-font-size:24px;
-margin-bottom:40px;
+.seasonal-banner{
+display:inline-block;
+background:#F9FF00;
+color:#007DB8;
+padding:12px 30px;
+border-radius:40px;
+font-size:22px;
+font-weight:900;
+margin-bottom:25px;
+box-shadow:0 6px 15px rgba(0,0,0,.15);
 }
+
+/* DIVISIONS */
+
+.specialties{
+margin-bottom:35px;
+}
+
+.division-btn{
+display:inline-block;
+background:white;
+color:#009EDB;
+padding:12px 20px;
+border-radius:30px;
+margin:6px;
+font-weight:800;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,.10);
+transition:.3s;
+}
+
+.division-btn:hover{
+background:#009EDB;
+color:white;
+transform:translateY(-2px);
+}
+
+/* BOUTON PRINCIPAL */
+
+.hero-btn{
+display:inline-block;
+background:#F9FF00;
+color:#007DB8;
+text-decoration:none;
+font-weight:900;
+padding:18px 35px;
+border-radius:12px;
+font-size:18px;
+transition:.3s;
+}
+
+.hero-btn:hover{
+background:white;
+}
+
+/* STATS */
 
 .stats{
 display:flex;
 justify-content:center;
 gap:60px;
+margin-top:50px;
 flex-wrap:wrap;
-margin-top:45px;
 }
 
 .stat-number{
-font-size:42px;
+font-size:40px;
 font-weight:900;
 color:#F9FF00;
 }
 
 .stat-label{
-font-size:15px;
+font-size:14px;
 }
 
-/* SECTION DIVISIONS */
+/* BANNIÈRE */
 
-.divisions{
-max-width:1200px;
-margin:60px auto;
-padding:0 20px;
-}
-
-.section-title{
-text-align:center;
-font-size:42px;
+.info{
+background:#F9FF00;
 color:#009EDB;
-margin-bottom:40px;
+font-weight:800;
+text-align:center;
+padding:18px;
+font-size:20px;
+border-bottom:4px solid #009EDB;
 }
+
+/* CONTENU */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:50px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.job-title{
+font-size:38px;
+font-weight:900;
+color:#009EDB;
+text-align:center;
+margin-bottom:10px;
+}
+
+.job-badge{
+display:inline-block;
+background:#F9FF00;
+color:#007DB8;
+padding:8px 18px;
+border-radius:20px;
+font-weight:700;
+}
+
+.center{
+text-align:center;
+}
+
+.main-description{
+text-align:center;
+margin:25px auto 40px;
+max-width:800px;
+}
+
+/* DIVISIONS */
 
 .divisions-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
 }
 
-.division-card{
-
-background:white;
-
-text-decoration:none;
-
-color:#333;
-
-padding:30px;
-
-border-radius:20px;
-
-border-top:8px solid #F9FF00;
-
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-
+.div-card{
+background:#f8fbff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.06);
+border-top:6px solid #F9FF00;
 transition:.3s;
+text-align:center;
 }
 
-.division-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 15px 35px rgba(0,0,0,.12);
+.div-card:hover{
+transform:translateY(-5px);
 }
 
-.division-card h3{
-
+.div-card h3{
 color:#009EDB;
-
-font-size:34px;
-
-margin-bottom:20px;
+margin-bottom:10px;
 }
 
-.division-card ul{
-
-margin-left:18px;
-
-margin-bottom:20px;
+.div-card p{
+margin-bottom:15px;
 }
 
-.division-card li{
-
-margin-bottom:8px;
+.div-card a{
+display:inline-block;
+padding:12px 20px;
+background:#009EDB;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:800;
 }
 
-.card-link{
-
-color:#009EDB;
-
-font-weight:900;
+.div-card a:hover{
+background:#007DB8;
 }
 
 /* WOW */
 
-.why{
-
-max-width:1200px;
-
-margin:auto;
-
-padding:20px;
+.wow{
+margin-top:60px;
 }
 
-.why h2{
-
+.wow h2{
 text-align:center;
-
-font-size:42px;
-
 color:#009EDB;
-
-margin-bottom:35px;
+margin-bottom:30px;
+font-size:30px;
 }
 
-.why-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:20px;
+.wow-grid{
+display:flex;
+gap:25px;
 }
 
-.why-card{
-
+.wow-card{
+flex:1;
 background:white;
-
-padding:30px;
-
-border-radius:18px;
-
-border-top:8px solid #F9FF00;
-
+padding:25px;
+border-radius:15px;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
+border-top:6px solid #F9FF00;
 }
 
-.why-card h3{
-
+.wow-card h3{
 color:#009EDB;
-
-margin-bottom:15px;
-}
-
-/* CTA */
-
-.cta{
-
-text-align:center;
-
-padding:70px 20px;
-}
-
-.cta-btn{
-
-display:inline-block;
-
-background:#009EDB;
-
-color:white;
-
-padding:18px 40px;
-
-border-radius:12px;
-
-text-decoration:none;
-
-font-weight:900;
-
-font-size:18px;
+margin-bottom:10px;
 }
 
 /* FOOTER */
 
 .footer{
-
 text-align:center;
-
 padding:40px;
-
-color:#777;
+color:#666;
 }
 
-@media(max-width:1000px){
-
-.divisions-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.why-grid{
-grid-template-columns:1fr;
-}
-
-}
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -257,23 +276,23 @@ grid-template-columns:1fr;
 font-size:48px;
 }
 
-.hero-subtitle{
-font-size:18px;
+.division-btn{
+display:block;
+max-width:260px;
+margin:10px auto;
 }
 
-.divisions-grid{
-grid-template-columns:1fr;
+.stats{
+gap:25px;
 }
 
-.section-title,
-.why h2{
-font-size:30px;
+.wow-grid{
+flex-direction:column;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
@@ -285,13 +304,38 @@ EMBAUCHE EN COURS
 </div>
 
 <h1>
-OPPORTUNITÉS<br>
-<span class="yellow">CHAUFFEURS</span>
+CARRIÈRES<br>
+<span class="yellow">E360S</span>
 </h1>
 
-<div class="hero-subtitle">
-Plusieurs divisions • Plusieurs régions du Québec
+<div class="seasonal-banner">
+REJOINS NOTRE ÉQUIPE
 </div>
+
+<div class="specialties">
+
+<a href="https://recrutement-e360s.vercel.app/sanitation.html" class="division-btn">
+Sanitation
+</a>
+
+#
+Commercial
+</a>
+
+#
+Recyclage
+</a>
+
+#
+Résidentiel
+</a>
+
+</div>
+
+<a class="hero-btn"
+href="https://recrutement-e360s.vercel.app/sanitation.html">
+VOIR LES POSTES DISPONIBLES
+</a>
 
 <div class="stats">
 
@@ -301,150 +345,140 @@ Plusieurs divisions • Plusieurs régions du Québec
 </div>
 
 <div>
+<div class="stat-number">48h</div>
+<div class="stat-label">Réponse rapide</div>
+</div>
+
+<div>
 <div class="stat-number">2 568+</div>
 <div class="stat-label">Employés au Canada</div>
 </div>
 
-<div>
-<div class="stat-number">24/7</div>
-<div class="stat-label">Services essentiels</div>
-</div>
-
 </div>
 
 </section>
 
-<section class="divisions">
+<div class="info">
+Opportunités disponibles dans plusieurs régions du Québec
+</div>
 
-<h2 class="section-title">
-Choisissez votre division
-</h2>
+<div class="container">
+
+<div class="card">
+
+<div class="center">
+
+<div class="job-title">
+Division Sanitation
+</div>
+
+<div class="job-badge">
+Postes actuellement disponibles
+</div>
+
+</div>
+
+<p class="main-description">
+Rejoignez notre équipe de Chauffeurs Opérateurs et participez à l'un des plus importants réseaux de services environnementaux au Canada.
+</p>
 
 <div class="divisions-grid">
 
-<a class="division-card"
-href="https://recrutement-e360s.vercel.app/chauffeur.html">
+<div class="div-card">
 
-<h3>Sanitation</h3>
+<h3>✅ Sanitation</h3>
 
-<ul>
-<li>Hydrovac</li>
-<li>Fosses septiques</li>
-<li>Classe 1</li>
-<li>Classe 3</li>
-</ul>
+<p>
+Collecte résidentielle, commerciale et industrielle.
+</p>
 
-<div class="card-link">
-Voir les postes →
-</div>
-
+<a href="https://recrutement-e360s.vercel.app/sanitation.html">
+Voir les postes
 </a>
 
-<a class="division-card"
-href="recyclage.html">
+</div>
+
+<div class="div-card">
+
+<h3>Commercial</h3>
+
+<p>
+Services destinés aux entreprises et aux commerces.
+</p>
+
+<p><strong>Bientôt disponible</strong></p>
+
+</div>
+
+<div class="div-card">
 
 <h3>Recyclage</h3>
--Off</li>
-<li>Classe 3</li>
-<li>Collecte</li>
-</ul>
 
-<div class="card-link">
-Voir les postes →
+<p>
+Collecte et traitement des matières recyclables.
+</p>
+
+<p><strong>Bientôt disponible</strong></p>
+
 </div>
 
+<div class="div-card">
+
+<h3>Résidentiel</h3>
+
+<p>
+Services de collecte destinés aux citoyens.
+</p>
+
+<p><strong>Bientôt disponible</strong></p>
+
+</div>
+
+</div>
+
+<a class="hero-btn" style="display:block;width:max-content;margin:40px auto 0;"
+href="https://recrutement-e360s.vercel.app/sanitation.html">
+CONSULTER LES POSTES EN SANITATION
 </a>
 
-<a class="division-card"
-href="</h3>
+<div class="wow">
 
-<ul>
-<li>Conteneurs</li>
-<li>Transport</li>
-<li>Collecte</li>
-<li>Classe 1-3</li>
-</ul>
+<h2>Pourquoi rejoindre E360S ?</h2>
 
-<div class="card-link">
-Voir les postes →
-</div>
+<div class="wow-grid">
 
-</a>
-
-<a class="division-card"
-href="residentiel.html">
-
-llecte</li>
-<li>Classe 3</li>
-<li>Municipal</li>
-<li>Opérations locales</li>
-</ul>
-
-<div class="card-link">
-Voir les postes →
-</div>
-
-</a>
-
-</div>
-
-</section>
-
-<section class="why">
-
-<h2>
-Pourquoi rejoindre E360S ?
-</h2>
-
-<div class="why-grid">
-
-<div class="why-card">
-
+<div class="wow-card">
 <h3>Entreprise en croissance</h3>
-
 <p>
 Une organisation environnementale en pleine expansion partout au Canada.
 </p>
-
 </div>
 
-<div class="why-card">
-
+<div class="wow-card">
 <h3>Équipements modernes</h3>
-
 <p>
-Travaillez avec des véhicules spécialisés et des équipements performants.
+Travaillez avec des camions spécialisés et des équipements performants.
 </p>
-
 </div>
 
-<div class="why-card">
-
+<div class="wow-card">
 <h3>Culture humaine</h3>
-
 <p>
 Une équipe accessible qui valorise la sécurité, le respect et le développement des employés.
 </p>
+</div>
+
+</div>
 
 </div>
 
 </div>
 
-</section>
-
-<section class="cta">
-
-<a class="cta-btn"
-href="https://forms SPONTANÉE
-
-</a>
-
-</section>
+</div>
 
 <div class="footer">
-Solutions Environnementales 360 (E360S)
+© 2026 Solutions Environnementales 360 (E360S)
 </div>
 
 </body>
 </html>
-``
