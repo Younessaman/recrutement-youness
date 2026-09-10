@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chauffeur Collecte Résidentielle et Municipale | E360S</title>
+<title>Collecte Résidentielle et Municipale | E360S</title>
 
 <style>
 
@@ -38,13 +38,12 @@ padding:12px 24px;
 border-radius:30px;
 font-size:14px;
 margin-bottom:25px;
-letter-spacing:1px;
 }
 
 .hero h1{
 font-size:72px;
 font-weight:900;
-line-height:0.95;
+line-height:.95;
 margin-bottom:25px;
 }
 
@@ -52,64 +51,10 @@ margin-bottom:25px;
 color:#F9FF00;
 }
 
-.reality-banner{
-display:inline-block;
-background:#F9FF00;
-color:#007DB8;
-padding:12px 25px;
-border-radius:30px;
-font-weight:800;
-margin-bottom:25px;
-box-shadow:0 6px 15px rgba(0,0,0,.15);
-}
-
-.specialties{
-margin-bottom:35px;
-}
-
-.specialties span{
-display:inline-block;
-background:white;
-color:#009EDB;
-padding:12px 20px;
-border-radius:30px;
-margin:6px;
-font-weight:800;
-box-shadow:0 4px 10px rgba(0,0,0,.10);
-}
-
-.hero-btn{
-display:inline-block;
-background:#F9FF00;
-color:#007DB8;
-text-decoration:none;
-font-weight:900;
-padding:18px 35px;
-border-radius:12px;
-font-size:18px;
-transition:.3s;
-}
-
-.hero-btn:hover{
-background:white;
-}
-
-.stats{
-display:flex;
-justify-content:center;
-gap:60px;
-margin-top:50px;
-flex-wrap:wrap;
-}
-
-.stat-number{
-font-size:40px;
-font-weight:900;
-color:#F9FF00;
-}
-
-.stat-label{
-font-size:14px;
+.hero-description{
+max-width:900px;
+margin:auto;
+font-size:20px;
 }
 
 .info{
@@ -123,7 +68,7 @@ border-bottom:4px solid #009EDB;
 }
 
 .container{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 padding:50px 20px;
 }
@@ -136,73 +81,87 @@ box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .job-title{
-font-size:34px;
+font-size:40px;
 font-weight:900;
 color:#009EDB;
-margin-bottom:10px;
+text-align:center;
+margin-bottom:15px;
 }
 
 .job-badge{
 display:inline-block;
 background:#F9FF00;
 color:#007DB8;
-padding:8px 15px;
+padding:10px 18px;
 border-radius:20px;
-font-weight:700;
-margin-bottom:20px;
-}
-
-.section-title{
-color:#009EDB;
-font-size:18px;
-margin-top:25px;
-margin-bottom:10px;
-}
-
-ul{
-margin-left:20px;
-}
-
-li{
-margin-bottom:8px;
-}
-
-.cities{
-margin-top:15px;
-}
-
-.city{
-display:inline-block;
-background:#F9FF00;
-color:#007DB8;
-padding:12px 18px;
-border-radius:30px;
 font-weight:800;
-margin:6px;
-text-decoration:none;
+}
+
+.center{
+text-align:center;
+}
+
+.main-description{
+text-align:center;
+max-width:850px;
+margin:25px auto 40px;
+font-size:18px;
+}
+
+.divisions-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+margin-top:30px;
+}
+
+.div-card{
+background:#f8fbff;
+padding:30px;
+border-radius:16px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+border-top:6px solid #F9FF00;
 transition:.3s;
 }
 
-.city:hover{
-background:#009EDB;
-color:white;
+.div-card:hover{
+transform:translateY(-5px);
 }
 
-.bottom-btn{
-display:block;
-text-align:center;
+.div-card h3{
+color:#009EDB;
+font-size:28px;
+margin-bottom:15px;
+}
+
+.div-card ul{
+list-style:none;
+padding:0;
+margin:20px 0;
+}
+
+.div-card li{
+margin-bottom:10px;
+}
+
+.div-card a{
+display:inline-block;
 background:#009EDB;
 color:white;
 text-decoration:none;
-padding:18px;
+padding:14px 24px;
 border-radius:12px;
-margin-top:30px;
-font-size:18px;
 font-weight:900;
+transition:.25s;
 }
 
-.bottom-btn:hover{
+.div-card a:hover{
 background:#007DB8;
+transform:translateY(-3px);
+}
+
+.div-card a:active{
+transform:scale(.96);
 }
 
 .wow{
@@ -213,7 +172,7 @@ margin-top:60px;
 text-align:center;
 color:#009EDB;
 margin-bottom:30px;
-font-size:30px;
+font-size:32px;
 }
 
 .wow-grid{
@@ -244,17 +203,7 @@ color:#666;
 @media(max-width:768px){
 
 .hero h1{
-font-size:46px;
-}
-
-.specialties span{
-display:block;
-max-width:250px;
-margin:8px auto;
-}
-
-.stats{
-gap:25px;
+font-size:48px;
 }
 
 .wow-grid{
@@ -275,189 +224,117 @@ EMBAUCHE EN COURS
 </div>
 
 <h1>
-CHAUFFEUR<br>
-<span class="yellow">COLLECTE</span>
+COLLECTE<br>
+<span class="yellow">RÉSIDENTIELLE</span>
 </h1>
 
-<div class="reality-banner">
-Départs tôt le matin • Travail extérieur • Sorties fréquentes du camion
-</div>
-
-<div class="specialties">
-<span>Classe 3</span>
-<span>Collecte résidentielle</span>
-<span>Collecte municipale</span>
-<span>Temps plein</span>
-</div>
-
-<a class="hero-btn"
-href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
-target="_blank">
-POSTULER MAINTENANT
-</a>
-
-<div class="stats">
-
-<div>
-<div class="stat-number">3</div>
-<div class="stat-label">Secteurs</div>
-</div>
-
-<div>
-<div class="stat-number">48h</div>
-<div class="stat-label">Réponse rapide</div>
-</div>
-
-<div>
-<div class="stat-number">2 568+</div>
-<div class="stat-label">Employés au Canada</div>
-</div>
-
+<div class="hero-description">
+Découvrez les opportunités actuellement disponibles dans le secteur résidentiel et municipal chez E360S.
 </div>
 
 </section>
 
 <div class="info">
-Opportunités disponibles dans le Grand Montréal, sur la Rive-Nord et la Rive-Sud
+Deux opportunités actuellement disponibles
 </div>
 
 <div class="container">
 
 <div class="card">
 
+<div class="center">
+
 <div class="job-title">
 Collecte Résidentielle et Municipale
 </div>
 
 <div class="job-badge">
-Deux opportunités actuellement disponibles
+Temps plein • Plusieurs secteurs disponibles
 </div>
 
-<p>
+</div>
+
+<p class="main-description">
 Solutions Environnementales 360 (E360S) recrute actuellement pour deux types de postes en collecte résidentielle et municipale. Sélectionnez l'opportunité qui correspond le mieux à votre expérience et à vos intérêts.
 </p>
 
-<h3 class="section-title">Choisissez votre poste</h3>
-
 <div class="divisions-grid">
+
+<!-- CHARGEMENT ARRIÈRE -->
 
 <div class="div-card">
 
 <h3>Chauffeur à chargement arrière</h3>
 
 <p>
-Participation à la collecte résidentielle et municipale avec sorties fréquentes du camion et travail terrain quotidien.
+Collecte résidentielle et municipale avec sorties fréquentes du camion et travail terrain quotidien.
 </p>
 
-<ul style="list-style:none;padding:0;text-align:left;">
+<ul>
 <li>✓ Permis Classe 3</li>
 <li>✓ Collecte résidentielle</li>
 <li>✓ Travail extérieur</li>
 <li>✓ Temps plein</li>
+<li>✓ Grand Montréal, Rive-Nord et Rive-Sud</li>
 </ul>
 
-<a href="TON-LIEN-FORMULAIRE-EL
+TON-LIEN-FORMULAIRE-RESIDENTIEL
 Postuler maintenant
 </a>
 
 </div>
+
+<!-- ROBOT -->
 
 <div class="div-card">
 
 <h3>Chauffeur robot</h3>
 
 <p>
-Conduite et opération d'un camion robotisé pour la collecte automatisée des matières résiduelles.
+Conduite et opération d'un camion robotisé utilisant un bras automatisé pour effectuer la collecte.
 </p>
 
-<ul style="list-style:none;padding:0;text-align:left;">
+<ul>
 <li>✓ Permis Classe 3</li>
 <li>✓ Opération du bras robotisé</li>
 <li>✓ Collecte automatisée</li>
 <li>✓ Temps plein</li>
+<li>✓ Grand Montréal, Rive-Nord et Rive-Sud</li>
 </ul>
 
-<a href="robot.html">
-e poste
+robot.html
+Découvrir le poste
 </a>
 
 </div>
 
 </div>
-
-<ul>
-<li>Conduite d'un camion à chargement arrière</li>
-<li>Collecte résidentielle et municipale</li>
-<li>Sorties fréquentes du camion</li>
-<li>Travail extérieur quotidien</li>
-<li>Départs tôt le matin</li>
-<li>Inspection quotidienne du véhicule</li>
-<li>Communication avec la répartition</li>
-<li>Complétion des feuilles de route</li>
-<li>Service professionnel auprès des citoyens</li>
-<li>Respect des normes SST</li>
-</ul>
-
-<h3 class="section-title">Profil recherché</h3>
-
-<ul>
-<li>Permis Classe 3 valide</li>
-<li>Bon dossier de conduite</li>
-<li>Expérience en collecte ou transport (atout)</li>
-<li>Autonomie et ponctualité</li>
-<li>Esprit d'équipe</li>
-<li>Éthique de travail professionnelle</li>
-<li>Respect des normes de sécurité</li>
-</ul>
-
-<h3 class="section-title">Conditions offertes</h3>
-
-<ul>
-<li>Salaire compétitif</li>
-<li>Temps plein</li>
-<li>Heures supplémentaires disponibles</li>
-<li>Équipements modernes</li>
-<li>Formation offerte</li>
-<li>Entrée en poste rapide</li>
-</ul>
-
-<h3 class="section-title">Secteurs disponibles</h3>
-
-<div class="cities">
-
-<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Grand Montréal</a>
-
-<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Rive-Nord</a>
-
-<a class="city" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Rive-Sud</a>
-
-</div>
-
-<a class="bottom-btn"
-href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
-target="_blank">
-POSTULER MAINTENANT
-</a>
 
 <div class="wow">
 
-<h2>Pourquoi rejoindre E360S ?</h2>
+<h2>Pourquoi choisir E360S ?</h2>
 
 <div class="wow-grid">
 
 <div class="wow-card">
-<h3>Entreprise en croissance</h3>
-<p>Une organisation environnementale en pleine expansion partout au Canada.</p>
+<h3>Leader canadien</h3>
+<p>
+Faites partie de l'un des plus importants fournisseurs de services environnementaux au Canada.
+</p>
 </div>
 
 <div class="wow-card">
-<h3>Horaire structuré</h3>
-<p>Parcours établis, opérations organisées et équipe de répartition dédiée.</p>
+<h3>Développement professionnel</h3>
+<p>
+Accédez à des possibilités réelles de formation, d'avancement et d'évolution de carrière.
+</p>
 </div>
 
 <div class="wow-card">
-<h3>Culture humaine</h3>
-<p>Une équipe accessible qui valorise la sécurité, le respect et le développement des employés.</p>
+<h3>Une équipe engagée</h3>
+<p>
+Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.
+</p>
 </div>
 
 </div>
@@ -469,9 +346,8 @@ POSTULER MAINTENANT
 </div>
 
 <div class="footer">
-Solutions Environnementales 360 (E360S)
+© 2026 Solutions Environnementales 360 (E360S)
 </div>
 
 </body>
 </html>
-``
