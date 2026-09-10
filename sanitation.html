@@ -6,21 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Chauffeur Opérateur | E360S</title>
-.hero h1{
-animation:fadeUp .8s ease;
-}
 
-.badge{
-animation:fadeUp .6s ease;
-}
-
-.specialties span{
-animation:fadeUp 1s ease;
-}
-
-.hero-btn{
-animation:fadeUp 1.2s ease;
-}
 <style>
 
 *{
@@ -104,20 +90,11 @@ font-weight:900;
 padding:18px 35px;
 border-radius:12px;
 font-size:18px;
-transition:all .25s ease;
-box-shadow:0 4px 12px rgba(0,0,0,.10);
-cursor:pointer;
+transition:.3s;
 }
 
 .hero-btn:hover{
 background:white;
-transform:translateY(-4px);
-box-shadow:0 12px 25px rgba(0,0,0,.18);
-}
-
-.hero-btn:active{
-transform:scale(.90);
-box-shadow:0 2px 6px rgba(0,0,0,.10);
 }
 
 .stats{
@@ -212,20 +189,13 @@ border-radius:30px;
 font-weight:800;
 margin:6px;
 text-decoration:none;
-transition:all .25s ease;
-box-shadow:0 4px 10px rgba(0,0,0,.10);
-cursor:pointer;
+transition:.3s;
 }
 
 .city:hover{
 background:#009EDB;
 color:white;
-transform:translateY(-4px);
-box-shadow:0 10px 22px rgba(0,0,0,.16);
-}
-
-.city:active{
-transform:scale(.88);
+transform:translateY(-2px);
 }
 
 /* BOUTON BAS */
@@ -241,21 +211,44 @@ border-radius:12px;
 margin-top:30px;
 font-size:18px;
 font-weight:900;
-transition:all .25s ease;
-box-shadow:0 4px 12px rgba(0,0,0,.10);
-cursor:pointer;
 }
 
 .bottom-btn:hover{
 background:#007DB8;
-transform:translateY(-4px);
-box-shadow:0 12px 25px rgba(0,0,0,.18);
 }
 
-.bottom-btn:active{
-transform:scale(.92);
+/* WOW */
+
+.wow{
+margin-top:60px;
 }
-``
+
+.wow h2{
+text-align:center;
+color:#009EDB;
+margin-bottom:30px;
+font-size:30px;
+}
+
+.wow-grid{
+display:flex;
+gap:25px;
+}
+
+.wow-card{
+flex:1;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+border-top:6px solid #F9FF00;
+}
+
+.wow-card h3{
+color:#009EDB;
+margin-bottom:10px;
+}
+
 /* FOOTER */
 
 .footer{
