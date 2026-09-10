@@ -90,11 +90,20 @@ font-weight:900;
 padding:18px 35px;
 border-radius:12px;
 font-size:18px;
-transition:.3s;
+transition:all .25s ease;
+box-shadow:0 4px 12px rgba(0,0,0,.10);
+cursor:pointer;
 }
 
 .hero-btn:hover{
 background:white;
+transform:translateY(-4px);
+box-shadow:0 12px 25px rgba(0,0,0,.18);
+}
+
+.hero-btn:active{
+transform:scale(.90);
+box-shadow:0 2px 6px rgba(0,0,0,.10);
 }
 
 .stats{
@@ -189,13 +198,20 @@ border-radius:30px;
 font-weight:800;
 margin:6px;
 text-decoration:none;
-transition:.3s;
+transition:all .25s ease;
+box-shadow:0 4px 10px rgba(0,0,0,.10);
+cursor:pointer;
 }
 
 .city:hover{
 background:#009EDB;
 color:white;
-transform:translateY(-2px);
+transform:translateY(-4px);
+box-shadow:0 10px 22px rgba(0,0,0,.16);
+}
+
+.city:active{
+transform:scale(.88);
 }
 
 /* BOUTON BAS */
