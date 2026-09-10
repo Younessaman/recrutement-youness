@@ -81,13 +81,15 @@ margin:6px;
 font-weight:800;
 text-decoration:none;
 box-shadow:0 4px 10px rgba(0,0,0,.10);
-transition:.3s;
+transition:all .25s ease;
 }
 
 .division-btn:hover{
-background:#009EDB;
-color:white;
-transform:translateY(-2px);
+transform:translateY(-3px);
+}
+
+.division-btn:active{
+transform:scale(.95);
 }
 
 /* BOUTON PRINCIPAL */
@@ -106,6 +108,7 @@ transition:.3s;
 
 .hero-btn:hover{
 background:white;
+transform:translateY(-3px);
 }
 
 /* STATS */
@@ -128,7 +131,7 @@ color:#F9FF00;
 font-size:14px;
 }
 
-/* BANNIÈRE */
+/* INFO */
 
 .info{
 background:#F9FF00;
@@ -160,16 +163,7 @@ font-size:38px;
 font-weight:900;
 color:#009EDB;
 text-align:center;
-margin-bottom:10px;
-}
-
-.job-badge{
-display:inline-block;
-background:#F9FF00;
-color:#007DB8;
-padding:8px 18px;
-border-radius:20px;
-font-weight:700;
+margin-bottom:25px;
 }
 
 .center{
@@ -178,15 +172,16 @@ text-align:center;
 
 .main-description{
 text-align:center;
-margin:25px auto 40px;
-max-width:800px;
+margin:0 auto 40px;
+max-width:850px;
+font-size:18px;
 }
 
-/* DIVISIONS */
+/* CARTES */
 
 .divisions-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 margin-top:30px;
 }
@@ -207,11 +202,12 @@ transform:translateY(-5px);
 
 .div-card h3{
 color:#009EDB;
-margin-bottom:10px;
+margin-bottom:12px;
+font-size:24px;
 }
 
 .div-card p{
-margin-bottom:15px;
+margin-bottom:18px;
 }
 
 .div-card a{
@@ -222,10 +218,16 @@ color:white;
 text-decoration:none;
 border-radius:10px;
 font-weight:800;
+transition:.25s;
 }
 
 .div-card a:hover{
 background:#007DB8;
+transform:translateY(-3px);
+}
+
+.div-card a:active{
+transform:scale(.95);
 }
 
 /* WOW */
@@ -309,7 +311,7 @@ CARRIÈRES<br>
 </h1>
 
 <div class="seasonal-banner">
-REJOINS NOTRE ÉQUIPE
+REJOINS UNE ÉQUIPE EN PLEINE CROISSANCE
 </div>
 
 <div class="specialties">
@@ -326,22 +328,21 @@ Commercial
 Recyclage
 </a>
 
-#
+<a href="https://recrutement-e360s.vercel.app/municipal.html" class="division-btn">
 Résidentiel
 </a>
 
 </div>
 
-<a class="hero-btn"
-href="https://recrutement-e360s.vercel.app/sanitation.html">
-VOIR LES POSTES DISPONIBLES
+#opportunites
+DÉCOUVRIR LES OPPORTUNITÉS
 </a>
 
 <div class="stats">
 
 <div>
-<div class="stat-number">13+</div>
-<div class="stat-label">Régions</div>
+<div class="stat-number">2 568+</div>
+<div class="stat-label">Employés au Canada</div>
 </div>
 
 <div>
@@ -350,8 +351,8 @@ VOIR LES POSTES DISPONIBLES
 </div>
 
 <div>
-<div class="stat-number">2 568+</div>
-<div class="stat-label">Employés au Canada</div>
+<div class="stat-number">13+</div>
+<div class="stat-label">Régions desservies</div>
 </div>
 
 </div>
@@ -359,41 +360,37 @@ VOIR LES POSTES DISPONIBLES
 </section>
 
 <div class="info">
-Opportunités disponibles dans plusieurs régions du Québec
+Découvrez les opportunités actuellement disponibles chez E360S
 </div>
 
 <div class="container">
 
-<div class="card">
+<div class="card" id="opportunites">
 
 <div class="center">
 
 <div class="job-title">
-Division Sanitation
-</div>
-
-<div class="job-badge">
-Postes actuellement disponibles
+Trouvez votre prochaine opportunité chez E360S
 </div>
 
 </div>
 
 <p class="main-description">
-Rejoignez notre équipe de Chauffeurs Opérateurs et participez à l'un des plus importants réseaux de services environnementaux au Canada.
+Explorez les opportunités actuellement disponibles chez E360S et découvrez un environnement où la sécurité, le respect, le travail d'équipe et le développement professionnel sont au cœur de chaque carrière.
 </p>
 
 <div class="divisions-grid">
 
 <div class="div-card">
 
-<h3>✅ Sanitation</h3>
+<h3>Sanitation</h3>
 
 <p>
-Collecte résidentielle, commerciale et industrielle.
+Chauffeur Opérateur spécialisé en fosses septiques et services environnementaux à travers plusieurs régions du Québec.
 </p>
 
-<a href="https://recrutement-e360s.vercel.app/sanitation.html">
-Voir les postes
+<a href="https://recrutement-e360s.vercel.app/sanitation.html" target="_blank">
+Découvrir le poste
 </a>
 
 </div>
@@ -403,7 +400,7 @@ Voir les postes
 <h3>Commercial</h3>
 
 <p>
-Services destinés aux entreprises et aux commerces.
+Services destinés aux entreprises, commerces et clients industriels partout au Canada.
 </p>
 
 <p><strong>Bientôt disponible</strong></p>
@@ -415,7 +412,7 @@ Services destinés aux entreprises et aux commerces.
 <h3>Recyclage</h3>
 
 <p>
-Collecte et traitement des matières recyclables.
+Collecte, transport et valorisation des matières recyclables.
 </p>
 
 <p><strong>Bientôt disponible</strong></p>
@@ -424,49 +421,44 @@ Collecte et traitement des matières recyclables.
 
 <div class="div-card">
 
-<h3>✅ Résidentiel</h3>
+<h3>Résidentiel</h3>
 
 <p>
-Collecte résidentielle et municipale destinée aux citoyens.
+Chauffeur Collecte Résidentielle et Municipale pour le Grand Montréal, la Rive-Nord et la Rive-Sud.
 </p>
 
-<a href="https://nt-e360s.vercel.app/municipal.html
-Voir les postes
+<a href="https://recrutement-e360s.vercel.app/municipal.html" target="_blank">
+Découvrir le poste
 </a>
 
 </div>
-``
-</div>
 
-<a class="hero-btn" style="display:block;width:max-content;margin:40px auto 0;"
-href="https://recrutement-e360s.vercel.app/sanitation.html">
-CONSULTER LES POSTES EN SANITATION
-</a>
+</div>
 
 <div class="wow">
 
-<h2>Pourquoi rejoindre E360S ?</h2>
+<h2>Pourquoi choisir E360S ?</h2>
 
 <div class="wow-grid">
 
 <div class="wow-card">
-<h3>Entreprise en croissance</h3>
+<h3>Leader canadien</h3>
 <p>
-Une organisation environnementale en pleine expansion partout au Canada.
+Faites partie de l'un des plus importants fournisseurs de services environnementaux au Canada.
 </p>
 </div>
 
 <div class="wow-card">
-<h3>Équipements modernes</h3>
+<h3>Développement professionnel</h3>
 <p>
-Travaillez avec des camions spécialisés et des équipements performants.
+Accédez à des possibilités réelles de formation, d'avancement et d'évolution de carrière.
 </p>
 </div>
 
 <div class="wow-card">
-<h3>Culture humaine</h3>
+<h3>Une équipe engagée</h3>
 <p>
-Une équipe accessible qui valorise la sécurité, le respect et le développement des employés.
+Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.
 </p>
 </div>
 
