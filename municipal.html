@@ -37,7 +37,6 @@ padding:12px 24px;
 border-radius:30px;
 font-size:14px;
 margin-bottom:25px;
-letter-spacing:1px;
 }
 
 .hero h1{
@@ -52,10 +51,10 @@ color:#F9FF00;
 }
 
 .hero-description{
-max-width:900px;
+max-width:850px;
 margin:auto;
 font-size:20px;
-margin-bottom:30px;
+margin-bottom:35px;
 }
 
 .hero-btn{
@@ -67,21 +66,48 @@ font-weight:900;
 padding:18px 35px;
 border-radius:12px;
 font-size:18px;
-transition:.3s;
+position:relative;
+overflow:hidden;
+transition:.25s ease;
 }
 
 .hero-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,.20);
 background:white;
-transform:translateY(-3px);
+}
+
+.hero-btn:active{
+transform:scale(.95);
+}
+
+.hero-btn::after{
+content:'';
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+transition:.6s;
+}
+
+.hero-btn:hover::after{
+left:120%;
 }
 
 .info{
 background:#F9FF00;
 color:#009EDB;
-font-weight:800;
+font-weight:900;
 text-align:center;
 padding:18px;
-font-size:20px;
+font-size:22px;
 border-bottom:4px solid #009EDB;
 }
 
@@ -121,24 +147,73 @@ text-align:center;
 
 .main-description{
 text-align:center;
-max-width:850px;
-margin:25px auto 40px;
+max-width:900px;
+margin:25px auto 35px;
 font-size:18px;
+}
+
+.regions-center{
+text-align:center;
+margin:20px 0 45px;
+}
+
+.region-btn{
+display:inline-block;
+background:#F9FF00;
+color:#009EDB;
+padding:14px 28px;
+margin:6px;
+border-radius:40px;
+font-weight:900;
+text-decoration:none;
+transition:all .25s ease;
+box-shadow:0 4px 12px rgba(0,0,0,.12);
+position:relative;
+overflow:hidden;
+}
+
+.region-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+.region-btn:active{
+transform:scale(.92);
+}
+
+.region-btn::before{
+content:'';
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.40),
+transparent
+);
+transition:.6s;
+}
+
+.region-btn:hover::before{
+left:120%;
 }
 
 .divisions-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 gap:30px;
-margin-top:30px;
+margin-top:20px;
 }
 
 .div-card{
 background:#f8fbff;
 padding:30px;
 border-radius:16px;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
 border-top:6px solid #F9FF00;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 transition:.3s;
 }
 
@@ -149,6 +224,10 @@ transform:translateY(-5px);
 .div-card h3{
 color:#009EDB;
 font-size:28px;
+margin-bottom:15px;
+}
+
+.div-card p{
 margin-bottom:15px;
 }
 
@@ -163,28 +242,7 @@ margin-bottom:10px;
 font-weight:600;
 }
 
-.regions{
-margin-top:20px;
-margin-bottom:20px;
-}
-
-.region-btn{
-display:inline-block;
-background:#F9FF00;
-color:#007DB8;
-padding:10px 15px;
-margin:5px;
-border-radius:25px;
-font-weight:800;
-text-decoration:none;
-transition:.25s;
-}
-
-.region-btn:hover{
-transform:translateY(-3px);
-}
-
-.div-card a.postuler{
+.postuler{
 display:inline-block;
 background:#009EDB;
 color:white;
@@ -192,16 +250,38 @@ text-decoration:none;
 padding:14px 24px;
 border-radius:12px;
 font-weight:900;
-transition:.25s;
+position:relative;
+overflow:hidden;
+transition:.25s ease;
 }
 
-.div-card a.postuler:hover{
+.postuler:hover{
 background:#007DB8;
 transform:translateY(-3px);
 }
 
-.div-card a.postuler:active{
-transform:scale(.96);
+.postuler:active{
+transform:scale(.95);
+}
+
+.postuler::after{
+content:'';
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+transition:.6s;
+}
+
+.postuler:hover::after{
+left:120%;
 }
 
 .bottom-apply{
@@ -216,8 +296,8 @@ margin-top:60px;
 .wow h2{
 text-align:center;
 color:#009EDB;
-margin-bottom:30px;
 font-size:32px;
+margin-bottom:30px;
 }
 
 .wow-grid{
@@ -230,8 +310,8 @@ flex:1;
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
 border-top:6px solid #F9FF00;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .wow-card h3{
@@ -240,15 +320,66 @@ margin-bottom:10px;
 }
 
 .footer{
-text-align:center;
 padding:40px;
+text-align:center;
 color:#666;
 }
 
 @media(max-width:768px){
 
+.hero{
+padding:60px 20px;
+}
+
 .hero h1{
-font-size:48px;
+font-size:42px;
+}
+
+.hero-description{
+font-size:17px;
+}
+
+.hero-btn{
+width:100%;
+max-width:320px;
+}
+
+.info{
+font-size:16px;
+padding:15px;
+}
+
+.container{
+padding:25px 15px;
+}
+
+.card{
+padding:25px;
+}
+
+.job-title{
+font-size:30px;
+}
+
+.main-description{
+font-size:16px;
+}
+
+.divisions-grid{
+grid-template-columns:1fr;
+}
+
+.region-btn{
+display:block;
+width:100%;
+max-width:320px;
+margin:10px auto;
+text-align:center;
+}
+
+.postuler{
+width:100%;
+text-align:center;
 }
 
 .wow-grid{
@@ -286,7 +417,7 @@ POSTULER MAINTENANT
 </section>
 
 <div class="info">
-Deux opportunités actuellement disponibles • Grand Montréal • Rive-Nord • Rive-Sud
+Plusieurs postes actuellement disponibles
 </div>
 
 <div class="container">
@@ -300,18 +431,38 @@ Collecte Résidentielle et Municipale
 </div>
 
 <div class="job-badge">
-Deux opportunités actuellement disponibles
+Plusieurs opportunités disponibles
 </div>
 
 </div>
 
 <p class="main-description">
-Solutions Environnementales 360 (E360S) recrute actuellement pour deux types de postes en collecte résidentielle et municipale. Sélectionnez l'opportunité qui correspond le mieux à votre expérience et à vos intérêts.
+Solutions Environnementales 360 (E360S) recrute actuellement plusieurs chauffeurs pour ses opérations de collecte résidentielle et municipale. Consultez les opportunités disponibles et choisissez le poste qui correspond le mieux à votre expérience.
 </p>
 
-<div class="divisions-grid">
+<div class="regions-center">
 
-<!-- CHARGEMENT ARRIERE -->
+<a class="region-btn"
+href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
+target="_blank">
+Grand Montréal
+</a>
+
+<a class="region-btn"
+href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
+target="_blank">
+Rive-Nord
+</a>
+
+<a class="region-btn"
+href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
+target="_blank">
+Rive-Sud
+</a>
+
+</div>
+
+<div class="divisions-grid">
 
 <div class="div-card">
 
@@ -323,35 +474,11 @@ Collecte résidentielle et municipale avec sorties fréquentes du camion et trav
 
 <ul>
 <li>✓ Permis Classe 3</li>
-<li>✓ Collecte résidentielle</li>
 <li>✓ Travail extérieur</li>
+<li>✓ Collecte résidentielle</li>
 <li>✓ Temps plein</li>
 <li>✓ Départs tôt le matin</li>
 </ul>
-
-<h4 style="color:#009EDB;">Secteurs disponibles</h4>
-
-<div class="regions">
-
-<a class="region-btn"
-href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
-Grand Montréal
-</a>
-
-<a class="region-btn"
-href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
-Rive-Nord
-</a>
-
-<a class="region-btn"
-href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
-Rive-Sud
-</a>
-
-</div>
 
 <a class="postuler"
 href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
@@ -360,8 +487,6 @@ POSTULER MAINTENANT
 </a>
 
 </div>
-
-<!-- ROBOT -->
 
 <div class="div-card">
 
@@ -373,35 +498,11 @@ Conduite et opération d'un camion robotisé utilisant un bras automatisé pour 
 
 <ul>
 <li>✓ Permis Classe 3</li>
-<li>✓ Opération du bras robotisé</li>
+<li>✓ Bras robotisé</li>
 <li>✓ Collecte automatisée</li>
 <li>✓ Temps plein</li>
 <li>✓ Équipements modernes</li>
 </ul>
-
-<h4 style="color:#009EDB;">Secteurs disponibles</h4>
-
-<div class="regions">
-
-<a class="region-btn"
-href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
-Grand Montréal
-</a>
-
-<a class="region-btn"
-href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
-Rive-Nord
-</a>
-
-<a class="region-btn"
-href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
-Rive-Sud
-</a>
-
-</div>
 
 <a class="postuler"
 href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
@@ -427,14 +528,14 @@ POSTULER MAINTENANT
 <div class="wow-card">
 <h3>Leader canadien</h3>
 <p>
-Faites partie de l'un des plus importants fournisseurs de services environnementaux au Canada.
+Faites partie de l’un des plus importants fournisseurs de services environnementaux au Canada.
 </p>
 </div>
 
 <div class="wow-card">
 <h3>Développement professionnel</h3>
 <p>
-Accédez à des possibilités réelles de formation, d'avancement et d'évolution de carrière.
+Accédez à des possibilités réelles de formation, d’avancement et d’évolution de carrière.
 </p>
 </div>
 
