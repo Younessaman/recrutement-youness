@@ -319,33 +319,27 @@
       opacity: .9;
     }
 
-    .contact-pills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
+.contact-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 22px;
+  border-radius:999px;
+  background:rgba(255,255,255,.95);
+  color:#007DB8;
+  font-size:.9rem;
+  font-weight:800;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  transition:all .25s ease;
+  border:1px solid rgba(255,255,255,.6);
+}
 
-    .contact-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 46px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: var(--white);
-      color: var(--blue);
-      font-size: .84rem;
-      font-weight: 900;
-      box-shadow: 0 12px 28px rgba(0,0,0,.1);
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-    }
-
-    .contact-pill:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 17px 34px rgba(0,0,0,.15);
-    }
+.contact-pill:hover{
+  transform:translateY(-3px);
+  background:#ffffff;
+  box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
 
     .hero-scroll {
       display: inline-flex;
