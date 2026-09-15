@@ -142,6 +142,43 @@ transform:translateY(0);
 }
 
 }
+.job-description{
+
+display:none;
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+margin-top:40px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.job-description.active{
+
+display:block;
+
+animation:fadeIn .4s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}  
 @media(max-width:768px){
 
 .hero h1{
@@ -181,7 +218,8 @@ Choisissez le poste qui vous correspond et postulez dès aujourd'hui.
 
 <div class="jobs-grid">
 
-<div class="job-card">
+<div class="job-card"
+onclick="showJob('chauffeur')">
 
 <h3>CHAUFFEUR-OPÉRATEUR</h3>
 
@@ -214,7 +252,19 @@ Choisissez le poste qui vous correspond et postulez dès aujourd'hui.
 </div>
 
 </section>
+<div class="container">
 
+<div id="chauffeur" class="job-description">
+
+<h2>Chauffeur-opérateur</h2>
+
+<p>
+Ici va apparaître la description complète du poste.
+</p>
+
+</div>
+
+</div>
 </body>
 
 </html>
