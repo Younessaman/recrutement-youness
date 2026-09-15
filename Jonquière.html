@@ -372,7 +372,7 @@
       border: 1px solid rgba(0,125,184,.08);
       border-radius: var(--radius);
       background: var(--white);
-      color: var(--ink);
+      color: var(--blue);
       text-align: left;
       cursor: pointer;
       box-shadow: var(--shadow);
@@ -404,19 +404,21 @@
     }
 
     .job-card h3 {
+      color:#007DB8;
       margin: 0 0 10px;
       font-size: clamp(1.35rem, 2.2vw, 1.8rem);
       line-height: 1.05;
       letter-spacing: -.03em;
     }
 
-    .job-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .95rem;
-      font-weight: 650;
-      transition: color .3s;
-    }
+.job-card p {
+  margin: 0;
+  color: #007DB8;
+  opacity: .75;
+  font-size: .95rem;
+  font-weight: 650;
+  transition: color .3s;
+}
 
     .job-card:hover p,
     .job-card.active p { color: #006fa5; }
