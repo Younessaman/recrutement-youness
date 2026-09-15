@@ -1,36 +1,53 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Carrières E360S à Jonquière — Chauffeur-opérateur, aide-opérateur et superviseur. Postulez dès aujourd'hui.">
+
+  <meta
+    name="description"
+    content="Carrières E360S à Jonquière — Chauffeur-opérateur, aide-opérateur et superviseur. Postulez dès aujourd'hui."
+  >
+
   <meta name="theme-color" content="#007DB8">
+
   <title>E360S — Carrières à Jonquière</title>
 
   <style>
     /* =========================================================
        E360S — CARRIÈRES JONQUIÈRE
-       Styles autonomes — aucune dépendance externe.
+       Design recrutement — style E360S / Sanitation
        ========================================================= */
 
     :root {
       --blue: #007DB8;
-      --blue-2: #00A7E1;
-      --blue-dark: #005c88;
+      --blue-accent: #00A7E1;
       --yellow: #F9FF00;
-      --ink: #102b3a;
-      --muted: #5f7180;
-      --bg: #f5f7fa;
-      --white: #ffffff;
-      --line: #e3eaf0;
-      --shadow: 0 20px 55px rgba(0, 79, 120, .12);
-      --shadow-hover: 0 28px 70px rgba(0, 79, 120, .20);
-      --radius: 28px;
-      --ease: cubic-bezier(.2,.75,.25,1);
-      --form-url: url("https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u");
+      --white: #FFFFFF;
+
+      --blue-soft: rgba(0, 125, 184, 0.08);
+      --blue-soft-2: rgba(0, 167, 225, 0.12);
+      --blue-border: rgba(0, 125, 184, 0.18);
+
+      --shadow: 0 18px 50px rgba(0, 125, 184, 0.12);
+      --shadow-hover: 0 26px 65px rgba(0, 125, 184, 0.18);
+
+      --radius: 24px;
+      --ease: cubic-bezier(.2, .75, .25, 1);
+
+      --form-url:
+        url("https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u");
     }
 
-    * { box-sizing: border-box; }
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -39,42 +56,60 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      color: var(--blue);
+      background: var(--white);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    button, input, select { font: inherit; }
+    button,
+    input,
+    select {
+      font: inherit;
+    }
 
-    button, a {
+    button,
+    a {
       -webkit-tap-highlight-color: transparent;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(1160px, calc(100% - 40px));
       margin: 0 auto;
     }
 
+
+    /* =========================================================
+       ÉLÉMENTS GÉNÉRAUX
+       ========================================================= */
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       min-height: 42px;
       padding: 9px 22px;
+
       border-radius: 999px;
+
       background: var(--yellow);
-      color: #006fa5;
+      color: var(--blue);
+
       font-size: .72rem;
-      text-align:center;
       font-weight: 900;
       letter-spacing: .055em;
+      text-align: center;
       text-transform: uppercase;
-      box-shadow: 0 10px 28px rgba(0,0,0,.08);
+
+      box-shadow: 0 10px 28px rgba(0, 125, 184, 0.12);
     }
 
     .section {
@@ -92,48 +127,88 @@
     }
 
     .section-heading h2 {
-      margin: 0 0 14px;
-      font-size: clamp(2.2rem, 5vw, 4.3rem);
+      margin: 0 0 16px;
+
+      color: var(--blue);
+
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
       line-height: .98;
       letter-spacing: -.045em;
-      font-weight: 950;
+      font-weight: 900;
     }
 
-    .section-heading h2 span { color: var(--blue); }
+    .section-heading h2 span {
+      color: var(--yellow);
+      background: var(--blue);
+      padding: 0 .14em;
+      border-radius: .16em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
 
     .section-heading p {
-      margin: 0 auto;
       max-width: 660px;
-      color: var(--muted);
-      font-size: 1.08rem;
+      margin: 0 auto;
+
+      color: var(--blue-accent);
+
+      font-size: 1.05rem;
+      font-weight: 600;
     }
 
-    /* ---------- HERO ---------- */
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
     .hero {
       position: relative;
+
       min-height: 780px;
+
       display: flex;
       align-items: center;
+
       overflow: hidden;
+
       color: var(--white);
+
       background:
-        radial-gradient(circle at 12% 20%, rgba(0,167,225,.65), transparent 30%),
-        radial-gradient(circle at 92% 80%, rgba(0,167,225,.45), transparent 28%),
-        linear-gradient(135deg, var(--blue), #008fc9 55%, var(--blue));
+        radial-gradient(
+          circle at 12% 20%,
+          rgba(0, 167, 225, .65),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 92% 80%,
+          rgba(0, 167, 225, .45),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          var(--blue),
+          #008FC9 55%,
+          var(--blue)
+        );
     }
 
     .hero::before,
     .hero::after {
       content: "";
+
       position: absolute;
+
       pointer-events: none;
+
       border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.12);
+
+      border: 1px solid rgba(255, 255, 255, .16);
     }
 
     .hero::before {
       width: 650px;
       height: 650px;
+
       right: -280px;
       top: -290px;
     }
@@ -141,6 +216,7 @@
     .hero::after {
       width: 420px;
       height: 420px;
+
       left: -240px;
       bottom: -250px;
     }
@@ -148,44 +224,60 @@
     .hero-grid {
       position: relative;
       z-index: 2;
+
       width: min(980px, calc(100% - 40px));
+
       margin: 0 auto;
-      text-align: center;
+
       padding: 76px 0 90px;
+
+      text-align: center;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
       gap: 10px;
+
       margin-bottom: 30px;
-      font-weight: 950;
+
+      color: var(--white);
+
+      font-weight: 900;
       letter-spacing: .14em;
       font-size: .86rem;
-      opacity: .96;
     }
 
     .brand-mark {
       display: grid;
       place-items: center;
+
       width: 38px;
       height: 38px;
+
       border-radius: 12px;
+
       background: var(--yellow);
       color: var(--blue);
+
       font-weight: 1000;
       letter-spacing: -.06em;
-      box-shadow: 0 10px 25px rgba(0,0,0,.13);
+
+      box-shadow: 0 10px 25px rgba(0, 125, 184, .18);
     }
 
     .hero-copy {
       opacity: 0;
       transform: translateY(18px);
+
       animation: heroIn .9s var(--ease) .08s forwards;
     }
 
     .hero h1 {
       margin: 28px 0 12px;
+
+      color: var(--white);
+
       font-size: clamp(3.2rem, 9vw, 6.5rem);
       line-height: .8;
       letter-spacing: -.075em;
@@ -194,24 +286,35 @@
 
     .hero h1 .yellow {
       display: block;
-      color: var(--yellow);
-      font-size: .7em;
+
       margin-top: 18px;
+
+      color: var(--yellow);
+
+      font-size: .7em;
       letter-spacing: -.07em;
     }
 
     .hero-subtitle {
-      margin: 28px auto 8px;
       max-width: 730px;
+
+      margin: 28px auto 8px;
+
+      color: var(--white);
+
       font-size: clamp(1.15rem, 2.3vw, 1.65rem);
       font-weight: 700;
     }
 
     .hero-note {
-      margin: 0 auto;
       max-width: 680px;
+
+      margin: 5px auto 0;
+
+      color: var(--white);
+
       font-size: 1rem;
-      opacity: .88;
+      opacity: .92;
     }
 
     .hero-pills {
@@ -219,6 +322,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
+
       margin: 38px auto 30px;
     }
 
@@ -226,20 +330,29 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       min-height: 54px;
       padding: 12px 22px;
+
       border-radius: 999px;
+
       background: var(--white);
       color: var(--blue);
+
       font-size: .92rem;
       font-weight: 900;
-      box-shadow: 0 14px 34px rgba(0,0,0,.12);
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+
+      box-shadow: 0 14px 34px rgba(0, 125, 184, .15);
+
+      transition:
+        transform .3s var(--ease),
+        box-shadow .3s var(--ease);
     }
 
     .pill:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 42px rgba(0,0,0,.18);
+
+      box-shadow: 0 20px 42px rgba(0, 125, 184, .2);
     }
 
     .hero-actions {
@@ -247,6 +360,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 14px;
+
       margin-top: 18px;
     }
 
@@ -255,14 +369,22 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+
       min-height: 58px;
       padding: 15px 28px;
+
       border: 0;
       border-radius: 18px;
+
       cursor: pointer;
-      font-weight: 950;
+
+      font-weight: 900;
       letter-spacing: .01em;
-      transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease);
+
+      transition:
+        transform .22s var(--ease),
+        box-shadow .22s var(--ease),
+        background .22s var(--ease);
     }
 
     .btn:active,
@@ -272,23 +394,27 @@
 
     .btn-primary {
       background: var(--yellow);
-      color: #006fa5;
-      box-shadow: 0 16px 35px rgba(0,0,0,.15);
+      color: var(--blue);
+
+      box-shadow: 0 16px 35px rgba(0, 125, 184, .2);
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 22px 44px rgba(0,0,0,.2);
+
+      box-shadow: 0 22px 44px rgba(0, 125, 184, .25);
     }
 
     .btn-light {
-      background: rgba(255,255,255,.12);
+      background: rgba(255, 255, 255, .12);
       color: var(--white);
-      border: 1px solid rgba(255,255,255,.35);
+
+      border: 1px solid rgba(255, 255, 255, .5);
     }
 
     .btn-light:hover {
-      background: rgba(255,255,255,.2);
+      background: rgba(255, 255, 255, .22);
+
       transform: translateY(-3px);
     }
 
@@ -296,87 +422,113 @@
       margin-top: 22px;
     }
 
-    .recruitment-contact{
-  margin-top:10px;
-}
-
-.contact-pill{
-  min-height:40px;
-  padding:8px 14px;
-}
-
-.hero-subtitle{
-  margin-top:15px;
-}
-
-.hero-note{
-  margin-top:5px;
-}
     .recruitment-contact p {
       margin: 0 0 10px;
+
+      color: var(--white);
+
       font-size: .84rem;
       font-weight: 800;
-      opacity: .9;
     }
 
-.contact-pill{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:48px;
-  padding:12px 22px;
-  border-radius:999px;
-  background:rgba(255,255,255,.95);
-  color:#007DB8;
-  font-size:.9rem;
-  font-weight:800;
-  box-shadow:0 12px 30px rgba(0,0,0,.12);
-  transition:all .25s ease;
-  border:1px solid rgba(255,255,255,.6);
-}
+    .contact-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
 
-.contact-pill:hover{
-  transform:translateY(-3px);
-  background:#ffffff;
-  box-shadow:0 18px 35px rgba(0,0,0,.18);
-}
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      min-height: 48px;
+      padding: 12px 22px;
+
+      border-radius: 999px;
+
+      background: var(--white);
+      color: var(--blue);
+
+      font-size: .9rem;
+      font-weight: 800;
+
+      box-shadow: 0 12px 30px rgba(0, 125, 184, .15);
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .contact-pill:hover {
+      transform: translateY(-3px);
+
+      box-shadow: 0 18px 35px rgba(0, 125, 184, .22);
+    }
 
     .hero-scroll {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+
       margin-top: 15px;
+
+      color: var(--white);
+
       font-size: .82rem;
       font-weight: 800;
-      opacity: .78;
+
+      opacity: .85;
     }
 
-    /* ---------- JOB SELECTOR ---------- */
+
+    /* =========================================================
+       SÉLECTEUR DE POSTES
+       ========================================================= */
+
     .jobs-section {
       position: relative;
+
       margin-top: -44px;
+
       z-index: 4;
     }
 
     .job-selector {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 18px;
     }
 
     .job-card {
       position: relative;
+
       overflow: hidden;
+
       min-height: 220px;
       padding: 28px;
-      border: 1px solid rgba(0,125,184,.08);
+
+      border: 2px solid var(--blue-soft-2);
       border-radius: var(--radius);
+
       background: var(--white);
       color: var(--blue);
+
       text-align: left;
+
       cursor: pointer;
+
       box-shadow: var(--shadow);
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
+
+      transition:
+        transform .35s var(--ease),
+        box-shadow .35s var(--ease),
+        background .35s var(--ease);
+      
       opacity: 0;
       transform: translateY(25px);
     }
@@ -386,984 +538,114 @@
       transform: translateY(0);
     }
 
-    .job-card:nth-child(1) { transition-delay: .08s; }
-    .job-card:nth-child(2) { transition-delay: .18s; }
-    .job-card:nth-child(3) { transition-delay: .28s; }
+    .job-card:nth-child(1) {
+      transition-delay: .08s;
+    }
+
+    .job-card:nth-child(2) {
+      transition-delay: .18s;
+    }
+
+    .job-card:nth-child(3) {
+      transition-delay: .28s;
+    }
 
     .job-card:hover,
     .job-card.active {
       background: var(--yellow);
-      color: #006fa5;
+
       transform: translateY(-8px);
+
       box-shadow: var(--shadow-hover);
     }
 
     .job-card:focus-visible {
-      outline: 4px solid rgba(0,167,225,.35);
+      outline: 4px solid var(--blue-accent);
       outline-offset: 3px;
     }
 
     .job-card h3 {
-      color:#007DB8;
       margin: 0 0 10px;
+
+      color: var(--blue);
+
       font-size: clamp(1.35rem, 2.2vw, 1.8rem);
       line-height: 1.05;
       letter-spacing: -.03em;
+      font-weight: 900;
     }
 
-.job-card p {
-  margin: 0;
-  color: #007DB8;
-  opacity: .75;
-  font-size: .95rem;
-  font-weight: 650;
-  transition: color .3s;
-}
+    .job-card p {
+      margin: 0;
 
-    .job-card:hover p,
-    .job-card.active p { color: #006fa5; }
+      color: var(--blue-accent);
+
+      font-size: .95rem;
+      font-weight: 700;
+    }
 
     .job-arrow {
       position: absolute;
+
       right: 27px;
       bottom: 25px;
+
+      color: var(--blue);
+
       font-size: 1.25rem;
       font-weight: 900;
     }
 
-    /* ---------- ACCORDION ---------- */
-    .details-section { padding-top: 74px; }
+
+    /* =========================================================
+       ACCORDÉON
+       ========================================================= */
+
+    .details-section {
+      padding-top: 88px;
+    }
 
     .jobs-list {
       display: grid;
       gap: 18px;
+
       max-width: 1000px;
+
       margin: 0 auto;
     }
 
     .job-detail {
       overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 24px;
+
+      border: 2px solid var(--blue-soft-2);
+      border-radius: var(--radius);
+
       background: var(--white);
-      box-shadow: 0 10px 35px rgba(0, 60, 90, .07);
+
+      box-shadow: 0 10px 35px rgba(0, 125, 184, .08);
     }
 
     .job-detail-head {
       width: 100%;
+
       display: flex;
       align-items: center;
       gap: 20px;
+
       padding: 24px 28px;
+
       border: 0;
-      background: transparent;
-      color: var(--ink);
+
+      background: var(--white);
+      color: var(--blue);
+
       text-align: left;
+
       cursor: pointer;
+
+      transition: background .25s ease;
     }
 
-    .job-detail-head:hover { background: #fbfdfe; }
-
-    .job-detail-head:focus-visible {
-      outline: 3px solid rgba(0,167,225,.35);
-      outline-offset: -3px;
-    }
-
-    .detail-title {
-      flex: 1;
-    }
-
-    .detail-title strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--blue);
-      font-size: 1.12rem;
-    }
-
-    .detail-title span {
-      color: var(--muted);
-      font-size: .88rem;
-    }
-
-    .detail-toggle {
-      flex: 0 0 42px;
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: #edf7fb;
-      color: var(--blue);
-      font-size: 1.35rem;
-      font-weight: 400;
-      transition: transform .35s var(--ease), background .3s;
-    }
-
-    .job-detail.open .detail-toggle {
-      transform: rotate(45deg);
-      background: var(--yellow);
-    }
-
-    .job-detail-body {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows .55s var(--ease);
-    }
-
-    .job-detail.open .job-detail-body {
-      grid-template-rows: 1fr;
-    }
-
-    .job-detail-inner {
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    .job-detail-content {
-      padding: 0 28px 30px;
-      border-top: 1px solid var(--line);
-    }
-
-    .job-badge {
-      display: inline-flex;
-      margin: 24px 0 16px;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: var(--yellow);
-      color: #006fa5;
-      font-size: .76rem;
-      font-weight: 900;
-    }
-
-    .job-intro {
-      margin: 0 0 28px;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .detail-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .detail-block h4 {
-      margin: 0 0 11px;
-      color: var(--blue);
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: .035em;
-    }
-
-    .detail-block ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .detail-block li {
-      position: relative;
-      padding-left: 22px;
-      margin: 7px 0;
-      color: #465d6c;
-      font-size: .94rem;
-    }
-
-    .detail-block li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: .67em;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--blue-2);
-    }
-
-    .detail-cta {
-      margin-top: 30px;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    /* ---------- POURQUOI E360S ---------- */
-    .why {
-      background: var(--white);
-    }
-
-    .wow-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .wow-card {
-      min-height: 245px;
-      padding: 34px 30px;
-      border: 1px solid var(--line);
-      border-top: 6px solid var(--yellow);
-      border-radius: 8px;
-      background: var(--white);
-      box-shadow: 0 10px 28px rgba(0, 60, 90, .08);
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-    }
-
-    .wow-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 17px 36px rgba(0, 60, 90, .12);
-    }
-
-    .wow-card h3 {
-      margin: 0 0 13px;
-      color: var(--blue);
-      font-size: 1.45rem;
-      line-height: 1.1;
-      letter-spacing: -.025em;
-    }
-
-    .wow-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .98rem;
-    }
-.wow h2{
-  text-align:center;
-  color:#009EDB;
-  margin-bottom:40px;
-  font-size:30px;
-  font-weight:900;
-}
-    /* ---------- CANDIDATURE SIMPLE ---------- */
-    .apply-section {
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    .apply-simple {
-      max-width: 760px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .apply-simple .eyebrow {
-      margin-bottom: 22px;
-    }
-
-    .apply-simple h2 {
-      margin: 0 0 14px;
-      font-size: clamp(2.5rem, 6vw, 4.8rem);
-      line-height: .95;
-      letter-spacing: -.055em;
-    }
-
-    .apply-simple p {
-      margin: 0 0 4px;
-      font-size: 1.35rem;
-      font-weight: 850;
-    }
-
-    .apply-simple > span {
-      display: block;
-      max-width: 610px;
-      margin: 0 auto;
-      color: rgba(255,255,255,.88);
-      font-size: 1rem;
-    }
-
-    .apply-simple .btn {
-      width: auto;
-      min-width: 260px;
-      margin-top: 30px;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      padding: 32px 0;
-      background: #004f76;
-      color: rgba(255,255,255,.82);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--white);
-      font-weight: 950;
-      letter-spacing: .08em;
-    }
-
-    .footer-brand .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      font-size: .85rem;
-    }
-
-    .footer-note {
-      margin: 0;
-      font-size: .8rem;
-    }
-
-    /* ---------- REVEAL ---------- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .75s var(--ease), transform .75s var(--ease);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes heroIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-    }
-
-    /* ---------- TABLET ---------- */
-    @media (max-width: 900px) {
-      .hero { min-height: 720px; }
-
-      .job-selector,
-      .wow-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .job-card {
-        min-height: 185px;
-      }
-
-      .apply-wrap {
-        grid-template-columns: 1fr;
-        gap: 42px;
-      }
-
-      .apply-copy { text-align: center; }
-      .apply-copy p { margin-left: auto; margin-right: auto; }
-      .apply-points { width: max-content; margin-left: auto; margin-right: auto; text-align: left; }
-    }
-
-    /* ---------- MOBILE ---------- */
-    @media (max-width: 620px) {
-      .container,
-      .hero-grid {
-        width: min(100% - 28px, 1160px);
-      }
-
-      .section { padding: 72px 0; }
-
-.hero {
-  min-height: auto;
-}
-
-.hero-grid {
-  padding: 25px 0 20px;
-}
-
-      .brand { margin-bottom: 24px; }
-
-      .eyebrow {
-        padding: 8px 16px;
-        font-size: .7rem;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.8rem, 15vw, 4.8rem);
-      }
-
-      .hero h1 .yellow {
-        margin-top: 13px;
-        font-size: .68em;
-      }
-
-      .hero-subtitle {
-        margin-top: 25px;
-        font-size: 1.1rem;
-      }
-
-      .hero-note { font-size: .92rem; }
-
-      .hero-pills {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 9px;
-        margin-top: 15px;
-      }
-
-      .pill {
-        min-height: 48px;
-        padding: 9px 10px;
-        font-size: .76rem;
-      }
-
-      .hero-actions {
-        display: grid;
-        width: 100%;
-      }
-
-      .contact-pills {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .contact-pill {
-        width: 100%;
-      }
-
-      .btn { width: 100%; }
-
-      .jobs-section { margin-top: -34px; }
-
-      .job-card {
-        min-height: 170px;
-        padding: 23px;
-        border-radius: 22px;
-      }
-
-      .job-card h3 { font-size: 1.3rem; }
-
-      .job-arrow { right: 22px; bottom: 21px; }
-
-      .section-heading {
-        margin-bottom: 36px;
-      }
-
-      .section-heading h2 {
-        font-size: 2.35rem;
-      }
-
-      .detail-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
-      .job-detail-head {
-        padding: 20px;
-      }
-
-      .job-detail-content {
-        padding: 0 20px 24px;
-      }
-
-      .detail-title strong { font-size: 1rem; }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- =======================================================
-       HERO
-       ======================================================= -->
-  <header class="hero" id="accueil">
-    <div class="hero-grid">
-  
-
-      <div class="hero-copy">
-        <div class="eyebrow">JONQUIÈRE • RECRUTEMENT EN COURS</div>
-
-        <h1>
-          JONQUIÈRE
-          <span class="yellow">3 POSTES<br>DISPONIBLES</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          Notre équipe agrandit ses opérations à Jonquière
-        </p>
-        <p class="hero-note">
-          Choisissez le poste qui vous correspond et postulez dès aujourd'hui.
-        </p>
-
-        <div class="hero-pills" aria-label="Avantages">
-          <span class="pill">Salaire concurrentiel</span>
-          <span class="pill">Temps plein</span>
-          <span class="pill">Formation offerte</span>
-          <span class="pill">Assurances + REER</span>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer">
-            POSTULER MAINTENANT <span aria-hidden="true">↗</span>
-          </a>
-          <a class="btn btn-light" href="#postes">
-            VOIR LES 3 POSTES <span aria-hidden="true">↓</span>
-          </a>
-        </div>
-
-        <div class="recruitment-contact">
-          <p>Questions ou intérêt pour le poste ?</p>
-          <div class="contact-pills">
-            <a class="contact-pill" href="mailto:Recruitment@e360s.ca">✉ <span>Recruitment@e360s.ca</span></a>
-            <a class="contact-pill" href="tel:+14385351659">☎ <span>(438) 535-1659</span></a>
-          </div>
-        </div>
-
-        <a class="hero-scroll" href="#postes">
-          ↓ Découvrir les opportunités
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- =======================================================
-       SELECTEUR DE POSTES
-       ======================================================= -->
-  <main>
-    <section class="jobs-section" id="postes" aria-label="Postes disponibles">
-      <div class="container">
-        <div class="job-selector">
-          <button class="job-card" type="button" data-job="chauffeur" aria-controls="detail-chauffeur" aria-expanded="false">
-            <h3>CHAUFFEUR-<br>OPÉRATEUR</h3>
-            <p>Classe 1 ou Classe 3</p>
-            <span class="job-arrow" aria-hidden="true">→</span>
-          </button>
-
-          <button class="job-card" type="button" data-job="aide" aria-controls="detail-aide" aria-expanded="false">
-            <h3>AIDE-OPÉRATEUR</h3>
-            <p>Production et opérations</p>
-            <span class="job-arrow" aria-hidden="true">→</span>
-          </button>
-
-          <button class="job-card" type="button" data-job="superviseur" aria-controls="detail-superviseur" aria-expanded="false">
-            <h3>SUPERVISEUR</h3>
-            <p>Gestion des opérations</p>
-            <span class="job-arrow" aria-hidden="true">→</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         DETAILS DES POSTES — ACCORDEON
-         ===================================================== -->
-    <section class="section details-section" id="details">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div class="eyebrow">TROUVEZ VOTRE PROCHAINE ÉTAPE</div>
-          <h2>Des postes où votre <span>impact</span> compte.</h2>
-          <p>Découvrez les responsabilités, le profil recherché et les conditions de chaque opportunité à Jonquière.</p>
-        </div>
-
-        <div class="jobs-list">
-
-          <!-- Poste 1 -->
-          <article class="job-detail reveal" id="detail-chauffeur" data-detail="chauffeur">
-            <button class="job-detail-head" type="button" aria-expanded="false">
-              <span class="detail-title">
-                <strong>Chauffeur-opérateur Classe 1 ou Classe 3</strong>
-                <span>Opérations environnementales • Jonquière</span>
-              </span>
-              <span class="detail-toggle" aria-hidden="true">+</span>
-            </button>
-
-            <div class="job-detail-body">
-              <div class="job-detail-inner">
-                <div class="job-detail-content">
-                  <span class="job-badge">Poste saisonnier • Possibilité de travail à l'année</span>
-                  <p class="job-intro">
-                    Environnementales 360 Solutions (E360S) recherche plusieurs chauffeurs-opérateurs afin de soutenir ses opérations environnementales à Jonquière.
-                  </p>
-
-                  <div class="detail-grid">
-                    <div class="detail-block">
-                      <h4>Ce qu'il faut savoir</h4>
-                      <ul>
-                        <li>Travail physique quotidien</li>
-                        <li>20 % conduite • 80 % opération</li>
-                        <li>Travail extérieur</li>
-                        <li>Manipulation jusqu'à 50 kg</li>
-                        <li>Présence occasionnelle d'odeurs</li>
-                      </ul>
-                    </div>
-
-                    <div class="detail-block">
-                      <h4>Principales tâches</h4>
-                      <ul>
-                        <li>Vidange de fosses septiques</li>
-                        <li>Pompage et aspiration</li>
-                        <li>Déplacements chez plusieurs clients</li>
-                        <li>Inspection et entretien de base</li>
-                        <li>Respect SST</li>
-                      </ul>
-                    </div>
-
-                    <div class="detail-block">
-                      <h4>Profil recherché</h4>
-                      <ul>
-                        <li>Classe 1 ou Classe 3</li>
-                        <li>Expérience pertinente</li>
-                        <li>Autonomie</li>
-                        <li>Professionnalisme</li>
-                        <li>Esprit d'équipe</li>
-                      </ul>
-                    </div>
-
-                    <div class="detail-block">
-                      <h4>Conditions offertes</h4>
-                      <ul>
-                        <li>Salaire entre 26 $ et 32 $/h</li>
-                        <li>Assurances collectives</li>
-                        <li>REER collectif</li>
-                        <li>Formation offerte</li>
-                        <li>Temps plein</li>
-                        <li>Heures supplémentaires</li>
-                        <li>Équipements modernes</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="detail-cta">
-                    <a class="btn btn-primary apply-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer">
-                      POSTULER POUR CE POSTE ↗
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Poste 2 -->
-          <article class="job-detail reveal" id="detail-aide" data-detail="aide">
-            <button class="job-detail-head" type="button" aria-expanded="false">
-              <span class="detail-title">
-                <strong>Aide-opérateur</strong>
-                <span>Production et opérations • Jonquière</span>
-              </span>
-              <span class="detail-toggle" aria-hidden="true">+</span>
-            </button>
-
-            <div class="job-detail-body">
-              <div class="job-detail-inner">
-                <div class="job-detail-content">
-                  <span class="job-badge">Formation offerte • Débutants bienvenus</span>
-
-                  <div class="detail-grid" style="margin-top:24px;">
-                    <div class="detail-block">
-                      <h4>Principales responsabilités</h4>
-                      <ul>
-                        <li>S'assurer du bon fonctionnement des équipements</li>
-                        <li>Respect des objectifs de qualité</li>
-                        <li>Nettoyage des équipements</li>
-                        <li>Vérification des installations</li>
-                        <li>Surveillance des panneaux de contrôle</li>
-                        <li>Ajustements nécessaires</li>
-                        <li>Aviser le responsable</li>
-                        <li>Travail sécuritaire</li>
-                        <li>Tâches connexes</li>
-                      </ul>
-                    </div>
-
-                    <div class="detail-block">
-                      <h4>Qualifications</h4>
-                      <ul>
-                        <li>Expérience manufacturière (atout)</li>
-                        <li>Débutants bienvenus</li>
-                      </ul>
-
-                      <h4 style="margin-top:24px;">Compétences recherchées</h4>
-                      <ul>
-                        <li>Responsable</li>
-                        <li>Sécuritaire</li>
-                        <li>Autonome</li>
-                        <li>Ponctuel</li>
-                        <li>Fiable</li>
-                        <li>Travail d'équipe</li>
-                      </ul>
-                    </div>
-
-                    <div class="detail-block">
-                      <h4>Conditions offertes</h4>
-                      <ul>
-                        <li>Salaire selon expérience</li>
-                        <li>REER collectif</li>
-                        <li>Allocation annuelle bottes</li>
-                        <li>Assurances collectives</li>
-                        <li>Possibilités d'avancement</li>
-                        <li>Formation offerte</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="detail-cta">
-                    <a class="btn btn-primary apply-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer">
-                      POSTULER POUR CE POSTE ↗
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Poste 3 -->
-          <article class="job-detail reveal" id="detail-superviseur" data-detail="superviseur">
-            <button class="job-detail-head" type="button" aria-expanded="false">
-              <span class="detail-title">
-                <strong>Superviseur</strong>
-                <span>Gestion des opérations • Jonquière</span>
-              </span>
-              <span class="detail-toggle" aria-hidden="true">+</span>
-            </button>
-
-            <div class="job-detail-body">
-              <div class="job-detail-inner">
-                <div class="job-detail-content">
-                  <span class="job-badge">Leadership • Gestion des opérations</span>
-                  <p class="job-intro">
-                    Nous recherchons un superviseur dynamique pour soutenir les opérations à Jonquière.
-                  </p>
-
-                  <div class="detail-grid">
-                    <div class="detail-block">
-                      <h4>Principales responsabilités</h4>
-                      <ul>
-                        <li>Superviser les opérateurs</li>
-                        <li>Évaluer la performance</li>
-                        <li>Participer au recrutement</li>
-                        <li>Planification des opérations</li>
-                        <li>Gestion des audits terrain</li>
-                        <li>Gestion d'inventaire</li>
-                        <li>Organisation de formations</li>
-                        <li>Coordination des livraisons</li>
-                        <li>Respect SST</li>
-                      </ul>
-                    </div>
-
-                    <div class="detail-block">
-                      <h4>Qualifications recherchées</h4>
-                      <ul>
-                        <li>Leadership</li>
-                        <li>Sens de l'organisation</li>
-                        <li>Gestion du personnel</li>
-                        <li>Classe 3</li>
-                        <li>Classe 1 (atout)</li>
-                        <li>Aptitudes informatiques</li>
-                        <li>Travail sous pression</li>
-                      </ul>
-                    </div>
-
-                    <div class="detail-block">
-                      <h4>Ce que nous offrons</h4>
-                      <ul>
-                        <li>Entreprise en croissance</li>
-                        <li>Assurances collectives</li>
-                        <li>REER collectif</li>
-                        <li>Développement professionnel</li>
-                        <li>Environnement collaboratif</li>
-                        <li>Outils modernes</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="detail-cta">
-                    <a class="btn btn-primary apply-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer">
-                      POSTULER POUR CE POSTE ↗
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-<div class="wow">
-
-  <h2>Pourquoi rejoindre E360S ?</h2>
-
-  <div class="wow-grid">
-
-    <div class="wow-card">
-      <h3>Leader canadien</h3>
-      <p>
-        Faites partie de l’un des plus importants fournisseurs de services environnementaux au Canada.
-      </p>
-    </div>
-
-    <div class="wow-card">
-      <h3>Développement professionnel</h3>
-      <p>
-        Accédez à des possibilités réelles de formation, d’avancement et d’évolution de carrière.
-      </p>
-    </div>
-
-    <div class="wow-card">
-      <h3>Une équipe engagée</h3>
-      <p>
-        Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.
-      </p>
-    </div>
-
-  </div>
-
-</div>
-
-<div class="footer">
-© 2026 Solutions Environnementales 360 (E360S)
-</div>
-
-  <script>
-    /* =========================================================
-       E360S — INTERACTIONS
-       ========================================================= */
-
-    const FORM_URL =
-      "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u";
-
-    // ---------------------------------------------------------
-    // Apparition des cartes de postes en cascade
-    // ---------------------------------------------------------
-    const jobCards = document.querySelectorAll(".job-card");
-
-    const revealJobCards = () => {
-      jobCards.forEach(card => card.classList.add("revealed"));
-    };
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(revealJobCards, 260);
-      });
-    } else {
-      setTimeout(revealJobCards, 260);
-    }
-
-    // ---------------------------------------------------------
-    // Accordéon : une seule description ouverte à la fois
-    // ---------------------------------------------------------
-    const selectorCards = document.querySelectorAll(".job-card");
-    const detailArticles = document.querySelectorAll(".job-detail");
-
-    function closeAllDetails(except = null) {
-      detailArticles.forEach(article => {
-        if (article === except) return;
-
-        article.classList.remove("open");
-        const head = article.querySelector(".job-detail-head");
-        head.setAttribute("aria-expanded", "false");
-      });
-
-      selectorCards.forEach(card => {
-        if (except && card.dataset.job === except.dataset.detail) return;
-        card.classList.remove("active");
-        card.setAttribute("aria-expanded", "false");
-      });
-    }
-
-    function openJob(jobName, shouldScroll = true) {
-      const detail = document.querySelector(`[data-detail="${jobName}"]`);
-      const card = document.querySelector(`[data-job="${jobName}"]`);
-
-      if (!detail || !card) return;
-
-      const wasOpen = detail.classList.contains("open");
-
-      closeAllDetails(wasOpen ? null : detail);
-
-      if (wasOpen) {
-        detail.classList.remove("open");
-        card.classList.remove("active");
-        card.setAttribute("aria-expanded", "false");
-        return;
-      }
-
-      detail.classList.add("open");
-      card.classList.add("active");
-      card.setAttribute("aria-expanded", "true");
-      detail.querySelector(".job-detail-head").setAttribute("aria-expanded", "true");
-
-      if (shouldScroll) {
-        setTimeout(() => {
-          const offset = 95;
-          const y = detail.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }, 120);
-      }
-    }
-
-    selectorCards.forEach(card => {
-      card.addEventListener("click", () => openJob(card.dataset.job, true));
-    });
-
-    detailArticles.forEach(article => {
-      const head = article.querySelector(".job-detail-head");
-      head.addEventListener("click", () => {
-        openJob(article.dataset.detail, false);
-      });
-    });
-
-    // ---------------------------------------------------------
-    // Liens de candidature : sécurité supplémentaire
-    // ---------------------------------------------------------
-    document.querySelectorAll(".apply-link").forEach(link => {
-      link.addEventListener("click", () => {
-        // Le lien est volontairement conservé comme navigation native
-        // vers Microsoft Forms dans un nouvel onglet.
-      });
-    });
-
-    // ---------------------------------------------------------
-    // Ouverture automatique du premier poste au chargement
-    // ---------------------------------------------------------
-    window.addEventListener("load", () => {
-      setTimeout(() => openJob("chauffeur", false), 380);
-    });
-
-    // ---------------------------------------------------------
-    // Scroll reveal premium
-    // ---------------------------------------------------------
-    const revealElements = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
-      });
-
-      revealElements.forEach(element => observer.observe(element));
-    } else {
-      revealElements.forEach(element => element.classList.add("visible"));
-    }
-
-    // ---------------------------------------------------------
-    // Navigation clavier améliorée pour les cartes
-    // ---------------------------------------------------------
-    selectorCards.forEach(card => {
-      card.addEventListener("keydown", event => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          card.click();
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+    .job-detail-head:hover {
+      background: var(--blue-soft
+```
