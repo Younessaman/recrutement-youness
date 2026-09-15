@@ -265,8 +265,7 @@
     }
 
     .btn:active,
-    .job-card:active,
-    .benefit-card:active {
+    .job-card:active {
       transform: scale(.975);
     }
 
@@ -290,6 +289,45 @@
     .btn-light:hover {
       background: rgba(255,255,255,.2);
       transform: translateY(-3px);
+    }
+
+    .recruitment-contact {
+      margin-top: 22px;
+    }
+
+    .recruitment-contact p {
+      margin: 0 0 10px;
+      font-size: .84rem;
+      font-weight: 800;
+      opacity: .9;
+    }
+
+    .contact-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--blue);
+      font-size: .84rem;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(0,0,0,.1);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+
+    .contact-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 17px 34px rgba(0,0,0,.15);
     }
 
     .hero-scroll {
@@ -352,26 +390,6 @@
     .job-card:focus-visible {
       outline: 4px solid rgba(0,167,225,.35);
       outline-offset: 3px;
-    }
-
-    .job-number {
-      display: inline-flex;
-      width: 38px;
-      height: 38px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: #eaf7fc;
-      color: var(--blue);
-      font-size: .8rem;
-      font-weight: 950;
-      margin-bottom: 28px;
-      transition: background .3s, color .3s;
-    }
-
-    .job-card:hover .job-number,
-    .job-card.active .job-number {
-      background: rgba(255,255,255,.68);
     }
 
     .job-card h3 {
@@ -555,205 +573,88 @@
       justify-content: flex-start;
     }
 
-    /* ---------- WHY E360S ---------- */
+    /* ---------- POURQUOI E360S ---------- */
     .why {
       background: var(--white);
     }
 
-    .benefits {
+    .wow-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
-    .benefit-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 285px;
-      padding: 34px;
+    .wow-card {
+      min-height: 245px;
+      padding: 34px 30px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, #fff, #f8fbfd);
-      box-shadow: 0 12px 35px rgba(0, 60, 90, .07);
-      transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+      border-top: 6px solid var(--yellow);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(0, 60, 90, .08);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
     }
 
-    .benefit-card::after {
-      content: "";
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      right: -65px;
-      bottom: -65px;
-      border-radius: 50%;
-      background: rgba(0,167,225,.08);
-      transition: transform .5s var(--ease);
+    .wow-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 17px 36px rgba(0, 60, 90, .12);
     }
 
-    .benefit-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(0,125,184,.22);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .benefit-card:hover::after { transform: scale(1.7); }
-
-    .benefit-icon {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 28px;
-      border-radius: 17px;
-      background: var(--blue);
-      color: var(--yellow);
+    .wow-card h3 {
+      margin: 0 0 13px;
+      color: var(--blue);
       font-size: 1.45rem;
-      font-weight: 1000;
-      box-shadow: 0 12px 24px rgba(0,125,184,.2);
+      line-height: 1.1;
+      letter-spacing: -.025em;
     }
 
-    .benefit-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.45rem;
-      letter-spacing: -.03em;
-    }
-
-    .benefit-card p {
+    .wow-card p {
       margin: 0;
       color: var(--muted);
+      font-size: .98rem;
     }
 
-    /* ---------- QUICK FORM ---------- */
+    /* ---------- CANDIDATURE SIMPLE ---------- */
     .apply-section {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      background: var(--blue);
       color: var(--white);
     }
 
-    .apply-section::before {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      right: -220px;
-      top: -270px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 50%;
-    }
-
-    .apply-wrap {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .apply-copy .eyebrow { margin-bottom: 20px; }
-
-    .apply-copy h2 {
-      margin: 0 0 16px;
-      font-size: clamp(2.5rem, 5vw, 4.6rem);
-      line-height: .95;
-      letter-spacing: -.05em;
-    }
-
-    .apply-copy p {
-      max-width: 450px;
-      margin: 0;
-      opacity: .9;
-    }
-
-    .apply-points {
-      display: grid;
-      gap: 9px;
-      margin-top: 28px;
-      padding: 0;
-      list-style: none;
-      font-weight: 750;
-    }
-
-    .apply-points li::before {
-      content: "✓";
-      margin-right: 10px;
-      color: var(--yellow);
-      font-weight: 1000;
-    }
-
-    .quick-form {
-      padding: 34px;
-      border-radius: 30px;
-      background: var(--white);
-      color: var(--ink);
-      box-shadow: 0 28px 65px rgba(0,50,80,.22);
-    }
-
-    .quick-form h3 {
-      margin: 0 0 6px;
-      color: var(--blue);
-      font-size: 1.55rem;
-    }
-
-    .quick-form > p {
-      margin: 0 0 24px;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-
-    .field {
-      display: grid;
-      gap: 7px;
-    }
-
-    .field.full { grid-column: 1 / -1; }
-
-    .field label {
-      font-size: .8rem;
-      font-weight: 850;
-      color: #405867;
-    }
-
-    .field input,
-    .field select {
-      width: 100%;
-      min-height: 52px;
-      padding: 13px 15px;
-      border: 1px solid #d8e3e9;
-      border-radius: 14px;
-      background: #fbfdfe;
-      color: var(--ink);
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
-    }
-
-    .field input:focus,
-    .field select:focus {
-      border-color: var(--blue-2);
-      box-shadow: 0 0 0 4px rgba(0,167,225,.11);
-    }
-
-    .form-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .form-actions .btn { width: 100%; }
-
-    .form-note {
-      margin: 12px 0 0;
-      color: #758693;
-      font-size: .75rem;
+    .apply-simple {
+      max-width: 760px;
+      margin: 0 auto;
       text-align: center;
+    }
+
+    .apply-simple .eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .apply-simple h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: .95;
+      letter-spacing: -.055em;
+    }
+
+    .apply-simple p {
+      margin: 0 0 4px;
+      font-size: 1.35rem;
+      font-weight: 850;
+    }
+
+    .apply-simple > span {
+      display: block;
+      max-width: 610px;
+      margin: 0 auto;
+      color: rgba(255,255,255,.88);
+      font-size: 1rem;
+    }
+
+    .apply-simple .btn {
+      width: auto;
+      min-width: 260px;
+      margin-top: 30px;
     }
 
     /* ---------- FOOTER ---------- */
@@ -821,7 +722,7 @@
       .hero { min-height: 720px; }
 
       .job-selector,
-      .benefits {
+      .wow-grid {
         grid-template-columns: 1fr;
       }
 
@@ -897,6 +798,15 @@
         width: 100%;
       }
 
+      .contact-pills {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .contact-pill {
+        width: 100%;
+      }
+
       .btn { width: 100%; }
 
       .jobs-section { margin-top: -34px; }
@@ -906,8 +816,6 @@
         padding: 23px;
         border-radius: 22px;
       }
-
-      .job-number { margin-bottom: 20px; }
 
       .job-card h3 { font-size: 1.3rem; }
 
@@ -935,14 +843,6 @@
       }
 
       .detail-title strong { font-size: 1rem; }
-
-      .quick-form { padding: 23px; }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full { grid-column: auto; }
 
       .footer-inner {
         flex-direction: column;
@@ -995,6 +895,14 @@
           </a>
         </div>
 
+        <div class="recruitment-contact">
+          <p>Questions ou intérêt pour le poste ?</p>
+          <div class="contact-pills">
+            <a class="contact-pill" href="mailto:Recruitment@e360s.ca">✉ <span>Recruitment@e360s.ca</span></a>
+            <a class="contact-pill" href="tel:+14385351659">☎ <span>(438) 535-1659</span></a>
+          </div>
+        </div>
+
         <a class="hero-scroll" href="#postes">
           ↓ Découvrir les opportunités
         </a>
@@ -1010,21 +918,18 @@
       <div class="container">
         <div class="job-selector">
           <button class="job-card" type="button" data-job="chauffeur" aria-controls="detail-chauffeur" aria-expanded="false">
-            <span class="job-number">01</span>
             <h3>CHAUFFEUR-<br>OPÉRATEUR</h3>
             <p>Classe 1 ou Classe 3</p>
             <span class="job-arrow" aria-hidden="true">→</span>
           </button>
 
           <button class="job-card" type="button" data-job="aide" aria-controls="detail-aide" aria-expanded="false">
-            <span class="job-number">02</span>
             <h3>AIDE-OPÉRATEUR</h3>
             <p>Production et opérations</p>
             <span class="job-arrow" aria-hidden="true">→</span>
           </button>
 
           <button class="job-card" type="button" data-job="superviseur" aria-controls="detail-superviseur" aria-expanded="false">
-            <span class="job-number">03</span>
             <h3>SUPERVISEUR</h3>
             <p>Gestion des opérations</p>
             <span class="job-arrow" aria-hidden="true">→</span>
@@ -1274,96 +1179,43 @@
     <section class="section why" id="e360s">
       <div class="container">
         <div class="section-heading reveal">
-          <div class="eyebrow">L'AVENIR SE CONSTRUIT EN ÉQUIPE</div>
+          <div class="eyebrow">POURQUOI E360S ?</div>
           <h2>Pourquoi rejoindre <span>E360S ?</span></h2>
-          <p>Une organisation qui combine croissance, outils performants et culture humaine pour faire avancer ses équipes.</p>
+          <p>Une équipe solide, des outils performants et un environnement où le travail bien fait compte.</p>
         </div>
 
-        <div class="benefits">
-          <article class="benefit-card reveal">
-            <div class="benefit-icon" aria-hidden="true">↗</div>
+        <div class="wow-grid">
+          <article class="wow-card reveal">
             <h3>Entreprise en croissance</h3>
-            <p>Organisation environnementale en expansion partout au Canada.</p>
+            <p>Une organisation environnementale en pleine expansion partout au Canada.</p>
           </article>
 
-          <article class="benefit-card reveal">
-            <div class="benefit-icon" aria-hidden="true">◈</div>
+          <article class="wow-card reveal">
             <h3>Équipements modernes</h3>
-            <p>Technologies et équipements performants pour travailler efficacement et en sécurité.</p>
+            <p>Travaillez avec des camions spécialisés et des équipements performants.</p>
           </article>
 
-          <article class="benefit-card reveal">
-            <div class="benefit-icon" aria-hidden="true">+</div>
+          <article class="wow-card reveal">
             <h3>Culture humaine</h3>
-            <p>Respect, sécurité, collaboration et développement professionnel au cœur du quotidien.</p>
+            <p>Une équipe accessible qui valorise la sécurité, le respect et le développement des employés.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- =====================================================
-         FORMULAIRE RAPIDE
-         Les champs servent à qualifier visuellement le candidat.
-         Le bouton ouvre le formulaire officiel Microsoft Forms.
+         CANDIDATURE
          ===================================================== -->
     <section class="section apply-section" id="candidature">
       <div class="container">
-        <div class="apply-wrap">
-          <div class="apply-copy reveal">
-            <div class="eyebrow">PROCHAINE ÉTAPE</div>
-            <h2>Postulez<br>à Jonquière.</h2>
-            <p>
-              Votre prochaine opportunité pourrait commencer ici. Remplissez vos coordonnées puis poursuivez votre candidature sur notre formulaire officiel.
-            </p>
-
-            <ul class="apply-points">
-              <li>Processus de candidature simple</li>
-              <li>Formation selon le poste</li>
-              <li>Équipe et environnement professionnels</li>
-            </ul>
-          </div>
-
-          <form class="quick-form reveal" id="quick-form">
-            <h3>Parlons de vous.</h3>
-            <p>Quelques informations pour préparer votre candidature.</p>
-
-            <div class="form-grid">
-              <div class="field">
-                <label for="name">Nom</label>
-                <input id="name" name="name" type="text" autocomplete="name" placeholder="Votre nom" required>
-              </div>
-
-              <div class="field">
-                <label for="phone">Téléphone</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" required>
-              </div>
-
-              <div class="field full">
-                <label for="email">Courriel</label>
-                <input id="email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required>
-              </div>
-
-              <div class="field full">
-                <label for="position">Poste souhaité</label>
-                <select id="position" name="position" required>
-                  <option value="" selected disabled>Sélectionner un poste</option>
-                  <option>Chauffeur-opérateur Classe 1 ou Classe 3</option>
-                  <option>Aide-opérateur</option>
-                  <option>Superviseur</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">
-                CONTINUER MA CANDIDATURE ↗
-              </button>
-            </div>
-
-            <p class="form-note">
-              Le bouton ouvrira le formulaire officiel E360S dans un nouvel onglet.
-            </p>
-          </form>
+        <div class="apply-simple reveal">
+          <div class="eyebrow">PROCHAINE ÉTAPE</div>
+          <h2>POSTULEZ À JONQUIÈRE</h2>
+          <p>Prêt à rejoindre E360S ?</p>
+          <span>Choisissez le poste qui vous correspond et complétez votre candidature en quelques minutes.</span>
+          <a class="btn btn-primary" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer">
+            POSTULER MAINTENANT ↗
+          </a>
         </div>
       </div>
     </section>
@@ -1482,29 +1334,10 @@
     });
 
     // ---------------------------------------------------------
-    // Formulaire rapide :
-    // les données ne sont pas stockées par cette page.
-    // Le bouton redirige vers le formulaire officiel.
+    // Ouverture automatique du premier poste au chargement
     // ---------------------------------------------------------
-    const quickForm = document.getElementById("quick-form");
-
-    quickForm.addEventListener("submit", event => {
-      event.preventDefault();
-
-      if (!quickForm.checkValidity()) {
-        quickForm.reportValidity();
-        return;
-      }
-
-      const position = document.getElementById("position").value;
-
-      // On mémorise uniquement le poste dans le navigateur pour
-      // faciliter le retour visuel sur la page, sans envoyer de données.
-      try {
-        sessionStorage.setItem("e360s_selected_position", position);
-      } catch (_) {}
-
-      window.open(FORM_URL, "_blank", "noopener,noreferrer");
+    window.addEventListener("load", () => {
+      setTimeout(() => openJob("chauffeur", false), 380);
     });
 
     // ---------------------------------------------------------
