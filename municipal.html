@@ -547,10 +547,8 @@ COLLECTE<br>
 E360S recrute actuellement plusieurs Chauffeurs Classe 3 pour ses opérations de collecte résidentielle et municipale dans le Grand Montréal, la Rive-Nord et la Rive-Sud.
 </div>
 
-<a class="btn-primary"
-href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank" rel="noopener noreferrer">
-POSTULER MAINTENANT
+<a class="btn-primary" href="#postes">
+VOIR LES POSTES
 </a>
 </section>
 
@@ -558,7 +556,7 @@ POSTULER MAINTENANT
 Plusieurs postes actuellement disponibles
 </div>
 
-<section class="content-section">
+<section class="content-section" id="postes">
 <div class="container">
 <div class="card">
 
@@ -688,6 +686,17 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
+
+// Défilement fluide vers les ancres internes
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target){
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 
 // Onde au clic sur les boutons de région
 document.querySelectorAll('.region-btn').forEach(btn => {
