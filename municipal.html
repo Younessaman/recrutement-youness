@@ -1,424 +1,542 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Collecte Résidentielle et Municipale | E360S</title>
 
 <meta property="og:title" content="Chauffeurs Classe 3 recherchés | Plusieurs postes disponibles">
-
 <meta property="og:description" content="Temps plein • Avantages sociaux • REER • Grand Montréal • Rive-Nord • Rive-Sud">
-
 <meta property="og:image" content="https://recrutement-e360s.vercel.app/images/municipal-preview-v2.png">
-
 <meta property="og:url" content="https://recrutement-e360s.vercel.app/municipal.html">
-
 <meta property="og:type" content="website">
-
 <meta property="og:site_name" content="E360S">
 
 <meta name="twitter:card" content="summary_large_image">
-
 <meta name="twitter:title" content="Nous embauchons | Chauffeurs Classe 3 - E360S">
-
 <meta name="twitter:description" content="Grand Montréal • Rive-Nord • Rive-Sud. Salaire compétitif, avantages sociaux et REER.">
-
 <meta name="twitter:image" content="https://recrutement-e360s.vercel.app/images/municipal-preview-v2.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+  :root{
+    /* Palette d'origine E360S — bleu clair, jaune vif, blanc. Identique à la page Jonquière. */
+    --blue-light:#2ea3f2;
+    --blue-mid:#1483d9;
+    --blue-deep:#0b60ac;
+    --yellow:#f4e600;
+    --yellow-dark:#d9cc00;
+    --white:#ffffff;
+    --heading:#0b60ac;
+    --ink:#182b3a;
+    --ink-soft:#51697a;
+    --line:#e3ebf1;
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:12px;
+    --shadow-card:0 8px 24px rgba(11,96,172,.08);
+    --shadow-lift:0 16px 40px rgba(11,96,172,.14);
+    --ease:cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    margin:0;
+    line-height:1.05;
+    letter-spacing:-.03em;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  :focus-visible{
+    outline:3px solid var(--yellow);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+    html{scroll-behavior:auto;}
+  }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+  /* ---------- Buttons ---------- */
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:var(--yellow);
+    color:var(--heading);
+    text-decoration:none;
+    font-weight:700;
+    font-family:'Outfit',sans-serif;
+    padding:18px 36px;
+    border-radius:999px;
+    font-size:1.05rem;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 10px 24px rgba(244,230,0,.35);
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+  }
+  .btn-primary:hover{
+    background:var(--yellow-dark);
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(244,230,0,.45);
+  }
+  .btn-primary:active{transform:scale(.96);}
+  .btn-primary::after{
+    content:'';
+    position:absolute;
+    top:0;left:-120%;
+    width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+    transition:.6s;
+  }
+  .btn-primary:hover::after{left:120%;}
 
-body{
-font-family:'Segoe UI',sans-serif;
-background:#f5f7fa;
-color:#333;
-line-height:1.6;
-}
+  .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:var(--white);
+    color:var(--heading);
+    text-decoration:none;
+    font-weight:700;
+    font-family:'Outfit',sans-serif;
+    padding:14px 30px;
+    border-radius:999px;
+    font-size:.98rem;
+    border:1.5px solid var(--line);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(11,96,172,.1);
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
+  }
+  .btn-secondary:hover{
+    background:var(--yellow);
+    border-color:var(--yellow);
+    transform:translateY(-3px);
+    box-shadow:0 12px 26px rgba(244,230,0,.3);
+  }
+  .btn-secondary:active{transform:scale(.94);}
+  .btn-secondary::before{
+    content:'';
+    position:absolute;
+    top:0;left:-120%;
+    width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+    transition:.6s;
+  }
+  .btn-secondary:hover::before{left:120%;}
 
-.hero{
-background:linear-gradient(135deg,#00A7E1,#007DB8);
-color:white;
-text-align:center;
-padding:80px 20px;
-}
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .container{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    height:72px;
+  }
+  .btn-ghost{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--blue-deep);
+    color:var(--white);
+    text-decoration:none;
+    font-weight:700;
+    font-family:'Outfit',sans-serif;
+    padding:12px 24px;
+    border-radius:999px;
+    font-size:.9rem;
+    transition:background .25s var(--ease), transform .25s var(--ease);
+  }
+  .btn-ghost:hover{background:var(--blue-mid);transform:translateY(-2px);}
+  .btn-ghost:active{transform:scale(.95);}
 
-.badge{
-display:inline-block;
-background:#F9FF00;
-color:#007DB8;
-font-weight:900;
-padding:12px 24px;
-border-radius:30px;
-font-size:14px;
-margin-bottom:25px;
-}
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--blue-light) 0%, var(--blue-mid) 55%, var(--blue-deep) 100%);
+    color:var(--white);
+    text-align:center;
+    padding:88px 20px 96px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 85% 10%, rgba(244,230,0,.16), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(255,255,255,.08), transparent 40%);
+    pointer-events:none;
+  }
+  .hero > *{position:relative;z-index:1;}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--yellow);
+    color:var(--heading);
+    font-weight:700;
+    font-family:'Outfit',sans-serif;
+    font-size:.85rem;
+    padding:9px 20px;
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+  .badge::before{
+    content:"";
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--heading);
+    animation:pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  .hero h1{
+    font-size:clamp(2.6rem,7vw,4.4rem);
+    text-transform:uppercase;
+    margin-bottom:25px;
+  }
+  .yellow{color:var(--yellow);}
+  .hero-description{
+    max-width:850px;
+    margin:0 auto 35px;
+    font-size:1.15rem;
+    font-weight:600;
+    color:rgba(255,255,255,.92);
+  }
 
-.hero h1{
-font-size:72px;
-font-weight:900;
-line-height:.95;
-margin-bottom:25px;
-}
+  /* ---------- Info bar ---------- */
+  .info{
+    background:var(--yellow);
+    color:var(--heading);
+    font-weight:800;
+    font-family:'Outfit',sans-serif;
+    text-align:center;
+    padding:18px;
+    font-size:1.3rem;
+  }
 
-.yellow{
-color:#F9FF00;
-}
+  /* ---------- Content ---------- */
+  .content-section{padding:88px 0;}
+  .card{
+    background:var(--white);
+    padding:0;
+  }
+  .center{text-align:center;}
+  .job-title{
+    font-size:clamp(1.9rem,3.5vw,2.5rem);
+    font-weight:800;
+    color:var(--heading);
+    text-align:center;
+    margin-bottom:16px;
+  }
+  .job-badge{
+    display:inline-block;
+    background:#eef4fa;
+    color:var(--blue-deep);
+    padding:10px 20px;
+    border-radius:999px;
+    font-weight:700;
+    font-family:'Outfit',sans-serif;
+    font-size:.9rem;
+  }
+  .main-description{
+    text-align:center;
+    max-width:900px;
+    margin:26px auto 40px;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
 
-.hero-description{
-max-width:850px;
-margin:auto;
-font-size:20px;
-margin-bottom:35px;
-}
+  /* ---------- Region buttons ---------- */
+  .regions-center{
+    text-align:center;
+    margin:0 0 56px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+  }
+  .region-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#eef4fa;
+    color:var(--blue-deep);
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:700;
+    font-family:'Outfit',sans-serif;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    position:relative;
+    overflow:hidden;
+    transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .region-btn:hover{
+    background:var(--yellow);
+    color:var(--heading);
+    border-color:var(--yellow-dark);
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(244,230,0,.32);
+  }
+  .region-btn:active{transform:scale(.93);}
+  .region-btn .ripple{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(11,96,172,.25);
+    transform:scale(0);
+    animation:rippleOut .6s var(--ease) forwards;
+    pointer-events:none;
+  }
+  @keyframes rippleOut{to{transform:scale(3);opacity:0;}}
 
-.hero-btn{
-display:inline-block;
-background:#F9FF00;
-color:#007DB8;
-text-decoration:none;
-font-weight:900;
-padding:18px 35px;
-border-radius:12px;
-font-size:18px;
-position:relative;
-overflow:hidden;
-transition:.25s ease;
-}
+  /* ---------- Divisions grid ---------- */
+  .divisions-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:24px;
+    margin-top:8px;
+  }
+  .div-card{
+    position:relative;
+    background:var(--white);
+    padding:34px 30px;
+    border-radius:var(--radius-lg);
+    border:1.5px solid var(--line);
+    box-shadow:var(--shadow-card);
+    overflow:hidden;
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+  }
+  .div-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;
+    height:6px;
+    width:100%;
+    background:var(--yellow);
+  }
+  .div-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-lift);
+    border-color:var(--blue-mid);
+  }
+  .div-card h3{
+    color:var(--heading);
+    font-size:1.55rem;
+    margin-bottom:14px;
+  }
+  .div-card p{
+    color:var(--ink-soft);
+    margin-bottom:18px;
+    line-height:1.55;
+  }
+  .div-card ul{
+    list-style:none;
+    padding:0;
+    margin:0 0 24px;
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+  }
+  .div-card li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-weight:600;
+    font-size:.95rem;
+    color:var(--ink);
+  }
+  .div-card li .check{
+    flex:none;
+    width:20px;height:20px;
+    border-radius:50%;
+    background:#eef4fa;
+    color:var(--blue-mid);
+    display:flex;align-items:center;justify-content:center;
+    margin-top:1px;
+  }
+  .div-card li .check svg{width:12px;height:12px;}
 
-.hero-btn:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 25px rgba(0,0,0,.20);
-background:white;
-}
+  .postuler{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--blue-deep);
+    color:var(--white);
+    text-decoration:none;
+    padding:15px 26px;
+    border-radius:999px;
+    font-weight:700;
+    font-family:'Outfit',sans-serif;
+    position:relative;
+    overflow:hidden;
+    transition:background .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .postuler:hover{
+    background:var(--blue-mid);
+    transform:translateY(-3px);
+    box-shadow:0 12px 26px rgba(11,96,172,.3);
+  }
+  .postuler:active{transform:scale(.95);}
+  .postuler::after{
+    content:'';
+    position:absolute;
+    top:0;left:-120%;
+    width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+    transition:.6s;
+  }
+  .postuler:hover::after{left:120%;}
 
-.hero-btn:active{
-transform:scale(.95);
-}
+  /* ---------- Wow section ---------- */
+  .wow{
+    margin-top:72px;
+    padding-top:72px;
+    border-top:1px solid var(--line);
+  }
+  .wow h2{
+    text-align:center;
+    color:var(--heading);
+    font-size:clamp(1.6rem,3vw,2rem);
+    margin-bottom:36px;
+  }
+  .wow-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .wow-card{
+    position:relative;
+    background:#f6f9fc;
+    padding:28px 26px;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-card);
+    transition:transform .3s var(--ease);
+  }
+  .wow-card:hover{transform:translateY(-4px);}
+  .wow-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;
+    height:6px;width:100%;
+    background:var(--yellow);
+  }
+  .wow-card h3{color:var(--heading);margin-bottom:10px;font-size:1.15rem;}
+  .wow-card p{color:var(--ink-soft);font-size:.95rem;line-height:1.55;}
 
-.hero-btn::after{
-content:'';
-position:absolute;
-top:0;
-left:-120%;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.35),
-transparent
-);
-transition:.6s;
-}
+  /* ---------- Contact RH ---------- */
+  .contact-section{padding:0 0 96px;}
+  .contact-card{
+    background:linear-gradient(140deg, var(--blue-mid), var(--blue-deep));
+    border-radius:28px;
+    padding:56px 40px;
+    color:var(--white);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 90% 90%, rgba(244,230,0,.18), transparent 45%);
+  }
+  .contact-card > *{position:relative;z-index:1;}
+  .contact-card h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;margin-bottom:12px;}
+  .contact-card p{color:rgba(255,255,255,.8);margin-bottom:32px;}
+  .contact-methods{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:460px;
+    margin:0 auto;
+  }
+  @media (min-width:560px){
+    .contact-methods{flex-direction:row;}
+  }
+  .contact-link{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:999px;
+    padding:16px 20px;
+    font-weight:600;
+    font-size:.95rem;
+    text-decoration:none;
+    transition:background .25s var(--ease), transform .25s var(--ease);
+  }
+  .contact-link:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);}
+  .contact-link svg{width:18px;height:18px;color:var(--yellow);}
 
-.hero-btn:hover::after{
-left:120%;
-}
+  /* ---------- Footer ---------- */
+  .footer{
+    padding:36px 20px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:.9rem;
+    border-top:1px solid var(--line);
+  }
 
-.info{
-background:#F9FF00;
-color:#009EDB;
-font-weight:900;
-text-align:center;
-padding:18px;
-font-size:22px;
-border-bottom:4px solid #009EDB;
-}
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s var(--ease), transform .6s var(--ease);}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:50px 20px;
-}
-
-.card{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.job-title{
-font-size:40px;
-font-weight:900;
-color:#009EDB;
-text-align:center;
-margin-bottom:15px;
-}
-
-.job-badge{
-display:inline-block;
-background:#F9FF00;
-color:#007DB8;
-padding:10px 18px;
-border-radius:20px;
-font-weight:800;
-}
-
-.center{
-text-align:center;
-}
-
-.main-description{
-text-align:center;
-max-width:900px;
-margin:25px auto 35px;
-font-size:18px;
-}
-
-.regions-center{
-text-align:center;
-margin:20px 0 45px;
-}
-
-.region-btn{
-display:inline-block;
-background:#F9FF00;
-color:#009EDB;
-padding:14px 28px;
-margin:6px;
-border-radius:40px;
-font-weight:900;
-text-decoration:none;
-transition:all .25s ease;
-box-shadow:0 4px 12px rgba(0,0,0,.12);
-position:relative;
-overflow:hidden;
-}
-
-.region-btn:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 20px rgba(0,0,0,.18);
-}
-
-.region-btn:active{
-transform:scale(.92);
-}
-
-.region-btn::before{
-content:'';
-position:absolute;
-top:0;
-left:-120%;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.40),
-transparent
-);
-transition:.6s;
-}
-
-.region-btn:hover::before{
-left:120%;
-}
-
-.divisions-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-gap:30px;
-margin-top:20px;
-}
-
-.div-card{
-background:#f8fbff;
-padding:30px;
-border-radius:16px;
-border-top:6px solid #F9FF00;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.div-card:hover{
-transform:translateY(-5px);
-}
-
-.div-card h3{
-color:#009EDB;
-font-size:28px;
-margin-bottom:15px;
-}
-
-.div-card p{
-margin-bottom:15px;
-}
-
-.div-card ul{
-list-style:none;
-padding:0;
-margin:20px 0;
-}
-
-.div-card li{
-margin-bottom:10px;
-font-weight:600;
-}
-
-.postuler{
-display:inline-block;
-background:#009EDB;
-color:white;
-text-decoration:none;
-padding:14px 24px;
-border-radius:12px;
-font-weight:900;
-position:relative;
-overflow:hidden;
-transition:.25s ease;
-}
-
-.postuler:hover{
-background:#007DB8;
-transform:translateY(-3px);
-}
-
-.postuler:active{
-transform:scale(.95);
-}
-
-.postuler::after{
-content:'';
-position:absolute;
-top:0;
-left:-120%;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.35),
-transparent
-);
-transition:.6s;
-}
-
-.postuler:hover::after{
-left:120%;
-}
-
-.bottom-apply{
-text-align:center;
-margin-top:50px;
-}
-
-.wow{
-margin-top:60px;
-}
-
-.wow h2{
-text-align:center;
-color:#009EDB;
-font-size:32px;
-margin-bottom:30px;
-}
-
-.wow-grid{
-display:flex;
-gap:25px;
-}
-
-.wow-card{
-flex:1;
-background:white;
-padding:25px;
-border-radius:15px;
-border-top:6px solid #F9FF00;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-.wow-card h3{
-color:#009EDB;
-margin-bottom:10px;
-}
-
-.footer{
-padding:40px;
-text-align:center;
-color:#666;
-}
-
-@media(max-width:768px){
-
-.hero{
-padding:60px 20px;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.hero-description{
-font-size:17px;
-}
-
-.hero-btn{
-width:100%;
-max-width:320px;
-}
-
-.info{
-font-size:16px;
-padding:15px;
-}
-
-.container{
-padding:25px 15px;
-}
-
-.card{
-padding:25px;
-}
-
-.job-title{
-font-size:30px;
-}
-
-.main-description{
-font-size:16px;
-}
-
-.divisions-grid{
-grid-template-columns:1fr;
-}
-
-.region-btn{
-display:block;
-width:100%;
-max-width:320px;
-margin:10px auto;
-text-align:center;
-}
-
-.postuler{
-width:100%;
-text-align:center;
-}
-
-.wow-grid{
-flex-direction:column;
-}
-
-}
-
+  @media(max-width:768px){
+    .hero{padding:64px 20px 76px;}
+    .info{font-size:1rem;padding:15px;}
+    .content-section{padding:56px 0;}
+    .job-title{font-size:1.8rem;}
+    .main-description{font-size:1rem;}
+    .divisions-grid{grid-template-columns:1fr;}
+    .region-btn{display:flex;width:100%;max-width:320px;margin:0 auto;justify-content:center;}
+    .postuler{width:100%;justify-content:center;}
+    .wow-grid{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-
-<div class="badge">
-EMBAUCHE EN COURS
+<header class="site-header">
+<div class="container">
+<a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="btn-ghost">Postuler</a>
 </div>
+</header>
+
+<section class="hero">
+<div class="badge">EMBAUCHE EN COURS</div>
 
 <h1>
 COLLECTE<br>
@@ -429,155 +547,164 @@ COLLECTE<br>
 E360S recrute actuellement plusieurs Chauffeurs Classe 3 pour ses opérations de collecte résidentielle et municipale dans le Grand Montréal, la Rive-Nord et la Rive-Sud.
 </div>
 
-<a class="hero-btn"
+<a class="btn-primary"
 href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 POSTULER MAINTENANT
 </a>
-
 </section>
 
 <div class="info">
 Plusieurs postes actuellement disponibles
 </div>
 
+<section class="content-section">
 <div class="container">
-
 <div class="card">
 
-<div class="center">
-
-<div class="job-title">
-Collecte Résidentielle et Municipale
+<div class="center reveal">
+<div class="job-title">Collecte Résidentielle et Municipale</div>
+<div class="job-badge">Plusieurs opportunités disponibles</div>
 </div>
 
-<div class="job-badge">
-Plusieurs opportunités disponibles
-</div>
-
-</div>
-
-<p class="main-description">
+<p class="main-description reveal">
 Solutions Environnementales 360 (E360S) recrute actuellement plusieurs chauffeurs pour ses opérations de collecte résidentielle et municipale. Consultez les opportunités disponibles et choisissez le poste qui correspond le mieux à votre expérience.
 </p>
 
-<div class="regions-center">
-
+<div class="regions-center reveal">
 <a class="region-btn"
 href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 Grand Montréal
 </a>
-
 <a class="region-btn"
 href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 Rive-Nord
 </a>
-
 <a class="region-btn"
 href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 Rive-Sud
 </a>
-
 </div>
 
 <div class="divisions-grid">
 
-<div class="div-card">
-
+<div class="div-card reveal">
 <h3>Chauffeur à chargement arrière</h3>
-
-<p>
-Collecte résidentielle et municipale avec sorties fréquentes du camion et travail terrain quotidien.
-</p>
-
+<p>Collecte résidentielle et municipale avec sorties fréquentes du camion et travail terrain quotidien.</p>
 <ul>
-<li>✓ Permis Classe 3</li>
-<li>✓ Travail extérieur</li>
-<li>✓ Collecte résidentielle</li>
-<li>✓ Temps plein</li>
-<li>✓ Départs tôt le matin</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Permis Classe 3</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Travail extérieur</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Collecte résidentielle</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Temps plein</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Départs tôt le matin</li>
 </ul>
-
 <a class="postuler"
 href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 POSTULER MAINTENANT
 </a>
-
 </div>
 
-<div class="div-card">
-
+<div class="div-card reveal">
 <h3>Chauffeur robot</h3>
-
-<p>
-Conduite et opération d'un camion robotisé utilisant un bras automatisé pour effectuer la collecte résidentielle.
-</p>
-
+<p>Conduite et opération d'un camion robotisé utilisant un bras automatisé pour effectuer la collecte résidentielle.</p>
 <ul>
-<li>✓ Permis Classe 3</li>
-<li>✓ Bras robotisé</li>
-<li>✓ Collecte automatisée</li>
-<li>✓ Temps plein</li>
-<li>✓ Équipements modernes</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Permis Classe 3</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Bras robotisé</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Collecte automatisée</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Temps plein</li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Équipements modernes</li>
 </ul>
-
 <a class="postuler"
 href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u"
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 POSTULER MAINTENANT
 </a>
-
 </div>
-
-</div>
-
-<div class="bottom-apply">
-
 
 </div>
 
 <div class="wow">
-
 <h2>Pourquoi choisir E360S ?</h2>
-
 <div class="wow-grid">
 
-<div class="wow-card">
+<div class="wow-card reveal">
 <h3>Leader canadien</h3>
-<p>
-Faites partie de l’un des plus importants fournisseurs de services environnementaux au Canada.
-</p>
+<p>Faites partie de l'un des plus importants fournisseurs de services environnementaux au Canada.</p>
 </div>
 
-<div class="wow-card">
+<div class="wow-card reveal">
 <h3>Développement professionnel</h3>
-<p>
-Accédez à des possibilités réelles de formation, d’avancement et d’évolution de carrière.
-</p>
+<p>Accédez à des possibilités réelles de formation, d'avancement et d'évolution de carrière.</p>
 </div>
 
-<div class="wow-card">
+<div class="wow-card reveal">
 <h3>Une équipe engagée</h3>
-<p>
-Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.
-</p>
+<p>Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.</p>
 </div>
 
 </div>
-
 </div>
 
 </div>
-
 </div>
+</section>
+
+<section class="contact-section">
+<div class="container">
+<div class="contact-card reveal">
+<h2>Une question ?</h2>
+<p>Notre équipe recrutement vous répond rapidement.</p>
+<div class="contact-methods">
+<a class="contact-link" href="mailto:Recruitment@e360s.ca">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+Recruitment@e360s.ca
+</a>
+<a class="contact-link" href="tel:+14385351659">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 12.9 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+(438) 535-1659
+</a>
+</div>
+</div>
+</div>
+</section>
 
 <div class="footer">
 © 2026 Solutions Environnementales 360 (E360S)
 </div>
+
+<script>
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+// Onde au clic sur les boutons de région
+document.querySelectorAll('.region-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+    btn.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 620);
+  });
+});
+</script>
 
 </body>
 </html>
