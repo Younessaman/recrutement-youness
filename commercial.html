@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrières | Collecte Commerciale — E360S</title>
+<meta name="description" content="E360S recrute des chauffeurs Classe 1 et Classe 3 en collecte commerciale. Plusieurs régions du Québec. Salaire compétitif, avantages complets. Postulez maintenant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Palette E360S — identique à la page Jonquière */
+    --blue-light:#2ea3f2;
+    --blue-mid:#1483d9;
+    --blue-deep:#0b60ac;
+    --yellow:#f4e600;
+    --yellow-dark:#d9cc00;
+    --white:#ffffff;
+    --heading:#0b60ac;
+    --ink:#182b3a;
+    --ink-soft:#51697a;
+    --line:#e3ebf1;
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:12px;
+    --shadow-card:0 8px 24px rgba(11,96,172,.08);
+    --shadow-lift:0 16px 40px rgba(11,96,172,.14);
+    --ease:cubic-bezier(.4,0,.2,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    margin:0;
+    line-height:1.05;
+    letter-spacing:-.03em;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+  :focus-visible{
+    outline:3px solid var(--yellow);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    position:relative;
+    overflow:hidden;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:16px 32px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:1rem;
+    font-family:'Outfit',sans-serif;
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+    text-decoration:none;
+  }
+  .btn:active{transform:scale(.96);}
+  .ripple{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.55);
+    transform:scale(0);
+    opacity:.6;
+    pointer-events:none;
+    animation:rippleAnim .6s var(--ease) forwards;
+  }
+  .btn-primary .ripple{background:rgba(11,96,172,.25);}
+  @keyframes rippleAnim{
+    to{transform:scale(2.6); opacity:0;}
+  }
+  .btn-primary{
+    background:var(--yellow);
+    color:var(--heading);
+    box-shadow:0 10px 24px rgba(244,230,0,.35);
+  }
+  .btn-primary:hover{
+    background:var(--yellow-dark);
+    transform:translateY(-2px);
+    box-shadow:0 14px 30px rgba(244,230,0,.45);
+  }
+  .btn-secondary{
+    background:rgba(255,255,255,.08);
+    color:var(--white);
+    border:1.5px solid rgba(255,255,255,.55);
+    backdrop-filter:blur(4px);
+  }
+  .btn-secondary:hover{
+    background:rgba(255,255,255,.18);
+    transform:translateY(-2px);
+  }
+  .btn-ghost{
+    background:var(--blue-deep);
+    color:var(--white);
+    padding:14px 28px;
+  }
+  .btn-ghost:hover{background:var(--blue-mid);}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .container{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    height:72px;
+  }
+  .site-header .btn{padding:12px 22px;font-size:.9rem;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--blue-light) 0%, var(--blue-mid) 55%, var(--blue-deep) 100%);
+    color:var(--white);
+    padding:64px 0 88px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 85% 10%, rgba(244,230,0,.16), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(255,255,255,.08), transparent 40%);
+    pointer-events:none;
+  }
+  .hero .container{position:relative;z-index:1;}
+  .eyebrow-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--yellow);
+    color:var(--heading);
+    font-weight:700;
+    font-size:.85rem;
+    padding:9px 18px;
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+  .eyebrow-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--heading);animation:pulse 1.8s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+  .hero h1{
+    font-size:clamp(2.6rem, 8vw, 4.75rem);
+    text-transform:uppercase;
+    margin-bottom:16px;
+    max-width:14ch;
+  }
+  .hero .hero-sub{
+    font-size:clamp(1.15rem,2.4vw,1.4rem);
+    font-weight:700;
+    color:var(--yellow);
+    margin-bottom:20px;
+  }
+  .hero .lead{
+    font-size:clamp(1.05rem,2vw,1.2rem);
+    color:rgba(255,255,255,.92);
+    max-width:50ch;
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .hero .lead-sub{
+    font-size:1rem;
+    color:rgba(255,255,255,.78);
+    max-width:50ch;
+    margin-bottom:36px;
+    font-weight:400;
+  }
+
+  .perks{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-bottom:36px;
+  }
+  @media (min-width:640px){
+    .perks{grid-template-columns:repeat(4,1fr);}
+  }
+  .perk{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:var(--white);
+    color:var(--heading);
+    border-radius:999px;
+    padding:20px 18px;
+    font-weight:700;
+    font-size:.95rem;
+    box-shadow:0 10px 22px rgba(4,30,54,.16);
+  }
+
+  .hero-actions{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:420px;
+  }
+  .hero-actions .btn{width:100%;padding:19px 32px;font-size:1.05rem;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:96px 0;}
+  .section-head{
+    max-width:60ch;
+    margin-bottom:48px;
+  }
+  .section-head h2{
+    font-size:clamp(1.75rem,3.5vw,2.5rem);
+    color:var(--heading);
+    margin-bottom:14px;
+    position:relative;
+    padding-bottom:16px;
+  }
+  .section-head h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:56px;
+    height:5px;
+    border-radius:999px;
+    background:var(--yellow);
+  }
+  .section-head p{
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .section-alt{background:#f6f9fc;}
+
+  /* ---------- Régions ---------- */
+  .regions-wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .region-badge{
+    position:relative;
+    overflow:hidden;
+    background:var(--yellow);
+    color:var(--heading);
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    padding:12px 22px;
+    border-radius:999px;
+    box-shadow:0 8px 18px rgba(244,230,0,.3);
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+  }
+  .region-badge:hover{
+    background:var(--yellow-dark);
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(244,230,0,.4);
+  }
+  .region-badge:active{transform:translateY(-1px) scale(.96);}
+  .region-badge .ripple{background:rgba(11,96,172,.25);}
+  .region-badge.selected{
+    background:var(--blue-mid);
+    color:var(--white);
+    box-shadow:0 8px 18px rgba(20,131,217,.35);
+  }
+  .region-badge.selected:hover{
+    background:var(--blue-deep);
+    box-shadow:0 12px 24px rgba(20,131,217,.45);
+  }
+  .region-badge.selected .ripple{background:rgba(255,255,255,.4);}
+
+  /* ---------- Jobs / accordion (identique à Jonquière) ---------- */
+  .jobs{display:flex;flex-direction:column;gap:16px;}
+
+  .job{
+    position:relative;
+    border:1.5px solid var(--line);
+    border-top:4px solid var(--yellow);
+    border-radius:var(--radius-lg);
+    background:var(--white);
+    box-shadow:var(--shadow-card);
+    overflow:hidden;
+    transition:box-shadow .3s var(--ease), border-color .3s var(--ease), transform .2s var(--ease);
+  }
+  .job.open, .job:hover{border-color:var(--blue-mid);border-top-color:var(--yellow);}
+  .job.open{box-shadow:var(--shadow-lift);}
+  .job:active{transform:scale(.995);}
+  .job .ripple{background:rgba(11,96,172,.12);}
+
+  .job-summary{
+    width:100%;
+    list-style:none;
+    cursor:pointer;
+    padding:26px 24px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    text-align:left;
+    background:none;
+    border:none;
+  }
+
+  .job-chevron{
+    flex:none;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#eef4fa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 0 0 3px rgba(244,230,0,.3);
+    transition:transform .4s var(--ease), background .3s var(--ease);
+  }
+  .job.open .job-chevron{
+    transform:rotate(180deg);
+    background:var(--yellow);
+  }
+  .job-chevron svg{width:16px;height:16px;color:var(--blue-deep);}
+
+  .job-summary-text{flex:1;min-width:0;}
+  .job-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--heading);margin-bottom:4px;}
+  .job-sub{font-size:.92rem;color:var(--ink-soft);margin-bottom:14px;}
+  .job-tags{display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
+  .job-tags .rate{
+    font-family:'Outfit',sans-serif;
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--heading);
+    padding:0;
+    background:none;
+    border-radius:0;
+  }
+  .tag{
+    font-size:.8rem;
+    font-weight:600;
+    padding:5px 12px;
+    border-radius:999px;
+    background:#eef4fa;
+    color:var(--blue-deep);
+  }
+
+  .job-panel{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows .45s var(--ease);
+  }
+  .job.open .job-panel{
+    grid-template-rows:1fr;
+  }
+  .job-panel-inner{
+    overflow:hidden;
+    min-height:0;
+  }
+
+  .job-body{
+    padding:0 24px 32px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+    opacity:0;
+    transform:translateY(-8px);
+    transition:opacity .35s var(--ease) .05s, transform .35s var(--ease) .05s;
+  }
+  .job.open .job-body{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (min-width:720px){
+    .job-body{grid-template-columns:1fr 1fr;}
+  }
+  .job-block h4{
+    font-family:'Outfit',sans-serif;
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--blue-mid);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin-bottom:14px;
+  }
+  .job-block ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .job-block li{
+    display:flex;
+    gap:10px;
+    font-size:.95rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  .job-block li svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--blue-mid);}
+  .job-cta{
+    grid-column:1/-1;
+    margin-top:4px;
+  }
+
+  .job-note{
+    font-size:.82rem;
+    color:#8296a6;
+    margin-top:20px;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-card{
+    background:linear-gradient(140deg, var(--blue-mid), var(--blue-deep));
+    border-radius:28px;
+    padding:56px 40px;
+    color:var(--white);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 90% 90%, rgba(244,230,0,.18), transparent 45%);
+  }
+  .contact-card > *{position:relative;z-index:1;}
+  .contact-card h2{font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:12px;}
+  .contact-card p{color:rgba(255,255,255,.8);margin-bottom:32px;}
+  .contact-methods{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:460px;
+    margin:0 auto;
+  }
+  @media (min-width:560px){
+    .contact-methods{flex-direction:row;}
+  }
+  .contact-link{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:999px;
+    padding:16px 20px;
+    font-weight:600;
+    font-size:.95rem;
+    transition:background .25s var(--ease), transform .25s var(--ease);
+  }
+  .contact-link:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);}
+  .contact-link svg{width:18px;height:18px;color:var(--yellow);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:32px 0;
+    text-align:center;
+    font-size:.85rem;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s var(--ease), transform .6s var(--ease);}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  /* ---------- Mobile guardrails ---------- */
+  @media (max-width:480px){
+    .container{padding:0 24px;}
+    .job-summary{padding:22px 20px;}
+    .job-body{padding:0 20px 28px;}
+    .contact-card{padding:40px 24px;}
+    section{padding:72px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#postuler" class="btn btn-ghost">Postuler</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow-pill"><span class="dot"></span>Nous embauchons maintenant · Plusieurs régions</span>
+    <h1>Collecte commerciale</h1>
+    <p class="hero-sub">Chauffeurs Classe 1 et Classe 3 recherchés</p>
+    <p class="lead">Rejoignez l'une des plus importantes équipes de collecte commerciale au Québec.</p>
+    <p class="lead-sub">Plusieurs régions recrutent actuellement.</p>
+
+    <div class="perks">
+      <div class="perk">Temps plein</div>
+      <div class="perk">Assurances collectives</div>
+      <div class="perk">REER</div>
+      <div class="perk">Équipements modernes</div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#postes" class="btn btn-primary">Voir les postes</a>
+    </div>
+  </div>
+</section>
+
+<section id="regions">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Régions disponibles</h2>
+      <p>Plusieurs régions du Québec recrutent actuellement. Trouvez celle qui vous convient.</p>
+    </div>
+    <div class="regions-wrap reveal">
+      <span class="region-badge">Longueuil</span>
+      <span class="region-badge">Sainte-Julie</span>
+      <span class="region-badge">Sorel</span>
+      <span class="region-badge">Saint-Jérôme</span>
+      <span class="region-badge">Mont-Blanc</span>
+      <span class="region-badge">Roxton Pond</span>
+      <span class="region-badge">Drummondville</span>
+      <span class="region-badge">Windsor</span>
+      <span class="region-badge">Saint-Denis-de-Brompton</span>
+      <span class="region-badge">Vaudreuil-Dorion</span>
+      <span class="region-badge">New Richmond</span>
+      <span class="region-badge">Québec</span>
+      <span class="region-badge">Lévis</span>
+      <span class="region-badge">Saguenay</span>
+    </div>
+  </div>
+</section>
+
+<section id="postes" class="section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Postes disponibles</h2>
+      <p>Découvrez les opportunités en collecte commerciale. Cliquez sur un poste pour en voir tous les détails.</p>
+    </div>
+
+    <div class="jobs">
+
+      <div class="job reveal">
+        <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-frontload">
+          <div class="job-summary-text">
+            <div class="job-title">Chauffeur Front Load</div>
+            <div class="job-sub">Collecte commerciale</div>
+            <div class="job-tags">
+              <span class="tag rate">28 $ – 35 $ / h *</span>
+              <span class="tag">Classe 3</span>
+              <span class="tag">Temps plein</span>
+            </div>
+          </div>
+          <span class="job-chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="job-panel" id="panel-frontload">
+          <div class="job-panel-inner">
+            <div class="job-body">
+              <div class="job-block">
+                <h4>Responsabilités</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Collecte de conteneurs commerciaux</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service aux commerces</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Inspection du camion</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des itinéraires</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des normes SST</li>
+                </ul>
+              </div>
+              <div class="job-block">
+                <h4>Qualifications</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Permis Classe 3 valide</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bon dossier de conduite</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expérience Front Load (atout)</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Autonomie et ponctualité</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Professionnalisme</li>
+                </ul>
+              </div>
+              <div class="job-block" style="grid-column:1/-1;">
+                <h4>Conditions</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Assurances collectives et REER</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Uniforme fourni</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Formation offerte</li>
+                </ul>
+              </div>
+              <a href="#postuler" class="btn btn-primary job-cta" data-job="Chauffeur Front Load">Postuler maintenant</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-rolloff">
+          <div class="job-summary-text">
+            <div class="job-title">Chauffeur Roll-Off</div>
+            <div class="job-sub">Transport de conteneurs</div>
+            <div class="job-tags">
+              <span class="tag rate">30 $ – 38 $ / h *</span>
+              <span class="tag">Classe 1 ou 3</span>
+              <span class="tag">Temps plein</span>
+            </div>
+          </div>
+          <span class="job-chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="job-panel" id="panel-rolloff">
+          <div class="job-panel-inner">
+            <div class="job-body">
+              <div class="job-block">
+                <h4>Responsabilités</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Livraison de conteneurs</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Ramassage de conteneurs</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Inspection quotidienne</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service à la clientèle</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect SST</li>
+                </ul>
+              </div>
+              <div class="job-block">
+                <h4>Qualifications</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Classe 1 ou Classe 3</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expérience Roll-Off</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Conduite sécuritaire</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Fiabilité</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bonne organisation</li>
+                </ul>
+              </div>
+              <div class="job-block" style="grid-column:1/-1;">
+                <h4>Conditions</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Heures supplémentaires disponibles</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>REER et assurances</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Équipements modernes</li>
+                </ul>
+              </div>
+              <a href="#postuler" class="btn btn-primary job-cta" data-job="Chauffeur Roll-Off">Postuler maintenant</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-recyclage">
+          <div class="job-summary-text">
+            <div class="job-title">Chauffeur Commercial Recyclage</div>
+            <div class="job-sub">Collecte commerciale et recyclage</div>
+            <div class="job-tags">
+              <span class="tag rate">28 $ – 34 $ / h *</span>
+              <span class="tag">Classe 3</span>
+              <span class="tag">Temps plein</span>
+            </div>
+          </div>
+          <span class="job-chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="job-panel" id="panel-recyclage">
+          <div class="job-panel-inner">
+            <div class="job-body">
+              <div class="job-block">
+                <h4>Responsabilités</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Collecte des matières recyclables</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service aux entreprises</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Vérification des équipements</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect de l'itinéraire</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Conduite sécuritaire</li>
+                </ul>
+              </div>
+              <div class="job-block">
+                <h4>Qualifications</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Classe 3 valide</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bon dossier de conduite</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Esprit d'équipe</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service à la clientèle</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Autonomie</li>
+                </ul>
+              </div>
+              <div class="job-block" style="grid-column:1/-1;">
+                <h4>Conditions</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>REER et assurances</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Formation offerte</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Stabilité d'emploi</li>
+                </ul>
+              </div>
+              <a href="#postuler" class="btn btn-primary job-cta" data-job="Chauffeur Commercial Recyclage">Postuler maintenant</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-industriel">
+          <div class="job-summary-text">
+            <div class="job-title">Chauffeur Commercial Industriel</div>
+            <div class="job-sub">Collecte industrielle</div>
+            <div class="job-tags">
+              <span class="tag rate">30 $ – 36 $ / h *</span>
+              <span class="tag">Classe 1 ou 3</span>
+              <span class="tag">Temps plein</span>
+            </div>
+          </div>
+          <span class="job-chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="job-panel" id="panel-industriel">
+          <div class="job-panel-inner">
+            <div class="job-body">
+              <div class="job-block">
+                <h4>Responsabilités</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Collecte industrielle</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Transport de matières résiduelles</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Inspection du camion</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des procédures</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service client</li>
+                </ul>
+              </div>
+              <div class="job-block">
+                <h4>Qualifications</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Classe 1 ou Classe 3</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expérience pertinente</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bonne capacité d'adaptation</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Autonomie</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Conduite sécuritaire</li>
+                </ul>
+              </div>
+              <div class="job-block" style="grid-column:1/-1;">
+                <h4>Conditions</h4>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Assurances et REER</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Uniforme fourni</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Possibilités d'avancement</li>
+                </ul>
+              </div>
+              <a href="#postuler" class="btn btn-primary job-cta" data-job="Chauffeur Commercial Industriel">Postuler maintenant</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="job-note">* Selon expérience. Les postes affichés peuvent varier selon les besoins opérationnels.</p>
+  </div>
+</section>
+
+<section id="postuler" class="section-alt" style="padding-top:48px;">
+  <div class="container">
+    <div class="contact-card reveal">
+      <h2>Une question ?</h2>
+      <p>Notre équipe recrutement vous répond rapidement.</p>
+      <div class="contact-methods">
+        <a class="contact-link" href="mailto:Recruitment@e360s.ca">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Recruitment@e360s.ca
+        </a>
+        <a class="contact-link" href="tel:+14385351659">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 12.9 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+          (438) 535-1659
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    &copy; <span id="year"></span> E360S
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+// Accordion — one job open at a time, smooth height animation, no scroll jump
+const jobs = document.querySelectorAll('.job');
+jobs.forEach(job => {
+  const trigger = job.querySelector('.job-summary');
+  trigger.addEventListener('click', () => {
+    const isOpen = job.classList.contains('open');
+    jobs.forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.job-summary').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen){
+      job.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Smooth scroll for in-page anchors
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target){
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Premium click feedback — ripple effect on buttons and "why" cards
+function addRipple(e){
+  const el = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+  const ripple = document.createElement('span');
+  ripple.className = 'ripple';
+  ripple.style.width = ripple.style.height = size + 'px';
+  ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+  ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+  el.appendChild(ripple);
+  ripple.addEventListener('animationend', () => ripple.remove());
+  if (el.classList.contains('btn')) e.stopPropagation();
+}
+document.querySelectorAll('.btn, .job, .region-badge').forEach(el => {
+  el.style.position = el.style.position || 'relative';
+  el.style.overflow = el.style.overflow || 'hidden';
+  el.addEventListener('click', addRipple);
+});
+
+// Régions — bascule en bleu au clic
+document.querySelectorAll('.region-badge').forEach(badge => {
+  badge.addEventListener('click', () => {
+    badge.classList.toggle('selected');
+  });
+});
+
+// Pass selected job title into the contact context
+document.querySelectorAll('.job-cta').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const job = btn.getAttribute('data-job');
+    const emailLink = document.querySelector('a[href^="mailto:"]');
+    if (emailLink && job){
+      emailLink.setAttribute('href', `mailto:Recruitment@e360s.ca?subject=Candidature - ${encodeURIComponent(job)}`);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
