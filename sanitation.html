@@ -12,7 +12,7 @@
 
 <style>
   :root{
-    /* Palette E360S — identique à toutes les pages du site carrière */
+    /* Palette E360S */
     --blue-light:#2ea3f2;
     --blue-mid:#1483d9;
     --blue-deep:#0b60ac;
@@ -30,8 +30,11 @@
     --shadow-lift:0 16px 40px rgba(11,96,172,.14);
     --ease:cubic-bezier(.4,0,.2,1);
   }
+
   *{box-sizing:border-box;}
+
   html{scroll-behavior:smooth;}
+
   body{
     margin:0;
     font-family:'Inter',sans-serif;
@@ -40,6 +43,7 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
+
   h1,h2,h3,.display{
     font-family:'Outfit',sans-serif;
     font-weight:800;
@@ -47,21 +51,34 @@
     line-height:1.05;
     letter-spacing:-.03em;
   }
+
   p{margin:0;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
-  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  .container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
   :focus-visible{
     outline:3px solid var(--yellow);
     outline-offset:3px;
     border-radius:6px;
   }
+
   @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+    *{
+      animation-duration:.01ms !important;
+      transition-duration:.01ms !important;
+    }
+
     html{scroll-behavior:auto;}
   }
 
   /* ---------- Buttons ---------- */
+
   .btn-primary{
     display:inline-flex;
     align-items:center;
@@ -77,49 +94,42 @@
     font-size:1.08rem;
     position:relative;
     overflow:hidden;
-    box-shadow:0 14px 32px rgba(244,230,0,.4), 0 4px 10px rgba(11,96,172,.16);
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+    box-shadow:
+      0 14px 32px rgba(244,230,0,.4),
+      0 4px 10px rgba(11,96,172,.16);
+    transition:
+      transform .25s var(--ease),
+      box-shadow .25s var(--ease),
+      background .25s var(--ease);
   }
+
   .btn-primary:hover{
     background:var(--yellow-dark);
     transform:translateY(-3px);
-    box-shadow:0 18px 38px rgba(244,230,0,.5), 0 6px 14px rgba(11,96,172,.2);
+    box-shadow:
+      0 18px 38px rgba(244,230,0,.5),
+      0 6px 14px rgba(11,96,172,.2);
   }
+
   .btn-primary:active{transform:scale(.96);}
+
   .btn-primary::after{
     content:'';
     position:absolute;
-    top:0;left:-120%;
-    width:100%;height:100%;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.45),
+      transparent
+    );
     transition:.6s;
   }
-  .btn-primary:hover::after{left:120%;}
 
-  .btn-secondary{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    background:rgba(255,255,255,.08);
-    color:var(--white);
-    text-decoration:none;
-    font-weight:700;
-    font-family:'Outfit',sans-serif;
-    padding:18px 34px;
-    border-radius:999px;
-    font-size:1rem;
-    border:1.5px solid rgba(255,255,255,.55);
-    backdrop-filter:blur(4px);
-    position:relative;
-    overflow:hidden;
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
-  }
-  .btn-secondary:hover{
-    background:rgba(255,255,255,.18);
-    transform:translateY(-2px);
-  }
-  .btn-secondary:active{transform:scale(.94);}
+  .btn-primary:hover::after{left:120%;}
 
   .btn-ghost{
     display:inline-flex;
@@ -133,12 +143,20 @@
     padding:12px 24px;
     border-radius:999px;
     font-size:.9rem;
-    transition:background .25s var(--ease), transform .25s var(--ease);
+    transition:
+      background .25s var(--ease),
+      transform .25s var(--ease);
   }
-  .btn-ghost:hover{background:var(--blue-deep);transform:translateY(-2px);}
+
+  .btn-ghost:hover{
+    background:var(--blue-deep);
+    transform:translateY(-2px);
+  }
+
   .btn-ghost:active{transform:scale(.95);}
 
   /* ---------- Header ---------- */
+
   .site-header{
     position:sticky;
     top:0;
@@ -147,6 +165,7 @@
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
+
   .site-header .container{
     display:flex;
     align-items:center;
@@ -155,24 +174,44 @@
   }
 
   /* ---------- Hero ---------- */
+
   .hero{
     position:relative;
-    background:linear-gradient(165deg, var(--blue-light) 0%, var(--blue-mid) 55%, var(--blue-deep) 100%);
+    background:linear-gradient(
+      165deg,
+      var(--blue-light) 0%,
+      var(--blue-mid) 55%,
+      var(--blue-deep) 100%
+    );
     color:var(--white);
     text-align:center;
     padding:88px 20px 96px;
     overflow:hidden;
   }
+
   .hero::after{
     content:"";
     position:absolute;
     inset:0;
     background:
-      radial-gradient(circle at 85% 10%, rgba(244,230,0,.16), transparent 45%),
-      radial-gradient(circle at 10% 90%, rgba(255,255,255,.08), transparent 40%);
+      radial-gradient(
+        circle at 85% 10%,
+        rgba(244,230,0,.16),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 10% 90%,
+        rgba(255,255,255,.08),
+        transparent 40%
+      );
     pointer-events:none;
   }
-  .hero > *{position:relative;z-index:1;}
+
+  .hero > *{
+    position:relative;
+    z-index:1;
+  }
+
   .badge{
     display:inline-flex;
     align-items:center;
@@ -187,22 +226,35 @@
     margin-bottom:28px;
     letter-spacing:.02em;
   }
+
   .badge::before{
     content:"";
-    width:7px;height:7px;
+    width:7px;
+    height:7px;
     border-radius:50%;
     background:var(--heading);
     animation:pulse 1.8s ease-in-out infinite;
   }
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:.35;}
+  }
+
   .hero h1{
     font-size:clamp(2.9rem,8vw,5rem);
     text-transform:uppercase;
     margin-bottom:32px;
   }
+
   .yellow{color:var(--yellow);}
 
-  /* ---------- Perks (specialties) ---------- */
+  .hero-title-highlight{
+    color:var(--yellow);
+  }
+
+  /* ---------- Perks ---------- */
+
   .perks{
     display:flex;
     flex-wrap:wrap;
@@ -210,6 +262,7 @@
     gap:12px;
     margin-bottom:40px;
   }
+
   .perk{
     display:inline-flex;
     align-items:center;
@@ -223,83 +276,75 @@
     font-size:.95rem;
     box-shadow:0 10px 22px rgba(4,30,54,.16);
   }
-  .perk svg{width:16px;height:16px;color:var(--blue-mid);flex:none;}
+
+  .perk svg{
+    width:16px;
+    height:16px;
+    color:var(--blue-mid);
+    flex:none;
+  }
 
   .hero-actions{
     display:flex;
-    flex-wrap:wrap;
-    gap:14px;
     justify-content:center;
-    margin-bottom:34px;
+    margin-bottom:0;
   }
 
-  .hero-contact-lead{
-    color:rgba(255,255,255,.85);
-    font-weight:700;
-    font-size:1rem;
-    margin-bottom:16px;
-  }
-  .hero-contact-methods{
-    display:flex;
-    justify-content:center;
-    gap:14px;
-    flex-wrap:wrap;
-  }
-  .contact-pill{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.3);
-    color:var(--white);
-    font-weight:600;
-    font-size:.92rem;
-    padding:12px 22px;
-    border-radius:999px;
-    text-decoration:none;
-    transition:background .25s var(--ease), transform .25s var(--ease);
-  }
-  .contact-pill svg{width:16px;height:16px;color:var(--yellow);}
-  .contact-pill:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);}
+  /* ---------- Recruitment opportunity banner ---------- */
 
-  /* ---------- Info bar ---------- */
   .info-strip{
-    text-align:center;
-    padding:20px 20px;
-    background:#f6f9fc;
-    border-bottom:1px solid var(--line);
+    width:100%;
+    padding:0;
+    background:var(--yellow);
+    border-bottom:1px solid var(--yellow-dark);
+    box-shadow:0 10px 28px rgba(11,96,172,.12);
   }
+
   .info-pill{
-    display:inline-flex;
+    display:flex;
     align-items:center;
-    gap:10px;
+    justify-content:center;
+    width:100%;
+    min-height:108px;
+    padding:28px 24px;
     color:var(--heading);
-    font-weight:700;
+    font-weight:800;
     font-family:'Outfit',sans-serif;
-    font-size:.98rem;
+    font-size:clamp(1.15rem,2.5vw,1.65rem);
+    line-height:1.2;
+    letter-spacing:-.02em;
+    text-align:center;
+    text-transform:uppercase;
   }
-  .info-pill svg{width:18px;height:18px;color:var(--blue-mid);}
 
   /* ---------- Content ---------- */
-  .content-section{padding:88px 0;}
+
+  .content-section{
+    padding:88px 0;
+  }
+
   .center{text-align:center;}
+
   .job-title{
     font-size:clamp(1.9rem,3.5vw,2.5rem);
     font-weight:800;
     color:var(--heading);
     text-align:center;
-    margin-bottom:16px;
+    margin-bottom:18px;
   }
+
   .job-badge{
     display:inline-block;
     background:#eef4fa;
     color:var(--blue-deep);
-    padding:10px 20px;
+    padding:12px 22px;
     border-radius:999px;
     font-weight:700;
     font-family:'Outfit',sans-serif;
-    font-size:.9rem;
+    font-size:1rem;
+    line-height:1.3;
   }
+
   .main-description{
     text-align:center;
     max-width:820px;
@@ -309,7 +354,8 @@
     line-height:1.6;
   }
 
-  /* ---------- Accordéon détails du poste ---------- */
+  /* ---------- Accordéon ---------- */
+
   .details-card{
     background:var(--white);
     border:1.5px solid var(--line);
@@ -319,9 +365,11 @@
     overflow:hidden;
     margin-bottom:56px;
   }
+
   .details-item + .details-item{
     border-top:1px solid var(--line);
   }
+
   .details-trigger{
     width:100%;
     display:flex;
@@ -336,53 +384,77 @@
     color:inherit;
     transition:background .25s var(--ease);
   }
+
   .details-trigger:hover{background:#f6f9fc;}
+
   .details-icon{
     flex:none;
-    width:42px;height:42px;
+    width:42px;
+    height:42px;
     border-radius:14px;
     background:#eef4fa;
     color:var(--blue-mid);
     display:flex;
     align-items:center;
     justify-content:center;
-    transition:background .3s var(--ease), color .3s var(--ease);
+    transition:
+      background .3s var(--ease),
+      color .3s var(--ease);
   }
-  .details-icon svg{width:20px;height:20px;}
+
+  .details-icon svg{
+    width:20px;
+    height:20px;
+  }
+
   .details-trigger[aria-expanded="true"] .details-icon{
     background:var(--yellow);
     color:var(--heading);
   }
+
   .details-heading{
     flex:1;
     font-size:1.15rem;
     color:var(--heading);
   }
+
   .details-chevron{
     flex:none;
-    width:34px;height:34px;
+    width:34px;
+    height:34px;
     border-radius:50%;
     background:#eef4fa;
     color:var(--blue-mid);
     display:flex;
     align-items:center;
     justify-content:center;
-    transition:transform .4s var(--ease), background .3s var(--ease), color .3s var(--ease);
+    transition:
+      transform .4s var(--ease),
+      background .3s var(--ease),
+      color .3s var(--ease);
   }
-  .details-chevron svg{width:14px;height:14px;}
+
+  .details-chevron svg{
+    width:14px;
+    height:14px;
+  }
+
   .details-trigger[aria-expanded="true"] .details-chevron{
     transform:rotate(180deg);
     background:var(--yellow);
     color:var(--heading);
   }
+
   .details-panel{
     max-height:0;
     overflow:hidden;
     transition:max-height .5s var(--ease);
   }
+
   .details-panel-inner{
     padding:0 30px 30px 88px;
   }
+
   .details-panel-inner ul{
     list-style:none;
     padding:0;
@@ -391,6 +463,7 @@
     flex-direction:column;
     gap:12px;
   }
+
   .details-panel-inner li{
     display:flex;
     align-items:flex-start;
@@ -399,18 +472,27 @@
     font-size:.98rem;
     color:var(--ink);
   }
+
   .details-panel-inner li .check{
     flex:none;
-    width:20px;height:20px;
+    width:20px;
+    height:20px;
     border-radius:50%;
     background:#eef4fa;
     color:var(--blue-mid);
-    display:flex;align-items:center;justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     margin-top:1px;
   }
-  .details-panel-inner li .check svg{width:12px;height:12px;}
+
+  .details-panel-inner li .check svg{
+    width:12px;
+    height:12px;
+  }
 
   /* ---------- Régions ---------- */
+
   .section-label{
     text-align:center;
     font-family:'Outfit',sans-serif;
@@ -421,6 +503,7 @@
     color:var(--blue-mid);
     margin-bottom:16px;
   }
+
   .cities{
     display:flex;
     flex-wrap:wrap;
@@ -428,6 +511,7 @@
     gap:12px;
     margin-bottom:56px;
   }
+
   .region-btn{
     display:inline-flex;
     align-items:center;
@@ -442,15 +526,23 @@
     border:1.5px solid transparent;
     position:relative;
     overflow:hidden;
-    transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+    transition:
+      background .25s var(--ease),
+      color .25s var(--ease),
+      border-color .25s var(--ease),
+      transform .25s var(--ease),
+      box-shadow .25s var(--ease);
   }
+
   .region-btn::before{
     content:"";
-    width:7px;height:7px;
+    width:7px;
+    height:7px;
     border-radius:50%;
     background:var(--blue-mid);
     transition:background .25s var(--ease);
   }
+
   .region-btn:hover{
     background:var(--yellow);
     color:var(--heading);
@@ -458,8 +550,15 @@
     transform:translateY(-3px);
     box-shadow:0 10px 22px rgba(244,230,0,.32);
   }
-  .region-btn:hover::before{background:var(--heading);}
-  .region-btn:active{transform:scale(.93);}
+
+  .region-btn:hover::before{
+    background:var(--heading);
+  }
+
+  .region-btn:active{
+    transform:scale(.93);
+  }
+
   .region-btn .ripple{
     position:absolute;
     border-radius:50%;
@@ -468,14 +567,26 @@
     animation:rippleOut .6s var(--ease) forwards;
     pointer-events:none;
   }
-  @keyframes rippleOut{to{transform:scale(3);opacity:0;}}
 
-  .bottom-cta{text-align:center;}
+  @keyframes rippleOut{
+    to{
+      transform:scale(3);
+      opacity:0;
+    }
+  }
 
   /* ---------- Contact RH ---------- */
-  .contact-section{padding:0 0 96px;}
+
+  .contact-section{
+    padding:0 0 96px;
+  }
+
   .contact-card{
-    background:linear-gradient(140deg, var(--blue-mid), var(--blue-deep));
+    background:linear-gradient(
+      140deg,
+      var(--blue-mid),
+      var(--blue-deep)
+    );
     border-radius:28px;
     padding:56px 40px;
     color:var(--white);
@@ -483,16 +594,35 @@
     position:relative;
     overflow:hidden;
   }
+
   .contact-card::after{
     content:"";
     position:absolute;
     inset:0;
-    background:radial-gradient(circle at 90% 90%, rgba(244,230,0,.18), transparent 45%);
+    background:
+      radial-gradient(
+        circle at 90% 90%,
+        rgba(244,230,0,.18),
+        transparent 45%
+      );
   }
-  .contact-card > *{position:relative;z-index:1;}
-  .contact-card h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;margin-bottom:12px;}
-  .contact-card p{color:rgba(255,255,255,.8);margin-bottom:32px;}
-  .contact-cta{margin-bottom:28px;}
+
+  .contact-card > *{
+    position:relative;
+    z-index:1;
+  }
+
+  .contact-card h2{
+    font-size:clamp(1.6rem,3vw,2.1rem);
+    font-weight:800;
+    margin-bottom:12px;
+  }
+
+  .contact-card p{
+    color:rgba(255,255,255,.8);
+    margin-bottom:32px;
+  }
+
   .contact-methods{
     display:flex;
     flex-direction:column;
@@ -500,9 +630,13 @@
     max-width:460px;
     margin:0 auto;
   }
+
   @media (min-width:560px){
-    .contact-methods{flex-direction:row;}
+    .contact-methods{
+      flex-direction:row;
+    }
   }
+
   .contact-link{
     flex:1;
     display:flex;
@@ -516,12 +650,24 @@
     font-weight:600;
     font-size:.95rem;
     text-decoration:none;
-    transition:background .25s var(--ease), transform .25s var(--ease);
+    transition:
+      background .25s var(--ease),
+      transform .25s var(--ease);
   }
-  .contact-link:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);}
-  .contact-link svg{width:18px;height:18px;color:var(--yellow);}
+
+  .contact-link:hover{
+    background:rgba(255,255,255,.2);
+    transform:translateY(-2px);
+  }
+
+  .contact-link svg{
+    width:18px;
+    height:18px;
+    color:var(--yellow);
+  }
 
   /* ---------- Footer ---------- */
+
   .footer{
     padding:36px 20px;
     text-align:center;
@@ -531,22 +677,76 @@
   }
 
   /* ---------- Reveal on scroll ---------- */
-  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s var(--ease), transform .6s var(--ease);}
-  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:
+      opacity .6s var(--ease),
+      transform .6s var(--ease);
+  }
+
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
 
   @media(max-width:768px){
-    .hero{padding:64px 20px 76px;}
-    .content-section{padding:56px 0;}
-    .job-title{font-size:1.8rem;}
-    .main-description{font-size:1rem;}
-    .region-btn{width:100%;max-width:320px;margin:0 auto;justify-content:center;}
-    .hero-actions{flex-direction:column;align-items:stretch;}
-    .hero-actions .btn-primary,
-    .hero-actions .btn-secondary{width:100%;}
-    .details-trigger{padding:22px 20px;gap:14px;}
-    .details-heading{font-size:1.02rem;}
-    .details-panel-inner{padding:0 20px 26px 20px;}
-    .details-icon{width:36px;height:36px;}
+
+    .hero{
+      padding:64px 20px 76px;
+    }
+
+    .content-section{
+      padding:56px 0;
+    }
+
+    .hero h1{
+      font-size:clamp(2.6rem,12vw,4rem);
+    }
+
+    .job-title{
+      font-size:1.8rem;
+    }
+
+    .main-description{
+      font-size:1rem;
+    }
+
+    .info-pill{
+      min-height:96px;
+      padding:24px 20px;
+      font-size:1.08rem;
+    }
+
+    .region-btn{
+      width:100%;
+      max-width:320px;
+      margin:0 auto;
+      justify-content:center;
+    }
+
+    .details-trigger{
+      padding:22px 20px;
+      gap:14px;
+    }
+
+    .details-heading{
+      font-size:1.02rem;
+    }
+
+    .details-panel-inner{
+      padding:0 20px 26px 20px;
+    }
+
+    .details-icon{
+      width:36px;
+      height:36px;
+    }
+
+    .contact-card{
+      padding:48px 24px;
+    }
   }
 </style>
 </head>
@@ -554,340 +754,734 @@
 <body>
 
 <header class="site-header">
-<div class="container">
-<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" class="btn-ghost">Postuler</a>
-</div>
+  <div class="container">
+    <a
+      href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-ghost"
+    >
+      Postuler
+    </a>
+  </div>
 </header>
 
 <section class="hero">
 
-<div class="badge">
-NOUS EMBAUCHONS • CHAUFFEURS FOSSES SEPTIQUES • CLASSE 1 ET 3
-</div>
+  <div class="badge">
+    NOUS EMBAUCHONS • CHAUFFEURS FOSSES SEPTIQUES • CLASSE 1 ET 3
+  </div>
 
-<h1>
-CHAUFFEUR<br>
-<span class="yellow">OPÉRATEUR</span>
-</h1>
+  <h1>
+    <span class="hero-title-highlight">20%</span> CHAUFFEUR<br>
+    <span class="hero-title-highlight">80%</span> OPÉRATEUR
+  </h1>
 
-<div class="perks reveal">
-<span class="perk">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-Salaire : 26 $ à 32 $/h
-</span>
-<span class="perk">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg>
-Temps plein
-</span>
-<span class="perk">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 20V10M18 20V4M6 20v-6"/></svg>
-Formation offerte
-</span>
-<span class="perk">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87M9 7a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/></svg>
-Assurances + REER
-</span>
-</div>
+  <div class="perks reveal">
 
-<div class="hero-actions reveal">
-<a class="btn-primary"
-href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
-target="_blank">
-POSTULER MAINTENANT
-</a>
-<a class="btn-secondary" href="#description-poste">
-↓ Voir la description du poste
-</a>
-</div>
+    <span class="perk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
+      Salaire : 26 $ à 32 $/h
+    </span>
 
-<p class="hero-contact-lead reveal">
-Ou contactez-nous directement :
-</p>
+    <span class="perk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
+      </svg>
+      Temps plein
+    </span>
 
-<div class="hero-contact-methods reveal">
-<a href="mailto:yaman@e360s.ca?subject=Candidature%20-%20Chauffeur%20Op%C3%A9rateur%20E360S" class="contact-pill">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-Recruitment@e360s.ca
-</a>
-<a href="tel:4385351659" class="contact-pill">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 12.9 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
-(438) 535-1659
-</a>
-</div>
+    <span class="perk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M12 20V10M18 20V4M6 20v-6"/>
+      </svg>
+      Formation offerte
+    </span>
+
+    <span class="perk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87M9 7a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/>
+      </svg>
+      Assurances + REER
+    </span>
+
+  </div>
+
+  <div class="hero-actions reveal">
+    <a class="btn-primary" href="#description-poste">
+      ↓ Voir la description du poste
+    </a>
+  </div>
 
 </section>
 
 <div class="info-strip">
-<span class="info-pill">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
-Opportunités disponibles dans plusieurs régions du Québec
-</span>
+  <div class="info-pill">
+    OPPORTUNITÉS DISPONIBLES DANS PLUSIEURS RÉGIONS DU QUÉBEC
+  </div>
 </div>
 
 <section class="content-section">
-<div class="container">
 
-<div class="center reveal">
-<div id="description-poste" class="job-title">
-Chauffeur Opérateur Classe 1 et Classe 3
-</div>
-<div class="job-badge">
-Poste saisonnier • Possibilité de travail à l'année
-</div>
-</div>
+  <div class="container">
 
-<p class="main-description reveal">
-Environnementales 360 Solutions (E360S) recherche plusieurs chauffeurs-opérateurs afin de soutenir ses opérations environnementales partout au Québec.
-</p>
+    <div class="center reveal">
 
-<div class="details-card reveal">
+      <div id="description-poste" class="job-title">
+        Chauffeur Opérateur Classe 1 et Classe 3
+      </div>
 
-<div class="details-item">
-<button class="details-trigger" type="button" aria-expanded="true" aria-controls="panel-1" id="header-1">
-<span class="details-icon">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-</span>
-<span class="details-heading">Ce qu'il faut savoir</span>
-<span class="details-chevron" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
-</span>
-</button>
-<div class="details-panel" id="panel-1" role="region" aria-labelledby="header-1">
-<div class="details-panel-inner">
-<ul>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Travail physique quotidien</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>20 % conduite • 80 % opération du camion</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Travail extérieur dans diverses conditions météorologiques</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Manipulation occasionnelle d'équipements pouvant peser jusqu'à 50 kg</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Présence occasionnelle d'odeurs liées aux opérations environnementales</li>
-</ul>
-</div>
-</div>
-</div>
+      <div class="job-badge">
+        Poste saisonnier • Possibilité de travail à l'année
+      </div>
 
-<div class="details-item">
-<button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-2" id="header-2">
-<span class="details-icon">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-</span>
-<span class="details-heading">Principales tâches</span>
-<span class="details-chevron" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
-</span>
-</button>
-<div class="details-panel" id="panel-2" role="region" aria-labelledby="header-2">
-<div class="details-panel-inner">
-<ul>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Vidange de fosses septiques</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Utilisation d'équipements d'aspiration et de pompage</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Déplacements chez plusieurs clients</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Inspection et entretien de base des équipements</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Respect des normes SST</li>
-</ul>
-</div>
-</div>
-</div>
+    </div>
 
-<div class="details-item">
-<button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-3" id="header-3">
-<span class="details-icon">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-</span>
-<span class="details-heading">Profil recherché</span>
-<span class="details-chevron" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
-</span>
-</button>
-<div class="details-panel" id="panel-3" role="region" aria-labelledby="header-3">
-<div class="details-panel-inner">
-<ul>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Permis Classe 1 ou Classe 3 valide</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Expérience pertinente</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Autonomie et professionnalisme</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Esprit d'équipe</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Respect des normes de sécurité</li>
-</ul>
-</div>
-</div>
-</div>
+    <p class="main-description reveal">
+      Environnementales 360 Solutions (E360S) recherche plusieurs chauffeurs-opérateurs afin de soutenir ses opérations environnementales partout au Québec.
+    </p>
 
-<div class="details-item">
-<button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-4" id="header-4">
-<span class="details-icon">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-</span>
-<span class="details-heading">Conditions offertes</span>
-<span class="details-chevron" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
-</span>
-</button>
-<div class="details-panel" id="panel-4" role="region" aria-labelledby="header-4">
-<div class="details-panel-inner">
-<ul>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Salaire entre 26$ et 32$/heure selon l'expérience et les qualifications</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Assurances collectives</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>REER collectif</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Heures supplémentaires disponibles</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Équipements modernes</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Formation offerte</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Entrée en poste rapide</li>
-</ul>
-</div>
-</div>
-</div>
+    <div class="details-card reveal">
 
-<div class="details-item">
-<button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-5" id="header-5">
-<span class="details-icon">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-</span>
-<span class="details-heading">Horaire</span>
-<span class="details-chevron" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
-</span>
-</button>
-<div class="details-panel" id="panel-5" role="region" aria-labelledby="header-5">
-<div class="details-panel-inner">
-<ul>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Temps plein</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Départ à 6h00 le matin</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Possibilité de travail de soir selon les projets spéciaux</li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Heures supplémentaires disponibles selon les besoins opérationnels</li>
-</ul>
-</div>
-</div>
-</div>
+      <!-- Ce qu'il faut savoir -->
+      <div class="details-item">
 
-</div>
+        <button
+          class="details-trigger"
+          type="button"
+          aria-expanded="true"
+          aria-controls="panel-1"
+          id="header-1"
+        >
+          <span class="details-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4M12 8h.01"/>
+            </svg>
+          </span>
 
-<div class="section-label reveal">Régions disponibles</div>
-<div class="cities reveal">
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Jonquière</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Longueuil</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Sorel</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Sainte‑Julie</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Québec</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Lévis</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Saguenay</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Saint‑Jérôme</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Mont‑Blanc</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Roxton Pond</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Windsor</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Drummondville</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Saint‑Denis‑de‑Brompton</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">Vaudreuil‑Dorion</a>
-<a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank">New-Richmond</a>
-</div>
+          <span class="details-heading">
+            Ce qu'il faut savoir
+          </span>
 
-<div class="bottom-cta reveal">
-<a class="btn-primary"
-href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
-target="_blank">
-POSTULER MAINTENANT
-</a>
-</div>
+          <span class="details-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
 
-</div>
+        <div
+          class="details-panel"
+          id="panel-1"
+          role="region"
+          aria-labelledby="header-1"
+        >
+          <div class="details-panel-inner">
+            <ul>
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Travail physique quotidien
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                20 % conduite • 80 % opération du camion
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Travail extérieur dans diverses conditions météorologiques
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Manipulation occasionnelle d'équipements pouvant peser jusqu'à 50 kg
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Présence occasionnelle d'odeurs liées aux opérations environnementales
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Principales tâches -->
+      <div class="details-item">
+
+        <button
+          class="details-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panel-2"
+          id="header-2"
+        >
+          <span class="details-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </span>
+
+          <span class="details-heading">
+            Principales tâches
+          </span>
+
+          <span class="details-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+
+        <div
+          class="details-panel"
+          id="panel-2"
+          role="region"
+          aria-labelledby="header-2"
+        >
+          <div class="details-panel-inner">
+            <ul>
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Vidange de fosses septiques
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Utilisation d'équipements d'aspiration et de pompage
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Déplacements chez plusieurs clients
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Inspection et entretien de base des équipements
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Respect des normes SST
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Profil recherché -->
+      <div class="details-item">
+
+        <button
+          class="details-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panel-3"
+          id="header-3"
+        >
+          <span class="details-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </span>
+
+          <span class="details-heading">
+            Profil recherché
+          </span>
+
+          <span class="details-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+
+        <div
+          class="details-panel"
+          id="panel-3"
+          role="region"
+          aria-labelledby="header-3"
+        >
+          <div class="details-panel-inner">
+            <ul>
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Permis Classe 1 ou Classe 3 valide
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Expérience pertinente
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Autonomie et professionnalisme
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Esprit d'équipe
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Respect des normes de sécurité
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Conditions offertes -->
+      <div class="details-item">
+
+        <button
+          class="details-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panel-4"
+          id="header-4"
+        >
+          <span class="details-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </span>
+
+          <span class="details-heading">
+            Conditions offertes
+          </span>
+
+          <span class="details-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+
+        <div
+          class="details-panel"
+          id="panel-4"
+          role="region"
+          aria-labelledby="header-4"
+        >
+          <div class="details-panel-inner">
+            <ul>
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Salaire entre 26$ et 32$/heure selon l'expérience et les qualifications
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Assurances collectives
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                REER collectif
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Heures supplémentaires disponibles
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Équipements modernes
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Formation offerte
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Entrée en poste rapide
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Horaire -->
+      <div class="details-item">
+
+        <button
+          class="details-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panel-5"
+          id="header-5"
+        >
+          <span class="details-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 3"/>
+            </svg>
+          </span>
+
+          <span class="details-heading">
+            Horaire
+          </span>
+
+          <span class="details-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+
+        <div
+          class="details-panel"
+          id="panel-5"
+          role="region"
+          aria-labelledby="header-5"
+        >
+          <div class="details-panel-inner">
+            <ul>
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Temps plein
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Départ à 6h00 le matin
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Possibilité de travail de soir selon les projets spéciaux
+              </li>
+
+              <li>
+                <span class="check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Heures supplémentaires disponibles selon les besoins opérationnels
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="section-label reveal">
+      Régions disponibles
+    </div>
+
+    <div class="cities reveal">
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Jonquière</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Longueuil</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Sorel</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Sainte-Julie</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Québec</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Lévis</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Saguenay</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Saint-Jérôme</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Mont-Blanc</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Roxton Pond</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Windsor</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Drummondville</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Saint-Denis-de-Brompton</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">Vaudreuil-Dorion</a>
+
+      <a class="region-btn" href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u" target="_blank" rel="noopener noreferrer">New-Richmond</a>
+
+    </div>
+
+  </div>
 </section>
 
 <section class="contact-section">
-<div class="container">
-<div class="contact-card reveal">
-<h2>Prêt à postuler ?</h2>
-<p>Remplissez le formulaire de candidature en ligne.</p>
-<div class="contact-cta">
-<a class="btn-primary"
-href="https://forms.office.com/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlcxWjhWVjY5VjJIRDlNWDQ5QTk4REZRWi4u"
-target="_blank">
-POSTULER MAINTENANT
-</a>
-</div>
-<div class="contact-methods">
-<a class="contact-link" href="mailto:yaman@e360s.ca?subject=Candidature%20-%20Chauffeur%20Op%C3%A9rateur%20E360S">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-Recruitment@e360s.ca
-</a>
-<a class="contact-link" href="tel:4385351659">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 12.9 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
-(438) 535-1659
-</a>
-</div>
-</div>
-</div>
+
+  <div class="container">
+
+    <div class="contact-card reveal">
+
+      <h2>Une question ?</h2>
+
+      <p>
+        Notre équipe recrutement vous répond rapidement.
+      </p>
+
+      <div class="contact-methods">
+
+        <a
+          class="contact-link"
+          href="mailto:yaman@e360s.ca?subject=Candidature%20-%20Chauffeur%20Op%C3%A9rateur%20E360S"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+          Recruitment@e360s.ca
+        </a>
+
+        <a
+          class="contact-link"
+          href="tel:4385351659"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 12.9 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/>
+          </svg>
+          (438) 535-1659
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <div class="footer">
-Solutions Environnementales 360 (E360S)
+  Solutions Environnementales 360 (E360S)
 </div>
 
 <script>
-// Reveal on scroll
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('is-visible');
-      io.unobserve(entry.target);
-    }
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealEls.forEach(el => io.observe(el));
+
+
+  // Défilement fluide vers les ancres internes
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(link.getAttribute('href'));
+
+      if (target){
+        e.preventDefault();
+
+        target.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 'auto'
+            : 'smooth',
+          block:'start'
+        });
+      }
+    });
   });
-}, { threshold: 0.15 });
-revealEls.forEach(el => io.observe(el));
 
-// Défilement fluide vers les ancres internes
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target){
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+
+  // Onde au clic sur les régions
+  document.querySelectorAll('.region-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+
+      btn.appendChild(ripple);
+
+      setTimeout(() => ripple.remove(), 620);
+    });
   });
-});
 
-// Onde au clic sur les pastilles de région
-document.querySelectorAll('.region-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const rect = btn.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const ripple = document.createElement('span');
-    ripple.className = 'ripple';
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-    btn.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 620);
-  });
-});
 
-// Accordéon premium — Détails du poste (ouverture fluide)
-function setPanelHeight(trigger, expanded){
-  const panel = document.getElementById(trigger.getAttribute('aria-controls'));
-  if (!panel) return;
-  panel.style.maxHeight = expanded ? panel.scrollHeight + 'px' : '0px';
-}
+  // Accordéon premium
+  function setPanelHeight(trigger, expanded){
+    const panel = document.getElementById(
+      trigger.getAttribute('aria-controls')
+    );
 
-const detailTriggers = document.querySelectorAll('.details-trigger');
-detailTriggers.forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-    trigger.setAttribute('aria-expanded', String(!isExpanded));
-    setPanelHeight(trigger, !isExpanded);
-  });
-});
+    if (!panel) return;
 
-window.addEventListener('load', () => {
+    panel.style.maxHeight = expanded
+      ? panel.scrollHeight + 'px'
+      : '0px';
+  }
+
+  const detailTriggers = document.querySelectorAll('.details-trigger');
+
   detailTriggers.forEach(trigger => {
-    const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-    setPanelHeight(trigger, isExpanded);
+    trigger.addEventListener('click', () => {
+      const isExpanded =
+        trigger.getAttribute('aria-expanded') === 'true';
+
+      trigger.setAttribute(
+        'aria-expanded',
+        String(!isExpanded)
+      );
+
+      setPanelHeight(trigger, !isExpanded);
+    });
   });
-});
-window.addEventListener('resize', () => {
-  detailTriggers.forEach(trigger => {
-    const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-    if (isExpanded) setPanelHeight(trigger, true);
+
+
+  // Initialisation des panneaux
+  window.addEventListener('load', () => {
+    detailTriggers.forEach(trigger => {
+      const isExpanded =
+        trigger.getAttribute('aria-expanded') === 'true';
+
+      setPanelHeight(trigger, isExpanded);
+    });
   });
-});
+
+
+  // Recalcul des hauteurs après redimensionnement
+  window.addEventListener('resize', () => {
+    detailTriggers.forEach(trigger => {
+      const isExpanded =
+        trigger.getAttribute('aria-expanded') === 'true';
+
+      if (isExpanded){
+        setPanelHeight(trigger, true);
+      }
+    });
+  });
 </script>
 
 </body>
