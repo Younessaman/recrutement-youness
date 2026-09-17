@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('has-js');</script>
 <style>
   :root{
     /* Palette E360S — bleu clair, jaune vif, blanc. Identique à la page Jonquière. */
@@ -424,19 +423,6 @@
     .contact-card{padding:40px 24px;}
   }
 
-  /* ---------- Transition de page ultra discrète ---------- */
-  html.has-js body{
-    opacity:0;
-  }
-  html.has-js body.is-page-ready{
-    opacity:1;
-    transition:opacity .32s ease;
-  }
-  html.has-js body.is-page-leaving{
-    opacity:0;
-    transition:opacity .3s ease;
-  }
-
   /* ---------- CTA principal du Hero ---------- */
   .btn-hero-primary{
     background:var(--yellow);
@@ -666,35 +652,6 @@ document.querySelectorAll('.btn, .sector-card, .why-card').forEach(el => {
   el.style.overflow = 'hidden';
   el.addEventListener('click', addRipple);
 });
-
-// Transition de page ultra discrète (fade-out avant navigation, fade-in à l'arrivée)
-(function(){
-  // Fade-in à l'arrivée sur la page
-  document.body.classList.add('is-page-ready');
-
-  // Sélectionne tout lien de navigation réelle (exclut ancres internes, mailto, tel, nouveaux onglets)
-  const navLinks = document.querySelectorAll(
-    'a[href]:not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"]):not([target="_blank"])'
-  );
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
-        return;
-      }
-
-      const destination = link.getAttribute('href');
-      e.preventDefault();
-
-      document.body.classList.remove('is-page-ready');
-      document.body.classList.add('is-page-leaving');
-
-      window.setTimeout(() => {
-        window.location.href = destination;
-      }, 300);
-    });
-  });
-})();
 </script>
 
 </body>
