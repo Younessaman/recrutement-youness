@@ -305,7 +305,26 @@
 
   .accordion-heading{flex:1;min-width:0;}
   .sector-title{font-size:1.35rem;color:var(--heading);margin-bottom:4px;}
-  .sector-sub{font-size:.92rem;font-weight:700;color:#8a7f00;}
+  .sector-sub{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:6px;
+  }
+  .sector-sub .badge{
+    display:inline-flex;
+    align-items:center;
+    background:var(--yellow);
+    color:var(--heading);
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:.01em;
+    padding:5px 12px;
+    border-radius:999px;
+    box-shadow:0 3px 8px rgba(244,230,0,.4);
+    white-space:nowrap;
+  }
 
   .accordion-chevron{
     flex:none;
@@ -364,6 +383,7 @@
     .sector-icon{width:50px;height:50px;border-radius:15px;}
     .sector-icon svg{width:24px;height:24px;}
     .sector-title{font-size:1.15rem;}
+    .sector-sub .badge{font-size:.72rem;padding:4px 10px;}
     .accordion-panel-inner{padding:0 18px 26px;padding-left:18px;}
   }
 
@@ -522,7 +542,7 @@
 </span>
 <span class="accordion-heading">
 <span class="sector-title">Services environnementaux</span>
-<span class="sector-sub">Hydrovac • Vacuum • Pompage</span>
+<span class="sector-sub"><span class="badge">Hydrovac</span><span class="badge">Vacuum</span><span class="badge">Pompage</span></span>
 </span>
 <span class="accordion-chevron" aria-hidden="true">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -550,7 +570,7 @@
 </span>
 <span class="accordion-heading">
 <span class="sector-title">Collecte municipale</span>
-<span class="sector-sub">Déchets solides • Recyclage</span>
+<span class="sector-sub"><span class="badge">Déchets solides</span><span class="badge">Recyclage</span></span>
 </span>
 <span class="accordion-chevron" aria-hidden="true">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -578,7 +598,7 @@
 </span>
 <span class="accordion-heading">
 <span class="sector-title">Collecte commerciale</span>
-<span class="sector-sub">Front Load • Roll-Off • Commercial</span>
+<span class="sector-sub"><span class="badge">Front Load</span><span class="badge">Roll-Off</span><span class="badge">Commercial</span></span>
 </span>
 <span class="accordion-chevron" aria-hidden="true">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
