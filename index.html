@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('has-js');</script>
 <style>
   :root{
     /* Palette E360S — bleu clair, jaune vif, blanc. Identique à la page Jonquière. */
@@ -423,50 +424,35 @@
     .contact-card{padding:40px 24px;}
   }
 
-  /* ---------- Page transition (overlay premium) ---------- */
-  body.is-transitioning-out > *:not(.page-transition-overlay){
+  /* ---------- Transition de page ultra discrète ---------- */
+  html.has-js body{
     opacity:0;
-    transition:opacity .4s var(--ease);
   }
-  .page-transition-overlay{
-    position:fixed;
-    inset:0;
-    background:var(--blue-deep);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    opacity:0;
-    transform:scale(.98);
-    transition:opacity .45s var(--ease), transform .5s var(--ease);
-    z-index:9999;
-    pointer-events:none;
-  }
-  .page-transition-overlay.is-active{
+  html.has-js body.is-page-ready{
     opacity:1;
-    transform:scale(1);
-    pointer-events:all;
+    transition:opacity .32s ease;
   }
-  .page-transition-logo{
-    font-family:'Outfit',sans-serif;
-    font-weight:800;
-    font-size:1.9rem;
-    letter-spacing:.09em;
-    color:var(--white);
+  html.has-js body.is-page-leaving{
     opacity:0;
-    transform:translateY(8px);
-    transition:opacity .5s var(--ease) .12s, transform .5s var(--ease) .12s;
+    transition:opacity .3s ease;
   }
-  .page-transition-overlay.is-active .page-transition-logo{
-    opacity:1;
-    transform:translateY(0);
+
+  /* ---------- CTA principal du Hero ---------- */
+  .btn-hero-primary{
+    background:var(--yellow);
+    color:var(--heading);
+    font-size:1.15rem;
+    padding:22px 44px;
+    box-shadow:0 14px 34px rgba(244,230,0,.45), 0 4px 10px rgba(11,96,172,.18);
+  }
+  .btn-hero-primary:hover{
+    background:var(--yellow-dark);
+    transform:translateY(-3px);
+    box-shadow:0 18px 40px rgba(244,230,0,.55), 0 6px 14px rgba(11,96,172,.22);
   }
 </style>
 </head>
 <body>
-
-<div class="page-transition-overlay" id="pageTransitionOverlay" aria-hidden="true">
-<span class="page-transition-logo">E360S</span>
-</div>
 
 <header class="site-header">
 <div class="container">
@@ -489,7 +475,7 @@
 </div>
 
 <div class="hero-actions">
-<a href="#secteurs" class="btn btn-secondary">Voir les secteurs</a>
+<a href="#secteurs" class="btn btn-hero-primary">Voir les secteurs</a>
 </div>
 </div>
 </section>
@@ -681,31 +667,31 @@ document.querySelectorAll('.btn, .sector-card, .why-card').forEach(el => {
   el.addEventListener('click', addRipple);
 });
 
-// Transition premium plein écran vers les pages de secteur
+// Transition de page ultra discrète (fade-out avant navigation, fade-in à l'arrivée)
 (function(){
-  const overlay = document.getElementById('pageTransitionOverlay');
-  const transitionLinks = document.querySelectorAll(
-    'a.btn-primary[href^="https://recrutement-e360s.vercel.app/"]'
+  // Fade-in à l'arrivée sur la page
+  document.body.classList.add('is-page-ready');
+
+  // Sélectionne tout lien de navigation réelle (exclut ancres internes, mailto, tel, nouveaux onglets)
+  const navLinks = document.querySelectorAll(
+    'a[href]:not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"]):not([target="_blank"])'
   );
 
-  transitionLinks.forEach(link => {
+  navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      // Laisser le comportement natif pour ouverture dans un nouvel onglet / nouvelle fenêtre
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
         return;
       }
 
-      e.preventDefault();
       const destination = link.getAttribute('href');
+      e.preventDefault();
 
-      document.body.classList.add('is-transitioning-out');
-      requestAnimationFrame(() => {
-        overlay.classList.add('is-active');
-      });
+      document.body.classList.remove('is-page-ready');
+      document.body.classList.add('is-page-leaving');
 
       window.setTimeout(() => {
         window.location.href = destination;
-      }, 500);
+      }, 300);
     });
   });
 })();
