@@ -422,9 +422,51 @@
     .sector-card{padding:28px 24px;}
     .contact-card{padding:40px 24px;}
   }
+
+  /* ---------- Page transition (overlay premium) ---------- */
+  body.is-transitioning-out > *:not(.page-transition-overlay){
+    opacity:0;
+    transition:opacity .4s var(--ease);
+  }
+  .page-transition-overlay{
+    position:fixed;
+    inset:0;
+    background:var(--blue-deep);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transform:scale(.98);
+    transition:opacity .45s var(--ease), transform .5s var(--ease);
+    z-index:9999;
+    pointer-events:none;
+  }
+  .page-transition-overlay.is-active{
+    opacity:1;
+    transform:scale(1);
+    pointer-events:all;
+  }
+  .page-transition-logo{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.9rem;
+    letter-spacing:.09em;
+    color:var(--white);
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .5s var(--ease) .12s, transform .5s var(--ease) .12s;
+  }
+  .page-transition-overlay.is-active .page-transition-logo{
+    opacity:1;
+    transform:translateY(0);
+  }
 </style>
 </head>
 <body>
+
+<div class="page-transition-overlay" id="pageTransitionOverlay" aria-hidden="true">
+<span class="page-transition-logo">E360S</span>
+</div>
 
 <header class="site-header">
 <div class="container">
@@ -638,6 +680,35 @@ document.querySelectorAll('.btn, .sector-card, .why-card').forEach(el => {
   el.style.overflow = 'hidden';
   el.addEventListener('click', addRipple);
 });
+
+// Transition premium plein écran vers les pages de secteur
+(function(){
+  const overlay = document.getElementById('pageTransitionOverlay');
+  const transitionLinks = document.querySelectorAll(
+    'a.btn-primary[href^="https://recrutement-e360s.vercel.app/"]'
+  );
+
+  transitionLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Laisser le comportement natif pour ouverture dans un nouvel onglet / nouvelle fenêtre
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+        return;
+      }
+
+      e.preventDefault();
+      const destination = link.getAttribute('href');
+
+      document.body.classList.add('is-transitioning-out');
+      requestAnimationFrame(() => {
+        overlay.classList.add('is-active');
+      });
+
+      window.setTimeout(() => {
+        window.location.href = destination;
+      }, 500);
+    });
+  });
+})();
 </script>
 
 </body>
