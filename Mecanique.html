@@ -529,9 +529,9 @@
   /* ---------- Pourquoi E360S ---------- */
 .why-grid{
   display:grid;
-  gri*-template-columns:repeat(auto-fit,*inmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:24px;
-  m*rgin-top:40px;
+  margin-top:40px;
 }
 
 .why-card{
@@ -544,8 +544,8 @@
   trans*tion:transform .25s var(--ease), b*x-shadow .25s var(--ease);
 }
 
-.why*card:hover{
-  transform:translateY*-5px);
+.why-card:hover{
+  transform:translateY(-5px);
   box-shadow:var(--shadow-l*ft);
 }
 
@@ -565,7 +565,7 @@
   height:32px;
 }
 
-.w*y-card h3{
+.why-card h3{
 * color*var(--heading);
   margin-bottom:10*x;
 }
