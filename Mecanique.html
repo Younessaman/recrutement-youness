@@ -499,6 +499,32 @@
     .job-cta{align-items:stretch;}
   }
 
+  /* ---------- Blocs accordéon du poste ---------- */
+  .jobs-sections{max-width:880px;gap:0;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--white);box-shadow:var(--shadow-card);}
+  .jobs-sections .job-section{border:0;border-radius:0;border-bottom:1px solid var(--line);box-shadow:none;transform:none;background:var(--white);}
+  .jobs-sections .job-section:last-of-type{border-bottom:0;}
+  .jobs-sections .job-section:hover{border-color:var(--line);transform:none;}
+  .jobs-sections .job-section.open{border-color:var(--line);box-shadow:none;}
+  .jobs-sections .job-section::before{height:4px;}
+  .jobs-sections .job-summary{padding:28px 38px;gap:20px;}
+  .jobs-sections .section-icon{flex:none;width:52px;height:52px;border-radius:17px;background:#eef4fa;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;}
+  .jobs-sections .section-icon svg{width:25px;height:25px;}
+  .jobs-sections .job-name{font-size:1.18rem;font-weight:600;color:var(--blue-deep);margin-bottom:8px;}
+  .jobs-sections .job-more{padding:0;background:transparent;color:var(--blue-mid);font-size:.82rem;}
+  .jobs-sections .job.open .job-more{background:transparent;color:var(--blue-mid);}
+  .jobs-sections .job-icon{width:34px;height:34px;background:#eef4fa;}
+  .jobs-sections .job.open .job-icon{background:var(--yellow);}
+  .jobs-sections .job-body{padding:0 38px 30px 110px;}
+  .jobs-sections .job-block{background:transparent;border:0;border-radius:0;padding:0;}
+  .jobs-sections .job-block h4{display:none;}
+  .jobs-cta{margin-top:22px;align-items:center;}
+  @media (max-width:560px){
+    .jobs-sections .job-summary{padding:22px 18px;gap:14px;}
+    .jobs-sections .section-icon{width:46px;height:46px;border-radius:15px;}
+    .jobs-sections .job-name{font-size:1.05rem;}
+    .jobs-sections .job-body{padding:0 18px 24px 78px;}
+  }
+
   /* ---------- Contact RH ---------- */
   .contact-section{padding:0 0 96px;}
   .contact-card{
@@ -638,26 +664,23 @@ E360S recrute des mécaniciens de véhicules lourds 2e et 3e classe pour ses op�
 <a class="region-btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UMTJPQTBaMFg3WVJDSTJGWUFWRlBUMFlPQi4u" target="_blank" rel="noopener noreferrer">Saint-Constant</a>
 </div>
 
-<div class="jobs">
+<div class="jobs jobs-sections">
 
-<div class="job reveal">
-<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-mecanicien">
+<div class="job job-section reveal open">
+<button type="button" class="job-summary" aria-expanded="true" aria-controls="panel-savoir">
+<span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v1"/><path d="M12 12v4"/></svg></span>
 <div class="job-summary-text">
-<div class="job-name">Mécanicien de véhicules lourds 2e et 3e classe</div>
-<div class="job-line">Diagnostic, entretien et réparation de camions lourds et d'équipements spécialisés dans un environnement d'atelier moderne.</div>
-<span class="job-more">En savoir plus</span>
+<div class="job-name">Ce qu’il faut savoir</div>
+<span class="job-more">Réduire</span>
 </div>
 <span class="job-icon" aria-hidden="true">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
 </span>
 </button>
-
-<div class="job-panel" id="panel-mecanicien">
+<div class="job-panel" id="panel-savoir">
 <div class="job-panel-inner">
 <div class="job-body">
-
 <div class="job-block">
-<h4>Savoir</h4>
 <ul>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Travail manuel et technique quotidien en atelier</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Postes de jour et de soir disponibles selon la région</li>
@@ -666,9 +689,26 @@ E360S recrute des mécaniciens de véhicules lourds 2e et 3e classe pour ses op�
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Port d'équipements de protection individuelle requis</li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
 
+<div class="job job-section reveal">
+<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-taches">
+<span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 12 2.5 2.5L16 9"/></svg></span>
+<div class="job-summary-text">
+<div class="job-name">Principales tâches</div>
+<span class="job-more">En savoir plus</span>
+</div>
+<span class="job-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+</span>
+</button>
+<div class="job-panel" id="panel-taches">
+<div class="job-panel-inner">
+<div class="job-body">
 <div class="job-block">
-<h4>Principales tâches</h4>
 <ul>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Diagnostic et réparation mécanique de camions lourds (vacuum, hydrovac, collecte)</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Entretien préventif : freins, suspensions, moteurs, transmissions</li>
@@ -677,9 +717,26 @@ E360S recrute des mécaniciens de véhicules lourds 2e et 3e classe pour ses op�
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Tenue des dossiers d'entretien et respect des normes SST</li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
 
+<div class="job job-section reveal">
+<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-profil">
+<span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span>
+<div class="job-summary-text">
+<div class="job-name">Profil recherché</div>
+<span class="job-more">En savoir plus</span>
+</div>
+<span class="job-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+</span>
+</button>
+<div class="job-panel" id="panel-profil">
+<div class="job-panel-inner">
+<div class="job-body">
 <div class="job-block">
-<h4>Profil recherché</h4>
 <ul>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Mécanicien de véhicules lourds 2e ou 3e classe (ou compagnon)</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expérience avec camions lourds, systèmes hydrauliques ou équipements spécialisés (atout)</li>
@@ -688,9 +745,26 @@ E360S recrute des mécaniciens de véhicules lourds 2e et 3e classe pour ses op�
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des normes de sécurité</li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
 
+<div class="job job-section reveal">
+<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-conditions">
+<span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M16 7.5c-.8-1-2.1-1.5-3.7-1.5-2.2 0-3.8 1.1-3.8 2.8 0 4.2 7.5 1.7 7.5 5.8 0 1.8-1.6 3-4 3-1.8 0-3.2-.6-4.1-1.8"/></svg></span>
+<div class="job-summary-text">
+<div class="job-name">Conditions offertes</div>
+<span class="job-more">En savoir plus</span>
+</div>
+<span class="job-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+</span>
+</button>
+<div class="job-panel" id="panel-conditions">
+<div class="job-panel-inner">
+<div class="job-body">
 <div class="job-block">
-<h4>Conditions offertes</h4>
 <ul>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Salaire concurrentiel selon l'expérience et les qualifications</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Assurances collectives</li>
@@ -702,9 +776,26 @@ E360S recrute des mécaniciens de véhicules lourds 2e et 3e classe pour ses op�
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Entrée en poste rapide</li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
 
+<div class="job job-section reveal">
+<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-horaire">
+<span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/</svg></span>
+<div class="job-summary-text">
+<div class="job-name">Horaire</div>
+<span class="job-more">En savoir plus</span>
+</div>
+<span class="job-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+</span>
+</button>
+<div class="job-panel" id="panel-horaire">
+<div class="job-panel-inner">
+<div class="job-body">
 <div class="job-block">
-<h4>Horaire</h4>
 <ul>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Quart de jour ou de soir selon le poste et la région</li>
@@ -712,19 +803,15 @@ E360S recrute des mécaniciens de véhicules lourds 2e et 3e classe pour ses op�
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Heures supplémentaires disponibles</li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
 
-<div class="job-cta">
-<a class="postuler" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UMTJPQTBaMFg3WVJDSTJGWUFWRlBUMFlPQi4u" target="_blank" rel="noopener noreferrer">
-POSTULER MAINTENANT
-</a>
+<div class="job-cta jobs-cta">
+<a class="postuler" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UMTJPQTBaMFg3WVJDSTJGWUFWRlBUMFlPQi4u" target="_blank" rel="noopener noreferrer">VOIR SI CE POSTE EST POUR MOI</a>
 <p class="consent-note">En soumettant votre candidature, vous consentez à la collecte et à l'utilisation de vos renseignements personnels conformément à notre politique de confidentialité.</p>
 </div>
-
-</div>
-</div>
-</div>
-</div>
-
 </div>
 
 </div>
@@ -775,8 +862,8 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
 
-// Accordéons — un seul poste ouvert à la fois, animation fluide
-const jobs = document.querySelectorAll('.job');
+// Accordéons du poste — un seul bloc ouvert à la fois
+const jobs = document.querySelectorAll('.job-section');
 jobs.forEach(job => {
   const trigger = job.querySelector('.job-summary');
   const label = job.querySelector('.job-more');
