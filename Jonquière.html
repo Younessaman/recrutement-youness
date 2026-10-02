@@ -3,640 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carrières | E360S Jonquière</title>
-<meta name="description" content="Plus qu'un emploi de chauffeur. Une carrière. Postes disponibles, avantages compétitifs, postulez en ligne.">
+<title>Jonquière | E360S</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      brand: { light:'#2ea3f2', DEFAULT:'#1483d9', deep:'#0b60ac', dark:'#084a86' },
+      accent: { DEFAULT:'#f4e600', dark:'#d9cc00' },
+      ink: { DEFAULT:'#182b3a', soft:'#51697a', faint:'#8aa0b4' }
+    },
+    fontFamily: { display:['Outfit','sans-serif'], sans:['Inter','sans-serif'] },
+    boxShadow: { card:'0 8px 24px rgba(11,96,172,.08)', lift:'0 16px 40px rgba(11,96,172,.14)' }
+  }}
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    /* Palette d'origine E360S — bleu clair, jaune vif, blanc. Conservée telle quelle. */
-    --blue-light:#2ea3f2;
-    --blue-mid:#1483d9;
-    --blue-deep:#0b60ac;
-    --yellow:#f4e600;
-    --yellow-dark:#d9cc00;
-    --yellow-brand:#f9f02f; /* jaune exact du logo E360S — utilisé pour le bandeau */
-    --brand-blue:#009ace;      /* bleu exact du logo E360S */
-    --brand-blue-dark:#007ba6; /* bleu corporatif assombri — survol */
-    --white:#ffffff;
-    --heading:#0b60ac;
-    --ink:#182b3a;
-    --ink-soft:#51697a;
-    --line:#e3ebf1;
-    --font-main:'Plus Jakarta Sans','Inter',sans-serif;
-    --radius-lg:24px;
-    --radius-md:16px;
-    --radius-sm:12px;
-    --shadow-card:0 8px 24px rgba(11,96,172,.08);
-    --shadow-lift:0 16px 40px rgba(11,96,172,.14);
-    --ease:cubic-bezier(.4,0,.2,1);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:var(--font-main);
-    font-weight:400;
-    color:var(--ink);
-    background:var(--white);
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4,.display{
-    font-family:var(--font-main);
-    font-weight:600;
-    margin:0;
-    line-height:1.1;
-    letter-spacing:-.02em;
-  }
-  p{margin:0;font-weight:400;}
-  a{color:inherit;}
-  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
-  img{max-width:100%;display:block;}
-  .container{max-width:920px;margin:0 auto;padding:0 24px;}
-  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
-  :focus-visible{
-    outline:3px solid var(--yellow);
-    outline-offset:3px;
-    border-radius:6px;
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
-    html{scroll-behavior:auto;}
-  }
-  /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:16px 32px;
-    border-radius:999px;
-    font-weight:600;
-    font-size:1rem;
-    font-family:var(--font-main);
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
-    text-decoration:none;
-  }
-  .btn-primary{
-    background:var(--yellow);
-    color:var(--heading);
-    box-shadow:0 10px 24px rgba(244,230,0,.35);
-  }
-  .btn-primary:hover{
-    background:var(--yellow-dark);
-    transform:translateY(-2px);
-    box-shadow:0 14px 30px rgba(244,230,0,.45);
-  }
-  .btn-secondary{
-    background:rgba(255,255,255,.08);
-    color:var(--white);
-    border:1.5px solid rgba(255,255,255,.55);
-    backdrop-filter:blur(4px);
-  }
-  .btn-secondary:hover{
-    background:rgba(255,255,255,.18);
-    transform:translateY(-2px);
-  }
-  /* Bouton POSTULER — couleurs corporatives E360S */
-  .btn-ghost{
-    background:var(--brand-blue);
-    color:var(--yellow-brand);
-    padding:14px 28px;
-    transition:background-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
-  }
-  .btn-ghost:hover,
-  .btn-ghost:focus-visible{
-    background:var(--brand-blue-dark);
-    color:var(--yellow-brand);
-    box-shadow:0 6px 16px rgba(0,80,110,.22);
-    transform:translateY(-1px);
-  }
-  .btn svg.ext{width:15px;height:15px;flex:none;}
-
-  /* ---------- Main application CTA ---------- */
-  .application-cta{
-    padding:88px 0 0;
-    text-align:center;
-  }
-  .application-cta .container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-  .application-cta-intro{
-    font-family:var(--font-main);
-    font-size:clamp(1.2rem,2.5vw,1.55rem);
-    font-weight:600;
-    color:var(--heading);
-    margin-bottom:18px;
-  }
-  .application-cta .btn-application{
-    width:min(100%,820px);
-    padding:23px 34px;
-    font-size:clamp(1.05rem,2vw,1.25rem);
-    letter-spacing:.02em;
-    box-shadow:0 16px 36px rgba(244,230,0,.45);
-  }
-  .application-cta .btn-application:hover{
-    transform:translateY(-4px);
-    box-shadow:0 20px 42px rgba(244,230,0,.55);
-  }
-  .application-cta-note{
-    margin-top:16px;
-    font-size:.92rem;
-    color:var(--ink-soft);
-  }
-
-  /* ---------- Why join E360S ---------- */
-  .why-e360s{
-    padding:88px 0 96px;
-  }
-  .why-e360s .section-head{
-    text-align:center;
-    max-width:68ch;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  .why-e360s .section-head h2{
-    margin-bottom:16px;
-  }
-  .why-e360s .benefits{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-  .why-e360s .benefit{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:var(--radius-lg);
-    padding:32px 28px;
-    box-shadow:var(--shadow-card);
-    transition:box-shadow .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease);
-  }
-  .why-e360s .benefit:hover{
-    transform:translateY(-5px);
-    border-color:var(--yellow);
-    box-shadow:var(--shadow-lift);
-  }
-  .why-e360s .benefit-icon{
-    width:52px;
-    height:52px;
-    border-radius:12px;
-    background:var(--yellow);
-    color:var(--heading);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:22px;
-  }
-  .why-e360s .benefit-icon svg{
-    width:25px;
-    height:25px;
-  }
-  .why-e360s .benefit h3{
-    font-size:1.25rem;
-    font-weight:600;
-    color:var(--heading);
-    margin-bottom:10px;
-  }
-  .why-e360s .benefit p{
-    color:var(--ink-soft);
-    line-height:1.6;
-    font-size:.96rem;
-  }
-  @media (min-width:640px){
-    .why-e360s .benefits{
-      grid-template-columns:repeat(2,1fr);
-    }
-  }
-  @media (min-width:860px){
-    .why-e360s .benefits{
-      grid-template-columns:repeat(4,1fr);
-    }
-    .why-e360s .benefit{
-      padding:34px 26px;
-    }
-  }
-
-  /* ---------- Header : bandeau jaune E360S pleine largeur ---------- */
-  .site-header{
-    position:sticky;
-    top:0;
-    z-index:50;
-    width:100%;
-    background:var(--yellow-brand);
-    border-bottom:1px solid rgba(11,96,172,.14);
-  }
-  .site-header .container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    min-height:86px;
-    padding-top:12px;
-    padding-bottom:12px;
-  }
-  .site-brand{
-    display:flex;
-    align-items:center;
-    flex:0 1 auto;
-    min-width:0;
-    line-height:0;
-  }
-  .site-brand img{
-    height:56px;          /* 45–60 px, proportions respectées */
-    width:auto;
-    max-width:100%;
-    object-fit:contain;   /* aucune déformation, aucun rognage */
-    display:block;
-  }
-  .site-header .btn{padding:12px 22px;font-size:.9rem;flex:none;white-space:nowrap;}
-  @media (max-width:560px){
-    .site-header .container{min-height:74px;gap:12px;padding-left:16px;padding-right:16px;}
-    .site-brand img{height:46px;}
-    .site-header .btn{padding:11px 18px;font-size:.85rem;}
-  }
-  @media (max-width:380px){
-    .site-brand img{height:40px;}
-  }
-  /* ---------- Hero ---------- */
-  .hero{
-    position:relative;
-    background:linear-gradient(165deg, var(--blue-light) 0%, var(--blue-mid) 55%, var(--blue-deep) 100%);
-    color:var(--white);
-    padding:72px 0 88px;
-    overflow:hidden;
-  }
-  .hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      radial-gradient(circle at 85% 10%, rgba(244,230,0,.16), transparent 45%),
-      radial-gradient(circle at 10% 90%, rgba(255,255,255,.08), transparent 40%);
-    pointer-events:none;
-  }
-  .hero .container{position:relative;z-index:1;}
-  .eyebrow-pill{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:var(--yellow);
-    color:var(--heading);
-    font-weight:600;
-    font-size:.85rem;
-    padding:9px 18px;
-    border-radius:999px;
-    margin-bottom:28px;
-  }
-  .eyebrow-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--heading);animation:pulse 1.8s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
-  .hero h1{
-    font-size:clamp(2.9rem, 8.5vw, 5.25rem);
-    font-weight:600;
-    line-height:1.05;
-    letter-spacing:-.03em;
-    text-transform:uppercase;
-    margin-bottom:24px;
-    max-width:12ch;
-  }
-  .hero h1 .accent{color:var(--yellow);}
-  .hero .lead{
-    font-size:clamp(1.05rem,2vw,1.2rem);
-    color:rgba(255,255,255,.92);
-    max-width:46ch;
-    margin-bottom:8px;
-    font-weight:600;
-  }
-  .hero .lead-sub{
-    font-size:1rem;
-    color:rgba(255,255,255,.78);
-    max-width:46ch;
-    margin-bottom:36px;
-    font-weight:400;
-  }
-  .perks{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
-    margin-bottom:36px;
-  }
-  @media (min-width:640px){
-    .perks{grid-template-columns:repeat(4,1fr);}
-  }
-  .perk{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    text-align:center;
-    background:var(--white);
-    color:var(--heading);
-    border-radius:999px;
-    padding:18px 18px;
-    font-weight:600;
-    font-size:.98rem;
-    box-shadow:0 10px 22px rgba(4,30,54,.16);
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease);
-  }
-  .perk:hover{
-    transform:translateY(-2px);
-    box-shadow:0 14px 28px rgba(4,30,54,.2);
-  }
-  .perk-icon{
-    flex:none;
-    width:20px;
-    height:20px;
-    color:var(--blue-mid);
-  }
-  .perk-icon svg{
-    display:block;
-    width:100%;
-    height:100%;
-  }
-  .hero-actions{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
-    max-width:420px;
-    margin:0 auto;
-  }
-  .hero-actions .btn{width:100%;padding:19px 32px;font-size:1.05rem;}
-  /* ---------- Section shell ---------- */
-  section{padding:96px 0;}
-  .section-head{
-    max-width:56ch;
-    margin-bottom:56px;
-  }
-  .section-head h2{
-    font-size:clamp(1.75rem,3.5vw,2.5rem);
-    font-weight:600;
-    color:var(--heading);
-    margin-bottom:14px;
-  }
-  .section-head p{
-    font-size:1.05rem;
-    color:var(--ink-soft);
-    line-height:1.6;
-  }
-  .section-alt{background:#f6f9fc;}
-  /* Section bleue — reprend exactement le dégradé et les accents de la bannière */
-  .section-blue{
-    position:relative;
-    background:linear-gradient(165deg, var(--blue-light) 0%, var(--blue-mid) 55%, var(--blue-deep) 100%);
-    color:var(--white);
-    overflow:hidden;
-  }
-  .section-blue::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      radial-gradient(circle at 85% 8%, rgba(244,230,0,.16), transparent 45%),
-      radial-gradient(circle at 5% 95%, rgba(255,255,255,.08), transparent 40%);
-    pointer-events:none;
-  }
-  .section-blue .container{position:relative;z-index:1;}
-  .section-blue .section-head h2{color:var(--white);}
-  .section-blue .section-head h2 .accent{color:var(--yellow);}
-  .section-blue .section-head p{color:rgba(255,255,255,.82);}
-  .section-blue .job-note{color:rgba(255,255,255,.7);}
-  /* ---------- Jobs / accordion ---------- */
-  .jobs{display:flex;flex-direction:column;gap:16px;}
-  .job{
-    position:relative;
-    border:1.5px solid transparent;
-    border-radius:var(--radius-lg);
-    background:var(--white);
-    box-shadow:0 10px 26px rgba(4,30,54,.16);
-    overflow:hidden;
-    transition:box-shadow .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
-  }
-  .job:hover{border-color:var(--yellow);transform:translateY(-2px);}
-  .job.open{
-    border-color:var(--yellow);
-    box-shadow:0 18px 44px rgba(4,30,54,.26);
-  }
-  /* Barre jaune qui se déploie en haut de la carte ouverte */
-  .job::before{
-    content:"";
-    position:absolute;
-    top:0;left:0;
-    height:5px;
-    width:100%;
-    background:var(--yellow);
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform .45s var(--ease);
-    z-index:2;
-  }
-  .job.open::before{transform:scaleX(1);}
-  /* Animation au clic */
-  @keyframes jobPress{
-    0%{transform:scale(1);}
-    35%{transform:scale(.985);}
-    100%{transform:scale(1);}
-  }
-  .job.pressed{animation:jobPress .38s var(--ease);}
-  /* Onde jaune partant du point de clic */
-  .ripple{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(244,230,0,.55);
-    transform:scale(0);
-    animation:rippleOut .6s var(--ease) forwards;
-    pointer-events:none;
-    z-index:0;
-  }
-  @keyframes rippleOut{
-    to{transform:scale(2.4);opacity:0;}
-  }
-  .job-summary{
-    position:relative;
-    z-index:1;
-    width:100%;
-    list-style:none;
-    cursor:pointer;
-    padding:26px 24px;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    text-align:left;
-    background:none;
-    border:none;
-  }
-  .job-chevron{
-    flex:none;
-    width:36px;
-    height:36px;
-    border-radius:50%;
-    background:#eef4fa;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:transform .4s var(--ease), background .3s var(--ease);
-  }
-  .job.open .job-chevron{
-    transform:rotate(180deg);
-    background:var(--yellow);
-  }
-  .job-chevron svg{width:16px;height:16px;color:var(--blue-deep);}
-  .job-summary-text{flex:1;min-width:0;}
-  .job-title{font-family:var(--font-main);font-weight:600;font-size:1.3rem;letter-spacing:-.02em;color:var(--heading);margin-bottom:4px;}
-  .job-sub{font-size:.92rem;color:var(--ink-soft);margin-bottom:14px;}
-  .job-tags{display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
-  .job-tags .rate{
-    font-family:var(--font-main);
-    font-size:1.05rem;
-    font-weight:600;
-    color:var(--heading);
-    padding:0;
-    background:none;
-    border-radius:0;
-  }
-  .tag{
-    font-size:.8rem;
-    font-weight:500;
-    padding:5px 12px;
-    border-radius:999px;
-    background:#eef4fa;
-    color:var(--blue-deep);
-  }
-  /* Smooth, premium downward expand — animates height via grid-template-rows */
-  .job-panel{
-    display:grid;
-    grid-template-rows:0fr;
-    transition:grid-template-rows .45s var(--ease);
-  }
-  .job.open .job-panel{
-    grid-template-rows:1fr;
-  }
-  .job-panel-inner{
-    overflow:hidden;
-    min-height:0;
-  }
-  .job-body{
-    padding:0 24px 32px;
-    display:grid;
-    grid-template-columns:1fr;
-    gap:28px;
-    opacity:0;
-    transform:translateY(-8px);
-    transition:opacity .35s var(--ease) .05s, transform .35s var(--ease) .05s;
-  }
-  .job.open .job-body{
-    opacity:1;
-    transform:translateY(0);
-  }
-  @media (min-width:720px){
-    .job-body{grid-template-columns:1fr 1fr;}
-  }
-  .job-block h4{
-    font-family:var(--font-main);
-    font-size:.85rem;
-    font-weight:600;
-    color:var(--blue-mid);
-    text-transform:uppercase;
-    letter-spacing:.06em;
-    margin-bottom:14px;
-  }
-  .job-block ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
-  .job-block li{
-    display:flex;
-    gap:10px;
-    font-size:.95rem;
-    font-weight:400;
-    color:var(--ink-soft);
-    line-height:1.5;
-  }
-  .job-block li svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--blue-mid);}
-  .job-cta{
-    grid-column:1/-1;
-    margin-top:4px;
-  }
-  .job-note{
-    font-size:.82rem;
-    color:#8296a6;
-    margin-top:20px;
-  }
-  /* ---------- Contact ---------- */
-  .contact-card{
-    background:linear-gradient(140deg, var(--blue-mid), var(--blue-deep));
-    border-radius:28px;
-    padding:56px 40px;
-    color:var(--white);
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-  }
-  .contact-card::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at 90% 90%, rgba(244,230,0,.18), transparent 45%);
-  }
-  .contact-card > *{position:relative;z-index:1;}
-  .contact-card h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:600;margin-bottom:12px;}
-  .contact-card p{color:rgba(255,255,255,.8);margin-bottom:32px;}
-  .contact-methods{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    max-width:460px;
-    margin:0 auto;
-  }
-  @media (min-width:560px){
-    .contact-methods{flex-direction:row;}
-  }
-  .contact-link{
-    flex:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:999px;
-    padding:16px 20px;
-    font-weight:500;
-    font-size:.95rem;
-    transition:background .25s var(--ease), transform .25s var(--ease);
-    text-decoration:none;
-    word-break:break-word;
-  }
-  .contact-link:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);}
-  .contact-link svg{width:18px;height:18px;flex:none;color:var(--yellow);}
-  /* ---------- Footer ---------- */
-  footer{
-    padding:44px 0 40px;
-    text-align:center;
-    font-size:.85rem;
-    color:var(--ink-soft);
-    border-top:1px solid var(--line);
-  }
-  .footer-brand{
-    display:flex;
-    justify-content:center;
-    margin-bottom:20px;
-  }
-  .footer-brand img{
-    height:76px;
-    width:auto;
-    object-fit:contain;
-    display:block;
-  }
-  @media (max-width:560px){
-    .footer-brand img{height:64px;}
-  }
-  /* ---------- Reveal on scroll ---------- */
-  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s var(--ease), transform .6s var(--ease);}
-  .reveal.is-visible{opacity:1; transform:translateY(0);}
+  html { scroll-behavior:smooth; }
+  body { text-rendering:optimizeLegibility; }
+  .acc-panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1); }
+  .acc-panel > div { overflow:hidden; }
+  .job-card[data-open="true"] .acc-panel { grid-template-rows:1fr; }
+  .job-card .acc-chevron { transition:transform .4s cubic-bezier(.4,0,.2,1); }
+  .job-card[data-open="true"] .acc-chevron { transform:rotate(180deg); }
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity:1; transform:none; transition:none; }
+    .acc-panel { transition:none; }
+    html { scroll-behavior:auto; }
+  }
+  .site-header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(12px); border-bottom:1px solid #e3ebf1; }
+  .site-header .container { display:flex; align-items:center; justify-content:space-between; max-width:1080px; margin:0 auto; padding:12px 24px; }
+  .site-brand { display:block; line-height:0; }
+  .site-brand img { height:56px; width:auto; max-width:180px; object-fit:contain; }
+  .btn-ghost { display:inline-flex; align-items:center; padding:12px 24px; border-radius:999px; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; color:#0b60ac; border:2px solid rgba(11,96,172,.18); text-decoration:none; transition:all .25s; }
+  .btn-ghost:hover { background:#0b60ac; color:#fff; border-color:#0b60ac; }
+  .pre-footer-brand { display:flex; flex-direction:column; align-items:center; gap:12px; padding:40px 24px 8px; }
+  .pre-footer-brand img { height:64px; width:auto; object-fit:contain; }
+  .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#51697a; }
+  :focus-visible { outline:3px solid #f4e600; outline-offset:3px; border-radius:6px; }
 </style>
 </head>
-<body>
+<body class="font-sans text-ink bg-white antialiased" id="top">
+
 <header class="site-header">
 <div class="container">
 <a class="site-brand" href="#" aria-label="E360S — Solutions Environnementales 360 Ltée">
@@ -645,335 +58,275 @@
 <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Postuler</a>
 </div>
 </header>
-<section class="hero">
-<div class="container">
-<span class="eyebrow-pill"><span class="dot"></span>NOUS EMBAUCHONS MAINTENANT JONQUIÈRE</span>
-<h1>Joignez-vous <span class="accent">à notre équipe</span></h1>
-<p class="lead">Notre équipe agrandit ses opérations à Jonquière.</p>
-<p class="lead-sub">Choisissez le poste qui vous correspond et postulez dès aujourd'hui.</p>
-<div class="perks">
-<div class="perk">
-<span class="perk-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10"/><path d="M15 9.5c-.6-.7-1.5-1-2.7-1-1.5 0-2.5.7-2.5 1.8s1 1.7 2.5 1.7 2.5.7 2.5 1.8-1 1.8-2.5 1.8c-1.2 0-2.1-.4-2.7-1"/></svg>
-</span>
-Salaire concurrentiel
-</div>
-<div class="perk">
-<span class="perk-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-</span>
-Temps plein
-</div>
-<div class="perk">
-<span class="perk-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-5 9 5-9 5-9-5Z"/><path d="M7 11.5V16c2.8 2 7.2 2 10 0v-4.5"/></svg>
-</span>
-Formation offerte
-</div>
-<div class="perk">
-<span class="perk-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 20 6v5c0 5-3.4 8.3-8 10-4.6-1.7-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.3 2.3 4.7-4.7"/></svg>
-</span>
-Assurances + REER
-</div>
-</div>
-<div class="hero-actions">
-<a href="#postes" class="btn btn-primary">VOIR LES POSTES</a>
-</div>
-</div>
-</section>
-<section id="postes" class="section-blue">
-<div class="container">
-<div class="section-head reveal">
-<h2>Postes <span class="accent">disponibles</span></h2>
-<p>Découvrez les opportunités actuellement offertes à Jonquière. Cliquez sur un poste pour en voir tous les détails.</p>
-</div>
-<div class="jobs">
-<div class="job reveal">
-<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-chauffeur">
-<div class="job-summary-text">
-<div class="job-title">Chauffeur-opérateur</div>
-<div class="job-sub">Classe 1 ou Classe 3</div>
-<div class="job-tags">
-<span class="tag rate">30 – 33.87 $ / h *</span>
-<span class="tag">Temps plein</span>
-<span class="tag">Départ à 6h00</span>
-</div>
-</div>
-<span class="job-chevron">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-</span>
-</button>
-<div class="job-panel" id="panel-chauffeur">
-<div class="job-panel-inner">
-<div class="job-body">
-
-<div class="job-block">
-<h4>Ce qu'il faut savoir</h4>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Travail physique quotidien</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>20 % conduite • 80 % opération du camion</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Travail extérieur dans diverses conditions météorologiques</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Manipulation occasionnelle d'équipements pouvant peser jusqu'à 50 kg</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Présence occasionnelle d'odeurs liées aux opérations environnementales</li>
-</ul>
-</div>
-
-<div class="job-block">
-<h4>Principales tâches</h4>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Vidange de fosses septiques</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Utilisation d'équipements d'aspiration et de pompage</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Déplacements chez plusieurs clients</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Inspection et entretien de base des équipements</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des normes SST</li>
-</ul>
-</div>
-
-<div class="job-block">
-<h4>Profil recherché</h4>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Permis Classe 1 ou Classe 3 valide</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expérience pertinente</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Autonomie et professionnalisme</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Esprit d'équipe</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des normes de sécurité</li>
-</ul>
-</div>
-
-<div class="job-block">
-<h4>Conditions offertes</h4>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Salaire entre 26$ et 32$/heure selon l'expérience et les qualifications</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Assurances collectives</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>REER collectif</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Heures supplémentaires disponibles</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Équipements modernes</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Formation offerte</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Entrée en poste rapide</li>
-</ul>
-</div>
-
-<div class="job-block">
-<h4>Horaire</h4>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Départ à 6h00 le matin</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Possibilité de travail de soir selon les projets spéciaux</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Heures supplémentaires disponibles selon les besoins opérationnels</li>
-</ul>
-</div>
-
-<a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer" class="btn btn-primary job-cta" data-job="Chauffeur-opérateur">Postuler maintenant
-<svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-
-</div>
-</div>
-</div>
-</div>
-<div class="job reveal">
-<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-aide">
-<div class="job-summary-text">
-<div class="job-title">Aide-opérateur</div>
-<div class="job-sub">Production et opérations</div>
-<div class="job-tags">
-<span class="tag rate">25 $ – 27.50 $ / h *</span>
-<span class="tag">Temps plein</span>
-<span class="tag">Formation offerte</span>
-</div>
-</div>
-<span class="job-chevron">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-</span>
-</button>
-<div class="job-panel" id="panel-aide">
-<div class="job-panel-inner">
-<div class="job-body">
-<div class="job-block">
-<h4>Ce que nous offrons</h4>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Assurances collectives</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>REER</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Formation continue</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Équipements modernes</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Possibilités d'avancement</li>
-</ul>
-</div>
-<div class="job-block">
-<h4>Responsabilités</h4>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Assister le chauffeur-opérateur lors des opérations de vidange</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Manipuler et installer les boyaux d'aspiration</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Aider à la préparation et au nettoyage des équipements</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Effectuer un travail physique sur le terrain</li>
-</ul>
-</div>
-<div class="job-block" style="grid-column:1/-1;">
-<h4>Profil recherché</h4>
-<ul>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Aucune expérience requise</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bonne forme physique</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Esprit d'équipe</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Permis de conduire valide (atout)</li>
-</ul>
-</div>
-<a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer" class="btn btn-primary job-cta" data-job="Aide-opérateur">Postuler maintenant
-<svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="application-cta" aria-label="Candidature">
-  <div class="container">
-    <p class="application-cta-intro">Prêt à faire partie de l'équipe ?</p>
-    <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UREhaNTZETTlXVUtSODVNU0dPRUFJOVlOMi4u" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-application">POSTULER MAINTENANT
-      <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-    </a>
-    <p class="application-cta-note">Quelques minutes suffisent pour soumettre votre candidature.</p>
-  </div>
-</section>
-
-<section class="why-e360s">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>Pourquoi rejoindre E360S ?</h2>
-      <p>Joignez-vous à une entreprise en croissance qui valorise ses employés, offre de la stabilité et investit dans leur développement.</p>
+<main>
+  <section class="relative overflow-hidden bg-accent">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-6 pt-16 pb-14 sm:pt-24 sm:pb-20 text-center">
+      <span class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ink/10 text-ink text-xs font-bold tracking-[0.18em] uppercase">
+        <span class="w-2 h-2 rounded-full bg-brand-deep animate-pulse"></span>
+        Nous embauchons maintenant
+      </span>
+      <h1 class="reveal font-display font-extrabold tracking-tight text-5xl sm:text-7xl mt-6 leading-[1.02] text-ink">
+        Jonquière
+      </h1>
+      <p class="reveal mt-6 text-lg sm:text-xl text-ink/70 leading-relaxed max-w-2xl mx-auto font-medium">
+        Joignez-vous à notre équipe. Notre équipe agrandit ses opérations à Jonquière. Choisissez le poste qui vous correspond et postulez dès aujourd'hui.
+      </p>
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+          <div class="reveal flex items-center gap-3 bg-white/80 backdrop-blur rounded-2xl px-5 py-4 shadow-card">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug">Salaire concurrentiel</span>
+          </div>
+          <div class="reveal flex items-center gap-3 bg-white/80 backdrop-blur rounded-2xl px-5 py-4 shadow-card">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug">Temps plein</span>
+          </div>
+          <div class="reveal flex items-center gap-3 bg-white/80 backdrop-blur rounded-2xl px-5 py-4 shadow-card">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug">Formation offerte</span>
+          </div>
+          <div class="reveal flex items-center gap-3 bg-white/80 backdrop-blur rounded-2xl px-5 py-4 shadow-card">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug">Assurances + REER</span>
+          </div>
+      </div>
+      <a href="#postes" class="reveal mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-ink text-white font-display font-bold text-lg hover:bg-brand-deep transition-colors shadow-lift">
+        Voir les postes
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7-7-7m7 7V3"/></svg>
+      </a>
     </div>
-    <div class="benefits">
-      <article class="benefit reveal">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5.5c-.9-1-2.5-1.5-4.5-1.5-3 0-5 1.4-5 3.5S9.5 11 12.5 11s5 1.4 5 3.5-2 3.5-5 3.5c-2 0-3.6-.5-4.5-1.5"/></svg>
-        </div>
-        <h3>Salaire compétitif</h3>
-        <p>Une rémunération concurrentielle basée sur votre expérience et votre contribution.</p>
-      </article>
-
-      <article class="benefit reveal">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 6V4h8v2"/><path d="M12 10v5"/><path d="M9.5 12.5h5"/></svg>
-        </div>
-        <h3>Assurances et REER</h3>
-        <p>Profitez d'avantages sociaux complets et d'un régime d'épargne pour préparer l'avenir.</p>
-      </article>
-
-      <article class="benefit reveal">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V9l8-5 8 5v11"/><path d="M8 20v-6h8v6"/><path d="M2 20h20"/></svg>
-        </div>
-        <h3>Emploi stable</h3>
-        <p>Postes à temps plein offrant stabilité, horaires réguliers et perspectives à long terme.</p>
-      </article>
-
-      <article class="benefit reveal">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M5 8l7-5 7 5"/><path d="M5 16l7 5 7-5"/><path d="M7 12h10"/></svg>
-        </div>
-        <h3>Opportunités d'avancement</h3>
-        <p>Développez votre carrière grâce à la formation continue et aux possibilités d'évolution au sein de l'entreprise.</p>
-      </article>
+  </section><section id="postes" class="py-16 sm:py-24 scroll-mt-20"><div class="max-w-4xl mx-auto px-6"><div class="reveal text-center mb-12"><p class="text-xs font-bold tracking-[0.2em] uppercase text-brand-deep/60">Nos opportunités</p><h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight mt-3">Postes <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-deep to-brand-light">disponibles</span></h2><p class="text-ink-soft text-lg mt-4 max-w-2xl mx-auto">Découvrez les opportunités actuellement offertes à Jonquière. Cliquez sur un poste pour en voir tous les détails.</p></div><div class="space-y-6">      <article class="job-card bg-white rounded-3xl border border-slate-100 shadow-card overflow-hidden reveal" data-open="false">
+        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-slate-50/60 transition-colors" aria-expanded="false">
+          <span class="shrink-0 w-14 h-14 rounded-2xl bg-brand-deep/5 text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+          </span>
+          <span class="flex-1 min-w-0">
+            <span class="block text-[11px] font-bold tracking-[0.18em] uppercase text-brand-deep/60">Poste disponible</span>
+            <span class="block font-display text-xl sm:text-2xl font-extrabold text-ink mt-1">Chauffeur-opérateur</span>
+            <span class="block text-ink-soft mt-1 leading-relaxed">Classe 1 ou Classe 3 · 30 – 33.87 $ / h * · Temps plein · Départ à 6h00</span>
+          </span>
+          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-accent/15 text-brand-deep flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </span>
+        </button>
+        <div class="acc-panel"><div><div class="px-6 sm:px-8 pb-8 pt-1">
+          <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Ce qu'il faut savoir</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Travail physique quotidien</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>20 % conduite · 80 % opération du camion</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Travail extérieur dans diverses conditions météorologiques</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Manipulation occasionnelle d'équipements pouvant peser jusqu'à 50 kg</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Présence occasionnelle d'odeurs liées aux opérations environnementales</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Principales tâches</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Vidange de fosses septiques</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Utilisation d'équipements d'aspiration et de pompage</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Déplacements chez plusieurs clients</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Inspection et entretien de base des équipements</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Respect des normes SST</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Profil recherché</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Permis Classe 1 ou Classe 3 valide</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Expérience pertinente</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Autonomie et professionnalisme</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Esprit d'équipe</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Respect des normes de sécurité</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Conditions offertes</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Salaire entre 26 $ et 32 $/heure selon l'expérience et les qualifications</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Assurances collectives</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>REER collectif</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Heures supplémentaires disponibles</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Équipements modernes</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Formation offerte</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Entrée en poste rapide</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Horaire</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Temps plein</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Départ à 6h00 le matin</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Possibilité de travail de soir selon les projets spéciaux</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Heures supplémentaires disponibles selon les besoins opérationnels</span></li>
+                  </ul>
+                </div>
+          </div>
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-ink font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
+            Postuler maintenant
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div></div></div>
+      </article>      <article class="job-card bg-white rounded-3xl border border-slate-100 shadow-card overflow-hidden reveal" data-open="false">
+        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-slate-50/60 transition-colors" aria-expanded="false">
+          <span class="shrink-0 w-14 h-14 rounded-2xl bg-brand-deep/5 text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+          </span>
+          <span class="flex-1 min-w-0">
+            <span class="block text-[11px] font-bold tracking-[0.18em] uppercase text-brand-deep/60">Poste disponible</span>
+            <span class="block font-display text-xl sm:text-2xl font-extrabold text-ink mt-1">Aide-opérateur</span>
+            <span class="block text-ink-soft mt-1 leading-relaxed">Production et opérations · 25 $ – 27.50 $ / h * · Temps plein · Formation offerte</span>
+          </span>
+          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-accent/15 text-brand-deep flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </span>
+        </button>
+        <div class="acc-panel"><div><div class="px-6 sm:px-8 pb-8 pt-1">
+          <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Ce que nous offrons</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Assurances collectives</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>REER</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Formation continue</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Équipements modernes</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Possibilités d'avancement</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Responsabilités</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Assister le chauffeur-opérateur lors des opérations de vidange</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Manipuler et installer les boyaux d'aspiration</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Aider à la préparation et au nettoyage des équipements</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Effectuer un travail physique sur le terrain</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Profil recherché</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Aucune expérience requise</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Bonne forme physique</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Esprit d'équipe</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Permis de conduire valide (atout)</span></li>
+                  </ul>
+                </div>
+          </div>
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-ink font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
+            Postuler maintenant
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div></div></div>
+      </article></div></div></section>  <section class="py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-ink text-white p-10 sm:p-14 text-center shadow-lift">
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-accent/30 rounded-full blur-3xl"></div>
+        <h2 class="relative font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Prêt à faire partie de <span class="text-accent">l'équipe</span> ?</h2>
+        <p class="relative mt-4 text-white/80 text-lg">Quelques minutes suffisent pour soumettre votre candidature.</p>
+        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="relative mt-8 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-accent text-ink font-display font-bold text-lg hover:bg-accent-dark transition-colors">
+          Postuler maintenant
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>  <section class="py-16 sm:py-24 bg-slate-50/70">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-12">
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight">Pourquoi rejoindre <span class="text-brand-deep">E360S</span> ?</h2>
+        <p class="text-ink-soft text-lg mt-4 max-w-2xl mx-auto">Joignez-vous à une entreprise en croissance qui valorise ses employés, offre de la stabilité et investit dans leur développement.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="reveal bg-white rounded-3xl border-2 border-accent/40 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent/30 text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-extrabold mt-6">Salaire compétitif</h3>
+          <p class="text-ink-soft leading-relaxed mt-3">Une rémunération concurrentielle basée sur votre expérience et votre contribution.</p>
+        </article>
+        <article class="reveal bg-white rounded-3xl border-2 border-accent/40 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent/30 text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-extrabold mt-6">Assurances et REER</h3>
+          <p class="text-ink-soft leading-relaxed mt-3">Profitez d'avantages sociaux complets et d'un régime d'épargne pour préparer l'avenir.</p>
+        </article>
+        <article class="reveal bg-white rounded-3xl border-2 border-accent/40 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent/30 text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-extrabold mt-6">Emploi stable</h3>
+          <p class="text-ink-soft leading-relaxed mt-3">Postes à temps plein offrant stabilité, horaires réguliers et perspectives à long terme.</p>
+        </article>
+        <article class="reveal bg-white rounded-3xl border-2 border-accent/40 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent/30 text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="font-display text-xl font-extrabold mt-6">Opportunités d'avancement</h3>
+          <p class="text-ink-soft leading-relaxed mt-3">Développez votre carrière grâce à la formation continue et aux possibilités d'évolution.</p>
+        </article>
+      </div>
+    </div>
+  </section>  <section class="py-16 sm:py-24 bg-slate-50/70">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-brand-deep text-white p-10 sm:p-14 text-center shadow-lift">
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
+        <h2 class="relative font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Une question ?</h2>
+        <p class="relative mt-4 text-white/80 text-lg max-w-xl mx-auto">Notre équipe recrutement vous répond rapidement.</p>
+        <div class="relative mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:recruitment@e360s.ca" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-brand-deep font-display font-bold hover:bg-accent transition-colors">recruitment@e360s.ca</a>
+          <a href="tel:+14385351659" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/30 text-white font-display font-bold hover:bg-white/10 transition-colors">(438) 535-1659</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-<section id="postuler">
-<div class="container">
-<div class="contact-card reveal">
-<h2>Une question ?</h2>
-<p>Notre équipe recrutement vous répond rapidement.</p>
-<div class="contact-methods">
-<a class="contact-link" href="mailto:Recruitment@e360s.ca">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          Recruitment@e360s.ca
-</a>
-<a class="contact-link" href="tel:+14385351659">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 12.9 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
-          (438) 535-1659
-</a>
+<div class="footer"></div>
+
+<div class="pre-footer-brand">
+  <img id="footer-logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="E360S — Solutions Environnementales 360 Ltée">
+  <div class="footer-brand-text">Solutions Environnementales 360 (E360S)</div>
 </div>
-</div>
-</div>
-</section>
-<footer>
-<div class="container">
-<div class="footer-brand">
-<img src="data:image/png;base64,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" alt="E360S — Solutions Environnementales 360" width="270" height="160">
-</div>
-&copy; <span id="year"></span> Solutions Environnementales 360 (E360S)
-</div>
-</footer>
+
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-// Reveal on scroll
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('is-visible');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-revealEls.forEach(el => io.observe(el));
-// Accordion — one job open at a time, smooth height animation, no scroll jump
-const jobs = document.querySelectorAll('.job');
-jobs.forEach(job => {
-  const trigger = job.querySelector('.job-summary');
-  trigger.addEventListener('click', (e) => {
-    // Onde jaune partant du point de clic + effet de pression
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      const rect = job.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple';
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-      job.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 620);
-      job.classList.remove('pressed');
-      void job.offsetWidth;
-      job.classList.add('pressed');
-      setTimeout(() => job.classList.remove('pressed'), 400);
-    }
-    const isOpen = job.classList.contains('open');
-    jobs.forEach(other => {
-      other.classList.remove('open');
-      other.querySelector('.job-summary').setAttribute('aria-expanded', 'false');
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else { revealEls.forEach(el => el.classList.add('is-visible')); }
+  document.querySelectorAll('.job-card-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const card = trigger.closest('.job-card');
+      const open = card.getAttribute('data-open') === 'true';
+      card.setAttribute('data-open', String(!open));
+      trigger.setAttribute('aria-expanded', String(!open));
     });
-    if (!isOpen){
-      job.classList.add('open');
-      trigger.setAttribute('aria-expanded', 'true');
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const openCard = document.querySelector('.job-card[data-open="true"]');
+    if (openCard) {
+      openCard.setAttribute('data-open', 'false');
+      openCard.querySelector('.job-card-trigger').setAttribute('aria-expanded', 'false');
     }
   });
-});
-// Smooth scroll for in-page anchors only (external links are untouched)
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href');
-    if (href === '#') return;
-    const target = document.querySelector(href);
-    if (target){
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+      const selector = link.getAttribute('href');
+      if (!selector || selector === '#') return;
+      const target = document.querySelector(selector);
+      if (target) { event.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
   });
-});
-// Ajoute le titre du poste au courriel de contact si le visiteur écrit plutôt que de postuler
-document.querySelectorAll('.job-cta').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const job = btn.getAttribute('data-job');
-    const emailLink = document.querySelector('a[href^="mailto:"]');
-    if (emailLink && job){
-      emailLink.setAttribute('href', `mailto:Recruitment@e360s.ca?subject=Candidature - ${encodeURIComponent(job)}`);
-    }
-  });
-});
+  (function() {
+    var h = document.querySelector('.site-brand img');
+    var f = document.getElementById('footer-logo');
+    if (h && f) { f.src = h.src; }
+  })();
 </script>
 </body>
 </html>
