@@ -69,7 +69,7 @@ body{font-family:'Inter',sans-serif;}
 <button type="button" class="lang-opt" data-setlang="en" role="menuitem"><span>English</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></button>
 </div>
 </div>
-<a href="#metiers" class="btn-ghost">Postuler</a>
+<a href="mailto:Recruitment@e360s.ca?subject=E360S%20%2F%20Candidature%20spontan%C3%A9e" class="btn-ghost">Candidature spontanée</a>
 </div>
 </div>
 </header>
@@ -218,20 +218,22 @@ const I18N = {"Postuler": "Apply", "NOUS RECRUTONS • PARTOUT AU QUÉBEC": "WE'
     "Développement professionnel": "Professional development",
     "Formation continue, mobilité interne et possibilités réelles d'avancement.": "Ongoing training, internal mobility and real advancement opportunities.",
     "Une équipe engagée": "A committed team",
-    "Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.": "Work in an environment focused on safety, respect and collaboration."};
+    "Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.": "Work in an environment focused on safety, respect and collaboration.",
+    "Candidature spontanée": "Spontaneous application"};
 const REV = {}; Object.keys(I18N).forEach(k=>{ REV[I18N[k]] = k; });
 const MAILTO = {fr:'mailto:Recruitment@e360s.ca?subject=E360S%20%2F%20Candidature%20spontan%C3%A9e',en:'mailto:Recruitment@e360s.ca?subject=E360S%20%2F%20Spontaneous%20application'};
 const META = {fr:document.querySelector('meta[name="description"]').getAttribute('content'),en:'Join E360S. Choose the trade that fits you and discover available positions across Quebec.'};
 const TITLE = {fr:document.title,en:'Careers | E360S'};
 let lang='fr';
 function swap(map){const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const ns=[];while(w.nextNode())ns.push(w.currentNode);ns.forEach(n=>{const p=n.parentElement;if(!p)return;if(p.closest('script,style'))return;if(p.closest('.lang-wrap'))return;const t=n.textContent,s=t.trim();if(s&&map[s]!==undefined)n.textContent=t.replace(s,map[s]);});}
-function setLang(l){if(l===lang)return;swap(l==='en'?I18N:REV);lang=l;document.documentElement.lang=l;document.title=TITLE[l];document.querySelector('meta[name="description"]').setAttribute('content',META[l]);const m=document.querySelector('a[href^="mailto:"]');if(m)m.setAttribute('href',MAILTO[l]);document.querySelectorAll('.lang-opt').forEach(o=>{o.querySelector('.check').style.opacity=o.dataset.setlang===l?'1':'0';});}
+function setLang(l){if(l===lang)return;swap(l==='en'?I18N:REV);lang=l;try{localStorage.setItem('e360s-lang',l)}catch(e){}document.documentElement.lang=l;document.title=TITLE[l];document.querySelector('meta[name="description"]').setAttribute('content',META[l]);const m=document.querySelector('a[href^="mailto:"]');if(m)m.setAttribute('href',MAILTO[l]);document.querySelectorAll('.lang-opt').forEach(o=>{o.querySelector('.check').style.opacity=o.dataset.setlang===l?'1':'0';});}
 const wrap=document.querySelector('.lang-wrap');const globe=document.querySelector('.lang-globe');
 globe.addEventListener('click',e=>{e.stopPropagation();const o=wrap.classList.toggle('open');globe.setAttribute('aria-expanded',String(o));});
 document.addEventListener('click',()=>{wrap.classList.remove('open');globe.setAttribute('aria-expanded','false');});
 document.querySelector('.lang-menu').addEventListener('click',e=>e.stopPropagation());
 document.querySelectorAll('.lang-opt').forEach(b=>b.addEventListener('click',()=>{setLang(b.dataset.setlang);wrap.classList.remove('open');}));
 document.querySelectorAll('.lang-opt').forEach(o=>{o.querySelector('.check').style.opacity=o.dataset.setlang===lang?'1':'0';});
+try{var _sl=localStorage.getItem('e360s-lang');if(_sl==='en'&&lang!=='en')setLang('en');}catch(e){}
 })();</script>
 </body>
 </html>
