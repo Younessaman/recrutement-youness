@@ -360,7 +360,7 @@ tailwind.config = { theme: { extend: {
   function setLang(l){
     if(l===lang) return;
     swap(l==='en' ? I18N : REV);
-    lang = l;
+    lang = l;try{localStorage.setItem('e360s-lang',l)}catch(e){}
     document.documentElement.lang = l;
     document.title = TITLE[l];
     if(metaEl) metaEl.setAttribute('content', META[l]);
@@ -375,6 +375,7 @@ tailwind.config = { theme: { extend: {
   document.querySelector('.lang-menu').addEventListener('click', e=>e.stopPropagation());
   document.querySelectorAll('.lang-opt').forEach(b=>b.addEventListener('click',()=>{ setLang(b.dataset.setlang); wrap.classList.remove('open'); }));
   document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===lang ? '1':'0'; });
+try{var _sl=localStorage.getItem('e360s-lang');if(_sl==='en'&&lang!=='en')setLang('en');}catch(e){}
 })();
 </script>
 </body>
