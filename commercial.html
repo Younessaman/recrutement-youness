@@ -4,297 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carrières | Collecte Commerciale — E360S</title>
-<meta name="description" content="E360S recrute des chauffeurs Classe 1 et Classe 3 en collecte commerciale. Plusieurs régions du Québec. Salaire compétitif, avantages complets. Postulez maintenant.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      brand: { light:'#2ea3f2', DEFAULT:'#1483d9', deep:'#0b60ac', dark:'#084a86' },
+      accent: { DEFAULT:'#f4e600', dark:'#d9cc00' },
+      ink: { DEFAULT:'#182b3a', soft:'#51697a', faint:'#8aa0b4' }
+    },
+    fontFamily: { display:['Outfit','sans-serif'], sans:['Inter','sans-serif'] },
+    boxShadow: { card:'0 8px 24px rgba(11,96,172,.08)', lift:'0 16px 40px rgba(11,96,172,.14)' }
+  }}
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/base.css">
 <style>
-body{
-    margin:0;
-    font-family:'Inter',sans-serif;
-    color:var(--ink);
-    background:var(--white);
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+  html { scroll-behavior:smooth; }
+  body { text-rendering:optimizeLegibility; }
+  .acc-panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1); }
+  .acc-panel > div { overflow:hidden; }
+  .job-card[data-open="true"] .acc-panel { grid-template-rows:1fr; }
+  .job-card .acc-chevron { transition:transform .4s cubic-bezier(.4,0,.2,1); }
+  .job-card[data-open="true"] .acc-chevron { transform:rotate(180deg); }
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity:1; transform:none; transition:none; }
+    .acc-panel { transition:none; }
+    html { scroll-behavior:auto; }
   }
-
-.hero h1{
-    font-size:clamp(2.6rem, 8vw, 4.75rem);
-    text-transform:uppercase;
-    margin-bottom:16px;
-    max-width:14ch;
-  }
-
-.hero .hero-sub{
-    font-size:clamp(1.15rem,2.4vw,1.4rem);
-    font-weight:700;
-    color:var(--yellow);
-    margin-bottom:20px;
-  }
-
-.hero .lead{
-    font-size:clamp(1.05rem,2vw,1.2rem);
-    color:rgba(255,255,255,.92);
-    max-width:50ch;
-    margin-bottom:8px;
-    font-weight:600;
-  }
-
-.hero .lead-sub{
-    font-size:1rem;
-    color:rgba(255,255,255,.78);
-    max-width:50ch;
-    margin-bottom:36px;
-    font-weight:400;
-  }
-
-.perk{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:var(--white);
-    color:var(--heading);
-    border-radius:999px;
-    padding:20px 18px;
-    font-weight:700;
-    font-size:.95rem;
-    box-shadow:0 10px 22px rgba(4,30,54,.16);
-  }
-
-.hero-actions{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    max-width:420px;
-  }
-
-.hero-actions .btn{width:100%;padding:19px 32px;font-size:1.05rem;}
-
-/* ---------- Section shell ---------- */
-  section{padding:96px 0;}
-
-.section-head{
-    max-width:60ch;
-    margin-bottom:48px;
-  }
-
-/* ---------- Régions ---------- */
-  .regions-wrap{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-  }
-
-.region-badge{
-    position:relative;
-    overflow:hidden;
-    background:var(--yellow);
-    color:var(--heading);
-    font-family:'Outfit',sans-serif;
-    font-weight:700;
-    font-size:.95rem;
-    padding:12px 22px;
-    border-radius:999px;
-    box-shadow:0 8px 18px rgba(244,230,0,.3);
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
-  }
-
-.region-badge:hover{
-    background:var(--yellow-dark);
-    transform:translateY(-3px);
-    box-shadow:0 12px 24px rgba(244,230,0,.4);
-  }
-
-.region-badge:active{transform:translateY(-1px) scale(.96);}
-
-.region-badge .ripple{background:rgba(11,96,172,.25);}
-
-.region-badge.selected{
-    background:var(--blue-mid);
-    color:var(--white);
-    box-shadow:0 8px 18px rgba(20,131,217,.35);
-  }
-
-.region-badge.selected:hover{
-    background:var(--blue-deep);
-    box-shadow:0 12px 24px rgba(20,131,217,.45);
-  }
-
-.region-badge.selected .ripple{background:rgba(255,255,255,.4);}
-
-/* ---------- Jobs / accordion (identique à Jonquière) ---------- */
-  .jobs{display:flex;flex-direction:column;gap:16px;}
-
-.job{
-    position:relative;
-    border:1.5px solid var(--line);
-    border-top:4px solid var(--yellow);
-    border-radius:var(--radius-lg);
-    background:var(--white);
-    box-shadow:var(--shadow-card);
-    overflow:hidden;
-    transition:box-shadow .3s var(--ease), border-color .3s var(--ease), transform .2s var(--ease);
-  }
-
-.job.open, .job:hover{border-color:var(--blue-mid);border-top-color:var(--yellow);}
-
-.job.open{box-shadow:var(--shadow-lift);}
-
-.job:active{transform:scale(.995);}
-
-.job .ripple{background:rgba(11,96,172,.12);}
-
-.job-summary{
-    width:100%;
-    list-style:none;
-    cursor:pointer;
-    padding:26px 24px;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    text-align:left;
-    background:none;
-    border:none;
-  }
-
-.job-chevron{
-    flex:none;
-    width:36px;
-    height:36px;
-    border-radius:50%;
-    background:#eef4fa;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 0 0 3px rgba(244,230,0,.3);
-    transition:transform .4s var(--ease), background .3s var(--ease);
-  }
-
-.job.open .job-chevron{
-    transform:rotate(180deg);
-    background:var(--yellow);
-  }
-
-.job-chevron svg{width:16px;height:16px;color:var(--blue-deep);}
-
-.job-summary-text{flex:1;min-width:0;}
-
-.job-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--heading);margin-bottom:4px;}
-
-.job-sub{font-size:.92rem;color:var(--ink-soft);margin-bottom:14px;}
-
-.job-tags{display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
-
-.job-tags .rate{
-    font-family:'Outfit',sans-serif;
-    font-size:1.05rem;
-    font-weight:700;
-    color:var(--heading);
-    padding:0;
-    background:none;
-    border-radius:0;
-  }
-
-.tag{
-    font-size:.8rem;
-    font-weight:600;
-    padding:5px 12px;
-    border-radius:999px;
-    background:#eef4fa;
-    color:var(--blue-deep);
-  }
-
-.job-panel{
-    display:grid;
-    grid-template-rows:0fr;
-    transition:grid-template-rows .45s var(--ease);
-  }
-
-.job.open .job-panel{
-    grid-template-rows:1fr;
-  }
-
-.job-panel-inner{
-    overflow:hidden;
-    min-height:0;
-  }
-
-.job-body{
-    padding:0 24px 32px;
-    display:grid;
-    grid-template-columns:1fr;
-    gap:28px;
-    opacity:0;
-    transform:translateY(-8px);
-    transition:opacity .35s var(--ease) .05s, transform .35s var(--ease) .05s;
-  }
-
-.job.open .job-body{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-@media (min-width:720px){
-    .job-body{grid-template-columns:1fr 1fr;}
-  }
-
-.job-block h4{
-    font-family:'Outfit',sans-serif;
-    font-size:.85rem;
-    font-weight:700;
-    color:var(--blue-mid);
-    text-transform:uppercase;
-    letter-spacing:.06em;
-    margin-bottom:14px;
-  }
-
-.job-block ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
-
-.job-block li{
-    display:flex;
-    gap:10px;
-    font-size:.95rem;
-    color:var(--ink-soft);
-    line-height:1.5;
-  }
-
-.job-block li svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--blue-mid);}
-
-.job-cta{
-    grid-column:1/-1;
-    margin-top:4px;
-  }
-
-.job-note{
-    font-size:.82rem;
-    color:#8296a6;
-    margin-top:20px;
-  }
-
-/* ---------- Mobile guardrails ---------- */
-  @media (max-width:480px){
-    .container{padding:0 24px;}
-    .job-summary{padding:22px 20px;}
-    .job-body{padding:0 20px 28px;}
-    .contact-card{padding:40px 24px;}
-    section{padding:72px 0;}
-  }
-
-  /* ---------- Signature E360S : logo header + footer ---------- */
-  .site-header .container{justify-content:space-between;}
-  .site-brand{display:flex;align-items:center;line-height:0;}
-  .site-brand img{height:56px;width:auto;max-width:180px;object-fit:contain;}
-  .footer-brand{display:flex;justify-content:center;margin-bottom:20px;}
-  .footer-brand img{height:76px;width:auto;object-fit:contain;display:block;}
-  @media (max-width:640px){
-    .site-brand img{height:44px;max-width:140px;}
-    .footer-brand img{height:60px;}
-  }
+  .site-header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(12px); border-bottom:1px solid #e3ebf1; }
+  .site-header .container { display:flex; align-items:center; justify-content:space-between; max-width:1080px; margin:0 auto; padding:12px 24px; }
+  .site-brand { display:block; line-height:0; }
+  .site-brand img { height:56px; width:auto; max-width:180px; object-fit:contain; }
+  .btn-ghost { display:inline-flex; align-items:center; padding:12px 24px; border-radius:999px; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; color:#0b60ac; border:2px solid rgba(11,96,172,.18); text-decoration:none; transition:all .25s; }
+  .btn-ghost:hover { background:#0b60ac; color:#fff; border-color:#0b60ac; }
+  .pre-footer-brand { display:flex; flex-direction:column; align-items:center; gap:12px; padding:40px 24px 8px; }
+  .pre-footer-brand img { height:64px; width:auto; object-fit:contain; }
+  .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#51697a; }
+  :focus-visible { outline:3px solid #f4e600; outline-offset:3px; border-radius:6px; }
 </style>
 </head>
-<body>
+<body class="font-sans text-ink bg-white antialiased" id="top">
 
 <header class="site-header">
   <div class="container">
@@ -302,386 +56,352 @@ body{
     <a href="#postuler" class="btn btn-ghost">Postuler</a>
   </div>
 </header>
-
-<section class="hero">
-  <div class="container">
-    <span class="eyebrow-pill"><span class="dot"></span>Nous embauchons maintenant · Plusieurs régions</span>
-    <h1>Collecte commerciale</h1>
-    <p class="hero-sub">Chauffeurs Classe 1 et Classe 3 recherchés</p>
-    <p class="lead">Rejoignez l'une des plus importantes équipes de collecte commerciale au Québec.</p>
-    <p class="lead-sub">Plusieurs régions recrutent actuellement.</p>
-
-    <div class="perks">
-      <div class="perk">Temps plein</div>
-      <div class="perk">Assurances collectives</div>
-      <div class="perk">REER</div>
-      <div class="perk">Équipements modernes</div>
-    </div>
-
-    <div class="hero-actions">
-      <a href="#postes" class="btn btn-primary">Voir les postes</a>
-    </div>
-  </div>
-</section>
-
-<section id="regions">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>Régions disponibles</h2>
-      <p>Plusieurs régions du Québec recrutent actuellement. Trouvez celle qui vous convient.</p>
-    </div>
-    <div class="regions-wrap reveal">
-      <span class="region-badge">Longueuil</span>
-      <span class="region-badge">Sainte-Julie</span>
-      <span class="region-badge">Sorel</span>
-      <span class="region-badge">Saint-Jérôme</span>
-      <span class="region-badge">Mont-Blanc</span>
-      <span class="region-badge">Roxton Pond</span>
-      <span class="region-badge">Drummondville</span>
-      <span class="region-badge">Windsor</span>
-      <span class="region-badge">Saint-Denis-de-Brompton</span>
-      <span class="region-badge">Vaudreuil-Dorion</span>
-      <span class="region-badge">New Richmond</span>
-      <span class="region-badge">Québec</span>
-      <span class="region-badge">Lévis</span>
-      <span class="region-badge">Saguenay</span>
-    </div>
-  </div>
-</section>
-
-<section id="postes" class="section-alt">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2>Postes disponibles</h2>
-      <p>Découvrez les opportunités en collecte commerciale. Cliquez sur un poste pour en voir tous les détails.</p>
-    </div>
-
-    <div class="jobs">
-
-      <div class="job reveal">
-        <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-frontload">
-          <div class="job-summary-text">
-            <div class="job-title">Chauffeur Front Load</div>
-            <div class="job-sub">Collecte commerciale</div>
-            <div class="job-tags">
-              <span class="tag rate">28 $ – 35 $ / h *</span>
-              <span class="tag">Classe 3</span>
-              <span class="tag">Temps plein</span>
-            </div>
+<main>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-white pointer-events-none"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-6 pt-16 pb-14 sm:pt-24 sm:pb-20 text-center">
+      <span class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-deep/5 text-brand-deep text-xs font-bold tracking-[0.18em] uppercase">
+        <span class="w-2 h-2 rounded-full bg-accent-dark animate-pulse"></span>
+        Nous embauchons maintenant · Plusieurs régions
+      </span>
+      <h1 class="reveal font-display font-extrabold tracking-tight text-4xl sm:text-6xl mt-6 leading-[1.05]">
+        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-brand-deep to-brand-light">Collecte</span>
+        <span class="block text-ink">commerciale</span>
+      </h1>
+      <p class="reveal mt-6 text-lg sm:text-xl text-ink-soft leading-relaxed max-w-2xl mx-auto">Rejoignez l'une des plus importantes équipes de collecte commerciale au Québec. Plusieurs régions recrutent actuellement.</p>
+      
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+          <div class="reveal flex items-center gap-3 bg-white rounded-2xl border border-slate-100 shadow-card px-5 py-4">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/5 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug">Temps plein</span>
           </div>
-          <span class="job-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          <div class="reveal flex items-center gap-3 bg-white rounded-2xl border border-slate-100 shadow-card px-5 py-4">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/5 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug">Assurances collectives</span>
+          </div>
+          <div class="reveal flex items-center gap-3 bg-white rounded-2xl border border-slate-100 shadow-card px-5 py-4">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/5 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug">REER</span>
+          </div>
+          <div class="reveal flex items-center gap-3 bg-white rounded-2xl border border-slate-100 shadow-card px-5 py-4">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/5 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug">Équipements modernes</span>
+          </div>
+      </div>
+      <a href="#postes" class="reveal mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-deep text-white font-display font-bold text-lg hover:bg-brand-dark transition-colors shadow-lift">
+        Voir les postes
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7-7-7m7 7V3"/></svg>
+      </a>
+    </div>
+  </section>  <section class="py-16 sm:py-20 bg-slate-50/70">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="reveal font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Régions disponibles</h2>
+      <p class="reveal text-ink-soft text-lg mt-4 max-w-2xl mx-auto">Plusieurs régions du Québec recrutent actuellement. Trouvez celle qui vous convient.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Longueuil</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Sainte-Julie</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Sorel</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Saint-Jérôme</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Mont-Blanc</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Roxton Pond</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Drummondville</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Windsor</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Saint-Denis-de-Brompton</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Vaudreuil-Dorion</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">New Richmond</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Québec</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Lévis</span>
+            <span class="reveal inline-flex items-center px-5 py-3 rounded-full bg-white border border-slate-200 shadow-card text-sm font-semibold">Saguenay</span>
+      </div>
+      <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="reveal mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-deep text-white font-display font-bold hover:bg-brand-dark transition-colors shadow-lift">
+        Postuler maintenant
+      </a>
+    </div>
+  </section>  <section id="postes" class="py-16 sm:py-24 scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="reveal text-center mb-12">
+        <p class="text-xs font-bold tracking-[0.2em] uppercase text-brand-deep/60">Nos opportunités</p>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight mt-3">Postes <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-deep to-brand-light">disponibles</span></h2>
+        <p class="text-ink-soft text-lg mt-4 max-w-2xl mx-auto">Découvrez les opportunités en collecte commerciale. Cliquez sur un poste pour en voir tous les détails.</p>
+      </div>
+      <div class="space-y-6">
+      <article class="job-card bg-white rounded-3xl border border-slate-100 shadow-card overflow-hidden reveal" data-open="false">
+        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-slate-50/60 transition-colors" aria-expanded="false">
+          <span class="flex-1 min-w-0">
+            <span class="block font-display text-xl sm:text-2xl font-extrabold text-ink">Chauffeur Front Load</span>
+            <span class="block text-ink-soft mt-1">Collecte commerciale</span>
+            <span class="flex flex-wrap gap-2 mt-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-accent/25 text-ink">28 $ – 35 $ / h *</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-ink-soft">Classe 3</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-ink-soft">Temps plein</span>
+            </span>
+          </span>
+          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-accent/15 text-brand-deep flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </span>
         </button>
-        <div class="job-panel" id="panel-frontload">
-          <div class="job-panel-inner">
-            <div class="job-body">
-              <div class="job-block">
-                <h4>Responsabilités</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Collecte de conteneurs commerciaux</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service aux commerces</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Inspection du camion</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des itinéraires</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des normes SST</li>
-                </ul>
-              </div>
-              <div class="job-block">
-                <h4>Qualifications</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Permis Classe 3 valide</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bon dossier de conduite</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expérience Front Load (atout)</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Autonomie et ponctualité</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Professionnalisme</li>
-                </ul>
-              </div>
-              <div class="job-block" style="grid-column:1/-1;">
-                <h4>Conditions</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Assurances collectives et REER</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Uniforme fourni</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Formation offerte</li>
-                </ul>
-              </div>
-              <a href="#postuler" class="btn btn-primary job-cta" data-job="Chauffeur Front Load">Postuler maintenant</a>
-            </div>
+        <div class="acc-panel"><div><div class="px-6 sm:px-8 pb-8 pt-1">
+          <div class="grid sm:grid-cols-3 gap-6">
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Responsabilités</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Collecte de conteneurs commerciaux</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Service aux commerces</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Inspection du camion</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Respect des itinéraires</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Respect des normes SST</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Qualifications</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Permis Classe 3 valide</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Bon dossier de conduite</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Expérience Front Load (atout)</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Autonomie et ponctualité</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Professionnalisme</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Conditions</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Temps plein</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Assurances collectives et REER</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Uniforme fourni</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Formation offerte</span></li>
+                  </ul>
+                </div>
           </div>
-        </div>
-      </div>
-
-      <div class="job reveal">
-        <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-rolloff">
-          <div class="job-summary-text">
-            <div class="job-title">Chauffeur Roll-Off</div>
-            <div class="job-sub">Transport de conteneurs</div>
-            <div class="job-tags">
-              <span class="tag rate">30 $ – 38 $ / h *</span>
-              <span class="tag">Classe 1 ou 3</span>
-              <span class="tag">Temps plein</span>
-            </div>
-          </div>
-          <span class="job-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-ink font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
+            Postuler maintenant
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div></div></div>
+      </article>
+      <article class="job-card bg-white rounded-3xl border border-slate-100 shadow-card overflow-hidden reveal" data-open="false">
+        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-slate-50/60 transition-colors" aria-expanded="false">
+          <span class="flex-1 min-w-0">
+            <span class="block font-display text-xl sm:text-2xl font-extrabold text-ink">Chauffeur Roll-Off</span>
+            <span class="block text-ink-soft mt-1">Transport de conteneurs</span>
+            <span class="flex flex-wrap gap-2 mt-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-accent/25 text-ink">30 $ – 38 $ / h *</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-ink-soft">Classe 1 ou 3</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-ink-soft">Temps plein</span>
+            </span>
+          </span>
+          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-accent/15 text-brand-deep flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </span>
         </button>
-        <div class="job-panel" id="panel-rolloff">
-          <div class="job-panel-inner">
-            <div class="job-body">
-              <div class="job-block">
-                <h4>Responsabilités</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Livraison de conteneurs</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Ramassage de conteneurs</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Inspection quotidienne</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service à la clientèle</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect SST</li>
-                </ul>
-              </div>
-              <div class="job-block">
-                <h4>Qualifications</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Classe 1 ou Classe 3</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expérience Roll-Off</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Conduite sécuritaire</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Fiabilité</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bonne organisation</li>
-                </ul>
-              </div>
-              <div class="job-block" style="grid-column:1/-1;">
-                <h4>Conditions</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Heures supplémentaires disponibles</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>REER et assurances</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Équipements modernes</li>
-                </ul>
-              </div>
-              <a href="#postuler" class="btn btn-primary job-cta" data-job="Chauffeur Roll-Off">Postuler maintenant</a>
-            </div>
+        <div class="acc-panel"><div><div class="px-6 sm:px-8 pb-8 pt-1">
+          <div class="grid sm:grid-cols-3 gap-6">
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Responsabilités</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Livraison de conteneurs</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Ramassage de conteneurs</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Inspection quotidienne</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Service à la clientèle</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Respect SST</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Qualifications</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Classe 1 ou Classe 3</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Expérience Roll-Off</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Conduite sécuritaire</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Fiabilité</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Bonne organisation</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Conditions</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Temps plein</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Heures supplémentaires disponibles</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>REER et assurances</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Équipements modernes</span></li>
+                  </ul>
+                </div>
           </div>
-        </div>
-      </div>
-
-      <div class="job reveal">
-        <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-recyclage">
-          <div class="job-summary-text">
-            <div class="job-title">Chauffeur Commercial Recyclage</div>
-            <div class="job-sub">Collecte commerciale et recyclage</div>
-            <div class="job-tags">
-              <span class="tag rate">28 $ – 34 $ / h *</span>
-              <span class="tag">Classe 3</span>
-              <span class="tag">Temps plein</span>
-            </div>
-          </div>
-          <span class="job-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-ink font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
+            Postuler maintenant
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div></div></div>
+      </article>
+      <article class="job-card bg-white rounded-3xl border border-slate-100 shadow-card overflow-hidden reveal" data-open="false">
+        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-slate-50/60 transition-colors" aria-expanded="false">
+          <span class="flex-1 min-w-0">
+            <span class="block font-display text-xl sm:text-2xl font-extrabold text-ink">Chauffeur Commercial Recyclage</span>
+            <span class="block text-ink-soft mt-1">Collecte commerciale et recyclage</span>
+            <span class="flex flex-wrap gap-2 mt-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-accent/25 text-ink">28 $ – 34 $ / h *</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-ink-soft">Classe 3</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-ink-soft">Temps plein</span>
+            </span>
+          </span>
+          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-accent/15 text-brand-deep flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </span>
         </button>
-        <div class="job-panel" id="panel-recyclage">
-          <div class="job-panel-inner">
-            <div class="job-body">
-              <div class="job-block">
-                <h4>Responsabilités</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Collecte des matières recyclables</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service aux entreprises</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Vérification des équipements</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect de l'itinéraire</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Conduite sécuritaire</li>
-                </ul>
-              </div>
-              <div class="job-block">
-                <h4>Qualifications</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Classe 3 valide</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bon dossier de conduite</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Esprit d'équipe</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service à la clientèle</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Autonomie</li>
-                </ul>
-              </div>
-              <div class="job-block" style="grid-column:1/-1;">
-                <h4>Conditions</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>REER et assurances</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Formation offerte</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Stabilité d'emploi</li>
-                </ul>
-              </div>
-              <a href="#postuler" class="btn btn-primary job-cta" data-job="Chauffeur Commercial Recyclage">Postuler maintenant</a>
-            </div>
+        <div class="acc-panel"><div><div class="px-6 sm:px-8 pb-8 pt-1">
+          <div class="grid sm:grid-cols-3 gap-6">
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Responsabilités</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Collecte des matières recyclables</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Service aux entreprises</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Vérification des équipements</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Respect de l'itinéraire</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Conduite sécuritaire</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Qualifications</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Classe 3 valide</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Bon dossier de conduite</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Esprit d'équipe</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Service à la clientèle</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Autonomie</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Conditions</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Temps plein</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>REER et assurances</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Formation offerte</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Stabilité d'emploi</span></li>
+                  </ul>
+                </div>
           </div>
-        </div>
-      </div>
-
-      <div class="job reveal">
-        <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-industriel">
-          <div class="job-summary-text">
-            <div class="job-title">Chauffeur Commercial Industriel</div>
-            <div class="job-sub">Collecte industrielle</div>
-            <div class="job-tags">
-              <span class="tag rate">30 $ – 36 $ / h *</span>
-              <span class="tag">Classe 1 ou 3</span>
-              <span class="tag">Temps plein</span>
-            </div>
-          </div>
-          <span class="job-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-ink font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
+            Postuler maintenant
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div></div></div>
+      </article>
+      <article class="job-card bg-white rounded-3xl border border-slate-100 shadow-card overflow-hidden reveal" data-open="false">
+        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-slate-50/60 transition-colors" aria-expanded="false">
+          <span class="flex-1 min-w-0">
+            <span class="block font-display text-xl sm:text-2xl font-extrabold text-ink">Chauffeur Commercial Industriel</span>
+            <span class="block text-ink-soft mt-1">Collecte industrielle</span>
+            <span class="flex flex-wrap gap-2 mt-3">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-accent/25 text-ink">30 $ – 36 $ / h *</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-ink-soft">Classe 1 ou 3</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-ink-soft">Temps plein</span>
+            </span>
+          </span>
+          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-accent/15 text-brand-deep flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </span>
         </button>
-        <div class="job-panel" id="panel-industriel">
-          <div class="job-panel-inner">
-            <div class="job-body">
-              <div class="job-block">
-                <h4>Responsabilités</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Collecte industrielle</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Transport de matières résiduelles</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Inspection du camion</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respect des procédures</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Service client</li>
-                </ul>
-              </div>
-              <div class="job-block">
-                <h4>Qualifications</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Classe 1 ou Classe 3</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expérience pertinente</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bonne capacité d'adaptation</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Autonomie</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Conduite sécuritaire</li>
-                </ul>
-              </div>
-              <div class="job-block" style="grid-column:1/-1;">
-                <h4>Conditions</h4>
-                <ul>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Assurances et REER</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Uniforme fourni</li>
-                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Possibilités d'avancement</li>
-                </ul>
-              </div>
-              <a href="#postuler" class="btn btn-primary job-cta" data-job="Chauffeur Commercial Industriel">Postuler maintenant</a>
-            </div>
+        <div class="acc-panel"><div><div class="px-6 sm:px-8 pb-8 pt-1">
+          <div class="grid sm:grid-cols-3 gap-6">
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Responsabilités</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Collecte industrielle</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Transport de matières résiduelles</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Inspection du camion</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Respect des procédures</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Service client</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Qualifications</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Classe 1 ou Classe 3</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Expérience pertinente</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Bonne capacité d'adaptation</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Autonomie</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Conduite sécuritaire</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Conditions</h3>
+                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Temps plein</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Assurances et REER</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Uniforme fourni</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Possibilités d'avancement</span></li>
+                  </ul>
+                </div>
           </div>
-        </div>
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-ink font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
+            Postuler maintenant
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div></div></div>
+      </article>
       </div>
-
+      <p class="reveal text-sm text-ink-faint mt-8 text-center">* Selon expérience. Les postes affichés peuvent varier selon les besoins opérationnels.</p>
     </div>
-    <p class="job-note">* Selon expérience. Les postes affichés peuvent varier selon les besoins opérationnels.</p>
-  </div>
-</section>
-
-<section id="postuler" class="section-alt" style="padding-top:48px;">
-  <div class="container">
-    <div class="contact-card reveal">
-      <h2>Une question ?</h2>
-      <p>Notre équipe recrutement vous répond rapidement.</p>
-      <div class="contact-methods">
-        <a class="contact-link" href="mailto:Recruitment@e360s.ca">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          Recruitment@e360s.ca
-        </a>
-        <a class="contact-link" href="tel:+14385351659">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 12.9 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
-          (438) 535-1659
-        </a>
+  </section>  <section class="py-16 sm:py-24 bg-slate-50/70">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-brand-deep text-white p-10 sm:p-14 text-center shadow-lift">
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
+        <h2 class="relative font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Une question ?</h2>
+        <p class="relative mt-4 text-white/80 text-lg max-w-xl mx-auto">Notre équipe recrutement vous répond rapidement.</p>
+        <div class="relative mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:recruitment@e360s.ca" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-brand-deep font-display font-bold hover:bg-accent transition-colors">recruitment@e360s.ca</a>
+          <a href="tel:+14385351659" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/30 text-white font-display font-bold hover:bg-white/10 transition-colors">(438) 535-1659</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<footer>
-  <div class="container">
-    <div class="footer-brand"><img src="images/Logo.jpg" alt="E360S — Solutions Environnementales 360"></div>
-    &copy; <span id="year"></span> E360S
-  </div>
-</footer>
+<div class="footer"></div>
+
+<div class="pre-footer-brand">
+  <img id="footer-logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="E360S — Solutions Environnementales 360 Ltée">
+  <div class="footer-brand-text">Solutions Environnementales 360 (E360S)</div>
+</div>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Reveal on scroll
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('is-visible');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-revealEls.forEach(el => io.observe(el));
-
-// Accordion — one job open at a time, smooth height animation, no scroll jump
-const jobs = document.querySelectorAll('.job');
-jobs.forEach(job => {
-  const trigger = job.querySelector('.job-summary');
-  trigger.addEventListener('click', () => {
-    const isOpen = job.classList.contains('open');
-    jobs.forEach(other => {
-      other.classList.remove('open');
-      other.querySelector('.job-summary').setAttribute('aria-expanded', 'false');
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else { revealEls.forEach(el => el.classList.add('is-visible')); }
+  document.querySelectorAll('.job-card-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const card = trigger.closest('.job-card');
+      const open = card.getAttribute('data-open') === 'true';
+      card.setAttribute('data-open', String(!open));
+      trigger.setAttribute('aria-expanded', String(!open));
     });
-    if (!isOpen){
-      job.classList.add('open');
-      trigger.setAttribute('aria-expanded', 'true');
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const openCard = document.querySelector('.job-card[data-open="true"]');
+    if (openCard) {
+      openCard.setAttribute('data-open', 'false');
+      openCard.querySelector('.job-card-trigger').setAttribute('aria-expanded', 'false');
     }
   });
-});
-
-// Smooth scroll for in-page anchors
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target){
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+      const selector = link.getAttribute('href');
+      if (!selector || selector === '#') return;
+      const target = document.querySelector(selector);
+      if (target) { event.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
   });
-});
-
-// Premium click feedback — ripple effect on buttons and "why" cards
-function addRipple(e){
-  const el = e.currentTarget;
-  const rect = el.getBoundingClientRect();
-  const size = Math.max(rect.width, rect.height);
-  const ripple = document.createElement('span');
-  ripple.className = 'ripple';
-  ripple.style.width = ripple.style.height = size + 'px';
-  ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-  ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-  el.appendChild(ripple);
-  ripple.addEventListener('animationend', () => ripple.remove());
-  if (el.classList.contains('btn')) e.stopPropagation();
-}
-document.querySelectorAll('.btn, .job, .region-badge').forEach(el => {
-  el.style.position = el.style.position || 'relative';
-  el.style.overflow = el.style.overflow || 'hidden';
-  el.addEventListener('click', addRipple);
-});
-
-// Régions — bascule en bleu au clic
-document.querySelectorAll('.region-badge').forEach(badge => {
-  badge.addEventListener('click', () => {
-    badge.classList.toggle('selected');
-  });
-});
-
-// Pass selected job title into the contact context
-document.querySelectorAll('.job-cta').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const job = btn.getAttribute('data-job');
-    const emailLink = document.querySelector('a[href^="mailto:"]');
-    if (emailLink && job){
-      emailLink.setAttribute('href', `mailto:Recruitment@e360s.ca?subject=Candidature - ${encodeURIComponent(job)}`);
-    }
-  });
-});
+  (function() {
+    var h = document.querySelector('.site-brand img');
+    var f = document.getElementById('footer-logo');
+    if (h && f) { f.src = h.src; }
+  })();
 </script>
-
 </body>
 </html>
