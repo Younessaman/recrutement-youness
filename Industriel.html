@@ -2,736 +2,41 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="E360S recrute à Saint-Lambert-de-Lauzon : électromécanicien(ne) et mécanicien(ne) industriel(le). 32 $/h et plus, temps plein, assurances et REER. Postulez dès maintenant.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Maintenance Industrielle | Saint-Lambert-de-Lauzon | E360S</title>
-
+<meta name="description" content="E360S recrute à Saint-Lambert-de-Lauzon : électromécanicien(ne) et mécanicien(ne) industriel(le). 32 $/h et plus, temps plein, assurances et REER. Postulez dès maintenant.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { display:['Outfit','sans-serif'], sans:['Inter','sans-serif'] }
+}}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/secteurs.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-.job-title{
-    font-size:clamp(1.9rem,3.5vw,2.5rem);
-    font-weight:800;
-    color:var(--heading);
-    text-align:center;
-    margin-bottom:16px;
-    scroll-margin-top:120px;
-  }
-
-.job-card-trigger[aria-expanded="false"] + .job-card-panel{display:block!important;height:0!important;max-height:0!important;overflow:hidden!important;opacity:0!important;visibility:hidden!important;margin:0!important;padding:0!important;border:0!important;}
-
-.job-card-trigger[aria-expanded="true"] + .job-card-panel{display:block!important;height:auto!important;max-height:2000px!important;overflow:hidden!important;opacity:1!important;visibility:visible!important;}
-
-.hero-actions{display:flex!important;justify-content:center!important;align-items:center!important;width:100%;margin:0 auto!important;text-align:center}
-
-.hero-actions .btn-primary{display:flex!important;align-items:center;justify-content:center;width:min(540px,100%);margin:0 auto!important;min-height:72px!important;padding:18px 32px!important;border:0!important;border-radius:999px!important;background:var(--yellow)!important;color:var(--blue-mid)!important;font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:800;box-shadow:0 16px 34px rgba(249,255,0,.25)}
-
-/* =========================================================
-     POSTES — NOUVELLE EXPÉRIENCE CANDIDAT
-  ========================================================= */
-  .company-overview{
-    max-width:1000px;
-    margin:0 auto 34px;
-    display:grid;
-    grid-template-columns:auto 1fr;
-    align-items:center;
-    gap:24px;
-    padding:30px 34px;
-    background:rgba(255,255,255,.98);
-    border:1px solid rgba(255,255,255,.45);
-    border-left:6px solid var(--yellow);
-    border-radius:22px;
-    box-shadow:0 16px 38px rgba(0,56,95,.18);
-  }
-
-.company-overview-icon{
-    width:62px;
-    height:62px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:18px;
-    background:var(--yellow);
-    color:var(--blue-mid);
-    box-shadow:0 10px 22px rgba(249,255,0,.22);
-  }
-
-.company-overview-icon svg{width:30px;height:30px}
-
-.company-overview-kicker{
-    display:inline-block;
-    margin-bottom:7px;
-    color:var(--blue-mid);
-    font-family:'Outfit',sans-serif;
-    font-size:.72rem;
-    font-weight:800;
-    letter-spacing:.08em;
-  }
-
-.company-overview h2{
-    margin:0 0 9px;
-    color:var(--blue-mid);
-    font-size:clamp(1.35rem,3vw,1.8rem);
-  }
-
-.company-overview p{
-    max-width:820px;
-    color:#416783;
-    font-size:.98rem;
-    line-height:1.68;
-  }
-
-.jobs-grid{
-    max-width:1000px;
-    margin:0 auto;
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:22px;
-    align-items:start;
-  }
-
-.job-card{
-    min-width:0;
-    background:#fff;
-    border:1px solid rgba(255,255,255,.65);
-    border-top:4px solid var(--yellow);
-    border-radius:24px;
-    box-shadow:0 14px 34px rgba(0,56,95,.18);
-    overflow:hidden;
-    transition:transform .28s var(--ease),box-shadow .28s var(--ease);
-  }
-
-.job-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 22px 46px rgba(0,56,95,.24);
-  }
-
-.job-card-trigger{
-    width:100%;
-    min-height:142px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:25px 23px;
-    border:0;
-    background:#fff;
-    color:inherit;
-    text-align:left;
-    cursor:pointer;
-  }
-
-.job-card-trigger:hover{background:#fbfdff}
-
-.job-card-icon{
-    flex:none;
-    width:54px;
-    height:54px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:16px;
-    background:#EAF4FA;
-    color:var(--blue-mid);
-    transition:.28s var(--ease);
-  }
-
-.job-card-icon svg{width:27px;height:27px}
-
-.job-card-trigger[aria-expanded="true"] .job-card-icon{
-    background:var(--yellow);
-    color:var(--blue-mid);
-  }
-
-.job-card-title-wrap{
-    flex:1;
-    min-width:0;
-    display:flex;
-    flex-direction:column;
-  }
-
-.job-card-eyebrow{
-    margin-bottom:5px;
-    color:#5d7d91;
-    font-family:'Outfit',sans-serif;
-    font-size:.68rem;
-    font-weight:800;
-    letter-spacing:.08em;
-  }
-
-.job-card-title{
-    color:var(--blue-mid);
-    font-family:'Outfit',sans-serif;
-    font-size:1.35rem;
-    font-weight:800;
-    line-height:1.1;
-  }
-
-.job-card-summary{
-    margin-top:7px;
-    color:#557388;
-    font-size:.88rem;
-    line-height:1.45;
-  }
-
-.job-card-arrow{
-    flex:none;
-    width:34px;
-    height:34px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#EAF4FA;
-    color:var(--blue-mid);
-    transition:transform .35s var(--ease),background .25s var(--ease);
-  }
-
-.job-card-arrow svg{width:15px;height:15px}
-
-.job-card-trigger[aria-expanded="true"] .job-card-arrow{
-    transform:rotate(180deg);
-    background:var(--yellow);
-  }
-
-/* Poste fermé : aucun contenu de l’aperçu ne doit dépasser du cadre. */
-  .job-card-panel{
-    display:block;
-    height:0;
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-    visibility:hidden;
-    transition:max-height .45s var(--ease), opacity .25s ease, visibility 0s linear .45s;
-  }
-
-.job-card-panel > .job-card-panel-inner{
-    min-height:0;
-    overflow:hidden;
-  }
-
-.job-card-trigger[aria-expanded="true"] + .job-card-panel{
-    height:auto;
-    max-height:2000px;
-    opacity:1;
-    visibility:visible;
-    transition:max-height .45s var(--ease), opacity .25s ease, visibility 0s linear 0s;
-  }
-
-.job-card-panel-inner{
-    padding:0 23px 24px;
-    border-top:1px solid #E6EEF3;
-  }
-
-.job-section-block{
-    padding-top:21px;
-  }
-
-.job-section-block h3{
-    margin:0 0 9px;
-    color:var(--blue-mid);
-    font-family:'Outfit',sans-serif;
-    font-size:.76rem;
-    font-weight:800;
-    letter-spacing:.07em;
-  }
-
-.job-section-block p{
-    color:#416783;
-    font-size:.91rem;
-    line-height:1.62;
-  }
-
-.job-mini-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-    margin-top:18px;
-  }
-
-.job-mini-item{
-    display:flex;
-    align-items:flex-start;
-    gap:9px;
-    padding:12px;
-    border-radius:14px;
-    background:#F5F9FC;
-  }
-
-.mini-icon{
-    flex:none;
-    width:30px;
-    height:30px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:9px;
-    background:#EAF4FA;
-    color:var(--blue-mid);
-  }
-
-.mini-icon svg{width:16px;height:16px}
-
-.job-mini-item strong,
-  .job-mini-item small{
-    display:block;
-  }
-
-.job-mini-item strong{
-    color:var(--blue-mid);
-    font-family:'Outfit',sans-serif;
-    font-size:.76rem;
-    font-weight:800;
-    line-height:1.2;
-  }
-
-.job-mini-item small{
-    margin-top:3px;
-    color:#527187;
-    font-size:.72rem;
-    line-height:1.35;
-  }
-
-.job-columns{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-  }
-
-.job-check-list{
-    list-style:none;
-    padding:0;
-    margin:0;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-  }
-
-.job-check-list li{
-    position:relative;
-    padding-left:20px;
-    color:#365D78;
-    font-size:.84rem;
-    line-height:1.48;
-  }
-
-.job-check-list li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:.45em;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--yellow);
-    box-shadow:0 0 0 3px rgba(249,255,0,.18);
-  }
-
-.job-apply-btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    width:100%;
-    min-height:54px;
-    margin-top:23px;
-    padding:14px 20px;
-    border-radius:999px;
-    background:var(--blue-mid);
-    color:var(--white);
-    text-decoration:none;
-    font-family:'Outfit',sans-serif;
-    font-size:.9rem;
-    font-weight:800;
-    box-shadow:0 12px 24px rgba(0,125,184,.18);
-    transition:.25s var(--ease);
-  }
-
-.job-apply-btn:hover{
-    background:var(--blue-deep);
-    transform:translateY(-2px);
-    box-shadow:0 16px 30px rgba(0,125,184,.24);
-  }
-
-.job-apply-btn svg{width:17px;height:17px}
-
-.opportunities-badge{
-    border-color:rgba(255,255,255,.42)!important;
-    background:rgba(255,255,255,.15)!important;
-    font-size:1rem!important;
-    font-weight:800!important;
-    padding:12px 22px!important;
-    box-shadow:0 8px 22px rgba(0,50,80,.12);
-  }
-
-.hero-actions .btn-primary{
-    cursor:pointer;
-  }
-
-@media(max-width:900px){
-    .jobs-grid{grid-template-columns:1fr}
-  }
-
-@media(max-width:680px){
-    .company-overview{
-      grid-template-columns:1fr;
-      gap:15px;
-      padding:24px 21px;
-      border-left-width:4px;
-      margin-bottom:22px;
-    }
-    .company-overview-icon{width:52px;height:52px;border-radius:15px}
-    .company-overview-icon svg{width:25px;height:25px}
-    .company-overview p{font-size:.91rem}
-    .jobs-grid{gap:16px}
-    .job-card{border-radius:20px}
-    .job-card-trigger{min-height:126px;padding:20px 17px;gap:11px}
-    .job-card-icon{width:45px;height:45px;border-radius:13px}
-    .job-card-icon svg{width:23px;height:23px}
-    .job-card-title{font-size:1.12rem}
-    .job-card-summary{font-size:.8rem}
-    .job-card-arrow{width:30px;height:30px}
-    .job-card-panel-inner{padding:0 17px 20px}
-    .job-card-panel{max-height:0!important;height:0!important}
-    .job-card-trigger[aria-expanded="true"] + .job-card-panel{max-height:2000px!important;height:auto!important}
-    .job-mini-grid,.job-columns{grid-template-columns:1fr}
-    .job-mini-item{padding:11px}
-    .job-section-block{padding-top:18px}
-    .job-check-list li{font-size:.82rem}
-    .opportunities-badge{
-      max-width:100%!important;
-      border-radius:17px!important;
-      font-size:.86rem!important;
-      line-height:1.35!important;
-    }
-  }
-
-/* =========================================================
-     MOBILE PHONE — FINAL CANDIDATE EXPERIENCE
-  ========================================================= */
-  .opportunities-badge{
-    display:inline-flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    width:auto!important;
-    min-width:min(280px,92vw)!important;
-    max-width:92vw!important;
-    min-height:52px!important;
-    margin:0 auto 30px!important;
-    padding:12px 24px!important;
-    background:var(--yellow)!important;
-    color:var(--blue-mid)!important;
-    border:0!important;
-    border-radius:999px!important;
-    box-shadow:0 10px 24px rgba(249,255,0,.25)!important;
-    font-family:'Outfit',sans-serif!important;
-    font-size:clamp(.92rem,4vw,1.08rem)!important;
-    font-weight:800!important;
-    letter-spacing:0!important;
-    text-transform:none!important;
-  }
-
-.hero h1 .yellow,
-  .job-title .yellow{
-    color:var(--yellow)!important;
-  }
-
-.job-title{
-    line-height:1.05!important;
-  }
-
-@media(max-width:680px){
-    .hero{
-      padding:42px 15px 54px!important;
-    }
-
-    .hero .badge{
-      margin-bottom:18px!important;
-      font-size:.72rem!important;
-      min-height:34px!important;
-      padding:8px 14px!important;
-    }
-
-    .hero h1{
-      font-size:clamp(2.15rem,12vw,3.25rem)!important;
-      line-height:.98!important;
-      margin-bottom:18px!important;
-    }
-
-    .hero-title-line{
-      display:block!important;
-      white-space:normal!important;
-    }
-
-    .hero-description{
-      font-size:.92rem!important;
-      line-height:1.55!important;
-      margin-bottom:18px!important;
-    }
-
-    .opportunities-badge{
-      min-width:0!important;
-      width:auto!important;
-      max-width:92vw!important;
-      min-height:50px!important;
-      margin-bottom:24px!important;
-      padding:11px 20px!important;
-      font-size:.92rem!important;
-    }
-
-    .hero .perks{
-      grid-template-columns:1fr!important;
-      gap:9px!important;
-      margin:0 auto 24px!important;
-    }
-
-    .hero .perk{
-      width:100%!important;
-      min-height:58px!important;
-      padding:12px 15px!important;
-      border-radius:16px!important;
-      font-size:.86rem!important;
-      line-height:1.25!important;
-    }
-
-    .hero-actions .btn-primary{
-      min-height:58px!important;
-      padding:16px 20px!important;
-      font-size:.98rem!important;
-    }
-
-    .content-section{
-      padding:46px 0 58px!important;
-    }
-
-    .content-section .container{
-      padding-left:14px!important;
-      padding-right:14px!important;
-    }
-
-    .job-title{
-      font-size:clamp(1.85rem,9vw,2.45rem)!important;
-      margin-bottom:12px!important;
-    }
-
-    .job-badge{
-      font-size:.82rem!important;
-      padding:9px 14px!important;
-    }
-
-    .main-description{
-      font-size:.92rem!important;
-      line-height:1.55!important;
-      margin:18px auto 28px!important;
-    }
-
-    .jobs-grid{
-      display:grid!important;
-      grid-template-columns:1fr!important;
-      gap:14px!important;
-      width:100%!important;
-    }
-
-    .job-card{
-      width:100%!important;
-      border-radius:18px!important;
-      margin:0!important;
-    }
-
-    .job-card-trigger{
-      min-height:104px!important;
-      padding:17px 14px!important;
-      gap:10px!important;
-    }
-
-    .job-card-icon{
-      width:43px!important;
-      height:43px!important;
-      border-radius:12px!important;
-    }
-
-    .job-card-icon svg{
-      width:22px!important;
-      height:22px!important;
-    }
-
-    .job-card-title{
-      font-size:1.05rem!important;
-      line-height:1.12!important;
-    }
-
-    .job-card-eyebrow{
-      font-size:.61rem!important;
-      margin-bottom:4px!important;
-    }
-
-    .job-card-summary{
-      font-size:.78rem!important;
-      line-height:1.35!important;
-      margin-top:5px!important;
-    }
-
-    .job-card-arrow{
-      width:30px!important;
-      height:30px!important;
-    }
-
-    .job-card-panel-inner{
-      padding:0 15px 18px!important;
-    }
-
-    .job-section-block{
-      padding-top:17px!important;
-    }
-
-    .job-section-block h3{
-      font-size:.7rem!important;
-      margin-bottom:7px!important;
-    }
-
-    .job-section-block p{
-      font-size:.86rem!important;
-      line-height:1.52!important;
-    }
-
-    .job-mini-grid{
-      grid-template-columns:1fr!important;
-      gap:8px!important;
-      margin-top:14px!important;
-    }
-
-    .job-mini-item{
-      padding:10px!important;
-      border-radius:12px!important;
-    }
-
-    .job-columns{
-      grid-template-columns:1fr!important;
-      gap:6px!important;
-    }
-
-    .job-check-list{
-      gap:7px!important;
-    }
-
-    .job-check-list li{
-      font-size:.82rem!important;
-      line-height:1.45!important;
-      padding-left:17px!important;
-    }
-
-    .job-check-list li::before{
-      width:7px!important;
-      height:7px!important;
-    }
-
-    .job-apply-btn{
-      min-height:52px!important;
-      margin-top:18px!important;
-      font-size:.92rem!important;
-    }
-
-    .regions-section{
-      margin-top:24px!important;
-    }
-
-    .regions-intro{
-      font-size:.92rem!important;
-    }
-
-    .contact-section{
-      padding:0 0 56px!important;
-    }
-
-    .contact-card{
-      border-radius:20px!important;
-      padding:34px 17px!important;
-    }
-
-    .contact-link{
-      min-height:52px!important;
-      font-size:.84rem!important;
-    }
-  }
-
-@media(max-width:380px){
-    .hero h1{
-      font-size:2.05rem!important;
-    }
-
-    .opportunities-badge{
-      max-width:100%!important;
-      font-size:.86rem!important;
-      padding-left:16px!important;
-      padding-right:16px!important;
-    }
-
-    .job-card-title{
-      font-size:1rem!important;
-    }
-
-    .job-card-summary{
-      font-size:.74rem!important;
-    }
-  }
-
-/* Titre POSTES DISPONIBLES : centré avec un espace équilibré au-dessus et au-dessous */
-  #postes .center{
-    text-align:center!important;
-    padding:38px 20px 42px!important;
-  }
-
-#postes .job-title{
-    display:block!important;
-    width:100%!important;
-    margin:0 auto!important;
-    text-align:center!important;
-    line-height:1.08!important;
-  }
-
-@media(max-width:680px){
-    #postes .center{
-      padding:28px 16px 32px!important;
-    }
-    #postes .job-title{
-      font-size:clamp(1.65rem,8vw,2.2rem)!important;
-    }
-  }
-
-/* ---------- Typographie éditoriale premium (test) ---------- */
-  body{font-size:1.02rem;line-height:1.7;letter-spacing:.002em;text-rendering:optimizeLegibility;}
-
-p,li{line-height:1.75;}
-
-.hero-description{font-size:1.16rem;line-height:1.72;max-width:60ch;}
-
-.job-section-block p{line-height:1.8;color:var(--ink-soft);}
-
-.job-check-list li{line-height:1.7;}
-
-h1,h2,h3{letter-spacing:-.015em;}
+  html { scroll-behavior:smooth; }
+  .acc-panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1); }
+  .acc-panel > div { overflow:hidden; }
+  .job-card[data-open="true"] .acc-panel { grid-template-rows:1fr; }
+  .job-card .acc-chevron { transition:transform .4s; }
+  .job-card[data-open="true"] .acc-chevron { transform:rotate(180deg); }
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } html { scroll-behavior:auto; } }
+  /* En-tête et signature : conservés tels quels */
+  .site-header { background:#f4e600; position:sticky; top:0; z-index:50; }
+  .site-header .container { display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:14px 28px; }
+  .site-brand img { height:52px; width:auto; object-fit:contain; }
+  .btn-ghost { display:inline-flex; align-items:center; padding:13px 34px; border-radius:999px; background:#0b6ea5; color:#f4e600; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; text-decoration:none; transition:all .25s; box-shadow:0 8px 20px rgba(0,60,100,.25); }
+  .btn-ghost:hover { background:#084e7c; }
+  .pre-footer-brand { display:flex; flex-direction:column; align-items:center; gap:10px; padding:44px 24px 10px; background:#fff; }
+  .pre-footer-brand img { height:64px; width:auto; object-fit:contain; }
+  .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#4d6e89; font-size:.95rem; }
+  :focus-visible { outline:3px solid #f4e600; outline-offset:3px; border-radius:6px; }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </head>
-
-<body id="top">
+<body class="font-sans antialiased" id="top">
 
 <header class="site-header">
   <div class="container">
@@ -747,478 +52,249 @@ h1,h2,h3{letter-spacing:-.015em;}
   </div>
 </header>
 
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="hero">
-
-  <div class="badge">
-    NOUS EMBAUCHONS MAINTENANT
-  </div>
-
-  <h1>
-    <span class="hero-title-line yellow">MAINTENANCE</span>
-    <span class="hero-title-line">INDUSTRIELLE</span>
-  </h1>
-
-  <div class="opportunities-badge" aria-label="Lieu de travail">
-    Saint-Lambert-de-Lauzon
-  </div>
-
-  <div class="hero-description">
-    Vous comprenez une machine avant même d'ouvrir le panneau? À Saint-Lambert-de-Lauzon, E360S vous offre un terrain à la hauteur de votre expertise : des équipements modernes, une équipe qui respecte le métier, et un salaire qui reconnaît votre valeur.
-  </div>
-
-
-  <div class="perks">
-
-      <span class="perk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-              <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-           32 $/h et plus, selon expérience
+<main>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-[#1ba0d6] via-[#1283b8] to-[#0a6ea5]">
+    <div class="absolute -top-32 -right-32 w-[480px] h-[480px] bg-[#f4e600]/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-6 pt-14 pb-16 sm:pt-20 sm:pb-24 text-center">
+      <span class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0b6ea5] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-[#0b6ea5] animate-pulse"></span>
+        Nous embauchons maintenant
       </span>
-
-      <span class="perk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-              <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
-          </svg>
-          Temps plein
-      </span>
-
-      <span class="perk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-              <path d="M12 20V10M18 20V4M6 20v-6"/>
-          </svg>
-          Horaire jour ou soir
-      </span>
-
-      <span class="perk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-              <path d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87M9 7a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/>
-          </svg>
-          Assurances + REER
-      </span>
-
-  </div>
-
-<div class="hero-actions reveal">
-    <a class="btn-primary" href="#description-poste" aria-label="Voir les postes disponibles">
-      VOIR LES POSTES
-    </a>
-</div>
-
-</section>
-
-<!-- =========================================================
-     BANDEAU JAUNE
-========================================================= -->
-
-
-<!-- =========================================================
-     POSTES
-========================================================= -->
-
-<section class="content-section" id="postes">
-
-  <div class="container">
-
-    <div class="center reveal">
-      <div id="description-poste" class="job-title" aria-label="Postes disponibles">
-        <span class="yellow">POSTES</span> DISPONIBLES
+      <h1 class="reveal font-display font-extrabold uppercase tracking-tight text-5xl sm:text-7xl mt-7 leading-[1.02]">
+        <span class="block text-[#f4e600]">Maintenance</span>
+        <span class="block text-white">industrielle</span>
+      </h1>
+      <div class="reveal mt-7">
+        <span class="inline-block px-8 py-3.5 rounded-full bg-[#f4e600] text-[#0b6ea5] font-display font-bold shadow-[0_10px_30px_rgba(0,40,70,.25)]">Saint-Lambert-de-Lauzon</span>
       </div>
-    </div>
-
-    <!-- POSTES -->
-    <div class="jobs-grid" aria-label="Postes disponibles">
-
-      <!-- ÉLECTROMÉCANICIEN -->
-      <article class="job-card reveal" id="poste-electromecanicien">
-        <button class="job-card-trigger" type="button" aria-expanded="false" aria-controls="job-panel-electromecanicien">
-          <span class="job-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>
-            </svg>
-          </span>
-          <span class="job-card-title-wrap">
-            <span class="job-card-eyebrow">POSTE DISPONIBLE</span>
-            <span class="job-card-title">Électromécanicien(ne)</span>
-            <span class="job-card-summary">Le premier répondant de nos équipements : diagnostic, dépannage et fiabilité, jour après jour.</span>
-          </span>
-          <span class="job-card-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6">
-              <path d="m6 9 6 6 6-6"/>
-            </svg>
-          </span>
-        </button>
-
-        <div class="job-card-panel" id="job-panel-electromecanicien">
-          <div class="job-card-panel-inner">
-            <div class="job-section-block">
-              <h3>APERÇU DU POSTE</h3>
-              <p>
-                Au cœur de notre site de Saint-Lambert-de-Lauzon, vous veillez à la santé de nos équipements industriels. Maintenance préventive rigoureuse, dépannage efficace, diagnostics précis : votre expertise garantit la continuité des opérations et la sécurité de vos collègues. Ici, la maintenance n'est pas une simple fonction de soutien — c'est un métier reconnu et valorisé.
-              </p>
-            </div>
-
-            <div class="job-mini-grid">
-            </div>
-
-            <div class="job-columns">
-              <div class="job-section-block">
-                <h3>RESPONSABILITÉS</h3>
-                <ul class="job-check-list">
-                  <li>Diagnostiquer avec méthode les pannes mécaniques, électriques et pneumatiques</li>
-                  <li>Exécuter la maintenance préventive et corrective selon les plans établis</li>
-                  <li>Installer, ajuster et mettre en service les équipements</li>
-                  <li>Appliquer rigoureusement les normes de santé et de sécurité</li>
-                  <li>Documenter vos interventions et contribuer à l'amélioration continue</li>
-                </ul>
-              </div>
-              <div class="job-section-block">
-                <h3>PROFIL RECHERCHÉ</h3>
-                <ul class="job-check-list">
-                  <li>DEP en électromécanique de systèmes automatisés ou expérience équivalente</li>
-                  <li>Excellente capacité de diagnostic et de résolution de problèmes</li>
-                  <li>Rigueur, autonomie et sens des responsabilités</li>
-                  <li>Esprit d'équipe : chez nous, on ne dépanne jamais seul</li>
-                  <li>Expérience industrielle : un atout</li>
-                </ul>
-              </div>
-            </div>
-
-            <a class="job-apply-btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer">
-              POSTULER MAINTENANT
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- MÉCANICIEN INDUSTRIEL -->
-      <article class="job-card reveal" id="poste-mecanicien-industriel">
-        <button class="job-card-trigger" type="button" aria-expanded="false" aria-controls="job-panel-mecanicien">
-          <span class="job-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/>
-            </svg>
-          </span>
-          <span class="job-card-title-wrap">
-            <span class="job-card-eyebrow">POSTE DISPONIBLE</span>
-            <span class="job-card-title">Mécanicien(ne) industriel(le)</span>
-            <span class="job-card-summary">La fiabilité de nos installations repose sur vos mains et votre jugement.</span>
-          </span>
-          <span class="job-card-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6">
-              <path d="m6 9 6 6 6-6"/>
-            </svg>
-          </span>
-        </button>
-
-        <div class="job-card-panel" id="job-panel-mecanicien">
-          <div class="job-card-panel-inner">
-            <div class="job-section-block">
-              <h3>APERÇU DU POSTE</h3>
-              <p>
-                De l'installation à l'optimisation, vous êtes le garant de la fiabilité mécanique de notre site. Montage, ajustement, réparation, entretien préventif : chaque intervention que vous signez prolonge la vie de nos équipements. Un rôle concret, pour quelqu'un qui aime voir le résultat de son travail.
-              </p>
-            </div>
-
-            <div class="job-mini-grid">
-              <div class="job-mini-item">
-                <span class="mini-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/></svg>
-                </span>
-                <span><strong>Expertise</strong><small>Mécanique industrielle</small></span>
-              </div>
-            </div>
-
-            <div class="job-columns">
-              <div class="job-section-block">
-                <h3>RESPONSABILITÉS</h3>
-                <ul class="job-check-list">
-                  <li>Exécuter les réparations mécaniques avec précision et dans les délais</li>
-                  <li>Installer et aligner les composantes mécaniques selon les plans</li>
-                  <li>Remplacer les pièces défectueuses et valider le bon fonctionnement</li>
-                  <li>Réaliser les inspections préventives et recommander les actions requises</li>
-                  <li>Proposer des améliorations pour optimiser la performance des équipements</li>
-                </ul>
-              </div>
-              <div class="job-section-block">
-                <h3>PROFIL RECHERCHÉ</h3>
-                <ul class="job-check-list">
-                  <li>DEP en mécanique industrielle ou expérience équivalente</li>
-                  <li>Lecture de plans et de schémas mécaniques</li>
-                  <li>Autonomie, sens de l'organisation et esprit d'équipe</li>
-                  <li>Dextérité et souci du travail bien fait</li>
-                  <li>Expérience en milieu manufacturier : un atout</li>
-                </ul>
-              </div>
-            </div>
-
-            <a class="job-apply-btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer">
-              POSTULER MAINTENANT
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-<section class="why-section">
-  <div class="container">
-    <div class="section-head why-head reveal">
-      <h2>Pourquoi rejoindre <span>E360S</span> ?</h2>
-      <div class="title-line"></div>
-      <p>Un employeur qui investit dans ses gens autant que dans ses équipements. Voici ce qui vous attend, concrètement.</p>
-    </div>
-    <div class="why-grid">
-      <article class="why-card reveal">
-        <div class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="5" y="18" width="5" height="9" rx="1.5" fill="currentColor"/>
-            <rect x="13.5" y="13" width="5" height="14" rx="1.5" fill="currentColor"/>
-            <rect x="22" y="7" width="5" height="20" rx="1.5" fill="currentColor"/>
-            <path d="M6 11.5L13.5 7.5L19 10.5L26.5 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22.5 4.5H26.5V8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Entreprise en croissance</h3>
-        <p>E360S est en pleine expansion : plus de projets, plus d'équipements, et plus d'occasions de faire vos preuves et d'évoluer.</p>
-      </article>
-      <article class="why-card reveal">
-        <div class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="7" y="7" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2.2"/>
-            <rect x="11.5" y="11.5" width="9" height="9" rx="2" stroke="currentColor" stroke-width="2.2"/>
-            <path d="M11 3.5V7M16 3.5V7M21 3.5V7M11 25V28.5M16 25V28.5M21 25V28.5M3.5 11H7M3.5 16H7M3.5 21H7M25 11H28.5M25 16H28.5M25 21H28.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Équipement moderne</h3>
-        <p>Des installations modernes et bien entretenues, avec les outils et les pièces nécessaires pour faire du travail de qualité.</p>
-      </article>
-      <article class="why-card reveal">
-        <div class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 26H26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M7 23H12V18H17V13H22V8H27" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22.5 8H27V12.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="7" cy="23" r="1.8" fill="currentColor"/>
-            <circle cx="12" cy="18" r="1.8" fill="currentColor"/>
-            <circle cx="17" cy="13" r="1.8" fill="currentColor"/>
-            <circle cx="22" cy="8" r="1.8" fill="currentColor"/>
-          </svg>
-        </div>
-        <h3>Possibilités d'avancement</h3>
-        <p>Formation continue et mobilité interne : votre progression est encouragée et structurée.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="contact-section">
-
-  <div class="container">
-
-    <div class="contact-card reveal">
-
-      <h2>
-        Une question ?
-      </h2>
-
-      <p>
-        Une question sur le poste ou le processus? Écrivez-nous ou appelez-nous : notre équipe recrutement vous répond rapidement.
+      <p class="reveal mt-7 text-white/95 text-[17px] leading-[1.8] max-w-2xl mx-auto">
+        Vous comprenez une machine avant même d'ouvrir le panneau? À Saint-Lambert-de-Lauzon, E360S vous offre un terrain à la hauteur de votre expertise : des équipements modernes, une équipe qui respecte le métier, et un salaire qui reconnaît votre valeur.
       </p>
-
-      <div class="contact-methods">
-
-        <a
-          class="contact-link"
-          href="mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FMaintenance%20industrielle"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <path d="m3 7 9 6 9-6"/>
-          </svg>
-          recruitment@e360s.ca
-        </a>
-
-        <a
-          class="contact-link"
-          href="tel:4385351659"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 12.9 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/>
-          </svg>
-          (438) 535-1659
-        </a>
-
+      <div class="mt-9 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><span class="text-lg font-bold">$</span></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center">32 $/h et plus, selon expérience</span>
+          </div>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.6 2A9 9 0 1112 3a9 9 0 018.6 9z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center">Temps plein</span>
+          </div>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center">Horaire jour ou soir</span>
+          </div>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6-4a3 3 0 11-3-3"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center">Assurances + REER</span>
+          </div>
       </div>
-
+      <a href="#postes" class="reveal mt-10 inline-flex items-center justify-center w-full sm:w-auto sm:min-w-[540px] px-10 py-5 rounded-full bg-[#f4e600] text-[#0b6ea5] font-display font-extrabold tracking-wide hover:bg-[#e2d400] transition-colors shadow-[0_16px_40px_rgba(0,40,70,.3)]">
+        VOIR LES POSTES
+      </a>
     </div>
+  </section>
 
-  </div>
+  <!-- POSTES -->
+  <section id="postes" class="py-16 sm:py-24 scroll-mt-20 bg-gradient-to-b from-[#1a90c6] to-[#0f7cab]">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="reveal font-display text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-center">
+        <span class="text-[#f4e600]">Postes</span> <span class="text-white">disponibles</span>
+      </h2>
+      <div class="mt-12 grid lg:grid-cols-2 gap-8 items-start">
+        <article class="job-card bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,40,70,.18)] reveal" data-open="false">
+          <div class="h-1.5 bg-[#f4e600]"></div>
+          <button class="job-card-trigger w-full flex items-start gap-4 p-6 sm:p-7 text-left" aria-expanded="false">
+            <span class="shrink-0 w-12 h-12 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
+            <span class="flex-1 min-w-0">
+              <span class="block text-[10px] font-bold tracking-[0.16em] text-slate-400 uppercase">Poste disponible</span>
+              <span class="block font-display text-lg font-extrabold text-[#0b7ab5] mt-0.5">Électromécanicien(ne)</span>
+              <span class="block text-[13px] text-slate-500 mt-1 leading-relaxed">Le premier répondant de nos équipements : diagnostic, dépannage et fiabilité, jour après jour.</span>
+            </span>
+            <span class="acc-chevron shrink-0 w-8 h-8 rounded-full bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center mt-1">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </button>
+          <div class="acc-panel"><div><div class="px-6 sm:px-7 pb-7">
+            <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Aperçu du poste</h4>
+            <p class="mt-2.5 text-[13px] text-slate-600 leading-[1.75]">Au cœur de notre site de Saint-Lambert-de-Lauzon, vous veillez à la santé de nos équipements industriels. Maintenance préventive rigoureuse, dépannage efficace, diagnostics précis : votre expertise garantit la continuité des opérations et la sécurité de vos collègues. Ici, la maintenance n'est pas une simple fonction de soutien — c'est un métier reconnu et valorisé.</p>
+            <div class="grid grid-cols-2 gap-6 mt-6">
+              <div>
+                <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Responsabilités</h4>
+                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Diagnostiquer avec méthode les pannes mécaniques, électriques et pneumatiques</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Exécuter la maintenance préventive et corrective selon les plans établis</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Installer, ajuster et mettre en service les équipements</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Appliquer rigoureusement les normes de santé et de sécurité</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Documenter vos interventions et contribuer à l'amélioration continue</span></li>
+                    </ul>
+              </div>
+              <div>
+                <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Profil recherché</h4>
+                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>DEP en électromécanique de systèmes automatisés ou expérience équivalente</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Excellente capacité de diagnostic et de résolution de problèmes</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>À l'aise avec la lecture de plans électriques et mécaniques</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Rigueur, autonomie et sens des responsabilités</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Esprit d'équipe : chez nous, on ne dépanne jamais seul</span></li>
+                    </ul>
+              </div>
+            </div>
+            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-7 flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#0b7ab5] text-white text-sm font-display font-bold tracking-wide hover:bg-[#095d8a] transition-colors">
+              POSTULER MAINTENANT
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div></div></div>
+        </article>
 
-</section>
+        <article class="job-card bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,40,70,.18)] reveal" data-open="false">
+          <div class="h-1.5 bg-[#f4e600]"></div>
+          <button class="job-card-trigger w-full flex items-start gap-4 p-6 sm:p-7 text-left" aria-expanded="false">
+            <span class="shrink-0 w-12 h-12 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4.5 4.5 0 00-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 006-6L14 13l-3-3 3.7-3.7z"/></svg></span>
+            <span class="flex-1 min-w-0">
+              <span class="block text-[10px] font-bold tracking-[0.16em] text-slate-400 uppercase">Poste disponible</span>
+              <span class="block font-display text-lg font-extrabold text-[#0b7ab5] mt-0.5">Mécanicien(ne) industriel(le)</span>
+              <span class="block text-[13px] text-slate-500 mt-1 leading-relaxed">La fiabilité de nos installations repose sur vos mains et votre jugement.</span>
+            </span>
+            <span class="acc-chevron shrink-0 w-8 h-8 rounded-full bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center mt-1">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </button>
+          <div class="acc-panel"><div><div class="px-6 sm:px-7 pb-7">
+            <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Aperçu du poste</h4>
+            <p class="mt-2.5 text-[13px] text-slate-600 leading-[1.75]">De l'installation à l'optimisation, vous êtes le garant de la fiabilité mécanique de notre site. Montage, ajustement, réparation, entretien préventif : chaque intervention que vous signez prolonge la vie de nos équipements. Un rôle concret, pour quelqu'un qui aime voir le résultat de son travail.</p>
+            <div class="grid grid-cols-2 gap-6 mt-6">
+              <div>
+                <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Responsabilités</h4>
+                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Exécuter les réparations mécaniques avec précision et dans les délais</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Installer et aligner les composantes mécaniques selon les plans</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Remplacer les pièces défectueuses et valider le bon fonctionnement</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Réaliser les inspections préventives et recommander les actions requises</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Proposer des améliorations pour optimiser la performance des équipements</span></li>
+                    </ul>
+              </div>
+              <div>
+                <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Profil recherché</h4>
+                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>DEP en mécanique industrielle ou expérience équivalente</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Lecture de plans et de schémas mécaniques</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Autonomie, sens de l'organisation et esprit d'équipe</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Dextérité et souci du travail bien fait</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Expérience en milieu manufacturier : un atout</span></li>
+                    </ul>
+              </div>
+            </div>
+            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-7 flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#0b7ab5] text-white text-sm font-display font-bold tracking-wide hover:bg-[#095d8a] transition-colors">
+              POSTULER MAINTENANT
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+  <!-- POURQUOI -->
+  <section class="py-16 sm:py-24 bg-[#eef5fa]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center">
+        <h2 class="font-display text-3xl sm:text-[2.6rem] font-extrabold text-[#0b7ab5]">Pourquoi rejoindre E360S ?</h2>
+        <div class="w-16 h-1.5 bg-[#f4e600] rounded-full mx-auto mt-4"></div>
+        <p class="text-slate-500 mt-5 max-w-2xl mx-auto leading-relaxed">Un employeur qui investit dans ses gens autant que dans ses équipements. Voici ce qui vous attend, concrètement.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6 mt-12">
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b7ab5] flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Entreprise en croissance</h3>
+          <p class="text-slate-500 text-[14px] leading-relaxed mt-2.5">E360S est en pleine expansion : plus de projets, plus d'équipements, et plus d'occasions de faire vos preuves et d'évoluer.</p>
+        </article>
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b7ab5] flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.3 4.3a4.5 4.5 0 00-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 006-6L14 13l-3-3 3.7-3.7z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Équipement moderne</h3>
+          <p class="text-slate-500 text-[14px] leading-relaxed mt-2.5">Des installations modernes et bien entretenues, avec les outils et les pièces nécessaires pour faire du travail de qualité.</p>
+        </article>
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b7ab5] flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Possibilités d'avancement</h3>
+          <p class="text-slate-500 text-[14px] leading-relaxed mt-2.5">Formation continue et mobilité interne : votre progression est encouragée et structurée.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="py-16 sm:py-20 bg-[#eef5fa]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#1283b8] to-[#0a6ea5] px-8 py-12 sm:p-14 text-center shadow-[0_20px_60px_rgba(10,110,165,.3)]">
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Une question ?</h2>
+        <p class="mt-4 text-white/85 max-w-2xl mx-auto leading-relaxed">Une question sur le poste ou le processus? Écrivez-nous ou appelez-nous : notre équipe recrutement vous répond rapidement.</p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:recruitment@e360s.ca" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/10 border border-white/25 text-white font-semibold text-[15px] hover:bg-white/20 transition-colors">
+            <svg class="w-5 h-5 text-[#f4e600]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.9 5.3a2 2 0 002.2 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            recruitment@e360s.ca
+          </a>
+          <a href="tel:+14385351659" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/10 border border-white/25 text-white font-semibold text-[15px] hover:bg-white/20 transition-colors">
+            <svg class="w-5 h-5 text-[#f4e600]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.3a1 1 0 01.9.7l1.5 4a1 1 0 01-.3 1.1L8.1 10a16 16 0 006 6l1.2-2.3a1 1 0 011.1-.3l4 1.5a1 1 0 01.7.9V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z"/></svg>
+            (438) 535-1659
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <div class="footer"></div>
-
-<script>
-  /* =========================================================
-     REVEAL ON SCROLL
-  ========================================================= */
-
-  const revealEls = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window) {
-
-    const io = new IntersectionObserver((entries, observer) => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-
-      });
-
-    }, {
-      threshold:0.15
-    });
-
-    revealEls.forEach(el => io.observe(el));
-
-  } else {
-
-    revealEls.forEach(el => {
-      el.classList.add('is-visible');
-    });
-
-  }
-
-
-  /* =========================================================
-     DÉFILEMENT FLUIDE VERS LES ANCRES INTERNES
-  ========================================================= */
-
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener('click', event => {
-
-      const selector = link.getAttribute('href');
-
-      if (!selector || selector === '#') {
-        return;
-      }
-
-      const target = document.querySelector(selector);
-
-      if (target) {
-
-        event.preventDefault();
-
-        target.scrollIntoView({
-          behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            ? 'auto'
-            : 'smooth',
-          block:'start'
-        });
-
-      }
-
-    });
-
-  });
-
-
-  /* =========================================================
-     ONDE AU CLIC SUR LES RÉGIONS
-  ========================================================= */
-
-  document.querySelectorAll('.region-btn').forEach(btn => {
-
-    btn.addEventListener('click', event => {
-
-      if (
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      ) {
-        return;
-      }
-
-      const rect = btn.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-
-      const ripple = document.createElement('span');
-
-      ripple.className = 'ripple';
-
-      ripple.style.width = size + 'px';
-      ripple.style.height = size + 'px';
-
-      ripple.style.left =
-        (event.clientX - rect.left - size / 2) + 'px';
-
-      ripple.style.top =
-        (event.clientY - rect.top - size / 2) + 'px';
-
-      btn.appendChild(ripple);
-
-      window.setTimeout(() => {
-        ripple.remove();
-      }, 620);
-
-    });
-
-  });
-
-
-  /* =========================================================
-     CARTES DE POSTES — OUVERTURE INDIVIDUELLE
-  ========================================================= */
-  const jobTriggers = document.querySelectorAll('.job-card-trigger');
-
-  jobTriggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const expanded = trigger.getAttribute('aria-expanded') === 'true';
-      trigger.setAttribute('aria-expanded', String(!expanded));
-    });
-  });
-
-  /* =========================================================
-     ACCESSIBILITÉ — FERMETURE AVEC ÉCHAP
-  ========================================================= */
-  document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape') return;
-
-    const openTrigger = document.querySelector('.job-card-trigger[aria-expanded="true"]');
-    if (openTrigger) {
-      openTrigger.setAttribute('aria-expanded', 'false');
-      openTrigger.focus();
-    }
-  });
-</script>
-
 
 <div class="pre-footer-brand">
   <img id="footer-logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="E360S — Solutions Environnementales 360 Ltée">
   <div class="footer-brand-text">Solutions Environnementales 360 (E360S)</div>
 </div>
+
 <script>
-  /* Logo du pied de page : réutilise celui de l'en-tête */
-  (function(){
-    var h=document.querySelector('.site-brand img');
-    var f=document.getElementById('footer-logo');
-    if(h&&f){f.src=h.src;}
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else { revealEls.forEach(el => el.classList.add('is-visible')); }
+  document.querySelectorAll('.job-card-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const card = trigger.closest('.job-card');
+      const open = card.getAttribute('data-open') === 'true';
+      card.setAttribute('data-open', String(!open));
+      trigger.setAttribute('aria-expanded', String(!open));
+    });
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const openCard = document.querySelector('.job-card[data-open="true"]');
+    if (openCard) {
+      openCard.setAttribute('data-open', 'false');
+      openCard.querySelector('.job-card-trigger').setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+      const selector = link.getAttribute('href');
+      if (!selector || selector === '#') return;
+      const target = document.querySelector(selector);
+      if (target) { event.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  (function() {
+    var h = document.querySelector('.site-brand img');
+    var f = document.getElementById('footer-logo');
+    if (h && f) { f.src = h.src; }
   })();
 </script>
 </body>
