@@ -318,12 +318,35 @@ body{
     box-shadow:0 18px 40px rgba(244,230,0,.55), 0 6px 14px rgba(11,96,172,.22);
   }
 </style>
+<style>
+  .header-actions { display:flex; align-items:center; gap:12px; }
+  .lang-wrap { position:relative; }
+  .lang-globe { width:48px; height:48px; border-radius:50%; background:#f4e600; border:2px solid rgba(11,110,165,.14); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,60,100,.22); transition:transform .25s, box-shadow .25s; }
+  .lang-globe:hover { transform:rotate(18deg) scale(1.06); box-shadow:0 10px 26px rgba(0,60,100,.3); }
+  .lang-globe svg { width:22px; height:22px; color:#0b6ea5; }
+  .lang-menu { position:absolute; top:calc(100% + 12px); right:0; background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(0,40,70,.28); padding:6px; min-width:176px; opacity:0; transform:translateY(-8px) scale(.96); transform-origin:top right; pointer-events:none; transition:opacity .22s, transform .22s; z-index:60; }
+  .lang-wrap.open .lang-menu { opacity:1; transform:none; pointer-events:auto; }
+  .lang-opt { display:flex; align-items:center; justify-content:space-between; width:100%; padding:11px 14px; border:0; background:transparent; border-radius:10px; font-family:'Outfit',sans-serif; font-weight:600; font-size:14px; color:#0b6ea5; cursor:pointer; transition:background .15s; }
+  .lang-opt:hover { background:#eef5fa; }
+  .lang-opt .check { width:16px; height:16px; color:#0b6ea5; opacity:0; }
+</style>
 </head>
 <body>
 
 <header class="site-header">
 <div class="container">
-<a href="#secteurs" class="btn btn-ghost">Voir les secteurs</a>
+<div class="header-actions">
+  <div class="lang-wrap">
+    <button type="button" class="lang-globe" aria-label="Langue / Language" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg>
+    </button>
+    <div class="lang-menu" role="menu">
+      <button type="button" class="lang-opt" data-setlang="fr" role="menuitem"><span>Français</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></button>
+      <button type="button" class="lang-opt" data-setlang="en" role="menuitem"><span>English</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></button>
+    </div>
+  </div>
+  <a href="#secteurs" class="btn btn-ghost">Voir les secteurs</a>
+</div>
 </div>
 </header>
 
@@ -600,5 +623,53 @@ window.addEventListener('resize', () => {
 });
 </script>
 
+<script>
+(function(){
+  const I18N = {"Voir les secteurs": "View sectors", "NOUS RECRUTONS DES CHAUFFEURS · PARTOUT AU QUÉBEC": "WE'RE HIRING DRIVERS · ACROSS QUEBEC", "Joignez-vous": "Join", "à notre équipe": "our team", "E360S est en pleine croissance dans plusieurs secteurs.": "E360S is growing fast across several sectors.", "Choisissez le secteur qui vous correspond pour découvrir les postes disponibles.": "Choose the sector that fits you to discover available positions.", "Salaire concurrentiel": "Competitive salary", "Temps plein": "Full time", "Formation offerte": "Training provided", "Assurances + REER": "Insurance + RRSP", "Choisissez votre secteur": "Choose your sector", "Quel camion allez-vous conduire ? Ouvrez le secteur qui correspond à votre expérience pour voir les postes disponibles.": "Which truck will you drive? Open the sector that matches your experience to see available positions.", "Services environnementaux": "Environmental services", "Pompage": "Pumping", "Opportunités pour chauffeurs-opérateurs spécialisés dans les services environnementaux.": "Opportunities for driver-operators specialized in environmental services.", "Classe 1 ou Classe 3": "Class 1 or Class 3", "En savoir plus": "Learn more", "Collecte municipale": "Municipal collection", "Déchets solides": "Solid waste", "Recyclage": "Recycling", "Opportunités pour chauffeurs de collecte municipale dans plusieurs régions du Québec.": "Opportunities for municipal collection drivers in several regions of Quebec.", "Chargement arrière": "Rear loader", "Camion robotisé": "Automated truck", "Recyclage municipal": "Municipal recycling", "Collecte commerciale": "Commercial collection", "Opportunités pour chauffeurs commerciaux et industriels.": "Opportunities for commercial and industrial drivers.", "Industriel": "Industrial", "Pourquoi choisir E360S": "Why choose E360S", "Une entreprise en croissance qui met la sécurité et le développement de ses équipes au premier plan, peu importe le secteur.": "A growing company that puts safety and team development first, in every sector.", "Leader canadien": "Canadian leader", "Faites partie de l'un des plus importants fournisseurs de services environnementaux au Canada.": "Join one of Canada's largest environmental services providers.", "Développement professionnel": "Professional development", "Formation continue, mobilité interne et possibilités réelles d'avancement.": "Ongoing training, internal mobility and real advancement opportunities.", "Une équipe engagée": "A committed team", "Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.": "Work in an environment focused on safety, respect and collaboration.", "Une question ?": "A question?", "Notre équipe recrutement vous répond rapidement.": "Our recruitment team will get back to you quickly.", "© Solutions Environnementales 360 (E360S)": "© Environmental Solutions 360 (E360S)"};
+  const REV = {}; Object.keys(I18N).forEach(k=>{ REV[I18N[k]] = k; });
+  const MAILTO = {
+    fr: 'mailto:Recruitment@e360s.ca?subject=E360S%20%2F%20Candidature%20spontan%C3%A9e',
+    en: 'mailto:Recruitment@e360s.ca?subject=E360S%20%2F%20Spontaneous%20application'
+  };
+  const META = {
+    fr: document.querySelector('meta[name="description"]').getAttribute('content'),
+    en: 'Join E360S. Choose your sector \u2014 environmental services, municipal collection or commercial collection \u2014 and discover available positions.'
+  };
+  const TITLE = { fr: document.title, en: 'Careers | E360S' };
+  let lang = 'fr';
+  function swap(map){
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      const p = n.parentElement;
+      if(!p) return;
+      if(p.closest('script,style')) return;
+      if(p.closest('.lang-wrap')) return;
+      const t = n.textContent, s = t.trim();
+      if(s && map[s] !== undefined) n.textContent = t.replace(s, map[s]);
+    });
+  }
+  function setLang(l){
+    if(l===lang) return;
+    swap(l==='en' ? I18N : REV);
+    lang = l;
+    document.documentElement.lang = l;
+    document.title = TITLE[l];
+    document.querySelector('meta[name="description"]').setAttribute('content', META[l]);
+    const mail = document.querySelector('a[href^="mailto:"]');
+    if(mail) mail.setAttribute('href', MAILTO[l]);
+    document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===l ? '1':'0'; });
+  }
+  const wrap = document.querySelector('.lang-wrap');
+  const globe = document.querySelector('.lang-globe');
+  globe.addEventListener('click', e=>{ e.stopPropagation(); const open = wrap.classList.toggle('open'); globe.setAttribute('aria-expanded', String(open)); });
+  document.addEventListener('click', ()=>{ wrap.classList.remove('open'); globe.setAttribute('aria-expanded','false'); });
+  document.querySelector('.lang-menu').addEventListener('click', e=>e.stopPropagation());
+  document.querySelectorAll('.lang-opt').forEach(b=>b.addEventListener('click',()=>{ setLang(b.dataset.setlang); wrap.classList.remove('open'); }));
+  document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===lang ? '1':'0'; });
+})();
+</script>
+</body>
 </body>
 </html>

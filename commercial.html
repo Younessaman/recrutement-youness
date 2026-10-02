@@ -293,13 +293,36 @@ body{
     .footer-brand img{height:60px;}
   }
 </style>
+<style>
+  .header-actions { display:flex; align-items:center; gap:12px; }
+  .lang-wrap { position:relative; }
+  .lang-globe { width:48px; height:48px; border-radius:50%; background:#f4e600; border:2px solid rgba(11,110,165,.14); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,60,100,.22); transition:transform .25s, box-shadow .25s; }
+  .lang-globe:hover { transform:rotate(18deg) scale(1.06); box-shadow:0 10px 26px rgba(0,60,100,.3); }
+  .lang-globe svg { width:22px; height:22px; color:#0b6ea5; }
+  .lang-menu { position:absolute; top:calc(100% + 12px); right:0; background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(0,40,70,.28); padding:6px; min-width:176px; opacity:0; transform:translateY(-8px) scale(.96); transform-origin:top right; pointer-events:none; transition:opacity .22s, transform .22s; z-index:60; }
+  .lang-wrap.open .lang-menu { opacity:1; transform:none; pointer-events:auto; }
+  .lang-opt { display:flex; align-items:center; justify-content:space-between; width:100%; padding:11px 14px; border:0; background:transparent; border-radius:10px; font-family:'Outfit',sans-serif; font-weight:600; font-size:14px; color:#0b6ea5; cursor:pointer; transition:background .15s; }
+  .lang-opt:hover { background:#eef5fa; }
+  .lang-opt .check { width:16px; height:16px; color:#0b6ea5; opacity:0; }
+</style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="container">
     <a class="site-brand" href="#" aria-label="E360S — Solutions Environnementales 360"><img src="images/Logo.jpg" alt="E360S — Solutions Environnementales 360"></a>
-    <a href="#postuler" class="btn btn-ghost">Postuler</a>
+    <div class="header-actions">
+  <div class="lang-wrap">
+    <button type="button" class="lang-globe" aria-label="Langue / Language" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg>
+    </button>
+    <div class="lang-menu" role="menu">
+      <button type="button" class="lang-opt" data-setlang="fr" role="menuitem"><span>Français</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></button>
+      <button type="button" class="lang-opt" data-setlang="en" role="menuitem"><span>English</span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></button>
+    </div>
+  </div>
+  <a href="#postuler" class="btn btn-ghost">Postuler</a>
+</div>
   </div>
 </header>
 
@@ -683,5 +706,47 @@ document.querySelectorAll('.job-cta').forEach(btn => {
 });
 </script>
 
+<script>
+(function(){
+  const I18N = {"Postuler": "Apply", "Nous embauchons maintenant · Plusieurs régions": "We're hiring now · Multiple regions", "Collecte commerciale": "Commercial collection", "Chauffeurs Classe 1 et Classe 3 recherchés": "Class 1 and Class 3 drivers wanted", "Rejoignez l'une des plus importantes équipes de collecte commerciale au Québec.": "Join one of Quebec's largest commercial collection teams.", "Plusieurs régions recrutent actuellement.": "Several regions are currently hiring.", "Temps plein": "Full time", "Assurances collectives": "Group insurance", "REER": "RRSP", "Équipements modernes": "Modern equipment", "Voir les postes": "View openings", "Régions disponibles": "Available regions", "Plusieurs régions du Québec recrutent actuellement. Trouvez celle qui vous convient.": "Several regions across Quebec are currently hiring. Find the one that suits you.", "Postes disponibles": "Available positions", "Découvrez les opportunités en collecte commerciale. Cliquez sur un poste pour en voir tous les détails.": "Explore opportunities in commercial collection. Click a position to see all the details.", "Chauffeur Front Load": "Front Load Driver", "Classe 3": "Class 3", "Responsabilités": "Responsibilities", "Collecte de conteneurs commerciaux": "Commercial container collection", "Service aux commerces": "Serving retail businesses", "Inspection du camion": "Truck inspection", "Respect des itinéraires": "Following assigned routes", "Respect des normes SST": "Compliance with OHS standards", "Qualifications": "Qualifications", "Permis Classe 3 valide": "Valid Class 3 license", "Bon dossier de conduite": "Good driving record", "Expérience Front Load (atout)": "Front Load experience (an asset)", "Autonomie et ponctualité": "Autonomy and punctuality", "Professionnalisme": "Professionalism", "Conditions": "Working conditions", "Assurances collectives et REER": "Group insurance and RRSP", "Uniforme fourni": "Uniform provided", "Formation offerte": "Training provided", "Postuler maintenant": "Apply now", "Chauffeur Roll-Off": "Roll-Off Driver", "Transport de conteneurs": "Container transport", "Classe 1 ou 3": "Class 1 or 3", "Livraison de conteneurs": "Container delivery", "Ramassage de conteneurs": "Container pickup", "Inspection quotidienne": "Daily inspection", "Service à la clientèle": "Customer service", "Respect SST": "OHS compliance", "Classe 1 ou Classe 3": "Class 1 or Class 3", "Expérience Roll-Off": "Roll-Off experience", "Conduite sécuritaire": "Safe driving", "Fiabilité": "Reliability", "Bonne organisation": "Good organizational skills", "Heures supplémentaires disponibles": "Overtime available", "REER et assurances": "RRSP and insurance", "Chauffeur Commercial Recyclage": "Commercial Recycling Driver", "Collecte commerciale et recyclage": "Commercial collection and recycling", "Collecte des matières recyclables": "Recyclable materials collection", "Service aux entreprises": "Serving corporate clients", "Vérification des équipements": "Equipment checks", "Respect de l'itinéraire": "Following the assigned route", "Classe 3 valide": "Valid Class 3", "Esprit d'équipe": "Team spirit", "Autonomie": "Autonomy", "Stabilité d'emploi": "Job stability", "Chauffeur Commercial Industriel": "Commercial Industrial Driver", "Collecte industrielle": "Industrial collection", "Transport de matières résiduelles": "Waste materials transport", "Respect des procédures": "Following procedures", "Service client": "Customer support", "Expérience pertinente": "Relevant experience", "Bonne capacité d'adaptation": "Strong adaptability", "Assurances et REER": "Insurance and RRSP", "Possibilités d'avancement": "Advancement opportunities", "* Selon expérience. Les postes affichés peuvent varier selon les besoins opérationnels.": "* Based on experience. Posted positions may vary according to operational needs.", "Une question ?": "A question?", "Notre équipe recrutement vous répond rapidement.": "Our recruitment team will respond quickly."};
+  const REV = {}; Object.keys(I18N).forEach(k=>{ REV[I18N[k]] = k; });
+  const META = {
+    fr: document.querySelector('meta[name="description"]').getAttribute('content'),
+    en: 'E360S is hiring Class 1 and Class 3 drivers for commercial collection. Multiple regions across Quebec. Competitive pay, full benefits. Apply now.'
+  };
+  const TITLE = { fr: document.title, en: 'Careers | Commercial Collection \u2014 E360S' };
+  let lang = 'fr';
+  function swap(map){
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      const p = n.parentElement;
+      if(!p) return;
+      if(p.closest('script,style')) return;
+      if(p.closest('.lang-wrap')) return;
+      const t = n.textContent, s = t.trim();
+      if(s && map[s] !== undefined) n.textContent = t.replace(s, map[s]);
+    });
+  }
+  function setLang(l){
+    if(l===lang) return;
+    swap(l==='en' ? I18N : REV);
+    lang = l;
+    document.documentElement.lang = l;
+    document.title = TITLE[l];
+    document.querySelector('meta[name="description"]').setAttribute('content', META[l]);
+    document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===l ? '1':'0'; });
+  }
+  const wrap = document.querySelector('.lang-wrap');
+  const globe = document.querySelector('.lang-globe');
+  globe.addEventListener('click', e=>{ e.stopPropagation(); const open = wrap.classList.toggle('open'); globe.setAttribute('aria-expanded', String(open)); });
+  document.addEventListener('click', ()=>{ wrap.classList.remove('open'); globe.setAttribute('aria-expanded','false'); });
+  document.querySelector('.lang-menu').addEventListener('click', e=>e.stopPropagation());
+  document.querySelectorAll('.lang-opt').forEach(b=>b.addEventListener('click',()=>{ setLang(b.dataset.setlang); wrap.classList.remove('open'); }));
+  document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===lang ? '1':'0'; });
+})();
+</script>
+</body>
 </body>
 </html>
