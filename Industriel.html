@@ -4,51 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maintenance Industrielle | Saint-Lambert-de-Lauzon | E360S</title>
+<meta name="description" content="E360S recrute à Saint-Lambert-de-Lauzon : électromécanicien(ne) et mécanicien(ne) industriel(le). 32 $/h et plus, temps plein, assurances et REER. Postulez dès maintenant.">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = {
-  theme: { extend: {
-    colors: {
-      brand: { light:'#2ea3f2', DEFAULT:'#1483d9', deep:'#0b60ac', dark:'#084a86' },
-      accent: { DEFAULT:'#f4e600', dark:'#d9cc00', soft:'#fdf6b3' },
-      navy: { DEFAULT:'#143a5e', soft:'#4d6e89', faint:'#8aa5bb' }
-    },
-    fontFamily: { display:['Outfit','sans-serif'], sans:['Inter','sans-serif'] },
-    boxShadow: { card:'0 8px 24px rgba(11,96,172,.10)', lift:'0 16px 40px rgba(11,96,172,.16)' }
-  }}
-}
+tailwind.config = { theme: { extend: {
+  fontFamily: { display:['Outfit','sans-serif'], sans:['Inter','sans-serif'] }
+}}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   html { scroll-behavior:smooth; }
-  body { text-rendering:optimizeLegibility; }
   .acc-panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1); }
   .acc-panel > div { overflow:hidden; }
   .job-card[data-open="true"] .acc-panel { grid-template-rows:1fr; }
-  .job-card .acc-chevron { transition:transform .4s cubic-bezier(.4,0,.2,1); }
+  .job-card .acc-chevron { transition:transform .4s; }
   .job-card[data-open="true"] .acc-chevron { transform:rotate(180deg); }
   .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.is-visible { opacity:1; transform:none; }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity:1; transform:none; transition:none; }
-    .acc-panel { transition:none; }
-    html { scroll-behavior:auto; }
-  }
-  .site-header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.94); backdrop-filter:blur(12px); border-bottom:3px solid #f4e600; }
-  .site-header .container { display:flex; align-items:center; justify-content:space-between; max-width:1080px; margin:0 auto; padding:12px 24px; }
-  .site-brand { display:block; line-height:0; }
-  .site-brand img { height:56px; width:auto; max-width:180px; object-fit:contain; }
-  .btn-ghost { display:inline-flex; align-items:center; padding:12px 24px; border-radius:999px; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; color:#0b60ac; border:2px solid rgba(11,96,172,.25); text-decoration:none; transition:all .25s; }
-  .btn-ghost:hover { background:#0b60ac; color:#fff; border-color:#0b60ac; }
-  .pre-footer-brand { display:flex; flex-direction:column; align-items:center; gap:12px; padding:40px 24px 8px; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } html { scroll-behavior:auto; } }
+  /* En-tête et signature : conservés tels quels */
+  .site-header { background:#f4e600; position:sticky; top:0; z-index:50; }
+  .site-header .container { display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:14px 28px; }
+  .site-brand img { height:52px; width:auto; object-fit:contain; }
+  .btn-ghost { display:inline-flex; align-items:center; padding:13px 34px; border-radius:999px; background:#0b6ea5; color:#f4e600; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; text-decoration:none; transition:all .25s; box-shadow:0 8px 20px rgba(0,60,100,.25); }
+  .btn-ghost:hover { background:#084e7c; }
+  .pre-footer-brand { display:flex; flex-direction:column; align-items:center; gap:10px; padding:44px 24px 10px; background:#fff; }
   .pre-footer-brand img { height:64px; width:auto; object-fit:contain; }
-  .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#4d6e89; }
+  .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#4d6e89; font-size:.95rem; }
   :focus-visible { outline:3px solid #f4e600; outline-offset:3px; border-radius:6px; }
 </style>
 </head>
-<body class="font-sans text-navy bg-white antialiased" id="top">
+<body class="font-sans antialiased" id="top">
 
 <header class="site-header">
   <div class="container">
@@ -63,193 +51,199 @@ tailwind.config = {
     </a>
   </div>
 </header>
+
 <main>
-  <section class="relative overflow-hidden bg-gradient-to-br from-brand-deep via-brand to-brand-light">
-    <div class="absolute -top-24 -right-24 w-96 h-96 bg-accent/30 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-32 -left-24 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="relative max-w-6xl mx-auto px-6 pt-16 pb-14 sm:pt-24 sm:pb-20 text-center">
-      <span class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-brand-deep text-xs font-bold tracking-[0.18em] uppercase shadow-card">
-        <span class="w-2 h-2 rounded-full bg-brand-deep animate-pulse"></span>
-        NOUS EMBAUCHONS MAINTENANT
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-[#1ba0d6] via-[#1283b8] to-[#0a6ea5]">
+    <div class="absolute -top-32 -right-32 w-[480px] h-[480px] bg-[#f4e600]/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-6 pt-14 pb-16 sm:pt-20 sm:pb-24 text-center">
+      <span class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0b6ea5] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-[#0b6ea5] animate-pulse"></span>
+        Nous embauchons maintenant
       </span>
-      <h1 class="reveal font-display font-extrabold tracking-tight text-4xl sm:text-6xl mt-6 leading-[1.05] text-white">
-        Maintenance <span class="text-accent">industrielle</span>
+      <h1 class="reveal font-display font-extrabold uppercase tracking-tight text-5xl sm:text-7xl mt-7 leading-[1.02]">
+        <span class="block text-[#f4e600]">Maintenance</span>
+        <span class="block text-white">industrielle</span>
       </h1>
-      <p class="reveal mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">Vous comprenez une machine avant même d'ouvrir le panneau? À Saint-Lambert-de-Lauzon, E360S vous offre un terrain à la hauteur de votre expertise : des équipements modernes, une équipe qui respecte le métier, et un salaire qui reconnaît votre valeur.</p>
-      <p class="reveal mt-3 text-sm font-bold text-accent tracking-wide uppercase">Saint-Lambert-de-Lauzon</p>
-      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-          <div class="reveal flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-card">
-            <span class="w-10 h-10 rounded-xl bg-accent text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-            <span class="text-sm font-semibold leading-snug text-brand-deep">32 $/h et plus, selon expérience</span>
+      <div class="reveal mt-7">
+        <span class="inline-block px-8 py-3.5 rounded-full bg-[#f4e600] text-[#0b6ea5] font-display font-bold shadow-[0_10px_30px_rgba(0,40,70,.25)]">Saint-Lambert-de-Lauzon</span>
+      </div>
+      <p class="reveal mt-7 text-white/95 text-[17px] leading-[1.8] max-w-2xl mx-auto">
+        Vous comprenez une machine avant même d'ouvrir le panneau? À Saint-Lambert-de-Lauzon, E360S vous offre un terrain à la hauteur de votre expertise : des équipements modernes, une équipe qui respecte le métier, et un salaire qui reconnaît votre valeur.
+      </p>
+      <div class="mt-9 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><span class="text-lg font-bold">$</span></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center">32 $/h et plus, selon expérience</span>
           </div>
-          <div class="reveal flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-card">
-            <span class="w-10 h-10 rounded-xl bg-accent text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-            <span class="text-sm font-semibold leading-snug text-brand-deep">Temps plein</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.6 2A9 9 0 1112 3a9 9 0 018.6 9z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center">Temps plein</span>
           </div>
-          <div class="reveal flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-card">
-            <span class="w-10 h-10 rounded-xl bg-accent text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-            <span class="text-sm font-semibold leading-snug text-brand-deep">Horaire jour ou soir</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center">Horaire jour ou soir</span>
           </div>
-          <div class="reveal flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-card">
-            <span class="w-10 h-10 rounded-xl bg-accent text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-            <span class="text-sm font-semibold leading-snug text-brand-deep">Assurances + REER</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6-4a3 3 0 11-3-3"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center">Assurances + REER</span>
           </div>
       </div>
-      <a href="#postes" class="reveal mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-accent text-brand-deep font-display font-bold text-lg hover:bg-accent-dark transition-colors shadow-lift">
-        Voir les postes
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7-7-7m7 7V3"/></svg>
+      <a href="#postes" class="reveal mt-10 inline-flex items-center justify-center w-full sm:w-auto sm:min-w-[540px] px-10 py-5 rounded-full bg-[#f4e600] text-[#0b6ea5] font-display font-extrabold tracking-wide hover:bg-[#e2d400] transition-colors shadow-[0_16px_40px_rgba(0,40,70,.3)]">
+        VOIR LES POSTES
       </a>
     </div>
-    <div class="h-2 bg-accent"></div>
-  </section>  <section id="postes" class="py-16 sm:py-24 scroll-mt-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="reveal text-center mb-12">
-        <p class="text-xs font-bold tracking-[0.2em] uppercase text-brand/70">Nos opportunités</p>
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight mt-3 text-brand-deep">Deux postes, <span class="text-brand">une équipe</span></h2>
-        
-      </div>
-      <div class="space-y-6">
-      <article class="job-card bg-white rounded-3xl border-2 border-brand-deep/10 shadow-card overflow-hidden reveal" data-open="false">
-        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-brand-deep/5 transition-colors" aria-expanded="false">
-          <span class="shrink-0 w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
-          </span>
-          <span class="flex-1 min-w-0">
-            <span class="block text-[11px] font-bold tracking-[0.18em] uppercase text-brand/80">Poste disponible</span>
-            <span class="block font-display text-xl sm:text-2xl font-extrabold text-brand-deep mt-1">Électromécanicien(ne)</span>
-            <span class="block text-navy-soft mt-1 leading-relaxed">Le premier répondant de nos équipements : diagnostic, dépannage et fiabilité, jour après jour.</span>
-          </span>
-          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-brand-deep text-white flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </span>
-        </button>
-        <div class="acc-panel"><div><div class="px-6 sm:px-8 pb-8 pt-1">
-          <div class="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Aperçu du poste</h3>
-                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Au cœur de notre site de Saint-Lambert-de-Lauzon, vous veillez à la santé de nos équipements industriels. Maintenance préventive rigoureuse, dépannage efficace, diagnostics précis : votre expertise garantit la continuité des opérations et la sécurité de vos collègues. Ici, la maintenance n'est pas une simple fonction de soutien — c'est un métier reconnu et valorisé.</span></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Responsabilités</h3>
-                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Diagnostiquer avec méthode les pannes mécaniques, électriques et pneumatiques</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Exécuter la maintenance préventive et corrective selon les plans établis</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Installer, ajuster et mettre en service les équipements</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Appliquer rigoureusement les normes de santé et de sécurité</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Documenter vos interventions et contribuer à l'amélioration continue</span></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Profil recherché</h3>
-                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>DEP en électromécanique de systèmes automatisés ou expérience équivalente</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Excellente capacité de diagnostic et de résolution de problèmes</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>À l'aise avec la lecture de plans électriques et mécaniques</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Rigueur, autonomie et sens des responsabilités</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Esprit d'équipe : chez nous, on ne dépanne jamais seul</span></li>
-                  </ul>
-                </div>
-          </div>
-          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand-deep font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
-            Postuler maintenant
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div></div></div>
-      </article>
+  </section>
 
-      <article class="job-card bg-white rounded-3xl border-2 border-brand-deep/10 shadow-card overflow-hidden reveal" data-open="false">
-        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-brand-deep/5 transition-colors" aria-expanded="false">
-          <span class="shrink-0 w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
-          </span>
-          <span class="flex-1 min-w-0">
-            <span class="block text-[11px] font-bold tracking-[0.18em] uppercase text-brand/80">Poste disponible</span>
-            <span class="block font-display text-xl sm:text-2xl font-extrabold text-brand-deep mt-1">Mécanicien(ne) industriel(le)</span>
-            <span class="block text-navy-soft mt-1 leading-relaxed">La fiabilité de nos installations repose sur vos mains et votre jugement.</span>
-          </span>
-          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-brand-deep text-white flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </span>
-        </button>
-        <div class="acc-panel"><div><div class="px-6 sm:px-8 pb-8 pt-1">
-          <div class="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Aperçu du poste</h3>
-                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>De l'installation à l'optimisation, vous êtes le garant de la fiabilité mécanique de notre site. Montage, ajustement, réparation, entretien préventif : chaque intervention que vous signez prolonge la vie de nos équipements. Un rôle concret, pour quelqu'un qui aime voir le résultat de son travail.</span></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Responsabilités</h3>
-                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Exécuter les réparations mécaniques avec précision et dans les délais</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Installer et aligner les composantes mécaniques selon les plans</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Remplacer les pièces défectueuses et valider le bon fonctionnement</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Réaliser les inspections préventives et recommander les actions requises</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Proposer des améliorations pour optimiser la performance des équipements</span></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Profil recherché</h3>
-                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>DEP en mécanique industrielle ou expérience équivalente</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Lecture de plans et de schémas mécaniques</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Autonomie, sens de l'organisation et esprit d'équipe</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Dextérité et souci du travail bien fait</span></li>
-                        <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Expérience en milieu manufacturier : un atout</span></li>
-                  </ul>
-                </div>
-          </div>
-          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand-deep font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
-            Postuler maintenant
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div></div></div>
-      </article>
-      </div>
-    </div>
-  </section>  <section class="py-16 sm:py-24 bg-white">
+  <!-- POSTES -->
+  <section id="postes" class="py-16 sm:py-24 scroll-mt-20 bg-gradient-to-b from-[#1a90c6] to-[#0f7cab]">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="reveal text-center mb-12">
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-brand-deep">Pourquoi rejoindre <span class="bg-accent px-3 rounded-lg">E360S</span> ?</h2>
-        <p class="text-navy-soft text-lg mt-4 max-w-2xl mx-auto">Un employeur qui investit dans ses gens autant que dans ses équipements. Voici ce qui vous attend, concrètement.</p>
-      </div>
-      <div class="grid sm:grid-cols-3 gap-6">
-        <article class="reveal bg-white rounded-3xl border-2 border-accent/60 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          </div>
-          <h3 class="font-display text-xl font-extrabold mt-6 text-brand-deep">Une entreprise qui grandit</h3>
-          <p class="text-navy-soft leading-relaxed mt-3">E360S est en pleine expansion : plus de projets, plus d'équipements, et plus d'occasions de faire vos preuves et d'évoluer.</p>
+      <h2 class="reveal font-display text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-center">
+        <span class="text-[#f4e600]">Postes</span> <span class="text-white">disponibles</span>
+      </h2>
+      <div class="mt-12 grid lg:grid-cols-2 gap-8 items-start">
+        <article class="job-card bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,40,70,.18)] reveal" data-open="false">
+          <div class="h-1.5 bg-[#f4e600]"></div>
+          <button class="job-card-trigger w-full flex items-start gap-4 p-6 sm:p-7 text-left" aria-expanded="false">
+            <span class="shrink-0 w-12 h-12 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
+            <span class="flex-1 min-w-0">
+              <span class="block text-[10px] font-bold tracking-[0.16em] text-slate-400 uppercase">Poste disponible</span>
+              <span class="block font-display text-lg font-extrabold text-[#0b7ab5] mt-0.5">Électromécanicien(ne)</span>
+              <span class="block text-[13px] text-slate-500 mt-1 leading-relaxed">Le premier répondant de nos équipements : diagnostic, dépannage et fiabilité, jour après jour.</span>
+            </span>
+            <span class="acc-chevron shrink-0 w-8 h-8 rounded-full bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center mt-1">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </button>
+          <div class="acc-panel"><div><div class="px-6 sm:px-7 pb-7">
+            <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Aperçu du poste</h4>
+            <p class="mt-2.5 text-[13px] text-slate-600 leading-[1.75]">Au cœur de notre site de Saint-Lambert-de-Lauzon, vous veillez à la santé de nos équipements industriels. Maintenance préventive rigoureuse, dépannage efficace, diagnostics précis : votre expertise garantit la continuité des opérations et la sécurité de vos collègues. Ici, la maintenance n'est pas une simple fonction de soutien — c'est un métier reconnu et valorisé.</p>
+            <div class="grid grid-cols-2 gap-6 mt-6">
+              <div>
+                <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Responsabilités</h4>
+                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Diagnostiquer avec méthode les pannes mécaniques, électriques et pneumatiques</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Exécuter la maintenance préventive et corrective selon les plans établis</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Installer, ajuster et mettre en service les équipements</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Appliquer rigoureusement les normes de santé et de sécurité</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Documenter vos interventions et contribuer à l'amélioration continue</span></li>
+                    </ul>
+              </div>
+              <div>
+                <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Profil recherché</h4>
+                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>DEP en électromécanique de systèmes automatisés ou expérience équivalente</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Excellente capacité de diagnostic et de résolution de problèmes</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>À l'aise avec la lecture de plans électriques et mécaniques</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Rigueur, autonomie et sens des responsabilités</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Esprit d'équipe : chez nous, on ne dépanne jamais seul</span></li>
+                    </ul>
+              </div>
+            </div>
+            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-7 flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#0b7ab5] text-white text-sm font-display font-bold tracking-wide hover:bg-[#095d8a] transition-colors">
+              POSTULER MAINTENANT
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div></div></div>
         </article>
-        <article class="reveal bg-white rounded-3xl border-2 border-accent/60 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          </div>
-          <h3 class="font-display text-xl font-extrabold mt-6 text-brand-deep">Des équipements à la hauteur</h3>
-          <p class="text-navy-soft leading-relaxed mt-3">Des installations modernes et bien entretenues, avec les outils et les pièces nécessaires pour faire du travail de qualité.</p>
-        </article>
-        <article class="reveal bg-white rounded-3xl border-2 border-accent/60 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          </div>
-          <h3 class="font-display text-xl font-extrabold mt-6 text-brand-deep">De vraies perspectives</h3>
-          <p class="text-navy-soft leading-relaxed mt-3">Formation continue et mobilité interne : votre progression est encouragée et structurée.</p>
+
+        <article class="job-card bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,40,70,.18)] reveal" data-open="false">
+          <div class="h-1.5 bg-[#f4e600]"></div>
+          <button class="job-card-trigger w-full flex items-start gap-4 p-6 sm:p-7 text-left" aria-expanded="false">
+            <span class="shrink-0 w-12 h-12 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4.5 4.5 0 00-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 006-6L14 13l-3-3 3.7-3.7z"/></svg></span>
+            <span class="flex-1 min-w-0">
+              <span class="block text-[10px] font-bold tracking-[0.16em] text-slate-400 uppercase">Poste disponible</span>
+              <span class="block font-display text-lg font-extrabold text-[#0b7ab5] mt-0.5">Mécanicien(ne) industriel(le)</span>
+              <span class="block text-[13px] text-slate-500 mt-1 leading-relaxed">La fiabilité de nos installations repose sur vos mains et votre jugement.</span>
+            </span>
+            <span class="acc-chevron shrink-0 w-8 h-8 rounded-full bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center mt-1">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </span>
+          </button>
+          <div class="acc-panel"><div><div class="px-6 sm:px-7 pb-7">
+            <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Aperçu du poste</h4>
+            <p class="mt-2.5 text-[13px] text-slate-600 leading-[1.75]">De l'installation à l'optimisation, vous êtes le garant de la fiabilité mécanique de notre site. Montage, ajustement, réparation, entretien préventif : chaque intervention que vous signez prolonge la vie de nos équipements. Un rôle concret, pour quelqu'un qui aime voir le résultat de son travail.</p>
+            <div class="grid grid-cols-2 gap-6 mt-6">
+              <div>
+                <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Responsabilités</h4>
+                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Exécuter les réparations mécaniques avec précision et dans les délais</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Installer et aligner les composantes mécaniques selon les plans</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Remplacer les pièces défectueuses et valider le bon fonctionnement</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Réaliser les inspections préventives et recommander les actions requises</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Proposer des améliorations pour optimiser la performance des équipements</span></li>
+                    </ul>
+              </div>
+              <div>
+                <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Profil recherché</h4>
+                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>DEP en mécanique industrielle ou expérience équivalente</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Lecture de plans et de schémas mécaniques</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Autonomie, sens de l'organisation et esprit d'équipe</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Dextérité et souci du travail bien fait</span></li>
+                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Expérience en milieu manufacturier : un atout</span></li>
+                    </ul>
+              </div>
+            </div>
+            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-7 flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#0b7ab5] text-white text-sm font-display font-bold tracking-wide hover:bg-[#095d8a] transition-colors">
+              POSTULER MAINTENANT
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div></div></div>
         </article>
       </div>
     </div>
-  </section>  <section class="py-16 sm:py-24 bg-gradient-to-b from-white to-brand-deep/5">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="reveal relative overflow-hidden rounded-[2rem] bg-brand-deep text-white p-10 sm:p-14 text-center shadow-lift">
-        <div class="absolute -top-20 -right-20 w-72 h-72 bg-accent/25 rounded-full blur-3xl"></div>
-        <div class="absolute top-0 left-0 right-0 h-2 bg-accent"></div>
-        <h2 class="relative font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Une <span class="text-accent">question</span> ?</h2>
-        <p class="relative mt-4 text-white/85 text-lg max-w-xl mx-auto">Notre équipe recrutement vous répond rapidement.</p>
-        <div class="relative mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:recruitment@e360s.ca" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-brand-deep font-display font-bold hover:bg-accent-dark transition-colors">recruitment@e360s.ca</a>
-          <a href="tel:+14385351659" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/40 text-white font-display font-bold hover:bg-white/10 transition-colors">(438) 535-1659</a>
+  </section>
+
+  <!-- POURQUOI -->
+  <section class="py-16 sm:py-24 bg-[#eef5fa]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center">
+        <h2 class="font-display text-3xl sm:text-[2.6rem] font-extrabold text-[#0b7ab5]">Pourquoi rejoindre E360S ?</h2>
+        <div class="w-16 h-1.5 bg-[#f4e600] rounded-full mx-auto mt-4"></div>
+        <p class="text-slate-500 mt-5 max-w-2xl mx-auto leading-relaxed">Un employeur qui investit dans ses gens autant que dans ses équipements. Voici ce qui vous attend, concrètement.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6 mt-12">
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b7ab5] flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Entreprise en croissance</h3>
+          <p class="text-slate-500 text-[14px] leading-relaxed mt-2.5">E360S est en pleine expansion : plus de projets, plus d'équipements, et plus d'occasions de faire vos preuves et d'évoluer.</p>
+        </article>
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b7ab5] flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.3 4.3a4.5 4.5 0 00-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 006-6L14 13l-3-3 3.7-3.7z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Équipement moderne</h3>
+          <p class="text-slate-500 text-[14px] leading-relaxed mt-2.5">Des installations modernes et bien entretenues, avec les outils et les pièces nécessaires pour faire du travail de qualité.</p>
+        </article>
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b7ab5] flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Possibilités d'avancement</h3>
+          <p class="text-slate-500 text-[14px] leading-relaxed mt-2.5">Formation continue et mobilité interne : votre progression est encouragée et structurée.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="py-16 sm:py-20 bg-[#eef5fa]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#1283b8] to-[#0a6ea5] px-8 py-12 sm:p-14 text-center shadow-[0_20px_60px_rgba(10,110,165,.3)]">
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Une question ?</h2>
+        <p class="mt-4 text-white/85 max-w-2xl mx-auto leading-relaxed">Une question sur le poste ou le processus? Écrivez-nous ou appelez-nous : notre équipe recrutement vous répond rapidement.</p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:recruitment@e360s.ca" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/10 border border-white/25 text-white font-semibold text-[15px] hover:bg-white/20 transition-colors">
+            <svg class="w-5 h-5 text-[#f4e600]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.9 5.3a2 2 0 002.2 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            recruitment@e360s.ca
+          </a>
+          <a href="tel:+14385351659" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/10 border border-white/25 text-white font-semibold text-[15px] hover:bg-white/20 transition-colors">
+            <svg class="w-5 h-5 text-[#f4e600]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.3a1 1 0 01.9.7l1.5 4a1 1 0 01-.3 1.1L8.1 10a16 16 0 006 6l1.2-2.3a1 1 0 011.1-.3l4 1.5a1 1 0 01.7.9V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z"/></svg>
+            (438) 535-1659
+          </a>
         </div>
       </div>
     </div>
