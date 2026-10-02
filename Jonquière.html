@@ -10,11 +10,11 @@ tailwind.config = {
   theme: { extend: {
     colors: {
       brand: { light:'#2ea3f2', DEFAULT:'#1483d9', deep:'#0b60ac', dark:'#084a86' },
-      accent: { DEFAULT:'#f4e600', dark:'#d9cc00' },
-      ink: { DEFAULT:'#182b3a', soft:'#51697a', faint:'#8aa0b4' }
+      accent: { DEFAULT:'#f4e600', dark:'#d9cc00', soft:'#fdf6b3' },
+      navy: { DEFAULT:'#143a5e', soft:'#4d6e89', faint:'#8aa5bb' }
     },
     fontFamily: { display:['Outfit','sans-serif'], sans:['Inter','sans-serif'] },
-    boxShadow: { card:'0 8px 24px rgba(11,96,172,.08)', lift:'0 16px 40px rgba(11,96,172,.14)' }
+    boxShadow: { card:'0 8px 24px rgba(11,96,172,.10)', lift:'0 16px 40px rgba(11,96,172,.16)' }
   }}
 }
 </script>
@@ -36,19 +36,19 @@ tailwind.config = {
     .acc-panel { transition:none; }
     html { scroll-behavior:auto; }
   }
-  .site-header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(12px); border-bottom:1px solid #e3ebf1; }
+  .site-header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.94); backdrop-filter:blur(12px); border-bottom:3px solid #f4e600; }
   .site-header .container { display:flex; align-items:center; justify-content:space-between; max-width:1080px; margin:0 auto; padding:12px 24px; }
   .site-brand { display:block; line-height:0; }
   .site-brand img { height:56px; width:auto; max-width:180px; object-fit:contain; }
-  .btn-ghost { display:inline-flex; align-items:center; padding:12px 24px; border-radius:999px; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; color:#0b60ac; border:2px solid rgba(11,96,172,.18); text-decoration:none; transition:all .25s; }
+  .btn-ghost { display:inline-flex; align-items:center; padding:12px 24px; border-radius:999px; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; color:#0b60ac; border:2px solid rgba(11,96,172,.25); text-decoration:none; transition:all .25s; }
   .btn-ghost:hover { background:#0b60ac; color:#fff; border-color:#0b60ac; }
   .pre-footer-brand { display:flex; flex-direction:column; align-items:center; gap:12px; padding:40px 24px 8px; }
   .pre-footer-brand img { height:64px; width:auto; object-fit:contain; }
-  .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#51697a; }
+  .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#4d6e89; }
   :focus-visible { outline:3px solid #f4e600; outline-offset:3px; border-radius:6px; }
 </style>
 </head>
-<body class="font-sans text-ink bg-white antialiased" id="top">
+<body class="font-sans text-navy bg-white antialiased" id="top">
 
 <header class="site-header">
 <div class="container">
@@ -60,52 +60,53 @@ tailwind.config = {
 </header>
 <main>
   <section class="relative overflow-hidden bg-accent">
-    <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/25 rounded-full blur-3xl pointer-events-none"></div>
     <div class="relative max-w-6xl mx-auto px-6 pt-16 pb-14 sm:pt-24 sm:pb-20 text-center">
-      <span class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ink/10 text-ink text-xs font-bold tracking-[0.18em] uppercase">
-        <span class="w-2 h-2 rounded-full bg-brand-deep animate-pulse"></span>
-        Nous embauchons maintenant
+      <span class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-deep text-white text-xs font-bold tracking-[0.18em] uppercase shadow-card">
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+        NOUS EMBAUCHONS MAINTENANT
       </span>
-      <h1 class="reveal font-display font-extrabold tracking-tight text-5xl sm:text-7xl mt-6 leading-[1.02] text-ink">
-        Jonquière
-      </h1>
-      <p class="reveal mt-6 text-lg sm:text-xl text-ink/70 leading-relaxed max-w-2xl mx-auto font-medium">
-        Joignez-vous à notre équipe. Notre équipe agrandit ses opérations à Jonquière. Choisissez le poste qui vous correspond et postulez dès aujourd'hui.
-      </p>
+      <h1 class="reveal font-display font-extrabold tracking-tight text-5xl sm:text-7xl mt-6 leading-[1.02] text-brand-deep">Jonquière</h1>
+      <p class="reveal mt-6 text-lg sm:text-xl text-brand-deep/80 font-medium leading-relaxed max-w-2xl mx-auto">Joignez-vous à notre équipe. Notre équipe agrandit ses opérations à Jonquière. Choisissez le poste qui vous correspond et postulez dès aujourd'hui.</p>
       <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-          <div class="reveal flex items-center gap-3 bg-white/80 backdrop-blur rounded-2xl px-5 py-4 shadow-card">
-            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-            <span class="text-sm font-semibold leading-snug">Salaire concurrentiel</span>
+          <div class="reveal flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-card">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug text-brand-deep">Salaire concurrentiel</span>
           </div>
-          <div class="reveal flex items-center gap-3 bg-white/80 backdrop-blur rounded-2xl px-5 py-4 shadow-card">
-            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-            <span class="text-sm font-semibold leading-snug">Temps plein</span>
+          <div class="reveal flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-card">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug text-brand-deep">Temps plein</span>
           </div>
-          <div class="reveal flex items-center gap-3 bg-white/80 backdrop-blur rounded-2xl px-5 py-4 shadow-card">
-            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-            <span class="text-sm font-semibold leading-snug">Formation offerte</span>
+          <div class="reveal flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-card">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug text-brand-deep">Formation offerte</span>
           </div>
-          <div class="reveal flex items-center gap-3 bg-white/80 backdrop-blur rounded-2xl px-5 py-4 shadow-card">
-            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-            <span class="text-sm font-semibold leading-snug">Assurances + REER</span>
+          <div class="reveal flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-card">
+            <span class="w-10 h-10 rounded-xl bg-brand-deep/10 text-brand-deep flex items-center justify-center shrink-0"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span class="text-sm font-semibold leading-snug text-brand-deep">Assurances + REER</span>
           </div>
       </div>
-      <a href="#postes" class="reveal mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-ink text-white font-display font-bold text-lg hover:bg-brand-deep transition-colors shadow-lift">
+      <a href="#postes" class="reveal mt-10 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-deep text-white font-display font-bold text-lg hover:bg-brand-dark transition-colors shadow-lift">
         Voir les postes
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7-7-7m7 7V3"/></svg>
       </a>
     </div>
-  </section><section id="postes" class="py-16 sm:py-24 scroll-mt-20"><div class="max-w-4xl mx-auto px-6"><div class="reveal text-center mb-12"><p class="text-xs font-bold tracking-[0.2em] uppercase text-brand-deep/60">Nos opportunités</p><h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight mt-3">Postes <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-deep to-brand-light">disponibles</span></h2><p class="text-ink-soft text-lg mt-4 max-w-2xl mx-auto">Découvrez les opportunités actuellement offertes à Jonquière. Cliquez sur un poste pour en voir tous les détails.</p></div><div class="space-y-6">      <article class="job-card bg-white rounded-3xl border border-slate-100 shadow-card overflow-hidden reveal" data-open="false">
-        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-slate-50/60 transition-colors" aria-expanded="false">
-          <span class="shrink-0 w-14 h-14 rounded-2xl bg-brand-deep/5 text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+    <div class="h-2 bg-brand-deep"></div>
+  </section><section id="postes" class="py-16 sm:py-24 scroll-mt-20 bg-white"><div class="max-w-4xl mx-auto px-6">      <div class="reveal text-center mb-12">
+        <p class="text-xs font-bold tracking-[0.2em] uppercase text-brand/70">Nos opportunités</p>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight mt-3 text-brand-deep">Postes <span class="text-brand">disponibles</span></h2>
+        <p class="text-navy-soft text-lg mt-4 max-w-2xl mx-auto leading-relaxed">Découvrez les opportunités actuellement offertes à Jonquière. Cliquez sur un poste pour en voir tous les détails.</p>
+      </div><div class="space-y-6">      <article class="job-card bg-white rounded-3xl border-2 border-brand-deep/10 shadow-card overflow-hidden reveal" data-open="false">
+        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-brand-deep/5 transition-colors" aria-expanded="false">
+          <span class="shrink-0 w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
           </span>
           <span class="flex-1 min-w-0">
-            <span class="block text-[11px] font-bold tracking-[0.18em] uppercase text-brand-deep/60">Poste disponible</span>
-            <span class="block font-display text-xl sm:text-2xl font-extrabold text-ink mt-1">Chauffeur-opérateur</span>
-            <span class="block text-ink-soft mt-1 leading-relaxed">Classe 1 ou Classe 3 · 30 – 33.87 $ / h * · Temps plein · Départ à 6h00</span>
+            <span class="block text-[11px] font-bold tracking-[0.18em] uppercase text-brand/80">Poste disponible</span>
+            <span class="block font-display text-xl sm:text-2xl font-extrabold text-brand-deep mt-1">Chauffeur-opérateur</span>
+            <span class="block text-navy-soft mt-1 leading-relaxed">Classe 1 ou Classe 3 · 30 – 33.87 $ / h * · Temps plein · Départ à 6h00</span>
           </span>
-          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-accent/15 text-brand-deep flex items-center justify-center">
+          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-brand-deep text-white flex items-center justify-center">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </span>
         </button>
@@ -113,7 +114,7 @@ tailwind.config = {
           <div class="grid sm:grid-cols-2 gap-6">
                 <div>
                   <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Ce qu'il faut savoir</h3>
-                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Travail physique quotidien</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>20 % conduite · 80 % opération du camion</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Travail extérieur dans diverses conditions météorologiques</span></li>
@@ -123,7 +124,7 @@ tailwind.config = {
                 </div>
                 <div>
                   <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Principales tâches</h3>
-                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Vidange de fosses septiques</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Utilisation d'équipements d'aspiration et de pompage</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Déplacements chez plusieurs clients</span></li>
@@ -133,7 +134,7 @@ tailwind.config = {
                 </div>
                 <div>
                   <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Profil recherché</h3>
-                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Permis Classe 1 ou Classe 3 valide</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Expérience pertinente</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Autonomie et professionnalisme</span></li>
@@ -143,7 +144,7 @@ tailwind.config = {
                 </div>
                 <div>
                   <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Conditions offertes</h3>
-                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Salaire entre 26 $ et 32 $/heure selon l'expérience et les qualifications</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Assurances collectives</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>REER collectif</span></li>
@@ -155,7 +156,7 @@ tailwind.config = {
                 </div>
                 <div>
                   <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Horaire</h3>
-                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Temps plein</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Départ à 6h00 le matin</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Possibilité de travail de soir selon les projets spéciaux</span></li>
@@ -163,22 +164,22 @@ tailwind.config = {
                   </ul>
                 </div>
           </div>
-          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-ink font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand-deep font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
             Postuler maintenant
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div></div></div>
-      </article>      <article class="job-card bg-white rounded-3xl border border-slate-100 shadow-card overflow-hidden reveal" data-open="false">
-        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-slate-50/60 transition-colors" aria-expanded="false">
-          <span class="shrink-0 w-14 h-14 rounded-2xl bg-brand-deep/5 text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+      </article>      <article class="job-card bg-white rounded-3xl border-2 border-brand-deep/10 shadow-card overflow-hidden reveal" data-open="false">
+        <button class="job-card-trigger w-full flex items-center gap-4 sm:gap-6 p-6 sm:p-8 text-left hover:bg-brand-deep/5 transition-colors" aria-expanded="false">
+          <span class="shrink-0 w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
           </span>
           <span class="flex-1 min-w-0">
-            <span class="block text-[11px] font-bold tracking-[0.18em] uppercase text-brand-deep/60">Poste disponible</span>
-            <span class="block font-display text-xl sm:text-2xl font-extrabold text-ink mt-1">Aide-opérateur</span>
-            <span class="block text-ink-soft mt-1 leading-relaxed">Production et opérations · 25 $ – 27.50 $ / h * · Temps plein · Formation offerte</span>
+            <span class="block text-[11px] font-bold tracking-[0.18em] uppercase text-brand/80">Poste disponible</span>
+            <span class="block font-display text-xl sm:text-2xl font-extrabold text-brand-deep mt-1">Aide-opérateur</span>
+            <span class="block text-navy-soft mt-1 leading-relaxed">Production et opérations · 25 $ – 27.50 $ / h * · Temps plein · Formation offerte</span>
           </span>
-          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-accent/15 text-brand-deep flex items-center justify-center">
+          <span class="acc-chevron shrink-0 w-10 h-10 rounded-full bg-brand-deep text-white flex items-center justify-center">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </span>
         </button>
@@ -186,7 +187,7 @@ tailwind.config = {
           <div class="grid sm:grid-cols-2 gap-6">
                 <div>
                   <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Ce que nous offrons</h3>
-                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Assurances collectives</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>REER</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Formation continue</span></li>
@@ -196,7 +197,7 @@ tailwind.config = {
                 </div>
                 <div>
                   <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Responsabilités</h3>
-                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Assister le chauffeur-opérateur lors des opérations de vidange</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Manipuler et installer les boyaux d'aspiration</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Aider à la préparation et au nettoyage des équipements</span></li>
@@ -205,7 +206,7 @@ tailwind.config = {
                 </div>
                 <div>
                   <h3 class="font-display text-sm font-bold tracking-[0.14em] uppercase text-brand-deep">Profil recherché</h3>
-                  <ul class="mt-4 space-y-3 text-ink-soft leading-relaxed">
+                  <ul class="mt-4 space-y-3 text-navy-soft leading-relaxed">
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Aucune expérience requise</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Bonne forme physique</span></li>
                         <li class="flex items-start gap-3"><span class="mt-1"><svg class="w-5 h-5 text-brand-deep shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span>Esprit d'équipe</span></li>
@@ -213,68 +214,70 @@ tailwind.config = {
                   </ul>
                 </div>
           </div>
-          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-ink font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand-deep font-display font-bold hover:bg-accent-dark transition-colors shadow-card">
             Postuler maintenant
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div></div></div>
-      </article></div></div></section>  <section class="py-16 sm:py-20">
+      </article></div></div></section>  <section class="py-16 sm:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-6">
-      <div class="reveal relative overflow-hidden rounded-[2rem] bg-ink text-white p-10 sm:p-14 text-center shadow-lift">
-        <div class="absolute -top-20 -right-20 w-72 h-72 bg-accent/30 rounded-full blur-3xl"></div>
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-brand-deep text-white p-10 sm:p-14 text-center shadow-lift">
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-accent/25 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-0 right-0 h-2 bg-accent"></div>
         <h2 class="relative font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Prêt à faire partie de <span class="text-accent">l'équipe</span> ?</h2>
-        <p class="relative mt-4 text-white/80 text-lg">Quelques minutes suffisent pour soumettre votre candidature.</p>
-        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="relative mt-8 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-accent text-ink font-display font-bold text-lg hover:bg-accent-dark transition-colors">
+        <p class="relative mt-4 text-white/85 text-lg">Quelques minutes suffisent pour soumettre votre candidature.</p>
+        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1URVc3RUs0QTRBNThaTTVFMUpINjEyM0UzQy4u" target="_blank" rel="noopener noreferrer" class="relative mt-8 inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-accent text-brand-deep font-display font-bold text-lg hover:bg-accent-dark transition-colors">
           Postuler maintenant
         </a>
       </div>
     </div>
-  </section>  <section class="py-16 sm:py-24 bg-slate-50/70">
+  </section>  <section class="py-16 sm:py-24 bg-gradient-to-b from-white to-brand-deep/5">
     <div class="max-w-6xl mx-auto px-6">
       <div class="reveal text-center mb-12">
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight">Pourquoi rejoindre <span class="text-brand-deep">E360S</span> ?</h2>
-        <p class="text-ink-soft text-lg mt-4 max-w-2xl mx-auto">Joignez-vous à une entreprise en croissance qui valorise ses employés, offre de la stabilité et investit dans leur développement.</p>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-brand-deep">Pourquoi rejoindre <span class="bg-accent px-3 rounded-lg">E360S</span> ?</h2>
+        <p class="text-navy-soft text-lg mt-4 max-w-2xl mx-auto">Joignez-vous à une entreprise en croissance qui valorise ses employés, offre de la stabilité et investit dans leur développement.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <article class="reveal bg-white rounded-3xl border-2 border-accent/40 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-accent/30 text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        <article class="reveal bg-white rounded-3xl border-2 border-accent/60 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
           </div>
-          <h3 class="font-display text-xl font-extrabold mt-6">Salaire compétitif</h3>
-          <p class="text-ink-soft leading-relaxed mt-3">Une rémunération concurrentielle basée sur votre expérience et votre contribution.</p>
+          <h3 class="font-display text-xl font-extrabold mt-6 text-brand-deep">Salaire compétitif</h3>
+          <p class="text-navy-soft leading-relaxed mt-3">Une rémunération concurrentielle basée sur votre expérience et votre contribution.</p>
         </article>
-        <article class="reveal bg-white rounded-3xl border-2 border-accent/40 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-accent/30 text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        <article class="reveal bg-white rounded-3xl border-2 border-accent/60 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
           </div>
-          <h3 class="font-display text-xl font-extrabold mt-6">Assurances et REER</h3>
-          <p class="text-ink-soft leading-relaxed mt-3">Profitez d'avantages sociaux complets et d'un régime d'épargne pour préparer l'avenir.</p>
+          <h3 class="font-display text-xl font-extrabold mt-6 text-brand-deep">Assurances et REER</h3>
+          <p class="text-navy-soft leading-relaxed mt-3">Profitez d'avantages sociaux complets et d'un régime d'épargne pour préparer l'avenir.</p>
         </article>
-        <article class="reveal bg-white rounded-3xl border-2 border-accent/40 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-accent/30 text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        <article class="reveal bg-white rounded-3xl border-2 border-accent/60 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
           </div>
-          <h3 class="font-display text-xl font-extrabold mt-6">Emploi stable</h3>
-          <p class="text-ink-soft leading-relaxed mt-3">Postes à temps plein offrant stabilité, horaires réguliers et perspectives à long terme.</p>
+          <h3 class="font-display text-xl font-extrabold mt-6 text-brand-deep">Emploi stable</h3>
+          <p class="text-navy-soft leading-relaxed mt-3">Postes à temps plein offrant stabilité, horaires réguliers et perspectives à long terme.</p>
         </article>
-        <article class="reveal bg-white rounded-3xl border-2 border-accent/40 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-accent/30 text-brand-deep flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        <article class="reveal bg-white rounded-3xl border-2 border-accent/60 shadow-card p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-accent text-brand-deep flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
           </div>
-          <h3 class="font-display text-xl font-extrabold mt-6">Opportunités d'avancement</h3>
-          <p class="text-ink-soft leading-relaxed mt-3">Développez votre carrière grâce à la formation continue et aux possibilités d'évolution.</p>
+          <h3 class="font-display text-xl font-extrabold mt-6 text-brand-deep">Opportunités d'avancement</h3>
+          <p class="text-navy-soft leading-relaxed mt-3">Développez votre carrière grâce à la formation continue et aux possibilités d'évolution.</p>
         </article>
       </div>
     </div>
-  </section>  <section class="py-16 sm:py-24 bg-slate-50/70">
+  </section>  <section class="py-16 sm:py-24 bg-gradient-to-b from-white to-brand-deep/5">
     <div class="max-w-4xl mx-auto px-6">
       <div class="reveal relative overflow-hidden rounded-[2rem] bg-brand-deep text-white p-10 sm:p-14 text-center shadow-lift">
-        <div class="absolute -top-20 -right-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
-        <h2 class="relative font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Une question ?</h2>
-        <p class="relative mt-4 text-white/80 text-lg max-w-xl mx-auto">Notre équipe recrutement vous répond rapidement.</p>
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-accent/25 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-0 right-0 h-2 bg-accent"></div>
+        <h2 class="relative font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Une <span class="text-accent">question</span> ?</h2>
+        <p class="relative mt-4 text-white/85 text-lg max-w-xl mx-auto">Notre équipe recrutement vous répond rapidement.</p>
         <div class="relative mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:recruitment@e360s.ca" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-brand-deep font-display font-bold hover:bg-accent transition-colors">recruitment@e360s.ca</a>
-          <a href="tel:+14385351659" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/30 text-white font-display font-bold hover:bg-white/10 transition-colors">(438) 535-1659</a>
+          <a href="mailto:recruitment@e360s.ca" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-brand-deep font-display font-bold hover:bg-accent-dark transition-colors">recruitment@e360s.ca</a>
+          <a href="tel:+14385351659" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/40 text-white font-display font-bold hover:bg-white/10 transition-colors">(438) 535-1659</a>
         </div>
       </div>
     </div>
