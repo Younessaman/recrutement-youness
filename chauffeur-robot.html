@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chauffeur latéral – Robot | E360S</title>
+<title>Chauffeur latéral | E360S</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = { theme: { extend: {
@@ -33,6 +33,35 @@ tailwind.config = { theme: { extend: {
   .pre-footer-brand img { height:64px; width:auto; object-fit:contain; }
   .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#4d6e89; font-size:.95rem; }
   :focus-visible { outline:3px solid #f4e600; outline-offset:3px; border-radius:6px; }
+:root{--blue-mid:#1483d9;--blue-deep:#0b60ac;--yellow:#f4e600;--white:#ffffff;--heading:#0b60ac;--ink:#182b3a;--ink-soft:#51697a;--line:#e3ebf1;--radius-lg:24px;--shadow-card:0 8px 24px rgba(11,96,172,.08);--shadow-lift:0 16px 40px rgba(11,96,172,.14);--ease:cubic-bezier(.4,0,.2,1);}
+.center{text-align:center;}
+.job-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);color:#fff;text-align:center;margin-top:24px;letter-spacing:-.01em;line-height:1.05;}
+.job-badge{display:inline-block;background:#f4e600;color:#0b6ea5;padding:12px 24px;border-radius:999px;font-weight:700;font-family:'Outfit',sans-serif;font-size:1rem;margin-top:18px;box-shadow:0 8px 18px rgba(0,40,70,.25);}
+.main-description{text-align:center;max-width:820px;margin:24px auto 44px;font-size:1.05rem;color:rgba(255,255,255,.92);line-height:1.65;}
+.details-card{max-width:900px;margin-left:auto;margin-right:auto;}
+.details-trigger{scroll-margin-top:110px;}
+.details-card{background:var(--white);border:1.5px solid var(--line);border-top:4px solid var(--yellow);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);overflow:hidden;margin-bottom:72px;}
+.details-item + .details-item{border-top:1px solid var(--line);}
+.details-trigger{width:100%;display:flex;align-items:center;gap:16px;padding:26px 30px;background:none;border:none;cursor:pointer;text-align:left;color:inherit;transition:background .25s var(--ease);}
+.details-trigger:hover{background:#f6f9fc;}
+.details-icon{flex:none;width:42px;height:42px;border-radius:14px;background:#eef4fa;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;transition:background .3s var(--ease),color .3s var(--ease);}
+.details-icon svg{width:20px;height:20px;}
+.details-trigger[aria-expanded="true"] .details-icon{background:var(--yellow);color:var(--heading);}
+.details-heading{flex:1;font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--heading);}
+.details-chevron{flex:none;width:34px;height:34px;border-radius:50%;background:#eef4fa;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease);}
+.details-chevron svg{width:14px;height:14px;}
+.details-trigger[aria-expanded="true"] .details-chevron{transform:rotate(180deg);background:var(--yellow);color:var(--heading);}
+.details-panel{max-height:0;overflow:hidden;transition:max-height .5s var(--ease);}
+.details-panel-inner{padding:0 30px 30px 88px;}
+.details-panel-inner ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.details-panel-inner li{display:flex;align-items:flex-start;gap:10px;font-weight:500;font-size:.98rem;color:var(--ink);}
+.details-panel-inner li .check{flex:none;width:20px;height:20px;border-radius:50%;background:#eef4fa;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.details-panel-inner li .check svg{width:12px;height:12px;}
+.details-trigger[aria-expanded="true"] .details-icon,.details-trigger[aria-expanded="true"] .details-chevron{background:var(--yellow)!important;color:var(--blue-mid)!important}
+.job-badge{display:inline-block;background:#eef4fa;color:var(--blue-deep);padding:12px 22px;border-radius:999px;font-weight:700;font-family:'Outfit',sans-serif;font-size:1rem;box-shadow:0 5px 14px rgba(11,96,172,.06);}
+.main-description{text-align:center;max-width:820px;margin:26px auto 48px;font-size:1.05rem;color:var(--ink-soft);line-height:1.6;}
+.job-title{font-size:1.8rem;}
+.job-title,.content-section .main-description{color:#fff!important}
 </style>
 <style>
   .header-actions { display:flex; align-items:center; gap:12px; }
@@ -63,7 +92,7 @@ tailwind.config = { theme: { extend: {
         </div>
       </div>
     <a
-      href="mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral%20%E2%80%93%20Robot"
+      href="mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral"
       target="_blank"
       rel="noopener noreferrer"
       class="btn-ghost"
@@ -85,22 +114,22 @@ tailwind.config = { theme: { extend: {
       </span>
       <h1 class="reveal font-display font-extrabold uppercase tracking-tight text-5xl sm:text-7xl mt-7 leading-[1.02]">
         <span class="block text-[#f4e600]">CHAUFFEUR</span>
-        <span class="block text-white">LATÉRAL – ROBOT</span>
+        <span class="block text-white">LATÉRAL</span>
       </h1>
       <p class="reveal mt-7 text-white/95 text-[17px] leading-[1.8] max-w-2xl mx-auto">
-        E360S recherche un chauffeur latéral qui aime le travail concret et les journées actives : conduite d’un camion à bras robotisé, basé à Victoriaville dans un rayon de 10 km.
+        E360S recherche plusieurs chauffeurs latéraux qui aiment le travail concret et les journées actives : conduite d’un camion à chargement latéral, basé à Victoriaville.
       </p>
       <div class="reveal mt-6">
-        <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 border border-white/30 text-white text-[13px] font-semibold tracking-wide">Poste disponible à Victoriaville</span>
+        <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 border border-white/30 text-white text-[13px] font-semibold tracking-wide">Plusieurs postes disponibles à Victoriaville</span>
       </div>
-      <div class="mt-9 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+      <div class="mt-9 grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
           <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0"><span class="text-lg font-bold">$</span></span>
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><span class="text-lg font-bold">$</span></svg></span>
             <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">24,93 $/h</span>
           </div>
           <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 3"/></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">6h à 17h</span>
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Temps plein</span>
           </div>
           <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
             <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></span>
@@ -110,96 +139,71 @@ tailwind.config = { theme: { extend: {
             <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 17h13V6H3v11Z"/><path d="M16 10h3l2 3v4h-5V10Z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
             <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Camions neufs</span>
           </div>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Équipement fourni</span>
+          </div>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+            <span class="text-[#0b7ab5] shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4l1.7 4.6L18 10l-4.3 1.4L12 16l-1.7-4.6L6 10l4.3-1.4L12 4Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Bonus propreté et graissage</span>
+          </div>
       </div>
-      <a href="#premier-poste" class="reveal mt-10 inline-flex items-center justify-center w-full sm:w-auto sm:min-w-[540px] px-10 py-5 rounded-full bg-[#f4e600] text-[#0b6ea5] font-display font-extrabold tracking-wide hover:bg-[#e2d400] transition-colors shadow-[0_16px_40px_rgba(0,40,70,.3)]">
-        VOIR LES POSTES
+      </div>
+      <a href="#header-1" class="reveal mt-10 inline-flex items-center justify-center w-full sm:w-auto sm:min-w-[540px] px-10 py-5 rounded-full bg-[#f4e600] text-[#0b6ea5] font-display font-extrabold tracking-wide hover:bg-[#e2d400] transition-colors shadow-[0_16px_40px_rgba(0,40,70,.3)]">
+        VOIR SI LE POSTE EST POUR MOI
       </a>
     </div>
   </section>
   <div class="bg-[#f4e600] py-4 px-6 text-center">
-    <span class="font-display font-extrabold tracking-[0.14em] text-[#0b6ea5] text-sm sm:text-base uppercase">CHAUFFEUR LATÉRAL – ROBOT • VICTORIAVILLE</span>
+    <span class="font-display font-extrabold tracking-[0.14em] text-[#0b6ea5] text-sm sm:text-base uppercase">CHAUFFEUR LATÉRAL • VICTORIAVILLE</span>
   </div>
 
-  <!-- POSTES -->
+    <!-- POSTES -->
   <section id="postes" class="py-16 sm:py-24 scroll-mt-20 bg-gradient-to-b from-[#1a90c6] to-[#0f7cab]">
     <div class="max-w-6xl mx-auto px-6">
       <div class="reveal text-center">
         <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0b6ea5] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">Plusieurs opportunités disponibles</span>
-        <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-center mt-6">
-          <span class="text-white">Chauffeur latéral – Robot</span>
-        </h2>
-        <p class="mt-5 text-white/85 max-w-2xl mx-auto leading-relaxed">E360S est à la recherche d’un chauffeur pour opérer un camion à bras robotisé latéral : collecte automatisée, camion neuf attitré et bonus d’entretien.</p>
       </div>
-      <div class="mt-12 max-w-3xl mx-auto">
-        <article id="premier-poste" class="job-card scroll-mt-28 bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,40,70,.18)] reveal" data-open="false">
-          <div class="h-1.5 bg-[#f4e600]"></div>
-          <button class="job-card-trigger w-full flex items-start gap-4 p-6 sm:p-7 text-left" aria-expanded="false">
-            <span class="shrink-0 w-12 h-12 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <path d="M3 17h13V6H3v11Z"/> <path d="M16 10h3l2 3v4h-5V10Z"/> <circle cx="7" cy="18" r="2"/> <circle cx="18" cy="18" r="2"/> </svg></span>
-            <span class="flex-1 min-w-0">
-              <span class="block font-display text-lg font-extrabold text-[#0b7ab5] mt-0.5">Chauffeur latéral – Robot</span>
-              <span class="block text-[13px] text-slate-500 mt-1 leading-relaxed">Conduite et collecte avec bras robotisé latéral.</span>
-            </span>
-            <span class="acc-chevron shrink-0 w-8 h-8 rounded-full bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center mt-1">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </span>
-          </button>
-          <div class="acc-panel"><div><div class="px-6 sm:px-7 pb-7">
-            <div class="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Responsabilités principales</h4>
-                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Conduire le camion de collecte de façon sécuritaire sur les routes assignées</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Opérer le bras robotisé latéral pour la levée et la vidange des bacs roulants</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Effectuer les vérifications du véhicule et du système robotisé avant et pendant les opérations</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Maintenir la propreté du camion et effectuer le graissage dans le cadre du bonus d’entretien</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Signaler toute anomalie ou bris d’équipement au répartiteur</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Respecter les procédures de sécurité et contribuer au bon déroulement des routes</span></li>
-                    </ul>
-                      </div>
-                      <div>
-                        <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0b7ab5] uppercase">Exigences et conditions</h4>
-                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Permis Classe 3</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Salaire : 24,93 $/h</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Horaire : 6h à 17h</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Basé à Victoriaville – rayon de 10 km</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Même camion de collecte attitré</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Camions neufs</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Équipement fourni</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Formation offerte</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Bonus d’entretien du camion</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Temps plein</span></li>
-                    </ul>
-                      </div>
-            </div>
-            <a href="mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral%20%E2%80%93%20Robot" target="_blank" rel="noopener noreferrer" class="mt-7 flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#1a9bd4] text-[#f4e600] text-sm font-display font-bold tracking-wide hover:bg-[#1283b8] transition-colors">
-              POSTULER MAINTENANT
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-          </div></div></div>
-        </article>
-
-        
+      <div class="center reveal"><div id="description-poste" class="job-title">Chauffeur latéral</div><div class="job-badge"> Le même camion chaque jour </div></div>
+      <p class="main-description reveal"> E360S recherche plusieurs chauffeurs latéraux pour assurer la collecte automatisée à Victoriaville : camion neuf attitré et bonus pour la propreté et le graissage. </p>
+      <div class="details-card reveal">
+<div class="details-item"><button class="details-trigger" type="button" aria-expanded="true" aria-controls="panel-1" id="header-1"><span class="details-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span><span class="details-heading"> Ce qu'il faut savoir </span><span class="details-chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="details-panel" id="panel-1" role="region" aria-labelledby="header-1"><div class="details-panel-inner"><ul><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Conduite d’un camion à chargement latéral </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Collecte automatisée des bacs roulants </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Le même camion chaque jour </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Travail extérieur, horaire de jour </li></ul></div></div></div>
+<div class="details-item"><button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-2" id="header-2"><span class="details-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1 2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="details-heading"> Principales tâches </span><span class="details-chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="details-panel" id="panel-2" role="region" aria-labelledby="header-2"><div class="details-panel-inner"><ul><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Conduire le camion de collecte de façon sécuritaire sur les routes assignées </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Opérer le bras latéral automatisé pour la levée et la vidange des bacs roulants </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Effectuer les vérifications du véhicule et du système automatisé avant et pendant les opérations </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Maintenir la propreté du camion et effectuer le graissage </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Signaler toute anomalie ou bris d’équipement au répartiteur </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Respecter les procédures de sécurité et contribuer au bon déroulement des routes </li></ul></div></div></div>
+<div class="details-item"><button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-3" id="header-3"><span class="details-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><span class="details-heading"> Profil recherché </span><span class="details-chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="details-panel" id="panel-3" role="region" aria-labelledby="header-3"><div class="details-panel-inner"><ul><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Permis Classe 3 valide </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Expérience pertinente (un atout) </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Autonomie et professionnalisme </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Esprit d’équipe </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Respect des normes de sécurité </li></ul></div></div></div>
+<div class="details-item"><button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-4" id="header-4"><span class="details-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span class="details-heading"> Conditions offertes </span><span class="details-chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="details-panel" id="panel-4" role="region" aria-labelledby="header-4"><div class="details-panel-inner"><ul><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Salaire : 24,93 $/h </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Temps plein, quart de jour (6h à 17h) </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Le même camion attitré chaque jour </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Camions neufs </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Équipement fourni </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Formation offerte </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Bonus pour la propreté et le graissage du camion (aucune mécanique requise) </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Basé à Victoriaville </li></ul></div></div></div>
+<div class="details-item"><button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-5" id="header-5"><span class="details-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><span class="details-heading"> Horaire </span><span class="details-chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="details-panel" id="panel-5" role="region" aria-labelledby="header-5"><div class="details-panel-inner"><ul><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Temps plein </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> 6h à 17h </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Quart de jour </li></ul></div></div></div>
+      </div>
+      <div class="reveal text-center" style="margin-top:-36px;padding-bottom:10px">
+        <a href="mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral" class="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-[#1a9bd4] text-[#f4e600] font-display font-bold tracking-wide hover:bg-[#1283b8] transition-colors shadow-[0_12px_30px_rgba(0,60,100,.25)]">
+          POSTULER MAINTENANT
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-<section class="py-16 sm:py-20 bg-[#eef5fa]">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <div class="reveal">
-        <h2 class="font-display text-3xl sm:text-[2.6rem] font-extrabold text-[#0b7ab5]">Lieu <span class="relative inline-block">du poste<span class="absolute -bottom-2 left-0 right-0 h-1.5 bg-[#f4e600] rounded-full"></span></span></h2>
-        <p class="text-slate-500 mt-5 max-w-2xl mx-auto leading-relaxed">Poste basé à Victoriaville, avec un rayon de 10 km autour de la ville.</p>
-      </div>
-      <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a href="#premier-poste" class="inline-flex items-center px-8 py-3.5 rounded-full bg-white text-[#0b7ab5] font-display font-bold shadow-[0_10px_30px_rgba(0,40,70,.12)] hover:shadow-[0_14px_36px_rgba(0,40,70,.20)] transition-shadow">Victoriaville</a>
-      </div>
-      <div class="reveal mt-8">
-        <a href="mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral%20%E2%80%93%20Robot" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-[#1a9bd4] text-[#f4e600] font-display font-bold tracking-wide hover:bg-[#1283b8] transition-colors shadow-[0_12px_30px_rgba(0,60,100,.25)]">POSTULER MAINTENANT</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- POURQUOI -->
+<!-- POURQUOI -->
   <section class="py-16 sm:py-24 bg-sky-50">
     <div class="max-w-6xl mx-auto px-6">
       <div class="reveal text-center">
@@ -240,7 +244,7 @@ tailwind.config = { theme: { extend: {
         <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Une question ?</h2>
         <p class="mt-4 text-white/85 max-w-2xl mx-auto leading-relaxed">Notre équipe recrutement vous répond rapidement.</p>
         <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral%20%E2%80%93%20Robot" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/10 border border-white/25 text-white font-semibold text-[15px] hover:bg-white/20 transition-colors">
+          <a href="mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/10 border border-white/25 text-white font-semibold text-[15px] hover:bg-white/20 transition-colors">
             <svg class="w-5 h-5 text-[#f4e600]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.9 5.3a2 2 0 002.2 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             recruitment@e360s.ca
           </a>
@@ -271,22 +275,36 @@ tailwind.config = { theme: { extend: {
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
   } else { revealEls.forEach(el => el.classList.add('is-visible')); }
-  document.querySelectorAll('.job-card-trigger').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const card = trigger.closest('.job-card');
-      const open = card.getAttribute('data-open') === 'true';
-      card.setAttribute('data-open', String(!open));
-      trigger.setAttribute('aria-expanded', String(!open));
-    });
-  });
-  document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape') return;
-    const openCard = document.querySelector('.job-card[data-open="true"]');
-    if (openCard) {
-      openCard.setAttribute('data-open', 'false');
-      openCard.querySelector('.job-card-trigger').setAttribute('aria-expanded', 'false');
+  /* ===== Accordéon détail emploi (style sanitation) ===== */
+  (function(){
+    function setPanelHeight(trigger, expanded){
+      var panelId = trigger.getAttribute('aria-controls');
+      var panel = document.getElementById(panelId);
+      if(!panel) return;
+      panel.style.maxHeight = expanded ? panel.scrollHeight + 'px' : '0px';
     }
-  });
+    var triggers = document.querySelectorAll('.details-trigger');
+    triggers.forEach(function(trigger){
+      trigger.addEventListener('click', function(){
+        var isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        var next = !isExpanded;
+        trigger.setAttribute('aria-expanded', String(next));
+        setPanelHeight(trigger, next);
+      });
+    });
+    function refresh(){
+      triggers.forEach(function(trigger){
+        setPanelHeight(trigger, trigger.getAttribute('aria-expanded') === 'true');
+      });
+    }
+    window.addEventListener('load', refresh);
+    window.addEventListener('resize', function(){
+      triggers.forEach(function(trigger){
+        if(trigger.getAttribute('aria-expanded') === 'true') setPanelHeight(trigger, true);
+      });
+    });
+    if(document.readyState === 'complete') refresh();
+  })();
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', event => {
       const selector = link.getAttribute('href');
@@ -304,61 +322,72 @@ tailwind.config = { theme: { extend: {
 <script>
 (function(){
   const I18N = {"Postuler": "Apply",
-"NOUS EMBAUCHONS \u2013 CHAUFFEUR LAT\u00c9RAL": "WE'RE HIRING \u2013 SIDE-LOADER DRIVER",
+"NOUS EMBAUCHONS – CHAUFFEUR LATÉRAL": "WE'RE HIRING – SIDE-LOADER DRIVER",
 "CHAUFFEUR": "DRIVER",
-"LAT\u00c9RAL \u2013 ROBOT": "SIDE-LOADER ROBOT",
-"E360S recherche un chauffeur lat\u00e9ral qui aime le travail concret et les journ\u00e9es actives : conduite d\u2019un camion \u00e0 bras robotis\u00e9, bas\u00e9 \u00e0 Victoriaville dans un rayon de 10 km.": "E360S is looking for a side-loader driver who enjoys hands-on work and active days: driving a robotic-arm truck based in Victoriaville within a 10 km radius.",
+"LATÉRAL": "SIDE-LOADER",
+"E360S recherche plusieurs chauffeurs latéraux qui aiment le travail concret et les journées actives : conduite d’un camion à chargement latéral, basé à Victoriaville.": "E360S is looking for several side-loader drivers who enjoy hands-on work and active days: driving a side-loader truck, based in Victoriaville.",
+"Plusieurs postes disponibles à Victoriaville": "Several positions available in Victoriaville",
 "24,93 $/h": "$24.93/h",
-"6h \u00e0 17h": "6am to 5pm",
-"Poste disponible \u00e0 Victoriaville": "Position available in Victoriaville",
-"VOIR LES POSTES": "VIEW OPENINGS",
-"CHAUFFEUR LAT\u00c9RAL \u2013 ROBOT \u2022 VICTORIAVILLE": "SIDE-LOADER ROBOT DRIVER \u2022 VICTORIAVILLE",
-"Chauffeur lat\u00e9ral \u2013 Robot": "Side-loader robot driver",
-"Conduite et collecte avec bras robotis\u00e9 lat\u00e9ral.": "Driving and collection with a side-loader robotic arm.",
-"Responsabilit\u00e9s principales": "Main responsibilities",
-"Conduire le camion de collecte de fa\u00e7on s\u00e9curitaire sur les routes assign\u00e9es": "Drive the collection truck safely on assigned routes",
-"Op\u00e9rer le bras robotis\u00e9 lat\u00e9ral pour la lev\u00e9e et la vidange des bacs roulants": "Operate the side-loader robotic arm to lift and empty rolling bins",
-"Effectuer les v\u00e9rifications du v\u00e9hicule et du syst\u00e8me robotis\u00e9 avant et pendant les op\u00e9rations": "Inspect the vehicle and robotic system before and during operations",
-"Maintenir la propret\u00e9 du camion et effectuer le graissage dans le cadre du bonus d\u2019entretien": "Keep the truck clean and perform greasing as part of the maintenance bonus",
-"Signaler toute anomalie ou bris d\u2019\u00e9quipement au r\u00e9partiteur": "Report any anomaly or equipment breakdown to dispatch",
-"Respecter les proc\u00e9dures de s\u00e9curit\u00e9 et contribuer au bon d\u00e9roulement des routes": "Follow safety procedures and contribute to the smooth running of routes",
-"Exigences et conditions": "Requirements and conditions",
-"Permis Classe 3": "Class 3 driver\u2019s licence",
-"Salaire : 24,93 $/h": "Pay: $24.93/h",
-"Horaire : 6h \u00e0 17h": "Schedule: 6am to 5pm",
-"Bas\u00e9 \u00e0 Victoriaville \u2013 rayon de 10 km": "Based in Victoriaville \u2013 10 km radius",
-"M\u00eame camion de collecte attitr\u00e9": "Same assigned collection truck",
-"Camions neufs": "New trucks",
-"\u00c9quipement fourni": "Equipment provided",
-"Formation offerte": "Training provided",
-"Bonus d\u2019entretien du camion": "Truck maintenance bonus",
 "Temps plein": "Full time",
+"Formation offerte": "Training provided",
+"Camions neufs": "New trucks",
+"Équipement fourni": "Equipment provided",
+"Bonus propreté et graissage": "Cleanliness and greasing bonus",
+"VOIR SI LE POSTE EST POUR MOI": "SEE IF THIS JOB IS FOR ME",
+"CHAUFFEUR LATÉRAL • VICTORIAVILLE": "SIDE-LOADER DRIVER • VICTORIAVILLE",
+"Plusieurs opportunités disponibles": "Several opportunities available",
+"Chauffeur latéral": "Side-loader driver",
+"Le même camion chaque jour": "The same truck every day",
+"E360S recherche plusieurs chauffeurs latéraux pour assurer la collecte automatisée à Victoriaville : camion neuf attitré et bonus pour la propreté et le graissage.": "E360S is looking for several side-loader drivers to handle automated collection in Victoriaville: assigned new truck and bonus for cleanliness and greasing.",
+"Ce qu'il faut savoir": "What you should know",
+"Conduite d’un camion à chargement latéral": "Driving a side-loader truck",
+"Collecte automatisée des bacs roulants": "Automated collection of rolling bins",
+"Travail extérieur, horaire de jour": "Outdoor work, day shift",
+"Principales tâches": "Main duties",
+"Conduire le camion de collecte de façon sécuritaire sur les routes assignées": "Drive the collection truck safely on assigned routes",
+"Opérer le bras latéral automatisé pour la levée et la vidange des bacs roulants": "Operate the automated side-loader arm to lift and empty rolling bins",
+"Effectuer les vérifications du véhicule et du système automatisé avant et pendant les opérations": "Inspect the vehicle and automated system before and during operations",
+"Maintenir la propreté du camion et effectuer le graissage": "Keep the truck clean and perform greasing",
+"Signaler toute anomalie ou bris d’équipement au répartiteur": "Report any anomaly or equipment breakdown to dispatch",
+"Respecter les procédures de sécurité et contribuer au bon déroulement des routes": "Follow safety procedures and contribute to the smooth running of routes",
+"Profil recherché": "Desired profile",
+"Permis Classe 3 valide": "Valid Class 3 driver’s licence",
+"Expérience pertinente (un atout)": "Relevant experience (an asset)",
+"Autonomie et professionnalisme": "Autonomy and professionalism",
+"Esprit d’équipe": "Team spirit",
+"Respect des normes de sécurité": "Compliance with safety standards",
+"Conditions offertes": "What we offer",
+"Salaire : 24,93 $/h": "Pay: $24.93/h",
+"Temps plein, quart de jour (6h à 17h)": "Full time, day shift (6am to 5pm)",
+"Le même camion attitré chaque jour": "The same assigned truck every day",
+"Bonus pour la propreté et le graissage du camion (aucune mécanique requise)": "Bonus for truck cleanliness and greasing (no mechanical work required)",
+"Basé à Victoriaville": "Based in Victoriaville",
+"Horaire": "Schedule",
+"6h à 17h": "6am to 5pm",
+"Quart de jour": "Day shift",
 "POSTULER MAINTENANT": "APPLY NOW",
-"Lieu": "Job",
-"du poste": "location",
-"Poste bas\u00e9 \u00e0 Victoriaville, avec un rayon de 10 km autour de la ville.": "Position based in Victoriaville, within a 10 km radius of the city.",
 "Une question ?": "A question?",
-"Notre \u00e9quipe recrutement vous r\u00e9pond rapidement.": "Our recruitment team will respond quickly.",
+"Notre équipe recrutement vous répond rapidement.": "Our recruitment team will respond quickly.",
 "Solutions Environnementales 360 (E360S)": "Environmental Solutions 360 (E360S)",
 "Pourquoi choisir E360S": "Why choose E360S",
-"Une entreprise en croissance qui met la s\u00e9curit\u00e9 et le d\u00e9veloppement de ses \u00e9quipes au premier plan, peu importe le secteur.": "A growing company that puts safety and team development first, in every sector.",
+"Une entreprise en croissance qui met la sécurité et le développement de ses équipes au premier plan, peu importe le secteur.": "A growing company that puts safety and team development first, in every sector.",
 "Leader canadien": "Canadian leader",
 "Faites partie de l'un des plus importants fournisseurs de services environnementaux au Canada.": "Join one of Canada's largest environmental services providers.",
-"D\u00e9veloppement professionnel": "Professional development",
-"Formation continue, mobilit\u00e9 interne et possibilit\u00e9s r\u00e9elles d'avancement.": "Ongoing training, internal mobility and real advancement opportunities.",
-"Une \u00e9quipe engag\u00e9e": "A committed team",
-"Travaillez dans un environnement ax\u00e9 sur la s\u00e9curit\u00e9, le respect et la collaboration.": "Work in an environment focused on safety, respect and collaboration."};
+"Développement professionnel": "Professional development",
+"Formation continue, mobilité interne et possibilités réelles d'avancement.": "Ongoing training, internal mobility and real advancement opportunities.",
+"Une équipe engagée": "A committed team",
+"Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.": "Work in an environment focused on safety, respect and collaboration."};
   const REV = {}; Object.keys(I18N).forEach(k=>{ REV[I18N[k]] = k; });
   const MAILTO = {
-    fr: 'mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral%20%E2%80%93%20Robot',
-    en: 'mailto:recruitment@e360s.ca?subject=E360S%2FApplication%2FSide-loader%20robot%20driver'
+    fr: 'mailto:recruitment@e360s.ca?subject=E360S%2FCandidature%2FChauffeur%20lat%C3%A9ral',
+    en: 'mailto:recruitment@e360s.ca?subject=E360S%2FApplication%2FSide-loader%20driver'
   };
   const metaEl = document.querySelector('meta[name="description"]');
   const META = {
     fr: metaEl ? metaEl.getAttribute('content') : '',
-    en: 'E360S is hiring a side-loader robot-arm driver in Victoriaville: $24.93/h, 6am to 5pm, new trucks, training provided. Apply now.'
+    en: 'E360S is hiring side-loader drivers in Victoriaville: $24.93/h, full time, new trucks, training provided. Apply now.'
   };
-  const TITLE = { fr: document.title, en: 'Side-loader Robot Driver | E360S' };
+  const TITLE = { fr: document.title, en: 'Side-loader Driver | E360S' };
   let lang = 'fr';
   function swap(map){
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
