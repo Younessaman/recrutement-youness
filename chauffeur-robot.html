@@ -36,55 +36,55 @@ tailwind.config = { theme: { extend: {
   .site-header { background:#f4e600; position:sticky; top:0; z-index:50; }
   .site-header .container { display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:14px 28px; }
   .site-brand img { height:52px; width:auto; object-fit:contain; }
-  .btn-ghost { display:inline-flex; align-items:center; padding:13px 34px; border-radius:999px; background:#1a9bd4; color:#f4e600; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; text-decoration:none; transition:all .25s; box-shadow:0 8px 20px rgba(0,60,100,.25); }
-  .btn-ghost:hover { background:#1283b8; }
+  .btn-ghost { display:inline-flex; align-items:center; padding:13px 34px; border-radius:999px; background:#0299d0; color:#f4e600; font-family:'Outfit',sans-serif; font-weight:700; font-size:.95rem; text-decoration:none; transition:all .25s; box-shadow:0 8px 20px rgba(2,119,168,.25); }
+  .btn-ghost:hover { background:#0277a8; }
   .pre-footer-brand { display:flex; flex-direction:column; align-items:center; gap:10px; padding:44px 24px 10px; background:#fff; }
   .pre-footer-brand img { height:64px; width:auto; object-fit:contain; }
   .footer-brand-text { font-family:'Outfit',sans-serif; font-weight:600; color:#4d6e89; font-size:.95rem; }
   :focus-visible { outline:3px solid #f4e600; outline-offset:3px; border-radius:6px; }
-:root{--blue-mid:#1483d9;--blue-deep:#0b60ac;--yellow:#f4e600;--white:#ffffff;--heading:#0b60ac;--ink:#182b3a;--ink-soft:#51697a;--line:#e3ebf1;--radius-lg:24px;--shadow-card:0 8px 24px rgba(11,96,172,.08);--shadow-lift:0 16px 40px rgba(11,96,172,.14);--ease:cubic-bezier(.4,0,.2,1);}
+:root{--blue-mid:#0299d0;--blue-deep:#0299d0;--yellow:#f4e600;--white:#ffffff;--heading:#0299d0;--ink:#182b3a;--ink-soft:#2e7d9f;--line:#e9f7fe;--radius-lg:24px;--shadow-card:0 8px 24px rgba(2,153,208,.08);--shadow-lift:0 16px 40px rgba(2,153,208,.14);--ease:cubic-bezier(.4,0,.2,1);}
 .center{text-align:center;}
 .job-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);color:#fff;text-align:center;margin-top:24px;letter-spacing:-.01em;line-height:1.05;}
-.job-badge{display:inline-block;background:#f4e600;color:#0b6ea5;padding:12px 24px;border-radius:999px;font-weight:700;font-family:'Outfit',sans-serif;font-size:1rem;margin-top:18px;box-shadow:0 8px 18px rgba(0,40,70,.25);}
+.job-badge{display:inline-block;background:#f4e600;color:#0299d0;padding:12px 24px;border-radius:999px;font-weight:700;font-family:'Outfit',sans-serif;font-size:1rem;margin-top:18px;box-shadow:0 8px 18px rgba(2,119,168,.25);}
 .main-description{text-align:center;max-width:820px;margin:24px auto 44px;font-size:1.05rem;color:rgba(255,255,255,.92);line-height:1.65;}
 .details-card{max-width:900px;margin-left:auto;margin-right:auto;}
 .details-trigger{scroll-margin-top:110px;}
 .details-card{background:var(--white);border:1.5px solid var(--line);border-top:4px solid var(--yellow);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);overflow:hidden;margin-bottom:72px;}
 .details-item + .details-item{border-top:1px solid var(--line);}
 .details-trigger{width:100%;display:flex;align-items:center;gap:16px;padding:26px 30px;background:none;border:none;cursor:pointer;text-align:left;color:inherit;transition:background .25s var(--ease);}
-.details-trigger:hover{background:#f6f9fc;}
-.details-icon{flex:none;width:42px;height:42px;border-radius:14px;background:#eef4fa;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;transition:background .3s var(--ease),color .3s var(--ease);}
+.details-trigger:hover{background:#e9f7fe;}
+.details-icon{flex:none;width:42px;height:42px;border-radius:14px;background:#e9f7fe;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;transition:background .3s var(--ease),color .3s var(--ease);}
 .details-icon svg{width:20px;height:20px;}
 .details-trigger[aria-expanded="true"] .details-icon{background:var(--yellow);color:var(--heading);}
 .details-heading{flex:1;font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--heading);}
-.details-chevron{flex:none;width:34px;height:34px;border-radius:50%;background:#eef4fa;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease);}
+.details-chevron{flex:none;width:34px;height:34px;border-radius:50%;background:#e9f7fe;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease);}
 .details-chevron svg{width:14px;height:14px;}
 .details-trigger[aria-expanded="true"] .details-chevron{transform:rotate(180deg);background:var(--yellow);color:var(--heading);}
 .details-panel{max-height:0;overflow:hidden;transition:max-height .5s var(--ease);}
 .details-panel-inner{padding:0 30px 30px 88px;}
 .details-panel-inner ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
 .details-panel-inner li{display:flex;align-items:flex-start;gap:10px;font-weight:500;font-size:.98rem;color:var(--ink);}
-.details-panel-inner li .check{flex:none;width:20px;height:20px;border-radius:50%;background:#eef4fa;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.details-panel-inner li .check{flex:none;width:20px;height:20px;border-radius:50%;background:#e9f7fe;color:var(--blue-mid);display:flex;align-items:center;justify-content:center;margin-top:1px;}
 .details-panel-inner li .check svg{width:12px;height:12px;}
 .details-trigger[aria-expanded="true"] .details-icon,.details-trigger[aria-expanded="true"] .details-chevron{background:var(--yellow)!important;color:var(--blue-mid)!important}
-.job-badge{display:inline-block;background:#eef4fa;color:var(--blue-deep);padding:12px 22px;border-radius:999px;font-weight:700;font-family:'Outfit',sans-serif;font-size:1rem;box-shadow:0 5px 14px rgba(11,96,172,.06);}
+.job-badge{display:inline-block;background:#e9f7fe;color:var(--blue-deep);padding:12px 22px;border-radius:999px;font-weight:700;font-family:'Outfit',sans-serif;font-size:1rem;box-shadow:0 5px 14px rgba(2,153,208,.06);}
 .main-description{text-align:center;max-width:820px;margin:26px auto 48px;font-size:1.05rem;color:var(--ink-soft);line-height:1.6;}
 .job-title{font-size:1.8rem;}
 .job-title,.content-section .main-description{color:#fff!important}
-.job-badge{background:#f4e600!important;color:#0b6ea5!important;border:0!important;}
+.job-badge{background:#f4e600!important;color:#0299d0!important;border:0!important;}
 .main-description{color:#ffffff!important;}
 </style>
 <style>
   .header-actions { display:flex; align-items:center; gap:12px; }
   .lang-wrap { position:relative; }
-  .lang-globe { width:48px; height:48px; border-radius:50%; background:#f4e600; border:2px solid rgba(11,110,165,.14); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 20px rgba(0,60,100,.22); transition:transform .25s, box-shadow .25s; }
-  .lang-globe:hover { transform:rotate(18deg) scale(1.06); box-shadow:0 10px 26px rgba(0,60,100,.3); }
-  .lang-globe svg { width:22px; height:22px; color:#0b6ea5; }
-  .lang-menu { position:absolute; top:calc(100% + 12px); right:0; background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(0,40,70,.28); padding:6px; min-width:176px; opacity:0; transform:translateY(-8px) scale(.96); transform-origin:top right; pointer-events:none; transition:opacity .22s, transform .22s; z-index:60; }
+  .lang-globe { width:48px; height:48px; border-radius:50%; background:#f4e600; border:2px solid rgba(2,153,208,.14); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 20px rgba(2,119,168,.22); transition:transform .25s, box-shadow .25s; }
+  .lang-globe:hover { transform:rotate(18deg) scale(1.06); box-shadow:0 10px 26px rgba(2,119,168,.3); }
+  .lang-globe svg { width:22px; height:22px; color:#0299d0; }
+  .lang-menu { position:absolute; top:calc(100% + 12px); right:0; background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(2,119,168,.28); padding:6px; min-width:176px; opacity:0; transform:translateY(-8px) scale(.96); transform-origin:top right; pointer-events:none; transition:opacity .22s, transform .22s; z-index:60; }
   .lang-wrap.open .lang-menu { opacity:1; transform:none; pointer-events:auto; }
-  .lang-opt { display:flex; align-items:center; justify-content:space-between; width:100%; padding:11px 14px; border:0; background:transparent; border-radius:10px; font-family:'Outfit',sans-serif; font-weight:600; font-size:14px; color:#0b6ea5; cursor:pointer; transition:background .15s; }
-  .lang-opt:hover { background:#eef5fa; }
-  .lang-opt .check { width:16px; height:16px; color:#0b6ea5; opacity:0; }
+  .lang-opt { display:flex; align-items:center; justify-content:space-between; width:100%; padding:11px 14px; border:0; background:transparent; border-radius:10px; font-family:'Outfit',sans-serif; font-weight:600; font-size:14px; color:#0299d0; cursor:pointer; transition:background .15s; }
+  .lang-opt:hover { background:#e9f7fe; }
+  .lang-opt .check { width:16px; height:16px; color:#0299d0; opacity:0; }
 </style>
 </head>
 <body class="font-sans antialiased" id="top">
@@ -116,11 +116,11 @@ tailwind.config = { theme: { extend: {
 
 <main>
   <!-- HERO -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-[#1ba0d6] via-[#1283b8] to-[#0a6ea5]">
+  <section class="relative overflow-hidden bg-gradient-to-br from-[#0299d0] via-[#0277a8] to-[#0299d0]">
     <div class="absolute -top-32 -right-32 w-[480px] h-[480px] bg-[#f4e600]/15 rounded-full blur-3xl pointer-events-none"></div>
     <div class="relative max-w-6xl mx-auto px-6 pt-14 pb-16 sm:pt-20 sm:pb-24 text-center">
-      <span class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0b6ea5] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">
-        <span class="w-2 h-2 rounded-full bg-[#0b6ea5] animate-pulse"></span>
+      <span class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0299d0] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-[#0299d0] animate-pulse"></span>
         NOUS EMBAUCHONS CHAUFFEUR LATÉRAL
       </span>
       <h1 class="reveal font-display font-extrabold uppercase tracking-tight text-5xl sm:text-7xl mt-7 leading-[1.02]">
@@ -134,56 +134,56 @@ tailwind.config = { theme: { extend: {
         <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 border border-white/30 text-white text-[13px] font-semibold tracking-wide">Plusieurs postes disponibles à Victoriaville</span>
       </div>
       <div class="mt-9 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><span class="text-lg font-bold">$</span></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">24,93 $/h</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+            <span class="text-[#0299d0] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><span class="text-lg font-bold">$</span></svg></span>
+            <span class="text-[13px] font-bold text-[#0299d0] leading-snug text-center whitespace-nowrap">24,93 $/h</span>
           </div>
-          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Temps plein</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+            <span class="text-[#0299d0] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0299d0] leading-snug text-center whitespace-nowrap">Temps plein</span>
           </div>
-          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Formation offerte</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+            <span class="text-[#0299d0] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0299d0] leading-snug text-center whitespace-nowrap">Formation offerte</span>
           </div>
-          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 17h13V6H3v11Z"/><path d="M16 10h3l2 3v4h-5V10Z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Camions neufs</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+            <span class="text-[#0299d0] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 17h13V6H3v11Z"/><path d="M16 10h3l2 3v4h-5V10Z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0299d0] leading-snug text-center whitespace-nowrap">Camions neufs</span>
           </div>
-          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Équipement fourni</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+            <span class="text-[#0299d0] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0299d0] leading-snug text-center whitespace-nowrap">Équipement fourni</span>
           </div>
-          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4l1.7 4.6L18 10l-4.3 1.4L12 16l-1.7-4.6L6 10l4.3-1.4L12 4Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-tight text-center">Bonus propreté<br>et graissage</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+            <span class="text-[#0299d0] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4l1.7 4.6L18 10l-4.3 1.4L12 16l-1.7-4.6L6 10l4.3-1.4L12 4Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0299d0] leading-tight text-center">Bonus propreté<br>et graissage</span>
           </div>
-          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87M9 7a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Assurances + REER</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+            <span class="text-[#0299d0] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87M9 7a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0299d0] leading-snug text-center whitespace-nowrap">Assurances + REER</span>
           </div>
-          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-            <span class="text-[#0b7ab5] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
-            <span class="text-[13px] font-bold text-[#0b7ab5] leading-snug text-center whitespace-nowrap">Horaire de jour</span>
+          <div class="reveal flex items-center justify-center gap-3 bg-white rounded-full px-7 py-4 shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+            <span class="text-[#0299d0] shrink-0 w-6 h-6 flex items-center justify-center"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+            <span class="text-[13px] font-bold text-[#0299d0] leading-snug text-center whitespace-nowrap">Horaire de jour</span>
           </div>
           
       </div>
       </div>
       <div class="reveal mt-3 mb-12 flex justify-center">
-      <a href="#header-1" class="inline-flex items-center justify-center w-full sm:w-auto sm:min-w-[540px] px-10 py-5 rounded-full bg-[#f4e600] text-[#0b6ea5] font-display font-extrabold tracking-wide hover:bg-[#e2d400] transition-colors shadow-[0_16px_40px_rgba(0,40,70,.3)]">
+      <a href="#header-1" class="inline-flex items-center justify-center w-full sm:w-auto sm:min-w-[540px] px-10 py-5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-extrabold tracking-wide hover:bg-[#e2d400] transition-colors shadow-[0_16px_40px_rgba(2,119,168,.3)]">
         VOIR SI LE POSTE EST POUR MOI
       </a>
       </div>
     </div>
   </section>
   <div class="bg-[#f4e600] py-4 px-6 text-center">
-    <span class="font-display font-extrabold tracking-[0.14em] text-[#0b6ea5] text-sm sm:text-base uppercase">CHAUFFEUR LATÉRAL • VICTORIAVILLE</span>
+    <span class="font-display font-extrabold tracking-[0.14em] text-[#0299d0] text-sm sm:text-base uppercase">CHAUFFEUR LATÉRAL • VICTORIAVILLE</span>
   </div>
 
   <!-- PHOTO CAMION -->
   <section class="bg-white py-12">
     <div class="max-w-5xl mx-auto px-6">
-      <div id="truck-slider" class="reveal relative overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,40,70,.25)]">
+      <div id="truck-slider" class="reveal relative overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(2,119,168,.25)]">
         <div id="truck-track" class="flex transition-transform duration-700 ease-in-out">
         <div class="w-full shrink-0 aspect-[16/10]"><img src="camion-lateral.jpg" alt="Camion E360S à chargement latéral en pleine collecte" class="w-full h-full object-cover"></div>
         <div class="w-full shrink-0 aspect-[16/10]"><img src="camion-flotte.jpg" alt="Flotte de camions E360S" class="w-full h-full object-cover"></div>
@@ -197,18 +197,18 @@ tailwind.config = { theme: { extend: {
         <button aria-label="Photo 4" class="w-2.5 h-2.5 rounded-full bg-white/50"></button>
         </div>
       </div>
-      <div class="bg-[#f4e600] rounded-2xl px-6 py-5 mt-4 text-center shadow-[0_10px_30px_rgba(0,40,70,.15)]">
-        <p class="text-[#0b6ea5] font-display font-extrabold text-lg sm:text-xl">Nos camions à chargement latéral</p>
-        <p class="text-[#0b6ea5] font-semibold mt-1">le tien t'attend chaque matin</p>
+      <div class="bg-[#f4e600] rounded-2xl px-6 py-5 mt-4 text-center shadow-[0_10px_30px_rgba(2,119,168,.15)]">
+        <p class="text-[#0299d0] font-display font-extrabold text-lg sm:text-xl">Nos camions à chargement latéral</p>
+        <p class="text-[#0299d0] font-semibold mt-1">le tien t'attend chaque matin</p>
       </div>
     </div>
   </section>
 
     <!-- POSTES -->
-  <section id="postes" class="py-16 sm:py-24 scroll-mt-20 bg-gradient-to-b from-[#1a90c6] to-[#0f7cab]">
+  <section id="postes" class="py-16 sm:py-24 scroll-mt-20 bg-gradient-to-b from-[#0299d0] to-[#0277a8]">
     <div class="max-w-6xl mx-auto px-6">
       <div class="reveal text-center">
-        <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0b6ea5] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">Plusieurs opportunités disponibles</span>
+        <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0299d0] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">Plusieurs opportunités disponibles</span>
       </div>
       <div class="center reveal"><div id="description-poste" class="job-title">Chauffeur <span style="color:#f4e600">latéral</span></div><div class="job-badge"> Le même camion chaque jour </div></div>
       <p class="main-description reveal"> E360S recherche plusieurs chauffeurs latéraux pour assurer la collecte automatisée à Victoriaville : camion neuf attitré et bonus pour la propreté et le graissage. </p>
@@ -241,7 +241,7 @@ tailwind.config = { theme: { extend: {
 <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Quart de jour </li><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Du lundi au vendredi </li></ul></div></div></div>
       </div>
       <div class="reveal text-center" style="margin-top:-36px;padding-bottom:10px">
-        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UM01NNDRHN1JZRUJWWEFMTEwwOUVOSkFLTS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-[#1a9bd4] text-[#f4e600] font-display font-bold tracking-wide hover:bg-[#1283b8] transition-colors shadow-[0_12px_30px_rgba(0,60,100,.25)]">
+        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UM01NNDRHN1JZRUJWWEFMTEwwOUVOSkFLTS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-[#0299d0] text-[#f4e600] font-display font-bold tracking-wide hover:bg-[#0277a8] transition-colors shadow-[0_12px_30px_rgba(2,119,168,.25)]">
           POSTULER MAINTENANT
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
@@ -253,30 +253,30 @@ tailwind.config = { theme: { extend: {
   <section class="py-16 sm:py-24 bg-sky-50">
     <div class="max-w-6xl mx-auto px-6">
       <div class="reveal text-center">
-        <h2 class="font-display text-3xl sm:text-[2.6rem] font-extrabold text-[#0b7ab5]">Pourquoi choisir <span>E360S</span> ?</h2>
+        <h2 class="font-display text-3xl sm:text-[2.6rem] font-extrabold text-[#0299d0]">Pourquoi choisir <span>E360S</span> ?</h2>
         <div class="w-16 h-1.5 bg-[#f4e600] rounded-full mx-auto mt-4"></div>
         <p class="text-sky-700 mt-5 max-w-2xl mx-auto leading-relaxed">Une entreprise en croissance qui met la sécurité et le développement de ses équipes au premier plan, peu importe le secteur.</p>
       </div>
       <div class="grid sm:grid-cols-3 gap-6 mt-12">
-        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
-          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center">
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(2,153,208,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center">
             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4M7 4h10v6a5 5 0 01-10 0V4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 6H4a1 1 0 00-1 1c0 2.5 2 4 4 4M17 6h3a1 1 0 011 1c0 2.5-2 4-4 4"/></svg>
           </div>
-          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Leader canadien</h3>
+          <h3 class="font-display text-lg font-extrabold text-[#0299d0] mt-5">Leader canadien</h3>
           <p class="text-sky-700 text-[14px] leading-relaxed mt-2.5">Faites partie de l'un des plus importants fournisseurs de services environnementaux au Canada.</p>
         </article>
-        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
-          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center">
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(2,153,208,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center">
             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 7h7v7"/></svg>
           </div>
-          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Développement professionnel</h3>
+          <h3 class="font-display text-lg font-extrabold text-[#0299d0] mt-5">Développement professionnel</h3>
           <p class="text-sky-700 text-[14px] leading-relaxed mt-2.5">Formation continue, mobilité interne et possibilités réelles d'avancement.</p>
         </article>
-        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
-          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center">
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(2,153,208,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center">
             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M12 12a4 4 0 100-8 4 4 0 000 8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M17 12a4 4 0 000-8"/></svg>
           </div>
-          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Une équipe engagée</h3>
+          <h3 class="font-display text-lg font-extrabold text-[#0299d0] mt-5">Une équipe engagée</h3>
           <p class="text-sky-700 text-[14px] leading-relaxed mt-2.5">Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.</p>
         </article>
       </div>
@@ -284,9 +284,9 @@ tailwind.config = { theme: { extend: {
   </section>
 
   <!-- CONTACT -->
-  <section class="py-16 sm:py-20 bg-[#eef5fa]">
+  <section class="py-16 sm:py-20 bg-[#e9f7fe]">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#1283b8] to-[#0a6ea5] px-8 py-12 sm:p-14 text-center shadow-[0_20px_60px_rgba(10,110,165,.3)]">
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#0277a8] to-[#0299d0] px-8 py-12 sm:p-14 text-center shadow-[0_20px_60px_rgba(2,153,208,.3)]">
         <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Une question ?</h2>
         <p class="mt-4 text-white/85 max-w-2xl mx-auto leading-relaxed">Notre équipe recrutement vous répond rapidement.</p>
         <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
