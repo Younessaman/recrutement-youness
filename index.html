@@ -19,34 +19,34 @@ body{font-family:'Inter',sans-serif;}
 .site-header{background:#f4e600;position:sticky;top:0;z-index:50;}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:14px 28px;}
 .site-brand img{height:52px;width:auto;object-fit:contain;}
-.btn-ghost{display:inline-flex;align-items:center;padding:13px 34px;border-radius:999px;background:#1a9bd4;color:#f4e600;font-family:'Outfit',sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 8px 20px rgba(0,60,100,.25);}
-.btn-ghost:hover{background:#1283b8;}
+.btn-ghost{display:inline-flex;align-items:center;padding:13px 34px;border-radius:999px;background:#0299d0;color:#f4e600;font-family:'Outfit',sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 8px 20px rgba(2,119,168,.25);}
+.btn-ghost:hover{background:#0277a8;}
 .header-actions{display:flex;align-items:center;gap:12px;}
 .lang-wrap{position:relative;}
-.lang-globe{width:48px;height:48px;border-radius:50%;background:#f4e600;border:2px solid rgba(11,110,165,.14);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 20px rgba(0,60,100,.22);transition:transform .25s,box-shadow .25s;}
-.lang-globe:hover{transform:rotate(18deg) scale(1.06);box-shadow:0 10px 26px rgba(0,60,100,.3);}
-.lang-globe svg{width:22px;height:22px;color:#0b6ea5;}
-.lang-menu{position:absolute;top:calc(100% + 12px);right:0;background:#fff;border-radius:16px;box-shadow:0 20px 50px rgba(0,40,70,.28);padding:6px;min-width:176px;opacity:0;transform:translateY(-8px) scale(.96);transform-origin:top right;pointer-events:none;transition:opacity .22s,transform .22s;z-index:60;}
+.lang-globe{width:48px;height:48px;border-radius:50%;background:#f4e600;border:2px solid rgba(2,153,208,.14);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 20px rgba(2,119,168,.22);transition:transform .25s,box-shadow .25s;}
+.lang-globe:hover{transform:rotate(18deg) scale(1.06);box-shadow:0 10px 26px rgba(2,119,168,.3);}
+.lang-globe svg{width:22px;height:22px;color:#0299d0;}
+.lang-menu{position:absolute;top:calc(100% + 12px);right:0;background:#fff;border-radius:16px;box-shadow:0 20px 50px rgba(2,119,168,.28);padding:6px;min-width:176px;opacity:0;transform:translateY(-8px) scale(.96);transform-origin:top right;pointer-events:none;transition:opacity .22s,transform .22s;z-index:60;}
 .lang-wrap.open .lang-menu{opacity:1;transform:none;pointer-events:auto;}
-.lang-opt{display:flex;align-items:center;justify-content:space-between;width:100%;padding:11px 14px;border:0;background:transparent;border-radius:10px;font-family:'Outfit',sans-serif;font-weight:600;font-size:14px;color:#0b6ea5;cursor:pointer;transition:background .15s;}
-.lang-opt:hover{background:#f0f9ff;}
-.lang-opt .check{width:16px;height:16px;color:#0b6ea5;opacity:0;}
+.lang-opt{display:flex;align-items:center;justify-content:space-between;width:100%;padding:11px 14px;border:0;background:transparent;border-radius:10px;font-family:'Outfit',sans-serif;font-weight:600;font-size:14px;color:#0299d0;cursor:pointer;transition:background .15s;}
+.lang-opt:hover{background:#e9f7fe;}
+.lang-opt .check{width:16px;height:16px;color:#0299d0;opacity:0;}
 .pre-footer-brand{display:flex;flex-direction:column;align-items:center;gap:10px;padding:44px 24px 10px;background:#fff;}
 .pre-footer-brand img{height:64px;width:auto;object-fit:contain;}
 .footer-brand-text{font-family:'Outfit',sans-serif;font-weight:600;color:#0b6ea5;font-size:.95rem;}
 :focus-visible{outline:3px solid #f4e600;outline-offset:3px;border-radius:6px;}
 /* Cartes métiers */
-.metier-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1.5px solid #e0f2fe;border-radius:26px;padding:36px 30px 30px;text-decoration:none;box-shadow:0 8px 24px rgba(11,96,172,.08);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.metier-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1.5px solid #e9f7fe;border-radius:26px;padding:36px 30px 30px;text-decoration:none;box-shadow:0 8px 24px rgba(2,153,208,.08);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
 .metier-card::before{content:'';position:absolute;top:0;left:0;right:0;height:7px;background:linear-gradient(90deg,#f4e600,#d9cc00);transform:scaleX(0);transform-origin:left;transition:transform .38s ease;}
-.metier-card:hover{transform:translateY(-7px);box-shadow:0 18px 44px rgba(11,96,172,.16);border-color:#2ea3f2;}
+.metier-card:hover{transform:translateY(-7px);box-shadow:0 18px 44px rgba(2,153,208,.16);border-color:#0299d0;}
 .metier-card:hover::before{transform:scaleX(1);}
 .metier-icon{width:64px;height:64px;border-radius:20px;background:linear-gradient(145deg,#f4e600,#e2d400);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(244,230,0,.45);margin-bottom:20px;transition:transform .3s ease;}
 .metier-card:hover .metier-icon{transform:scale(1.08) rotate(-4deg);}
-.metier-icon svg{width:30px;height:30px;color:#0b6ea5;}
-.metier-tag{position:absolute;top:20px;right:20px;font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.08em;color:#0b6ea5;background:#e0f2fe;padding:6px 12px;border-radius:999px;}
-.metier-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.35rem;color:#0b60ac;letter-spacing:-.01em;margin-bottom:10px;}
-.metier-desc{font-size:.95rem;color:#0369a1;line-height:1.6;flex:1;margin-bottom:18px;}
-.metier-link{display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;color:#1483d9;}
+.metier-icon svg{width:30px;height:30px;color:#0299d0;}
+.metier-tag{position:absolute;top:20px;right:20px;font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.08em;color:#0299d0;background:#e9f7fe;padding:6px 12px;border-radius:999px;}
+.metier-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.35rem;color:#0299d0;letter-spacing:-.01em;margin-bottom:10px;}
+.metier-desc{font-size:.95rem;color:#0299d0;line-height:1.6;flex:1;margin-bottom:18px;}
+.metier-link{display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;color:#0299d0;}
 .metier-link svg{width:20px;height:20px;transition:transform .25s ease;}
 .metier-card:hover .metier-link svg{transform:translateX(5px);}
 /* Hero décoratif */
@@ -76,14 +76,14 @@ body{font-family:'Inter',sans-serif;}
 
 <main>
 <!-- HERO -->
-<section class="relative overflow-hidden bg-gradient-to-br from-[#1ba0d6] via-[#1283b8] to-[#0a6ea5]">
+<section class="relative overflow-hidden bg-gradient-to-br from-[#0299d0] via-[#0277a8] to-[#0299d0]">
 <div class="hero-orb -top-32 -right-32 w-[480px] h-[480px] bg-[#f4e600]/15 blur-3xl" style="animation:drift 9s ease-in-out infinite;"></div>
 <div class="hero-orb -bottom-40 -left-32 w-[420px] h-[420px] bg-white/10 blur-3xl" style="animation:drift 11s ease-in-out infinite reverse;"></div>
 <div class="hero-ring top-16 left-[8%] w-24 h-24 hidden md:block"></div>
 <div class="hero-ring bottom-24 right-[12%] w-16 h-16 hidden md:block" style="animation-delay:2s;"></div>
 <div class="relative max-w-6xl mx-auto px-6 pt-14 pb-16 sm:pt-20 sm:pb-24 text-center">
-<span class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0b6ea5] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">
-<span class="w-2 h-2 rounded-full bg-[#0b6ea5] animate-pulse"></span>NOUS RECRUTONS • PARTOUT AU QUÉBEC</span>
+<span class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0299d0] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">
+<span class="w-2 h-2 rounded-full bg-[#0299d0] animate-pulse"></span>NOUS RECRUTONS • PARTOUT AU QUÉBEC</span>
 <h1 class="reveal font-display font-extrabold uppercase tracking-tight text-5xl sm:text-7xl mt-7 leading-[1.02]">
 <span class="block text-white">JOIGNEZ-VOUS</span>
 <span class="block text-[#f4e600]">À NOTRE ÉQUIPE</span>
@@ -91,13 +91,13 @@ body{font-family:'Inter',sans-serif;}
 <p class="reveal mt-7 text-white font-semibold text-lg">E360S est en pleine croissance dans plusieurs secteurs.</p>
 <p class="reveal mt-2 text-white/80">Choisissez le secteur qui vous correspond pour découvrir les postes disponibles.</p>
 <div class="mt-9 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-<div class="reveal flex items-center justify-center gap-2.5 bg-white rounded-full px-6 py-3.5 shadow-[0_10px_30px_rgba(0,40,70,.15)]"><span class="text-[#0b7ab5] shrink-0 w-5 h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2.5 0 0 1 2.5-1.5h.5a2 2 0 0 1 0 4h-1a2 2 0 0 0 0 4h.5a2.5 2.5 0 0 0 2.5-1.5"/></svg></span><span class="text-[13px] font-bold text-[#0b7ab5] leading-snug whitespace-nowrap">Salaire concurrentiel</span></div>
-<div class="reveal flex items-center justify-center gap-2.5 bg-white rounded-full px-6 py-3.5 shadow-[0_10px_30px_rgba(0,40,70,.15)]"><span class="text-[#0b7ab5] shrink-0 w-5 h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span class="text-[13px] font-bold text-[#0b7ab5] leading-snug whitespace-nowrap">Temps plein</span></div>
-<div class="reveal flex items-center justify-center gap-2.5 bg-white rounded-full px-6 py-3.5 shadow-[0_10px_30px_rgba(0,40,70,.15)]"><span class="text-[#0b7ab5] shrink-0 w-5 h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span><span class="text-[13px] font-bold text-[#0b7ab5] leading-snug whitespace-nowrap">Formation offerte</span></div>
-<div class="reveal flex items-center justify-center gap-2.5 bg-white rounded-full px-6 py-3.5 shadow-[0_10px_30px_rgba(0,40,70,.15)]"><span class="text-[#0b7ab5] shrink-0 w-5 h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg></span><span class="text-[13px] font-bold text-[#0b7ab5] leading-snug whitespace-nowrap">Assurances + REER</span></div>
+<div class="reveal flex items-center justify-center gap-2.5 bg-white rounded-full px-6 py-3.5 shadow-[0_10px_30px_rgba(2,119,168,.15)]"><span class="text-[#0299d0] shrink-0 w-5 h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2.5 0 0 1 2.5-1.5h.5a2 2 0 0 1 0 4h-1a2 2 0 0 0 0 4h.5a2.5 2.5 0 0 0 2.5-1.5"/></svg></span><span class="text-[13px] font-bold text-[#0299d0] leading-snug whitespace-nowrap">Salaire concurrentiel</span></div>
+<div class="reveal flex items-center justify-center gap-2.5 bg-white rounded-full px-6 py-3.5 shadow-[0_10px_30px_rgba(2,119,168,.15)]"><span class="text-[#0299d0] shrink-0 w-5 h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><span class="text-[13px] font-bold text-[#0299d0] leading-snug whitespace-nowrap">Temps plein</span></div>
+<div class="reveal flex items-center justify-center gap-2.5 bg-white rounded-full px-6 py-3.5 shadow-[0_10px_30px_rgba(2,119,168,.15)]"><span class="text-[#0299d0] shrink-0 w-5 h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span><span class="text-[13px] font-bold text-[#0299d0] leading-snug whitespace-nowrap">Formation offerte</span></div>
+<div class="reveal flex items-center justify-center gap-2.5 bg-white rounded-full px-6 py-3.5 shadow-[0_10px_30px_rgba(2,119,168,.15)]"><span class="text-[#0299d0] shrink-0 w-5 h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg></span><span class="text-[13px] font-bold text-[#0299d0] leading-snug whitespace-nowrap">Assurances + REER</span></div>
 </div>
 <div class="reveal mt-10">
-<a href="#premier-metier" class="inline-flex items-center justify-center px-10 py-5 rounded-full bg-[#f4e600] text-[#0b6ea5] font-display font-extrabold tracking-wide hover:bg-[#e2d400] transition-colors shadow-[0_16px_40px_rgba(0,40,70,.3)]">Voir les secteurs</a>
+<a href="#premier-metier" class="inline-flex items-center justify-center px-10 py-5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-extrabold tracking-wide hover:bg-[#e2d400] transition-colors shadow-[0_16px_40px_rgba(2,119,168,.3)]">Voir les secteurs</a>
 </div>
 </div>
 </section>
@@ -106,7 +106,7 @@ body{font-family:'Inter',sans-serif;}
 <section id="metiers" class="py-16 sm:py-24 scroll-mt-20 bg-white">
 <div class="max-w-6xl mx-auto px-6">
 <div class="reveal max-w-2xl mb-12">
-<h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#0b60ac]">Trouvez votre métier</h2>
+<h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#0299d0]">Trouvez votre métier</h2>
 <span class="block w-14 h-1.5 bg-[#f4e600] rounded-full mt-4"></span>
 <p class="mt-5 text-sky-700 leading-relaxed">Cinq univers, une même équipe. Choisissez le métier qui vous ressemble pour découvrir les postes disponibles.</p>
 </div>
@@ -154,30 +154,30 @@ body{font-family:'Inter',sans-serif;}
 <section class="py-16 sm:py-24 bg-sky-50">
     <div class="max-w-6xl mx-auto px-6">
       <div class="reveal text-center">
-        <h2 class="font-display text-3xl sm:text-[2.6rem] font-extrabold text-[#0b7ab5]">Pourquoi choisir <span>E360S</span> ?</h2>
+        <h2 class="font-display text-3xl sm:text-[2.6rem] font-extrabold text-[#0299d0]">Pourquoi choisir <span>E360S</span> ?</h2>
         <div class="w-16 h-1.5 bg-[#f4e600] rounded-full mx-auto mt-4"></div>
         <p class="text-sky-700 mt-5 max-w-2xl mx-auto leading-relaxed">Une entreprise en croissance qui met la sécurité et le développement de ses équipes au premier plan, peu importe le secteur.</p>
       </div>
       <div class="grid sm:grid-cols-3 gap-6 mt-12">
-        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
-          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center">
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(2,153,208,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center">
             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4M7 4h10v6a5 5 0 01-10 0V4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 6H4a1 1 0 00-1 1c0 2.5 2 4 4 4M17 6h3a1 1 0 011 1c0 2.5-2 4-4 4"/></svg>
           </div>
-          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Leader canadien</h3>
+          <h3 class="font-display text-lg font-extrabold text-[#0299d0] mt-5">Leader canadien</h3>
           <p class="text-sky-700 text-[14px] leading-relaxed mt-2.5">Faites partie de l'un des plus importants fournisseurs de services environnementaux au Canada.</p>
         </article>
-        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
-          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center">
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(2,153,208,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center">
             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 7h7v7"/></svg>
           </div>
-          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Développement professionnel</h3>
+          <h3 class="font-display text-lg font-extrabold text-[#0299d0] mt-5">Développement professionnel</h3>
           <p class="text-sky-700 text-[14px] leading-relaxed mt-2.5">Formation continue, mobilité interne et possibilités réelles d'avancement.</p>
         </article>
-        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(11,122,181,.10)] p-8">
-          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0b6ea5] flex items-center justify-center">
+        <article class="reveal bg-white rounded-3xl shadow-[0_14px_40px_rgba(2,153,208,.10)] p-8">
+          <div class="w-14 h-14 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center">
             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M12 12a4 4 0 100-8 4 4 0 000 8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M17 12a4 4 0 000-8"/></svg>
           </div>
-          <h3 class="font-display text-lg font-extrabold text-[#0b7ab5] mt-5">Une équipe engagée</h3>
+          <h3 class="font-display text-lg font-extrabold text-[#0299d0] mt-5">Une équipe engagée</h3>
           <p class="text-sky-700 text-[14px] leading-relaxed mt-2.5">Travaillez dans un environnement axé sur la sécurité, le respect et la collaboration.</p>
         </article>
       </div>
@@ -187,7 +187,7 @@ body{font-family:'Inter',sans-serif;}
 <!-- CONTACT -->
 <section class="py-16 sm:py-20 bg-white">
 <div class="max-w-5xl mx-auto px-6">
-<div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#1283b8] to-[#0a6ea5] px-8 py-12 sm:p-14 text-center shadow-[0_20px_60px_rgba(10,110,165,.3)]">
+<div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#0277a8] to-[#0299d0] px-8 py-12 sm:p-14 text-center shadow-[0_20px_60px_rgba(2,153,208,.3)]">
 <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Une question ?</h2>
 <p class="mt-4 text-white/85 max-w-2xl mx-auto leading-relaxed">Notre équipe recrutement vous répond rapidement.</p>
 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
