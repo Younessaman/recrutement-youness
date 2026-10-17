@@ -180,6 +180,30 @@ tailwind.config = { theme: { extend: {
     <span class="font-display font-extrabold tracking-[0.14em] text-[#0b6ea5] text-sm sm:text-base uppercase">CHAUFFEUR LATÉRAL • VICTORIAVILLE</span>
   </div>
 
+  <!-- PHOTO CAMION -->
+  <section class="bg-white py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <div id="truck-slider" class="reveal relative overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,40,70,.25)]">
+        <div id="truck-track" class="flex transition-transform duration-700 ease-in-out">
+        <div class="w-full shrink-0 aspect-[16/10]"><img src="camion-lateral.jpg" alt="Camion E360S à chargement latéral en pleine collecte" class="w-full h-full object-cover"></div>
+        <div class="w-full shrink-0 aspect-[16/10]"><img src="camion-flotte.jpg" alt="Flotte de camions E360S" class="w-full h-full object-cover"></div>
+        <div class="w-full shrink-0 aspect-[16/10]"><img src="camion-arriere.jpg" alt="Camions E360S prêts pour la route" class="w-full h-full object-cover"></div>
+        <div class="w-full shrink-0 aspect-[16/10]"><img src="camion-4016.jpg" alt="Camion E360S 4016 en tournée" class="w-full h-full object-cover"></div>
+        </div>
+        <div id="truck-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        <button aria-label="Photo 1" class="w-2.5 h-2.5 rounded-full bg-white"></button>
+        <button aria-label="Photo 2" class="w-2.5 h-2.5 rounded-full bg-white/50"></button>
+        <button aria-label="Photo 3" class="w-2.5 h-2.5 rounded-full bg-white/50"></button>
+        <button aria-label="Photo 4" class="w-2.5 h-2.5 rounded-full bg-white/50"></button>
+        </div>
+      </div>
+      <div class="bg-[#f4e600] rounded-2xl px-6 py-5 mt-4 text-center shadow-[0_10px_30px_rgba(0,40,70,.15)]">
+        <p class="text-[#0b6ea5] font-display font-extrabold text-lg sm:text-xl">Nos camions à chargement latéral</p>
+        <p class="text-[#0b6ea5] font-semibold mt-1">le tien t'attend chaque matin</p>
+      </div>
+    </div>
+  </section>
+
     <!-- POSTES -->
   <section id="postes" class="py-16 sm:py-24 scroll-mt-20 bg-gradient-to-b from-[#1a90c6] to-[#0f7cab]">
     <div class="max-w-6xl mx-auto px-6">
@@ -200,7 +224,7 @@ tailwind.config = { theme: { extend: {
 <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Signaler toute anomalie ou bris d’équipement au répartiteur </li>
 <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Respecter les procédures de sécurité et contribuer au bon déroulement des routes </li></ul></div></div></div>
 <div class="details-item"><button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-3" id="header-3"><span class="details-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><span class="details-heading"> Profil recherché </span><span class="details-chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="details-panel" id="panel-3" role="region" aria-labelledby="header-3"><div class="details-panel-inner"><ul><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Permis Classe 3 valide </li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Expérience pertinente (un atout) </li>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Aucune expérience en collecte requise — formation offerte </li>
 <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Autonomie et professionnalisme </li>
 <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Esprit d’équipe </li>
 <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Respect des normes de sécurité </li></ul></div></div></div>
@@ -214,7 +238,7 @@ tailwind.config = { theme: { extend: {
 <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Basé à Victoriaville </li></ul></div></div></div>
 <div class="details-item"><button class="details-trigger" type="button" aria-expanded="false" aria-controls="panel-5" id="header-5"><span class="details-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><span class="details-heading"> Horaire </span><span class="details-chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="details-panel" id="panel-5" role="region" aria-labelledby="header-5"><div class="details-panel-inner"><ul><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Temps plein </li>
 <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> 6h à 17h </li>
-<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Quart de jour </li></ul></div></div></div>
+<li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Quart de jour </li><li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Du lundi au vendredi </li></ul></div></div></div>
       </div>
       <div class="reveal text-center" style="margin-top:-36px;padding-bottom:10px">
         <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UM01NNDRHN1JZRUJWWEFMTEwwOUVOSkFLTS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-[#1a9bd4] text-[#f4e600] font-display font-bold tracking-wide hover:bg-[#1283b8] transition-colors shadow-[0_12px_30px_rgba(0,60,100,.25)]">
@@ -378,7 +402,7 @@ tailwind.config = { theme: { extend: {
 "Respecter les procédures de sécurité et contribuer au bon déroulement des routes": "Follow safety procedures and contribute to the smooth running of routes",
 "Profil recherché": "Desired profile",
 "Permis Classe 3 valide": "Valid Class 3 driver’s licence",
-"Expérience pertinente (un atout)": "Relevant experience (an asset)",
+"Aucune expérience en collecte requise — formation offerte": "No collection experience required — training provided",
 "Autonomie et professionnalisme": "Autonomy and professionalism",
 "Esprit d’équipe": "Team spirit",
 "Respect des normes de sécurité": "Compliance with safety standards",
@@ -391,6 +415,9 @@ tailwind.config = { theme: { extend: {
 "Horaire": "Schedule",
 "6h à 17h": "6am to 5pm",
 "Quart de jour": "Day shift",
+"Du lundi au vendredi": "Monday to Friday",
+"Nos camions à chargement latéral": "Our side-loader trucks",
+"le tien t'attend chaque matin": "yours is waiting every morning",
 "POSTULER MAINTENANT": "APPLY NOW",
 "Une question ?": "A question?",
 "Notre équipe recrutement vous répond rapidement.": "Our recruitment team will respond quickly.",
@@ -447,6 +474,32 @@ tailwind.config = { theme: { extend: {
   document.querySelectorAll('.lang-opt').forEach(b=>b.addEventListener('click',()=>{ setLang(b.dataset.setlang); wrap.classList.remove('open'); }));
   document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===lang ? '1':'0'; });
 try{var _sl=localStorage.getItem('e360s-lang');if(_sl==='en'&&lang!=='en')setLang('en');}catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+  var track = document.getElementById('truck-track');
+  if(!track) return;
+  var n = track.children.length;
+  var dots = document.querySelectorAll('#truck-dots button');
+  var i = 0, timer = null;
+  function go(k){
+    i = (k + n) % n;
+    track.style.transform = 'translateX(-' + (i*100) + '%)';
+    dots.forEach(function(d, j){
+      d.classList.toggle('bg-white', j === i);
+      d.classList.toggle('bg-white/50', j !== i);
+    });
+  }
+  function auto(){ timer = setInterval(function(){ go(i+1); }, 2500); }
+  dots.forEach(function(d, k){
+    d.addEventListener('click', function(){ clearInterval(timer); go(k); auto(); });
+  });
+  var box = document.getElementById('truck-slider');
+  box.addEventListener('mouseenter', function(){ clearInterval(timer); });
+  box.addEventListener('mouseleave', auto);
+  auto();
 })();
 </script>
 </body>
