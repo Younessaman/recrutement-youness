@@ -492,7 +492,7 @@ try{var _sl=localStorage.getItem('e360s-lang');if(_sl==='en'&&lang!=='en')setLan
       d.classList.toggle('bg-white/50', j !== i);
     });
   }
-  function auto(){ timer = setInterval(function(){ go(i+1); }, 2500); }
+  function auto(){ timer = setInterval(function(){ go(i+1); }, 1500); }
   dots.forEach(function(d, k){
     d.addEventListener('click', function(){ clearInterval(timer); go(k); auto(); });
   });
