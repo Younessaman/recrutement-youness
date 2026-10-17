@@ -473,7 +473,7 @@ tailwind.config = { theme: { extend: {
   document.querySelector('.lang-menu').addEventListener('click', e=>e.stopPropagation());
   document.querySelectorAll('.lang-opt').forEach(b=>b.addEventListener('click',()=>{ setLang(b.dataset.setlang); wrap.classList.remove('open'); }));
   document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===lang ? '1':'0'; });
-try{var _sl=localStorage.getItem('e360s-lang');if(_sl==='en'&&lang!=='en')setLang('en');}catch(e){}
+try{var _sl=localStorage.getItem('e360s-lang');if(_sl==='en')setLang('en');else if(!_sl&&(navigator.language||'').toLowerCase().slice(0,2)==='en')setLang('en');}catch(e){}
 })();
 </script>
 
