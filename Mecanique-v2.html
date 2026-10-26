@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mécanicien de véhicules lourds | E360S</title>
-<meta name="description" content="E360S embauche des mécaniciens de véhicules lourds — entre 25 $ et 50 $ (selon expérience). Postes à Saint-Jérôme, Roxton Pond, Laval, Montréal-Est et Saint-Constant.">
+<meta name="description" content="E360S embauche des mécaniciens de véhicules lourds — entre 25 $ et 50 $ (selon expérience). Postes à Saint-Constant, Laval et Montréal-Est.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mécanicien de véhicules lourds | E360S">
-<meta property="og:description" content="NOUS EMBAUCHONS ! Entre 25 $ et 50 $ (selon expérience) — Saint-Jérôme · Roxton Pond · Laval · Montréal-Est · Saint-Constant.">
+<meta property="og:description" content="NOUS EMBAUCHONS ! Entre 25 $ et 50 $ (selon expérience) — Saint-Constant · Laval · Montréal-Est.">
 <meta property="og:url" content="https://recrutement-e360s.vercel.app/Mecanique.html">
 <meta property="og:image" content="https://recrutement-e360s.vercel.app/og-mecanicien-story.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mécanicien de véhicules lourds | E360S">
-<meta name="twitter:description" content="NOUS EMBAUCHONS ! Entre 25 $ et 50 $ (selon expérience) — Saint-Jérôme · Roxton Pond · Laval · Montréal-Est · Saint-Constant.">
+<meta name="twitter:description" content="NOUS EMBAUCHONS ! Entre 25 $ et 50 $ (selon expérience) — Saint-Constant · Laval · Montréal-Est.">
 <meta name="twitter:image" content="https://recrutement-e360s.vercel.app/og-mecanicien-story.jpg">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -30,6 +30,7 @@ tailwind.config = { theme: { extend: {
   .job-card[data-open="true"] .acc-panel { grid-template-rows:1fr; }
   .job-card .acc-chevron { transition:transform .4s; }
   .job-card[data-open="true"] .acc-chevron { transform:rotate(180deg); }
+  .ville-pill.actif { outline:3px solid #0299d0; outline-offset:3px; }
   .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.is-visible { opacity:1; transform:none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } html { scroll-behavior:auto; } }
@@ -145,15 +146,13 @@ tailwind.config = { theme: { extend: {
   <section class="py-16 sm:py-20 bg-sky-50">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h2 class="reveal font-display text-3xl sm:text-4xl font-extrabold text-[#0299d0]">Villes <span class="underline decoration-[#f4e600] decoration-4 underline-offset-8">disponibles</span></h2>
-      <p class="reveal text-sky-700 mt-6 max-w-2xl mx-auto leading-relaxed">Plusieurs villes du Québec recrutent actuellement. Trouvez celle qui vous convient.</p>
+      <p class="reveal text-sky-700 mt-6 max-w-2xl mx-auto leading-relaxed">Trois villes recrutent actuellement. Trouvez celle qui vous convient.</p>
       <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a href="#postuler" class="inline-block px-7 py-3.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-[15px] shadow-[0_10px_30px_rgba(2,119,168,.18)] hover:bg-[#e2d400] transition-colors">Saint-Jérôme</a>
-            <a href="#postuler" class="inline-block px-7 py-3.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-[15px] shadow-[0_10px_30px_rgba(2,119,168,.18)] hover:bg-[#e2d400] transition-colors">Roxton Pond</a>
-            <a href="#postuler" class="inline-block px-7 py-3.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-[15px] shadow-[0_10px_30px_rgba(2,119,168,.18)] hover:bg-[#e2d400] transition-colors">Laval</a>
-            <a href="#postuler" class="inline-block px-7 py-3.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-[15px] shadow-[0_10px_30px_rgba(2,119,168,.18)] hover:bg-[#e2d400] transition-colors">Montréal-Est</a>
-            <a href="#postuler" class="inline-block px-7 py-3.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-[15px] shadow-[0_10px_30px_rgba(2,119,168,.18)] hover:bg-[#e2d400] transition-colors">Saint-Constant</a>
+            <a href="#postuler" data-ville="Saint-Constant" class="ville-pill inline-block px-7 py-3.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-[15px] shadow-[0_10px_30px_rgba(2,119,168,.18)] hover:bg-[#e2d400] transition-colors">Saint-Constant</a>
+            <a href="#postuler" data-ville="Laval" class="ville-pill inline-block px-7 py-3.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-[15px] shadow-[0_10px_30px_rgba(2,119,168,.18)] hover:bg-[#e2d400] transition-colors">Laval</a>
+            <a href="#postuler" data-ville="Montréal-Est" class="ville-pill inline-block px-7 py-3.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-[15px] shadow-[0_10px_30px_rgba(2,119,168,.18)] hover:bg-[#e2d400] transition-colors">Montréal-Est</a>
       </div>
-      <div id="postuler" class="reveal mt-12 scroll-mt-24">
+      <div id="villePanel" class="hidden max-w-xl mx-auto mt-6 bg-white rounded-3xl shadow-[0_20px_50px_rgba(2,119,168,.18)] p-6 text-left"><div class="flex items-start gap-3"><span class="w-11 h-11 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center shrink-0"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Z"/><circle cx="12" cy="9" r="2.6"/></svg></span><div class="min-w-0 flex-1"><p id="villeNom" class="font-display font-bold text-lg text-[#0299d0]"></p><p id="villeAdr" class="text-sky-700 mt-0.5"></p><div class="mt-4 flex flex-wrap gap-3"><a id="villeMaps" href="#" target="_blank" rel="noopener" class="inline-block px-5 py-2.5 rounded-full bg-[#0299d0] text-[#f4e600] font-display font-bold text-sm shadow hover:bg-[#0280b0] transition-colors">Ouvrir dans Plans / Maps →</a><a href="#postuler" class="inline-block px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-bold text-sm shadow hover:bg-[#e2d400] transition-colors">Postuler pour cette ville →</a></div></div><button type="button" id="villeFermer" aria-label="Fermer" class="shrink-0 w-8 h-8 rounded-full bg-sky-100 text-[#0299d0] flex items-center justify-center hover:bg-sky-200 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button></div></div><div id="postuler" class="reveal mt-12 scroll-mt-24">
         <div class="bg-[#f4e600] rounded-3xl px-6 py-10 sm:p-12 shadow-[0_14px_40px_rgba(2,153,208,.18)]">
           <h3 class="font-display text-4xl sm:text-5xl font-extrabold text-[#0299d0] text-center leading-tight" style="text-shadow:0 2px 12px rgba(255,255,255,.35);">TON ATELIER<br>T'ATTEND.</h3>
           <p class="text-[#0299d0] font-medium mt-5 max-w-2xl mx-auto leading-relaxed text-center">Mécanicien de véhicules lourds ?<br>On a un poste pour toi, entre 25 $ et 50 $/h (selon expérience).</p>
@@ -271,7 +270,9 @@ tailwind.config = { theme: { extend: {
 </script>
 <script>
 (function(){
-  const I18N = {"TON ATELIER": "YOUR SHOP", "T'ATTEND.": "IS WAITING.", "Mécanicien de véhicules lourds ?": "Heavy vehicle mechanic?", "On a un poste pour toi, entre 25 $ et 50 $/h (selon expérience).": "We have a position for you, $25 to $50/h (based on experience).", "Postuler": "Apply", "NOUS EMBAUCHONS": "WE'RE HIRING", "MÉCANICIEN DE": "HEAVY VEHICLE", "VÉHICULES LOURDS": "MECHANIC", "E360S recrute des mécaniciens de véhicules lourds dans plusieurs villes du Québec afin de soutenir la croissance de ses opérations.": "E360S is hiring heavy vehicle mechanics in several cities in Quebec to support the growth of its operations.", "Plusieurs opportunités disponibles": "Several opportunities available", "Entre 25 $ et 50 $": "Between $25 and $50", "(selon expérience)": "(based on experience)", "Temps plein": "Full time", "Formation offerte": "Training provided", "Assurances + REER": "Insurance + RRSP", "VOIR LE POSTE": "VIEW THE POSITION", "UN SEUL POSTE · PLUSIEURS VILLES DISPONIBLES": "ONE POSITION · SEVERAL CITIES AVAILABLE", "Mécanicien de véhicules lourds": "Heavy vehicle mechanic", "Mécanicien de": "Heavy vehicle", "véhicules lourds": "mechanic", "Plusieurs villes disponibles": "Several cities available", "E360S recherche des mécaniciens de véhicules lourds afin d’assurer l’entretien préventif et correctif de sa flotte de véhicules et équipements.": "E360S is looking for heavy vehicle mechanics to perform preventive and corrective maintenance on its fleet of vehicles and equipment.", "Ce qu'il faut savoir": "What you should know", "Travail manuel et technique quotidien en atelier": "Daily hands-on technical work in the shop", "Postes de jour et de soir disponibles selon la ville": "Day and evening positions available depending on the city", "Manipulation d'outils et de pièces pouvant peser jusqu'à 50 kg": "Handling tools and parts weighing up to 50 kg", "Environnement pouvant impliquer huile, graisse et bruit d'atelier": "Environment may involve oil, grease and shop noise", "Port d'équipements de protection individuelle requis": "Personal protective equipment required", "Principales tâches": "Main duties", "Diagnostic et réparation mécanique de camions lourds (vacuum, hydrovac, collecte)": "Mechanical diagnostics and repair of heavy trucks (vacuum, hydrovac, collection)", "Entretien préventif : freins, suspensions, moteurs, transmissions": "Preventive maintenance: brakes, suspensions, engines, transmissions", "Réparation des systèmes hydrauliques, pneumatiques et électriques": "Repair of hydraulic, pneumatic and electrical systems", "Inspection pré et post-utilisation des véhicules": "Pre- and post-use vehicle inspections", "Tenue des dossiers d'entretien et respect des normes SST": "Maintenance record keeping and OHS standards compliance", "Profil recherché": "Desired profile", "Mécanicien de véhicules lourds (ou compagnon)": "Heavy vehicle mechanic (or journeyman)", "Expérience avec camions lourds, systèmes hydrauliques ou équipements spécialisés (atout)": "Experience with heavy trucks, hydraulic systems or specialized equipment (an asset)", "Disponibilité pour un poste de jour ou de soir": "Availability for a day or evening position", "Autonomie et esprit d'équipe": "Autonomy and team spirit", "Respect des normes de sécurité": "Compliance with safety standards", "Conditions offertes": "What we offer", "Salaire entre 25 $ et 50 $ (selon expérience) et les qualifications": "Salary between $25 and $50 (based on experience) and qualifications", "Assurances collectives": "Group insurance", "REER collectif": "Group RRSP", "Heures supplémentaires disponibles": "Overtime available", "Équipements et outils spécialisés fournis": "Equipment and specialized tools provided", "Coffre d'outils de base requis (1/4, 3/8, 1/2)": "Basic tool chest required (1/4, 3/8, 1/2)", "Atelier moderne": "Modern shop", "Formation continue offerte": "Ongoing training provided", "Horaire": "Schedule", "Quart de jour ou de soir selon le poste et la ville": "Day or evening shift depending on the position and city", "Villes": "Cities", "disponibles": "available", "Plusieurs villes du Québec recrutent actuellement. Trouvez celle qui vous convient.": "Several cities in Quebec are currently hiring. Find the one that suits you.", "POSTULER MAINTENANT": "APPLY NOW", "Une question ?": "A question?", "Notre équipe recrutement vous répond rapidement.": "Our recruitment team will respond quickly.", "Solutions Environnementales 360 (E360S)": "Environmental Solutions 360 (E360S)",
+  const I18N = {"TON ATELIER": "YOUR SHOP", "T'ATTEND.": "IS WAITING.", "Mécanicien de véhicules lourds ?": "Heavy vehicle mechanic?", "On a un poste pour toi, entre 25 $ et 50 $/h (selon expérience).": "We have a position for you, $25 to $50/h (based on experience).", "Postuler": "Apply", "NOUS EMBAUCHONS": "WE'RE HIRING", "MÉCANICIEN DE": "HEAVY VEHICLE", "VÉHICULES LOURDS": "MECHANIC", "E360S recrute des mécaniciens de véhicules lourds dans plusieurs villes du Québec afin de soutenir la croissance de ses opérations.": "E360S is hiring heavy vehicle mechanics in several cities in Quebec to support the growth of its operations.", "Plusieurs opportunités disponibles": "Several opportunities available", "Entre 25 $ et 50 $": "Between $25 and $50", "(selon expérience)": "(based on experience)", "Temps plein": "Full time", "Formation offerte": "Training provided", "Assurances + REER": "Insurance + RRSP", "VOIR LE POSTE": "VIEW THE POSITION", "UN SEUL POSTE · PLUSIEURS VILLES DISPONIBLES": "ONE POSITION · SEVERAL CITIES AVAILABLE", "Mécanicien de véhicules lourds": "Heavy vehicle mechanic", "Mécanicien de": "Heavy vehicle", "véhicules lourds": "mechanic", "Plusieurs villes disponibles": "Several cities available", "E360S recherche des mécaniciens de véhicules lourds afin d’assurer l’entretien préventif et correctif de sa flotte de véhicules et équipements.": "E360S is looking for heavy vehicle mechanics to perform preventive and corrective maintenance on its fleet of vehicles and equipment.", "Ce qu'il faut savoir": "What you should know", "Travail manuel et technique quotidien en atelier": "Daily hands-on technical work in the shop", "Postes de jour et de soir disponibles selon la ville": "Day and evening positions available depending on the city", "Manipulation d'outils et de pièces pouvant peser jusqu'à 50 kg": "Handling tools and parts weighing up to 50 kg", "Environnement pouvant impliquer huile, graisse et bruit d'atelier": "Environment may involve oil, grease and shop noise", "Port d'équipements de protection individuelle requis": "Personal protective equipment required", "Principales tâches": "Main duties", "Diagnostic et réparation mécanique de camions lourds (vacuum, hydrovac, collecte)": "Mechanical diagnostics and repair of heavy trucks (vacuum, hydrovac, collection)", "Entretien préventif : freins, suspensions, moteurs, transmissions": "Preventive maintenance: brakes, suspensions, engines, transmissions", "Réparation des systèmes hydrauliques, pneumatiques et électriques": "Repair of hydraulic, pneumatic and electrical systems", "Inspection pré et post-utilisation des véhicules": "Pre- and post-use vehicle inspections", "Tenue des dossiers d'entretien et respect des normes SST": "Maintenance record keeping and OHS standards compliance", "Profil recherché": "Desired profile", "Mécanicien de véhicules lourds (ou compagnon)": "Heavy vehicle mechanic (or journeyman)", "Expérience avec camions lourds, systèmes hydrauliques ou équipements spécialisés (atout)": "Experience with heavy trucks, hydraulic systems or specialized equipment (an asset)", "Disponibilité pour un poste de jour ou de soir": "Availability for a day or evening position", "Autonomie et esprit d'équipe": "Autonomy and team spirit", "Respect des normes de sécurité": "Compliance with safety standards", "Conditions offertes": "What we offer", "Salaire entre 25 $ et 50 $ (selon expérience) et les qualifications": "Salary between $25 and $50 (based on experience) and qualifications", "Assurances collectives": "Group insurance", "REER collectif": "Group RRSP", "Heures supplémentaires disponibles": "Overtime available", "Équipements et outils spécialisés fournis": "Equipment and specialized tools provided", "Coffre d'outils de base requis (1/4, 3/8, 1/2)": "Basic tool chest required (1/4, 3/8, 1/2)", "Atelier moderne": "Modern shop", "Formation continue offerte": "Ongoing training provided", "Horaire": "Schedule", "Quart de jour ou de soir selon le poste et la ville": "Day or evening shift depending on the position and city", "Villes": "Cities",
+"Ouvrir dans Plans / Maps →": "Open in Maps →",
+"Postuler pour cette ville →": "Apply for this city →", "disponibles": "available", "Trois villes recrutent actuellement. Trouvez celle qui vous convient.": "Three cities are currently hiring. Find the one that suits you.", "POSTULER MAINTENANT": "APPLY NOW", "Une question ?": "A question?", "Notre équipe recrutement vous répond rapidement.": "Our recruitment team will respond quickly.", "Solutions Environnementales 360 (E360S)": "Environmental Solutions 360 (E360S)",
     "Pourquoi choisir E360S": "Why choose E360S",
     "Une entreprise en croissance qui met la sécurité et le développement de ses équipes au premier plan, peu importe le secteur.": "A growing company that puts safety and team development first, in every sector.",
     "Leader canadien": "Canadian leader",
@@ -325,6 +326,46 @@ tailwind.config = { theme: { extend: {
   document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===lang ? '1':'0'; });
 try{var _sl=localStorage.getItem('e360s-lang');if(_sl==='en')setLang('en');else if(!_sl&&(navigator.language||'').toLowerCase().slice(0,2)==='en')setLang('en');}catch(e){}
 })();
+</script>
+<script>
+var VILLES = {
+  'Saint-Constant': { nom: 'E360S Saint-Constant', adr: '700 Rang Saint-Régis S, Saint-Constant, QC J5A 2E7', q: 'E360S, 700 Rang Saint-Régis S, Saint-Constant, QC' },
+  'Laval': { nom: 'E360S Laval', adr: '160 Rue de la Station, Laval, QC H7M 3H7', q: 'E360S, 160 Rue de la Station, Laval, QC' },
+  'Montréal-Est': { nom: 'E360S Montréal-Est (JR Services Sanitaires)', adr: '9050 Boul. Henri-Bourassa E, Montréal-Est, QC H1E 3S3', q: 'JR Services Sanitaires, 9050 Boulevard Henri-Bourassa E, Montréal-Est, QC' }
+};
+var villeOuverte = null;
+function majVille(nom) {
+  var d = VILLES[nom]; if (!d) return;
+  document.getElementById('villeNom').textContent = d.nom;
+  document.getElementById('villeAdr').textContent = d.adr;
+  var apple = /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent);
+  document.getElementById('villeMaps').href = apple
+    ? 'https://maps.apple.com/?q=' + encodeURIComponent(d.q)
+    : 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(d.q);
+}
+document.querySelectorAll('.ville-pill').forEach(function (pill) {
+  pill.addEventListener('click', function (e) {
+    e.preventDefault();
+    var nom = pill.getAttribute('data-ville');
+    var panel = document.getElementById('villePanel');
+    if (villeOuverte === nom) {
+      panel.classList.add('hidden');
+      pill.classList.remove('actif');
+      villeOuverte = null;
+      return;
+    }
+    document.querySelectorAll('.ville-pill').forEach(function (p) { p.classList.remove('actif'); });
+    pill.classList.add('actif');
+    majVille(nom);
+    panel.classList.remove('hidden');
+    villeOuverte = nom;
+  });
+});
+document.getElementById('villeFermer').addEventListener('click', function () {
+  document.getElementById('villePanel').classList.add('hidden');
+  document.querySelectorAll('.ville-pill').forEach(function (p) { p.classList.remove('actif'); });
+  villeOuverte = null;
+});
 </script>
 </body>
   <script>
