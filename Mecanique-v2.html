@@ -354,7 +354,23 @@ document.getElementById('villeFermer').addEventListener('click', function () {
 });
 var lienVilles = document.getElementById('lienVilles');
 if (lienVilles) { lienVilles.addEventListener('click', function () { document.getElementById('villes').scrollIntoView({ behavior: 'smooth', block: 'start' }); }); }
+var initFlottant = function () {
+  var flottant = document.getElementById('voirPosteFlottant');
+  var secVilles = document.getElementById('villes');
+  if (flottant && secVilles && 'IntersectionObserver' in window) {
+    var obsVilles = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { flottant.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none'); }
+        else { flottant.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none'); }
+      });
+    }, { rootMargin: '-15% 0px -15% 0px' });
+    obsVilles.observe(secVilles);
+  }
+};
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initFlottant); } else { initFlottant(); }
 </script>
+<a href="#header-1" id="voirPosteFlottant" class="fixed bottom-4 left-4 right-4 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 z-50 flex sm:inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-[#f4e600] text-[#0299d0] font-display font-extrabold tracking-wide shadow-[0_16px_40px_rgba(2,119,168,.4)] hover:bg-[#e2d400] transition-all duration-300 opacity-0 translate-y-4 pointer-events-none">VOIR LE POSTE<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg></a>
+
 </body>
   <script>
 (function(){
