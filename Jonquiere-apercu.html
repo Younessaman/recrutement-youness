@@ -692,12 +692,12 @@ Assurances + REER
 <h2>Postes <span class="accent">disponibles</span></h2>
 <p>Découvre nos opportunités en nettoyage industriel à Jonquière. Clique sur un poste pour en voir tous les détails.</p>
 </div>
-<div class="jobs">
+<div class="seg" role="tablist"><span class="seg-glide"></span><button type="button" role="tab" aria-selected="true" data-job="panel-chauffeur">Chauffeur-opérateur</button><button type="button" role="tab" aria-selected="false" data-job="panel-aide">Aide-opérateur</button></div> <div class="jobs">
 <div class="job reveal">
 <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-chauffeur">
 <div class="job-summary-text">
 <div class="job-title">Chauffeur-opérateur</div>
-<div class="job-sub">Classe 1 ou Classe 3</div> <div class="job-pay"><span class="job-pay-big">30 – 33,87 $</span><span class="job-pay-cap">par heure, selon l'expérience</span></div> <div class="job-bar"><i style="width:100%"></i></div>
+<div class="job-sub">Classe 1 ou Classe 3</div> <div class="job-pay"><span class="job-pay-big">30 – 33,87 $</span><span class="job-pay-cap">par heure, selon l'expérience</span></div>
 <div class="job-tags">
 
 <span class="tag">Temps plein</span>
@@ -780,7 +780,7 @@ Assurances + REER
 <button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-aide">
 <div class="job-summary-text">
 <div class="job-title">Aide-opérateur</div>
-<div class="job-sub">Nettoyage industriel</div> <div class="job-pay"><span class="job-pay-big">25 – 27,50 $</span><span class="job-pay-cap">par heure</span></div> <div class="job-bar"><i style="width:82%"></i></div>
+<div class="job-sub">Nettoyage industriel</div> <div class="job-pay"><span class="job-pay-big">25 – 27,50 $</span><span class="job-pay-cap">par heure</span></div>
 <div class="job-tags">
 
 <span class="tag">Temps plein</span>
@@ -878,38 +878,7 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
-// Accordion — one job open at a time, smooth height animation, no scroll jump
-const jobs = document.querySelectorAll('.job');
-jobs.forEach(job => {
-  const trigger = job.querySelector('.job-summary');
-  trigger.addEventListener('click', (e) => {
-    // Onde jaune partant du point de clic + effet de pression
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      const rect = job.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple';
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-      job.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 620);
-      job.classList.remove('pressed');
-      void job.offsetWidth;
-      job.classList.add('pressed');
-      setTimeout(() => job.classList.remove('pressed'), 400);
-    }
-    const isOpen = job.classList.contains('open');
-    jobs.forEach(other => {
-      other.classList.remove('open');
-      other.querySelector('.job-summary').setAttribute('aria-expanded', 'false');
-    });
-    if (!isOpen){
-      job.classList.add('open');
-      trigger.setAttribute('aria-expanded', 'true');
-    }
-  });
-});
+// Les panneaux sont contrôlés par les onglets (voir le script des onglets plus bas).
 // Smooth scroll for in-page anchors only (external links are untouched)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
@@ -963,7 +932,7 @@ document.querySelectorAll('.job-cta').forEach(btn => {
 .job{scroll-margin-top:96px}
 .page-photo{display:block;width:100%;border-radius:24px;box-shadow:0 24px 50px rgba(2,60,90,.35);margin:2.2rem 0 .4rem}
 </style>
-<script>(function(){document.querySelectorAll('.hero-job-link').forEach(function(btn){btn.addEventListener('click',function(){var panel=document.getElementById(btn.getAttribute('data-panel'));if(!panel)return;var job=panel.closest('.job');if(!job)return;job.scrollIntoView({behavior:'smooth',block:'start'});if(!job.classList.contains('open')){setTimeout(function(){var t=job.querySelector('.job-summary');if(t)t.click();},450);}});});})();</script>
+<script>(function(){document.querySelectorAll('.hero-job-link').forEach(function(btn){btn.addEventListener('click',function(){var sec=document.getElementById('postes');if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});});});})();</script>
 
 <style>
 .header-actions{display:flex;align-items:center;gap:12px}
@@ -1031,6 +1000,9 @@ document.querySelectorAll('.job-cta').forEach(btn => {
 .perk:first-child .perk-icon{background:rgba(255,255,255,.18);color:#f4e600}
 </style>
 <script>(function(){var sl=document.getElementById("sliderJonquiere");if(!sl)return;var track=sl.querySelector(".slider-track");var n=track.children.length;var dots=sl.querySelector(".slider-dots");for(var d=0;d<n;d++){var sp=document.createElement("span");if(d===0)sp.className="on";dots.appendChild(sp);}var i=0,timer=null;function go(k){i=(k+n)%n;track.style.transform="translateX(-"+(i*100)+"%)";for(var d=0;d<n;d++)dots.children[d].className=(d===i?"on":"");}function start(){if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;timer=setInterval(function(){go(i+1);},1500);}function stop(){if(timer){clearInterval(timer);timer=null;}}sl.addEventListener("touchstart",stop,{passive:true});sl.addEventListener("mouseenter",stop);sl.addEventListener("mouseleave",start);start();})();</script>
-<style>#postes .section-head h2{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2.3rem,6.5vw,3.4rem);line-height:1;letter-spacing:.01em}.job-summary{background:linear-gradient(135deg,#0299d0,#0277a8);align-items:flex-start}.job-summary-text{flex:1;min-width:0}.job-title{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2rem,7vw,2.6rem);line-height:1;letter-spacing:.01em;color:#fff;margin-bottom:6px}.job-summary .job-sub{color:rgba(255,255,255,.8);margin-bottom:14px}.job-pay-big{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:800;font-size:clamp(2.6rem,9vw,3.2rem);line-height:1;color:#f4e600;display:block}.job-pay-cap{font-size:.8rem;color:rgba(255,255,255,.8);display:block;margin-top:3px}.job-bar{height:8px;background:rgba(255,255,255,.18);border-radius:8px;margin:12px 0 14px;overflow:hidden}.job-bar i{display:block;height:100%;background:#f4e600;border-radius:8px}.job-summary .tag{background:rgba(255,255,255,.15);color:#fff}.job-summary .job-chevron{background:rgba(255,255,255,.16);color:#f4e600}</style>
+<style>#postes .section-head h2{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2.3rem,6.5vw,3.4rem);line-height:1;letter-spacing:.01em}.job-summary{background:linear-gradient(135deg,#0299d0,#0277a8);align-items:flex-start}.job-summary-text{flex:1;min-width:0}.job-title{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2rem,7vw,2.6rem);line-height:1;letter-spacing:.01em;color:#fff;margin-bottom:6px}.job-summary .job-sub{color:rgba(255,255,255,.8);margin-bottom:14px}.job-pay-big{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:800;font-size:clamp(2.6rem,9vw,3.2rem);line-height:1;color:#f4e600;display:block}.job-pay-cap{font-size:.8rem;color:rgba(255,255,255,.8);display:block;margin-top:3px}.job-summary .tag{background:rgba(255,255,255,.15);color:#fff}.job-summary .job-chevron{background:rgba(255,255,255,.16);color:#f4e600}</style>
+<style>.seg{display:flex;background:#fff;border-radius:16px;padding:5px;gap:4px;margin-bottom:20px;box-shadow:0 10px 26px rgba(4,30,54,.14)}.seg button{flex:1;border:0;background:transparent;color:var(--ink-soft);font-family:var(--font-main);font-weight:700;font-size:.98rem;padding:13px 8px;border-radius:12px;cursor:pointer;transition:background .2s,color .2s}.seg button[aria-selected="true"]{background:#0299d0;color:#fff;box-shadow:0 8px 18px rgba(2,119,168,.35)}.jobs .job{display:none}.jobs .job.active{display:block}.job-summary{cursor:default}.job-summary .job-chevron{display:none}</style>
+<script>(function(){var tabs=document.querySelectorAll(".seg button[data-job]");if(!tabs.length)return;function activate(panelId){tabs.forEach(function(t){t.setAttribute("aria-selected",t.getAttribute("data-job")===panelId?"true":"false");});var g=document.querySelector(".seg-glide");if(g){var idx=0;tabs.forEach(function(t,i){if(t.getAttribute("data-job")===panelId)idx=i;});g.style.transform="translateX("+(idx*100)+"%)";}document.querySelectorAll(".jobs .job").forEach(function(job){var panel=job.querySelector(".job-panel");var on=panel&&panel.id===panelId;job.classList.toggle("active",!!on);job.classList.toggle("open",!!on);if(on)job.classList.add("is-visible");var tr=job.querySelector(".job-summary");if(tr)tr.setAttribute("aria-expanded",on?"true":"false");});}tabs.forEach(function(t){t.addEventListener("click",function(){activate(t.getAttribute("data-job"));});});document.querySelectorAll(".hero-job-link").forEach(function(btn){btn.addEventListener("click",function(){activate(btn.getAttribute("data-panel"));});});activate("panel-chauffeur");})();</script>
+<style>.seg{position:relative}.seg-glide{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);background:#0299d0;border-radius:12px;box-shadow:0 8px 18px rgba(2,119,168,.35),inset 0 -3px 0 #f4e600;transition:transform .38s cubic-bezier(.6,.05,.2,1);z-index:0}.seg button{position:relative;z-index:1}.seg button[aria-selected="true"]{background:transparent;box-shadow:none}@keyframes jobIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}.jobs .job.active{animation:jobIn .45s ease}@keyframes payShine{to{background-position:-200% 0}}@supports ((-webkit-background-clip:text) or (background-clip:text)){.job-pay-big{background:linear-gradient(100deg,#f4e600 25%,#fff9b0 50%,#f4e600 75%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:payShine 3.4s linear infinite}}@media (prefers-reduced-motion:reduce){.seg-glide{transition:none}.jobs .job.active{animation:none}.job-pay-big{animation:none}}</style>
 </body>
 </html>
