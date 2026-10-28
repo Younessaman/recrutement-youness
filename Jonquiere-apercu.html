@@ -634,7 +634,7 @@
   /* ---------- Reveal on scroll ---------- */
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s var(--ease), transform .6s var(--ease);}
   .reveal.is-visible{opacity:1; transform:translateY(0);}
-</style>
+.slider{position:relative;overflow:hidden;border-radius:24px;box-shadow:0 24px 50px rgba(2,60,90,.35);margin:2.2rem 0 .4rem}.slider-track{display:flex;transition:transform .6s ease}.slider-track img{flex:0 0 100%;width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.slider-track img.portrait{object-position:center 22%}.slider-dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px}.slider-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);transition:background .3s}.slider-dots span.on{background:#f4e600}</style>
 <meta property="og:type" content="website"><meta property="og:url" content="https://recrutement-e360s.vercel.app/Jonquiere.html"><meta property="og:title" content="Nettoyage industriel à Jonquière : chauffeur-opérateur et aide-opérateur | E360S"><meta property="og:description" content="E360S embauche en nettoyage industriel à Jonquière : chauffeur-opérateur et aide-opérateur. Temps plein, formation offerte, assurances collectives et REER."><meta property="og:image" content="https://recrutement-e360s.vercel.app/og-jonquiere-1200.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://recrutement-e360s.vercel.app/og-jonquiere-1200.jpg"></head>
 <body>
 <header class="site-header">
@@ -686,6 +686,7 @@ Assurances + REER
 </div>
 </div>
 </section>
+<div class="container"><div class="slider" id="sliderJonquiere"><div class="slider-track"><img src="jonquiere-terrain-equipe.jpg" alt="Équipe E360S marchant vers les camions vacuum"><img class="portrait" src="jonquiere-terrain-1.jpg" alt="Camion vacuum E360S en opération, équipe de deux"><img class="portrait" src="jonquiere-terrain-2.jpg" alt="Opérateurs E360S au travail sur un camion vacuum"><img src="jonquiere-terrain-3.jpg" alt="Camion E360S, vue rapprochée du logo"><img src="jonquiere-terrain-4.jpg" alt="Camions vacuum E360S au dépôt"></div><div class="slider-dots"></div></div></div>
 <section id="postes" class="section-blue">
 <div class="container">
 <div class="section-head reveal">
@@ -1036,5 +1037,6 @@ document.querySelectorAll('.job-cta').forEach(btn => {
 .perk:first-child{background:#0299d0;color:#f4e600}
 .perk:first-child .perk-icon{background:rgba(255,255,255,.18);color:#f4e600}
 </style>
+<script>(function(){var sl=document.getElementById("sliderJonquiere");if(!sl)return;var track=sl.querySelector(".slider-track");var n=track.children.length;var dots=sl.querySelector(".slider-dots");for(var d=0;d<n;d++){var sp=document.createElement("span");if(d===0)sp.className="on";dots.appendChild(sp);}var i=0,timer=null;function go(k){i=(k+n)%n;track.style.transform="translateX(-"+(i*100)+"%)";for(var d=0;d<n;d++)dots.children[d].className=(d===i?"on":"");}function start(){if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;timer=setInterval(function(){go(i+1);},1500);}function stop(){if(timer){clearInterval(timer);timer=null;}}sl.addEventListener("touchstart",stop,{passive:true});sl.addEventListener("mouseenter",stop);sl.addEventListener("mouseleave",start);start();})();</script>
 </body>
 </html>
