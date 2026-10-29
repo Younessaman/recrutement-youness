@@ -46,6 +46,40 @@ tailwind.config = { theme: { extend: {
   .lang-opt:hover { background:#e9f7fe; }
   .lang-opt .check { width:16px; height:16px; color:#0299d0; opacity:0; }
 </style>
+<style>
+.seg{display:flex;background:#fff;border-radius:16px;padding:5px;gap:4px;margin-bottom:20px;box-shadow:0 10px 26px rgba(4,30,54,.14);position:relative}
+.seg-glide{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);background:#0299d0;border-radius:12px;box-shadow:0 8px 18px rgba(2,119,168,.35),inset 0 -3px 0 #f4e600;z-index:0}
+.seg button{flex:1;border:0;background:transparent;color:#2e7d9f;font-family:'Outfit',sans-serif;font-weight:700;font-size:.98rem;padding:13px 8px;border-radius:12px;cursor:pointer;position:relative;z-index:1;transition:color .2s}
+.seg button[aria-selected="true"]{color:#fff}
+.jobs{display:flex;flex-direction:column;gap:16px}
+.jobs .job{display:none}
+.jobs .job.active{display:block}
+.job{position:relative;border:1.5px solid transparent;border-radius:24px;background:#fff;box-shadow:0 10px 26px rgba(4,30,54,.16);overflow:hidden;transition:box-shadow .3s ease}
+.job.open{border-color:#f4e600;box-shadow:0 18px 44px rgba(4,30,54,.26)}
+.job::before{content:"";position:absolute;top:0;left:0;height:5px;width:100%;background:#f4e600;transform:scaleX(0);transform-origin:left;transition:transform .45s ease;z-index:2}
+.job.open::before{transform:scaleX(1)}
+.job-summary{position:relative;z-index:1;width:100%;cursor:default;padding:26px 24px;display:flex;align-items:flex-start;gap:20px;text-align:left;background:linear-gradient(135deg,#0299d0,#0277a8);border:0}
+.job-summary-text{flex:1;min-width:0}
+.job-title{font-family:'Outfit',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1.65rem,6.6vw,2.25rem);line-height:1;letter-spacing:.01em;color:#fff;margin-bottom:6px}
+.job-title-accent{color:#f4e600}
+.job-sub{font-size:.92rem;color:rgba(255,255,255,.8);margin-bottom:14px}
+.job-tags{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:16px}
+.job-summary .tag{font-size:.8rem;font-weight:500;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.15);color:#fff}
+.job-summary .job-chevron{display:none}
+.job-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.job.open .job-panel{grid-template-rows:1fr}
+.job-panel-inner{overflow:hidden;min-height:0}
+.job-body{padding:24px 24px 32px;display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:720px){.job-body{grid-template-columns:1fr 1fr}}
+.job-block h4{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:800;color:#0277a8;text-transform:uppercase;letter-spacing:.05em;border-left:4px solid #f4e600;padding:5px 38px 5px 12px;margin-bottom:12px;background:linear-gradient(90deg,rgba(2,153,208,.10),rgba(2,153,208,0) 72%);cursor:pointer;position:relative;user-select:none;-webkit-user-select:none}
+.job-block h4::after{content:"";position:absolute;right:14px;top:50%;width:9px;height:9px;border-right:2.5px solid #0277a8;border-bottom:2.5px solid #0277a8;transform:translateY(-70%) rotate(45deg)}
+.job-block.open h4::after{transform:translateY(-30%) rotate(225deg)}
+.job-block>ul{display:none;margin:0;padding:0;list-style:none;flex-direction:column;gap:10px}
+.job-block.open>ul{display:flex}
+.job-block li{display:flex;gap:10px;font-size:.95rem;font-weight:400;color:#2e7d9f;line-height:1.5}
+.job-block li svg{flex:none;width:16px;height:16px;margin-top:3px;color:#0299d0}
+.job-cta{grid-column:1/-1;margin-top:4px}
+</style>
 </head>
 <body class="font-sans antialiased" id="top">
 
@@ -88,7 +122,7 @@ tailwind.config = { theme: { extend: {
         <span class="block text-white">RÉSIDENTIELLE</span>
       </h1>
       <p class="reveal mt-7 text-white/95 text-[17px] leading-[1.8] max-w-2xl mx-auto">
-        E360S recherche des Chauffeurs Classe 3 qui aiment le travail concret, les journées actives et les opérations sur le terrain, dans le Grand Montréal, la Rive-Nord et la Rive-Sud.
+        E360S recherche des Chauffeurs Classe 3 qui aiment le travail concret, les journées actives et les opérations sur le terrain, à Montréal et à Laval.
       </p>
       <div class="reveal mt-6">
         <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 border border-white/30 text-white text-[13px] font-semibold tracking-wide">Plusieurs postes actuellement disponibles</span>
@@ -108,94 +142,104 @@ tailwind.config = { theme: { extend: {
       <div class="reveal text-center">
         <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f4e600] text-[#0299d0] text-xs font-extrabold tracking-[0.14em] uppercase shadow-lg">Plusieurs opportunités disponibles</span>
         <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-center mt-6">
-          <span class="text-white">Collecte Résidentielle et Municipale</span>
+          <span class="text-white">Collecte Résidentielle et</span> <span class="text-[#f4e600]">Municipale</span>
         </h2>
         <p class="mt-5 text-white/85 max-w-2xl mx-auto leading-relaxed">E360S est à la recherche de chauffeurs pour assurer le bon déroulement de ses opérations de collecte résidentielle et municipale. Les postes proposés combinent conduite, travail terrain et respect des procédures de sécurité.</p>
       </div>
-      <div class="mt-12 grid lg:grid-cols-2 gap-8 items-start">
-        <article id="premier-poste" class="job-card scroll-mt-28 bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(2,119,168,.18)] reveal" data-open="false">
-          <div class="h-1.5 bg-[#f4e600]"></div>
-          <button class="job-card-trigger w-full flex items-start gap-4 p-6 sm:p-7 text-left" aria-expanded="false">
-            <span class="shrink-0 w-12 h-12 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <path d="M3 17h13V6H3v11Z"/> <path d="M16 10h3l2 3v4h-5V10Z"/> <circle cx="7" cy="18" r="2"/> <circle cx="18" cy="18" r="2"/> </svg></span>
-            <span class="flex-1 min-w-0">
-              <span class="block font-display text-lg font-extrabold text-[#0299d0] mt-0.5">Chauffeur à chargement arrière</span>
-              <span class="block text-[13px] text-slate-500 mt-1 leading-relaxed">Conduite, collecte et travail terrain.</span>
-            </span>
-            <span class="acc-chevron shrink-0 w-8 h-8 rounded-full bg-[#f4e600] text-[#0299d0] flex items-center justify-center mt-1">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </span>
-          </button>
-          <div class="acc-panel"><div><div class="px-6 sm:px-7 pb-7">
-            <div class="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0299d0] uppercase">Responsabilités principales</h4>
-                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Conduire le camion de collecte de façon sécuritaire sur les routes assignées</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Effectuer les arrêts prévus pour les collectes résidentielles et municipales</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Participer activement aux opérations de collecte et aux interventions sur le terrain</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Effectuer les vérifications nécessaires du véhicule avant et pendant les opérations</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Respecter les procédures de sécurité et contribuer au bon déroulement des routes</span></li>
-                    </ul>
-                      </div>
-                      <div>
-                        <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0299d0] uppercase">Exigences et conditions</h4>
-                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Permis Classe 3</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Collecte résidentielle et municipale</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Travail extérieur et arrêts fréquents</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Temps plein</span></li>
-                    </ul>
-                      </div>
-            </div>
-            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="mt-7 flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#0299d0] text-[#f4e600] text-sm font-display font-bold tracking-wide hover:bg-[#0277a8] transition-colors">
-              POSTULER MAINTENANT
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-          </div></div></div>
-        </article>
-
-        <article class="job-card bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(2,119,168,.18)] reveal" data-open="false">
-          <div class="h-1.5 bg-[#f4e600]"></div>
-          <button class="job-card-trigger w-full flex items-start gap-4 p-6 sm:p-7 text-left" aria-expanded="false">
-            <span class="shrink-0 w-12 h-12 rounded-2xl bg-[#f4e600] text-[#0299d0] flex items-center justify-center"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <rect x="5" y="5" width="14" height="14" rx="3"/> <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/> <circle cx="9" cy="12" r="1" fill="currentColor"/> <circle cx="15" cy="12" r="1" fill="currentColor"/> </svg></span>
-            <span class="flex-1 min-w-0">
-              <span class="block font-display text-lg font-extrabold text-[#0299d0] mt-0.5">Chauffeur robot</span>
-              <span class="block text-[13px] text-slate-500 mt-1 leading-relaxed">Conduite et collecte avec bras robotisé.</span>
-            </span>
-            <span class="acc-chevron shrink-0 w-8 h-8 rounded-full bg-[#f4e600] text-[#0299d0] flex items-center justify-center mt-1">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </span>
-          </button>
-          <div class="acc-panel"><div><div class="px-6 sm:px-7 pb-7">
-            <div class="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0299d0] uppercase">Responsabilités principales</h4>
-                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Conduire le camion de collecte de façon sécuritaire sur les routes assignées</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Opérer le bras robotisé pour la levée et la vidange des bacs roulants</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Effectuer les vérifications du véhicule et du système robotisé avant et pendant les opérations</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Signaler toute anomalie ou bris d'équipement au répartiteur</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Respecter les procédures de sécurité et contribuer au bon déroulement des routes</span></li>
-                    </ul>
-                  </div>
-                      <div>
-                        <h4 class="text-[11px] font-extrabold tracking-[0.14em] text-[#0299d0] uppercase">Exigences et conditions</h4>
-                    <ul class="mt-3 space-y-2.5 text-[13px] text-slate-600 leading-relaxed">
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Permis Classe 3</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Bras robotisé</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Collecte automatisée</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Temps plein</span></li>
-                      <li class="flex items-start gap-2.5"><span class="mt-1 w-2 h-2 rounded-full bg-[#f4e600] shrink-0"></span><span>Équipements modernes</span></li>
-                    </ul>
-                      </div>
-            </div>
-            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="mt-7 flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#0299d0] text-[#f4e600] text-sm font-display font-bold tracking-wide hover:bg-[#0277a8] transition-colors">
-              POSTULER MAINTENANT
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-          </div></div></div>
-        </article>
-      </div>
+      <div id="premier-poste" class="mt-12 max-w-3xl mx-auto scroll-mt-28">
+<div class="seg" role="tablist"><span class="seg-glide"></span><button type="button" role="tab" aria-selected="true" data-job="panel-arriere">Chauffeur à chargement arrière</button><button type="button" role="tab" aria-selected="false" data-job="panel-robot">Chauffeur robot</button></div>
+<div class="jobs">
+<div class="job reveal">
+<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-arriere">
+<div class="job-summary-text">
+<div class="job-title"><span>Chauffeur à</span> <span class="job-title-accent">chargement arrière</span></div>
+<div class="job-sub">Conduite, collecte et travail terrain.</div>
+<div class="job-tags">
+<span class="tag">Temps plein</span>
+<span class="tag">Permis Classe 3</span>
+</div>
+</div>
+<span class="job-chevron">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+</span>
+</button>
+<div class="job-panel" id="panel-arriere">
+<div class="job-panel-inner">
+<div class="job-body">
+<div class="job-block">
+<h4>Responsabilités principales</h4>
+<ul>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Conduire le camion de collecte de façon sécuritaire sur les routes assignées</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Effectuer les arrêts prévus pour les collectes résidentielles et municipales</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Participer activement aux opérations de collecte et aux interventions sur le terrain</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Effectuer les vérifications nécessaires du véhicule avant et pendant les opérations</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respecter les procédures de sécurité et contribuer au bon déroulement des routes</li>
+</ul>
+</div>
+<div class="job-block">
+<h4>Exigences et conditions</h4>
+<ul>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Permis Classe 3</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Collecte résidentielle et municipale</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Travail extérieur et arrêts fréquents</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
+</ul>
+</div>
+<a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="job-cta flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#0299d0] text-[#f4e600] text-sm font-display font-bold tracking-wide hover:bg-[#0277a8] transition-colors">
+POSTULER MAINTENANT
+<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="job reveal">
+<button type="button" class="job-summary" aria-expanded="false" aria-controls="panel-robot">
+<div class="job-summary-text">
+<div class="job-title"><span>Chauffeur</span> <span class="job-title-accent">robot</span></div>
+<div class="job-sub">Conduite et collecte avec bras robotisé.</div>
+<div class="job-tags">
+<span class="tag">Temps plein</span>
+<span class="tag">Permis Classe 3</span>
+</div>
+</div>
+<span class="job-chevron">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+</span>
+</button>
+<div class="job-panel" id="panel-robot">
+<div class="job-panel-inner">
+<div class="job-body">
+<div class="job-block">
+<h4>Responsabilités principales</h4>
+<ul>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Conduire le camion de collecte de façon sécuritaire sur les routes assignées</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Opérer le bras robotisé pour la levée et la vidange des bacs roulants</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Effectuer les vérifications du véhicule et du système robotisé avant et pendant les opérations</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Signaler toute anomalie ou bris d'équipement au répartiteur</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Respecter les procédures de sécurité et contribuer au bon déroulement des routes</li>
+</ul>
+</div>
+<div class="job-block">
+<h4>Exigences et conditions</h4>
+<ul>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Permis Classe 3</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bras robotisé</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Collecte automatisée</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Temps plein</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Équipements modernes</li>
+</ul>
+</div>
+<a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="job-cta flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#0299d0] text-[#f4e600] text-sm font-display font-bold tracking-wide hover:bg-[#0277a8] transition-colors">
+POSTULER MAINTENANT
+<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
     </div>
   </section>
 
@@ -203,12 +247,12 @@ tailwind.config = { theme: { extend: {
     <div class="max-w-5xl mx-auto px-6 text-center">
       <div class="reveal">
         <h2 class="font-display text-3xl sm:text-[2.6rem] font-extrabold text-[#0299d0]">Villes <span class="relative inline-block">disponibles<span class="absolute -bottom-2 left-0 right-0 h-1.5 bg-[#f4e600] rounded-full"></span></span></h2>
-        <p class="text-slate-500 mt-5 max-w-2xl mx-auto leading-relaxed">Plusieurs possibilités sont offertes dans le Grand Montréal, sur la Rive-Nord et sur la Rive-Sud.</p>
+        <p class="text-slate-500 mt-5 max-w-2xl mx-auto leading-relaxed">Plusieurs possibilités sont offertes à Montréal et à Laval.</p>
       </div>
       <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3.5 rounded-full bg-white text-[#0299d0] font-display font-bold shadow-[0_10px_30px_rgba(2,119,168,.12)] hover:shadow-[0_14px_36px_rgba(2,119,168,.20)] transition-shadow">Grand Montréal</a>
-        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3.5 rounded-full bg-white text-[#0299d0] font-display font-bold shadow-[0_10px_30px_rgba(2,119,168,.12)] hover:shadow-[0_14px_36px_rgba(2,119,168,.20)] transition-shadow">Rive-Nord</a>
-        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3.5 rounded-full bg-white text-[#0299d0] font-display font-bold shadow-[0_10px_30px_rgba(2,119,168,.12)] hover:shadow-[0_14px_36px_rgba(2,119,168,.20)] transition-shadow">Rive-Sud</a>
+        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3.5 rounded-full bg-white text-[#0299d0] font-display font-bold shadow-[0_10px_30px_rgba(2,119,168,.12)] hover:shadow-[0_14px_36px_rgba(2,119,168,.20)] transition-shadow">Montréal</a> <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3.5 rounded-full bg-white text-[#0299d0] font-display font-bold shadow-[0_10px_30px_rgba(2,119,168,.12)] hover:shadow-[0_14px_36px_rgba(2,119,168,.20)] transition-shadow">Laval</a>
+       
+       
       </div>
       <div class="reveal mt-8">
         <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=o_WwTLgPIkCO8bYOhpHq4nRlwgaBhsZIli39gXh7Kc1UQlIzNjQ5RUpSRTBWTFE5QkxaRDRPQk9XVS4u" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-[#0299d0] text-[#f4e600] font-display font-bold tracking-wide hover:bg-[#0277a8] transition-colors shadow-[0_12px_30px_rgba(2,119,168,.25)]">POSTULER MAINTENANT</a>
@@ -320,7 +364,7 @@ tailwind.config = { theme: { extend: {
 </script>
 <script>
 (function(){
-  const I18N = {"Postuler": "Apply", "NOUS EMBAUCHONS - CHAUFFEUR CLASSE 3": "WE'RE HIRING - CLASS 3 DRIVER", "COLLECTE": "COLLECTION", "RÉSIDENTIELLE": "RESIDENTIAL", "E360S recherche des Chauffeurs Classe 3 qui aiment le travail concret, les journées actives et les opérations sur le terrain, dans le Grand Montréal, la Rive-Nord et la Rive-Sud.": "E360S is looking for Class 3 Drivers who enjoy hands-on work, active days and field operations in Greater Montreal, the North Shore and the South Shore.", "Plusieurs postes actuellement disponibles": "Several positions currently available", "VOIR LES POSTES": "VIEW OPENINGS", "COLLECTE RÉSIDENTIELLE ET MUNICIPALE": "RESIDENTIAL AND MUNICIPAL COLLECTION", "Collecte Résidentielle et Municipale": "Residential and Municipal Collection", "Plusieurs opportunités disponibles": "Several opportunities available", "E360S est à la recherche de chauffeurs pour assurer le bon déroulement de ses opérations de collecte résidentielle et municipale. Les postes proposés combinent conduite, travail terrain et respect des procédures de sécurité.": "E360S is looking for drivers to ensure the smooth running of its residential and municipal collection operations. These positions combine driving, field work and compliance with safety procedures.", "Chauffeur à chargement arrière": "Rear-load driver", "Conduite, collecte et travail terrain.": "Driving, collection and field work.", "Responsabilités principales": "Main responsibilities", "Conduire le camion de collecte de façon sécuritaire sur les routes assignées": "Drive the collection truck safely on assigned routes", "Effectuer les arrêts prévus pour les collectes résidentielles et municipales": "Make scheduled stops for residential and municipal collections", "Participer activement aux opérations de collecte et aux interventions sur le terrain": "Actively participate in collection operations and field interventions", "Effectuer les vérifications nécessaires du véhicule avant et pendant les opérations": "Perform the required vehicle checks before and during operations", "Respecter les procédures de sécurité et contribuer au bon déroulement des routes": "Follow safety procedures and contribute to the smooth running of routes", "Exigences et conditions": "Requirements and conditions", "Permis Classe 3": "Class 3 driver's licence", "Collecte résidentielle et municipale": "Residential and municipal collection", "Travail extérieur et arrêts fréquents": "Outdoor work and frequent stops", "Temps plein": "Full time", "POSTULER MAINTENANT": "APPLY NOW", "Chauffeur robot": "Robotic-arm driver", "Conduite et collecte avec bras robotisé.": "Driving and collection with a robotic arm.", "Bras robotisé": "Robotic arm", "Collecte automatisée": "Automated collection", "Équipements modernes": "Modern equipment", "Villes": "Cities", "disponibles": "available", "Plusieurs possibilités sont offertes dans le Grand Montréal, sur la Rive-Nord et sur la Rive-Sud.": "Several opportunities are available in Greater Montreal, on the North Shore and on the South Shore.", "Grand Montréal": "Greater Montreal", "Rive-Nord": "North Shore", "Rive-Sud": "South Shore", "Une question ?": "A question?", "Notre équipe recrutement vous répond rapidement.": "Our recruitment team will respond quickly.", "Solutions Environnementales 360 (E360S)": "Environmental Solutions 360 (E360S)",
+  const I18N = {"Postuler": "Apply", "NOUS EMBAUCHONS - CHAUFFEUR CLASSE 3": "WE'RE HIRING - CLASS 3 DRIVER", "COLLECTE": "COLLECTION", "RÉSIDENTIELLE": "RESIDENTIAL", "E360S recherche des Chauffeurs Classe 3 qui aiment le travail concret, les journées actives et les opérations sur le terrain, à Montréal et à Laval.": "E360S is looking for Class 3 Drivers who enjoy hands-on work, active days and field operations in Montreal and Laval.", "Plusieurs postes actuellement disponibles": "Several positions currently available", "VOIR LES POSTES": "VIEW OPENINGS", "COLLECTE RÉSIDENTIELLE ET MUNICIPALE": "RESIDENTIAL AND MUNICIPAL COLLECTION", "Collecte Résidentielle et Municipale": "Residential and Municipal Collection", "Collecte Résidentielle et": "Residential and Municipal", "Municipale": "Collection", "Chauffeur à": "Rear-load", "chargement arrière": "Driver", "Chauffeur": "Robotic-arm", "robot": "driver", "Plusieurs opportunités disponibles": "Several opportunities available", "E360S est à la recherche de chauffeurs pour assurer le bon déroulement de ses opérations de collecte résidentielle et municipale. Les postes proposés combinent conduite, travail terrain et respect des procédures de sécurité.": "E360S is looking for drivers to ensure the smooth running of its residential and municipal collection operations. These positions combine driving, field work and compliance with safety procedures.", "Chauffeur à chargement arrière": "Rear-load driver", "Conduite, collecte et travail terrain.": "Driving, collection and field work.", "Responsabilités principales": "Main responsibilities", "Conduire le camion de collecte de façon sécuritaire sur les routes assignées": "Drive the collection truck safely on assigned routes", "Effectuer les arrêts prévus pour les collectes résidentielles et municipales": "Make scheduled stops for residential and municipal collections", "Participer activement aux opérations de collecte et aux interventions sur le terrain": "Actively participate in collection operations and field interventions", "Effectuer les vérifications nécessaires du véhicule avant et pendant les opérations": "Perform the required vehicle checks before and during operations", "Respecter les procédures de sécurité et contribuer au bon déroulement des routes": "Follow safety procedures and contribute to the smooth running of routes", "Exigences et conditions": "Requirements and conditions", "Permis Classe 3": "Class 3 driver's licence", "Collecte résidentielle et municipale": "Residential and municipal collection", "Travail extérieur et arrêts fréquents": "Outdoor work and frequent stops", "Temps plein": "Full time", "POSTULER MAINTENANT": "APPLY NOW", "Chauffeur robot": "Robotic-arm driver", "Conduite et collecte avec bras robotisé.": "Driving and collection with a robotic arm.", "Bras robotisé": "Robotic arm", "Collecte automatisée": "Automated collection", "Équipements modernes": "Modern equipment", "Villes": "Cities", "disponibles": "available", "Plusieurs possibilités sont offertes à Montréal et à Laval.": "Several opportunities are available in Montreal and Laval.", "Montréal": "Montreal", "Laval": "Laval", "Une question ?": "A question?", "Notre équipe recrutement vous répond rapidement.": "Our recruitment team will respond quickly.", "Solutions Environnementales 360 (E360S)": "Environmental Solutions 360 (E360S)",
     "Opérer le bras robotisé pour la levée et la vidange des bacs roulants": "Operate the robotic arm to lift and empty rolling bins",
     "Effectuer les vérifications du véhicule et du système robotisé avant et pendant les opérations": "Inspect the vehicle and robotic system before and during operations",
     "Signaler toute anomalie ou bris d'équipement au répartiteur": "Report any anomaly or equipment breakdown to dispatch",
@@ -340,7 +384,7 @@ tailwind.config = { theme: { extend: {
   const metaEl = document.querySelector('meta[name="description"]');
   const META = {
     fr: metaEl ? metaEl.getAttribute('content') : '',
-    en: 'E360S is hiring Class 3 drivers for residential and municipal collection in Greater Montreal. Apply now.'
+    en: 'E360S is hiring Class 3 drivers for residential and municipal collection in Montreal and Laval. Apply now.'
   };
   const TITLE = { fr: document.title, en: 'Residential and Municipal Collection | E360S' };
   let lang = 'fr';
@@ -377,6 +421,10 @@ tailwind.config = { theme: { extend: {
   document.querySelectorAll('.lang-opt').forEach(o=>{ o.querySelector('.check').style.opacity = o.dataset.setlang===lang ? '1':'0'; });
 try{var _sl=localStorage.getItem('e360s-lang');if(_sl==='en')setLang('en');else if(!_sl&&(navigator.language||'').toLowerCase().slice(0,2)==='en')setLang('en');}catch(e){}
 })();
+</script>
+<script>
+(function(){var tabs=document.querySelectorAll(".seg button[data-job]");if(!tabs.length)return;function activate(panelId){tabs.forEach(function(t){t.setAttribute("aria-selected",t.getAttribute("data-job")===panelId?"true":"false");});var g=document.querySelector(".seg-glide");if(g){var idx=0;tabs.forEach(function(t,i){if(t.getAttribute("data-job")===panelId)idx=i;});g.style.transform="translateX("+(idx*100)+"%";}document.querySelectorAll(".jobs .job").forEach(function(job){var panel=job.querySelector(".job-panel");var on=panel&&panel.id===panelId;job.classList.toggle("active",!!on);job.classList.toggle("open",!!on);if(on)job.classList.add("is-visible");var tr=job.querySelector(".job-summary");if(tr)tr.setAttribute("aria-expanded",on?"true":"false");});}tabs.forEach(function(t){t.addEventListener("click",function(){activate(t.getAttribute("data-job"));});});activate("panel-arriere");})();
+(function(){document.querySelectorAll(".job-panel").forEach(function(panel){var blocks=panel.querySelectorAll(".job-block");if(!blocks.length)return;blocks[0].classList.add("open");blocks.forEach(function(block){var h4=block.querySelector("h4");if(!h4)return;h4.setAttribute("role","button");h4.setAttribute("tabindex","0");function sync(){h4.setAttribute("aria-expanded",block.classList.contains("open")?"true":"false");}function toggle(){var was=block.classList.contains("open");blocks.forEach(function(b){b.classList.remove("open");var bh=b.querySelector("h4");if(bh)bh.setAttribute("aria-expanded","false");});if(!was)block.classList.add("open");sync();}h4.addEventListener("click",toggle);h4.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});sync();});});})();
 </script>
 </body>
 </body>
