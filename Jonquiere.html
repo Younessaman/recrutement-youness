@@ -848,7 +848,7 @@ Assurances + REER
 <h2>Une question ?</h2>
 <p>Notre équipe recrutement te répond rapidement.</p>
 <div class="contact-methods">
-<a class="contact-link" href="mailto:Recruitment@e360s.ca">
+<a class="contact-link" href="mailto:Recruitment@e360s.ca?subject=E360S%2F%20Candidature%20%2F%20Jonqui%C3%A8re">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
           Recruitment@e360s.ca
 </a>
@@ -920,7 +920,7 @@ document.querySelectorAll('.job-cta').forEach(btn => {
 .addr-btn{display:flex;align-items:center;gap:.5rem;border:none;border-radius:9999px;background:#0299d0;color:#f4e600;padding:.875rem 1.25rem .875rem 1rem;box-shadow:0 16px 36px rgba(2,119,168,.5);font-weight:700;font-size:14px;cursor:pointer;transition:transform .1s}
 .addr-btn:active{transform:scale(.95)}
 </style>
-<script>(function(){var a=document.getElementById('mapCard');if(!a)return;var q=encodeURIComponent('E360S, 1480 rue des Investisseurs, Chicoutimi, QC G7J 0L8');if(/iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent)){a.href='https://maps.apple.com/?q='+q;}})();</script>
+<script>(function(){function f(){var a=document.getElementById('mapCard');if(!a)return;var q=encodeURIComponent('E360S, 1480 rue des Investisseurs, Chicoutimi, QC G7J 0L8');if(/iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent)){a.href='https://maps.apple.com/?q='+q;}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{f();}})();</script>
 <div class="addr-wrap"><div id="addrPopup" class="addr-popup" hidden><img src="map-jonquiere.jpg" alt="Carte, E360S Chicoutimi"><button id="addrClose" type="button" aria-label="Fermer" class="addr-close">✕</button><div class="addr-body"><svg style="width:24px;height:24px;flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="#0299d0" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span><span class="addr-title">E360S Chicoutimi</span><span class="addr-line">1480, rue des Investisseurs, Chicoutimi, QC G7J 0L8</span><a id="mapCard" href="https://www.google.com/maps/search/?api=1&query=E360S%2C%201480%20rue%20des%20Investisseurs%2C%20Chicoutimi%2C%20QC%20G7J%200L8" target="_blank" rel="noopener" class="addr-link">Ouvrir dans Plans / Maps →</a><span class="addr-credit">Carte © OpenStreetMap</span></span></div></div><button id="addrBtn" type="button" aria-expanded="false" class="addr-btn"><svg style="width:20px;height:20px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Adresse</button></div>
 <script>(function(){var b=document.getElementById('addrBtn'),p=document.getElementById('addrPopup'),c=document.getElementById('addrClose');if(!b||!p)return;function set(o){p.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');}b.addEventListener('click',function(e){e.stopPropagation();set(p.hidden);});if(c)c.addEventListener('click',function(){set(false);});document.addEventListener('click',function(e){if(!p.hidden&&!p.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();</script>
 
